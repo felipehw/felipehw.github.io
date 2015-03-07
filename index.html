@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>$ls /home/felipehw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="free software, free culture, copyleft, etc.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="$ls /home/felipehw">
+<meta property="og:url" content="http://felipehw.github.io/index.html">
+<meta property="og:site_name" content="$ls /home/felipehw">
+<meta property="og:description" content="free software, free culture, copyleft, etc.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="$ls /home/felipehw">
+<meta name="twitter:description" content="free software, free culture, copyleft, etc.">
+  
+    <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title">
+      <h1 id="logo-wrap">
+        <img src="/css/images/tux_v02.svg.png" alt="Tux pixelated" title="Tux pixelated" id="header-logo">
+        <a href="/" id="logo">$ls /home/felipehw</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">software &amp; cultura livre</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://felipehw.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-instalando-debian-jessie-usando-criptografia-de-disco" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" class="article-date">
+  <time datetime="2015-02-28T20:27:02.000Z" itemprop="datePublished">28 fev 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/gnu-linux/">gnu/linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/">Instalando Debian Jessie usando criptografia de disco</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de me preocupar com os dados em caso de perca ou roubo.</p>
+<p>A melhor maneira de se prevenir contra perca ou roubo é criptografando os dados e para tanto optei em instalar o Debian numa partição completamente criptografada. Assim … nem a PF consegue os dados :D.</p>
+<p>O post <strong>não</strong> é indicado para quem nunca instalou um GNU/Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.</p>
+<p>A versão do Debian que optei é a Jessie (v8), ela está quase saindo do forno (é <strong>testing</strong> mas está em <em>freeze</em>, portanto só aceita correção de bugs). Existem pouquíssimos bugs nela (me deparei mais com eles na instalação do que no uso do dia-a-dia) e certamente o que está aqui valerá para a versão final que sairá em algumas semanas.</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png">
+<p><strong>Bom, vamos lá:</strong></p>
+<h2 id="0-_Backup_dos_dados_existentes_(disco_será_integralmente_utilizado)">0. Backup dos dados existentes (disco será integralmente utilizado)</h2><p>O passo zero não será descrito e depende de cada um. O instalador do Debian automatiza o processo de formatar, particionar e configurar a criptografia em disco desde que optemos por instalá-lo usando inteiramente um disco. Portanto, faça um backup dos dados e deixe o disco pronto para a instalação.</p>
+<p>Caso não desejes reservar um disco inteiro para o Debian, é plenamente possível instalá-lo em apenas uma parte do disco com criptografia e etc. (o sobrenome do GNU/Linux é configurabilidade) mas não será coberto nesse post :P.</p>
+<h2 id="1-_Download_da_imagem_do_Debian:">1. Download da imagem do Debian:</h2><p>Primeiro baixe uma imagem do Debian Jessie em <a href="https://www.debian.org/CD/http-ftp/" target="_blank" rel="external">https://www.debian.org/CD/http-ftp/</a> e grave numa pendrive (ou CD/DVD - alguém usa isso?).</p>
+<p>No momento que escrevo o Jessie é testing, portanto é o link <a href="http://cdimage.debian.org/cdimage/weekly-builds/" target="_blank" rel="external">Official CD/DVD images of the “testing” distribution (regenerated weekly)</a> mas em breve será o link <a href="https://www.debian.org/CD/http-ftp/#stable" target="_blank" rel="external">Official CD/DVD images of the “stable” release</a>.</p>
+<h2 id="2-_Instalando_c/_criptografia:">2. Instalando c/ criptografia:</h2><p>Reinicie a máquina com a pendrive espetada e siga as seguintes opções:</p>
+<ul>
+<li><p>Ao iniciar a imagem de instalação, escolha <em>Graphical install</em>:</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-graphical_install.png">
+</li>
+<li><p>Selecione como linguaguem “Português Brasil” e na sequência a localidade como “Brasil”:</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-select_a_language.png">
+</li>
+<li><p>Na próxima tela (“Configure o teclado”) escolha o teclado apropriado. “Português brasileiro” para teclado ABNT (com cedilha) ou “Inglês americano” para teclado sem cedilha.</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>Caso seu computador possua hardware de rede que necessita de firmware proprietário</strong> chegaremos à parte mais chatinha (<strong>se não precisar</strong> o instalador pula essa etapa, agradeça ao seus fabricantes de hardware e <strong><a href="#configurarrede">pule uma seção</a></strong> :D).</p>
+<p>O Debian perguntará (tela “Detectar hardware de rede”) se você deseja oferecer o firmware (ausente na instalação pq ñ é software livre). É um caso comum p/ placas de rede wireless e algumas cabeadas.</p>
+<p>A vantagem de usar a rede na instalação é que são baixadas atualizações além de configurarmos a rede e o endereço do repositório de pacotes utilizado pelo sistema. No meu caso, tive azar … tanta a placa de rede cabeada quanto wireless precisam de firmware proprietário. <strong>Caso seja o seu caso</strong> (malditos fabricantes que <del>não colaboram com</del> boicotam o software livre):</p>
+<ol>
+<li>Anote os firmwares necessários informados pelo Debian (no meu caso, ele informou os arquivos <code>iwlwifi-6000g2b-6.ucode</code> - wifi- e, <code>rtl_nic/rtl8411-1.fw</code>  -cabeada-).</li>
+<li>Faça os procedimentos informados abaixo em <a href="#firmwares">Firmwares</a> para obter os arquivos.</li>
+<li>Ofereça os arquivos nesse ponto da instalação, inserindo uma segunda pendrive quando pedido.</li>
+</ol>
+<p><strong>Ou</strong> dê um belo f@#$-@# nos dois últimos passos, continue sem os firmwares e instale manualmente os pacotes com os firmwares após a instalação (tb explicado em <a href="#firmwares">Firmwares</a>).</p>
+</li>
+<li><p><span id="configurarrede"></span>Após o suplício causado pelas empresas que não lançam nem colaboram com drivers livres (ou caso seu computador esteja livre desses hardwares), chegamos à configuração da rede (Tela “Configurar a rede”).</p>
+<p>A configuração é simples. No meu caso, fiz a configuração mais “complicada” (rede sem fio):</p>
+<ul>
+<li>Escolhi a interface: <code>wlan0</code> (<code>wlan0</code> era a placa wifi, <code>eth0</code> a placa cabeada).</li>
+<li>Em “Escolher SSID”, informei o nome da rede sem fio.</li>
+<li>Em “Tipo da rede sem fio …”: <code>WPA/WPA2 PSK</code> (<code>WPA/WPA2 PSK</code> é a + comum e segura; <code>Rede Aberta/WEP</code> é + antiga e insegura).</li>
+<li>Em “Frase secreta”: Senha da rede.</li>
+</ul>
+<p>Depois de configurar a forma de acesso à rede é só informar o “Nome da máquina” (qualquer um) e o “Nome de domínio” (se não souber/tiver, qualquer um).</p>
+</li>
+<li><p>O próximo passo é configurar usuários e senhas (tela “Configurar usuários e senhas”). Defina a senha do root bem como login e senha de um usuário normal:</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-configurar_usuarios_e_senhas.png">
+</li>
+<li><p>Na tela “Configurar o relógio”, defina o fuso horário correto escolhendo seu estado na lista (ex: “Santa Catarina”).</p>
+</li>
+<li><p>Finalmente, chegamos à tela do particionador de discos:</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-particionar_discos.png">
+<p>É aqui que definiremos que o sistema operacional seja instalado num sistema de arquivo sob criptografia. Iremos utilizar um disco inteiro (portanto, apagaremos qualquer coisa que exista nele)</p>
+<p>Siga os seguintes passos:</p>
+<ol>
+<li>Escolha “Assistido - usar disco todo e LVM criptografado”</li>
+<li>Selecione o disco a ser formatado e particionado (escolhi o disco <code>sda</code>).</li>
+<li>Na tela “Esquema de particionamento” escolha “Todos os arquivos em uma partição (para iniciantes)” pois como estamos usando <a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29" target="_blank" rel="external">LVM</a> é fácil redimensionar depois e criar as partições desejadas (post futuro).</li>
+<li>Responda “Sim” à pergunta “Gravar as mudanças nos discos e configurar LVM?”.<br>O disco será sobrescrito com dados aleatório para aumentar a segurança (dificulta diferenciar o que possui dados do que ainda está vazio).</li>
+<li>Agora é solicitada uma “frase criptográfica” para desbloquear o disco sempre que o sistema <em>bootar</em>. Atenção, se você esquecer essa senha … adeus dados :D.</li>
+<li>Finalmente, confirme tudo escolhendo a opção “Finalizar o particionamento e escrever as mudanças no disco” e depois respondendo “Sim” à pergunta “Escrever as mudanças nos discos?”.<br>As partições serão criadas e o sistema básico instalado.</li>
+</ol>
+</li>
+<li><p>Na tela “Configurar o gerenciador de pacotes”:</p>
+<ol>
+<li>Responda “Não” à pergunta “Ler outro CD ou DVD?”</li>
+<li>Responda “Sim” à pergunta “Usar um espelho de rede?” se você tiver acesso à internet durante à instalação.<br>2.1. Escolha o Brasil, como país do espelho e algum dos repositóris disponíveis.<br>2.2. Opcionalmente, informe um proxy (se você não sabe o que é … não precisa de um :D).<br>Será configurado o acesso ao repositório, baixada e instalada as atualizações existentes.</li>
+</ol>
+</li>
+<li><p>Na tela “Configurando popularity-contest” podemos optar por enviar dados anônimos sobre os pacotes instalados. Essa informação é usada para decidir os pacotes que são colocados no primeiro CD da distribuição.</p>
+</li>
+<li><p>Na tela “Seleção de software” podemos escolher coleções de software para serem instaladas além do sistema básico. Na dúvida, a seleção padrão possui o necessário para ambientes desktop.</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-selecao_de_software.png">
+</li>
+<li><p>Por fim na tela “Instalar o carregador de inicialização GRUB em um disco rígido”:</p>
+<ol>
+<li>Responsa “Sim” à pergunta “Instalar o carregador de inicialização GRUB no registro mestre de inicialização?”.</li>
+<li>Escolha o disco rídigo para gravar o GRUB (responsável por viabilizar o boot do sistema operacional): No meu caso, escolhi meu primeiro disco (<code>/dev/sda</code>).</li>
+</ol>
+</li>
+<li><p>Pronto, basta reiniciar o sistema:</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-instalacao_completada.png">
+</li>
+<li><p>No boot será pedido a “frase criptográfica” (sem ela é impossível acessar os dados da partição):</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-pedindo_frase_criptografica.png">
+</li>
+<li><p>Após o boot, eis o GNOME do Debian Jessie em toda sua glória (e com a merecida segurança oferecida pela criptografia):</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-desktop.png">
+</li>
+</ul>
+<h2 id="Extras">Extras</h2><h3 id="Firmwares"><span id="firmwares">Firmwares</span></h3><ul>
+<li><p>Para conseguir exatamente os firmwares faltando:</p>
+<ol>
+<li>Pesquise pelos arquivos de firmware mencionados pelo instalador no site <a href="https://www.debian.org/distrib/packages" target="_blank" rel="external">Debian — Packages</a>, por meio do instrumento de busca “Search the contents of packages”. Será indicado o pacote .deb contendo o firmware.</li>
+<li>Realize o download do pacote.</li>
+<li>Copie o pacote para o diretório raiz de um pendrive formatado em FAT.</li>
+<li>Insira a pendrive quando solicitada durante a instalação.</li>
+</ol>
+<p>No caso dos arquivos <code>rtlwifi/rtl8723befw.bin</code> e <code>rtl_nic/rtl8411-1.fw</code>, ambos estavam no pacote <code>firmware-realtek</code>.<br>No caso do arquivo <code>iwlwifi-6000g2b-6.ucode</code>, está no pacote <code>firmware-iwlwifi</code>.</p>
+</li>
+<li><p>Para baixar num único arquivo os pacotes .debs contendo os firmwares mais populares, basta fazer o download do arquivo compactado correspondente ao release da distribuição em <a href="http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/" target="_blank" rel="external">http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a>. Aí é só extrair seu conteúdo para uma pendrive e seguir os passos acima.</p>
+</li>
+<li><p>Opcionalmente, os pacotes contendo os firmwares podem ser instalados manualmente após a instalação. (No meu caso, os pacotes <code>firmware-realtek_0.43_all.deb</code> e <code>firmware-iwlwifi</code>)</p>
+</li>
+<li><p>Mais info: <a href="https://www.debian.org/releases/stable/amd64/ch06s04.html.en" target="_blank" rel="external">6.4. Loading Missing Firmware</a></p>
+</li>
+</ul>
+<h3 id="Bugs,_etc-">Bugs, etc.</h3><p>Os bugs que encontrei durante a instalação seguem abaixo. Lembre-se que o Jessie está na reta final e esses bugs provavelmente estarão corrigidos à tempo do lançamento. Ainda assim, vale lembrar que não topei com bugs após a instalação.</p>
+<ul>
+<li>Não funcionou o touchpad durante a instalação (após a instalação, sim).</li>
+<li>Após configurar os discos com a opção “Assistido - usar o disco todo e LVM criptografado”, não posso voltar para configurar mais nada relacionado à discos pois dessa forma o instalador fará configurações erradas que após a instalação inviabilizarão o boot sem intervenção manual. Parece semelhante ao problema relatado em <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739299" target="_blank" rel="external">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739299</a>.</li>
+<li>Não consegui instalar os firmwares a partir de mídia removível durante a instalação, acabei instalando os pacotes .deb contendo os firmwares manualmente após a instalação.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" data-id="ci6z8529s00012sovpc6wmjh0" class="article-share-link">Share</a>
+      
+        <a href="http://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/criptografia/">criptografia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/28/hello-world/" class="article-date">
+  <time datetime="2015-02-28T19:48:39.000Z" itemprop="datePublished">28 fev 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/offtopic/">offtopic</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/28/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Quem é vivo sempre aparece, o <a href="https://lowdread.wordpress.com/" target="_blank" rel="external">primeiro blog que criei</a> (julho de 2010) entrou em hibernação profunda em julho de 2012. Na época eu estava me formando em História, entrando no curso de Gestão de T.I e especulava que ele poderia voltar no futuro mas sem promessas.</p>
+<img src="/2015/02/28/hello-world/paradox-clock.jpg">
+<p>Pois bem, voltamos com a segunda edição do blog justamente após o final do curso de Gestão de T.I. Quem sabe agora tenha mais tempo (só trabalho, ao invés de trabalho + estudo).</p>
+<p>Recuperando a explicação da criação do 1ro blog:</p>
+<blockquote><p>Bom, a ideia do blog é, antes de mais nada, conhecer um pouco essas ferramentas para criaçào de blog.</p>
+<p>E <del>, talvez,</del> publicar algo que <del>ajudou meus colegas em suas primeiras explorações no mundo GNU/Linux</del> ajude a mim mesmo (hue) nas minhas explorações do mundo do software livre (principalmente GNU/Linux e desenvolvimento de software).</p>
+<p>Podem entrar também coisas que considere interessante sobre software livre e todo tipo de informação relacionada a cultura livre, assim como, mais raramente, alguma coisa relacionada a política/história/sociedade/cerveja/futebol.</p>
+<footer><strong>Eu mesmo</strong><cite><a href="https://lowdread.wordpress.com/2010/07/26/sobre-a-utilidade-disso/" target="_blank" rel="external">Sobre a utilidade disso</a></cite></footer></blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://felipehw.github.io/2015/02/28/hello-world/" data-id="ci6z852an00082sovmz667u1l" class="article-share-link">Share</a>
+      
+        <a href="http://felipehw.github.io/2015/02/28/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/criptografia/" style="font-size: NaNpx;">criptografia</a><a href="/tags/debian/" style="font-size: NaNpx;">debian</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/">Instalando Debian Jessie usando criptografia de disco</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/28/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 felipehw<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'felipehwgithubiogit';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
