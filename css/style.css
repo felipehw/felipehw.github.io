@@ -311,8 +311,6 @@ body {
 #header {
   height: 90px;
   position: relative;
-  padding: 0 20px 0;
-  margin-bottom: 10px;
 }
 #header-outer {
   height: 100%;
@@ -330,15 +328,19 @@ body {
   height: 100%;
   z-index: -1;
 }
-#header-logo {
-  display: inline-block;
-  height: 45px;
-}
 #header-title {
-  text-align: left;
   position: absolute;
   top: 50%;
   margin: 10px;
+}
+#header-logo {
+  display: inline-block;
+  height: 45px;
+  position: relative;
+  top: 5px;
+}
+#header-wrap-hs {
+  display: inline-block;
 }
 #logo,
 #subtitle {
@@ -348,19 +350,14 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 #logo {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
-  line-height: 20px;
-  text-shadow: unset;
+  font-family: 'Source Code Pro', cursive;
+  font-size: 30px;
+  line-height: 30px;
 }
 #subtitle {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
-}
-#subtitle-wrap {
-  padding-left: 35px;
-  text-align: initial;
 }
 #main-nav {
   float: left;
@@ -376,7 +373,7 @@ body {
   -ms-transition: opacity 0.2s;
   transition: opacity 0.2s;
   display: block;
-  padding: 15px 15px;
+  padding: 20px 15px;
 }
 .nav-icon:hover,
 .main-nav-link:hover {
