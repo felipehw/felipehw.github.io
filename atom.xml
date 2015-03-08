@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2015-03-08T01:08:20.000Z</updated>
+  <updated>2015-03-08T01:19:42.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/"/>
     <id>https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/</id>
     <published>2015-03-08T04:08:20.000Z</published>
-    <updated>2015-03-08T01:08:20.000Z</updated>
+    <updated>2015-03-08T01:19:42.000Z</updated>
     <content type="html"><![CDATA[<p>Esse post é do <em>dark side</em>. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou o desenvolvimento do driver livre (<a href="http://nouveau.freedesktop.org/wiki/" target="_blank" rel="external">nouveau</a>) e só recentemente começou a prestar alguma ajuda.</p>
 <img src="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">
+<a id="more"></a>
 <p>A tecnologia <a href="http://www.nvidia.com/object/optimus_technology.html" target="_blank" rel="external">NVIDIA Optimus</a> permite aos notebooks utilizarem a placa de vídeo onboard no cotidiano e, apenas quando necessário, fazer uso da placa de vídeo dedicada (Nvidia). Isso é essencial para que a bateria tenha longa duração, dado que a placa de vídeo dedicada é ativada apenas quando necessário (e ela consome bastante energia :/).</p>
 <p>O projeto que se dedica a suportar essa tecnologia no GNU/Linux é o <a href="http://bumblebee-project.org/" target="_blank" rel="external">Bumblebee</a>. Podemos usar ele com o driver livre (nouveau) e o driver proprietário. Como o driver proprietário da Nvidia é bem maduro no GNU/Linux, conseguimos por meio dele usar todo o potencial da placa de vídeo e por meio do Bumblebee economizar o máximo de energia possível.</p>
 <p>A instalação no Debian antes do Jessie exigia alguma atenção, mas no Jessie os pacotes já estão nos repositórios e o processo é bem direto.</p>
@@ -71,7 +72,9 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Esse post é do <em>dark side</em>. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver li]]>
+    <![CDATA[<p>Esse post é do <em>dark side</em>. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou o desenvolvimento do driver livre (<a href="http://nouveau.freedesktop.org/wiki/">nouveau</a>) e só recentemente começou a prestar alguma ajuda.</p>
+<img src="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">]]>
+    
     </summary>
     
   </entry>
@@ -81,12 +84,13 @@
     <link href="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/"/>
     <id>https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/</id>
     <published>2015-02-28T20:27:02.000Z</published>
-    <updated>2015-03-07T17:26:20.000Z</updated>
+    <updated>2015-03-08T01:20:02.000Z</updated>
     <content type="html"><![CDATA[<p>O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de me preocupar com os dados em caso de perca ou roubo.</p>
 <p>A melhor maneira de se prevenir contra perca ou roubo é criptografando os dados e para tanto optei em instalar o Debian numa partição completamente criptografada. Assim … nem a PF consegue os dados :D.</p>
 <p>O post <strong>não</strong> é indicado para quem nunca instalou um GNU/Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.</p>
 <p>A versão do Debian que optei é a Jessie (v8), ela está quase saindo do forno (é <strong>testing</strong> mas está em <em>freeze</em>, portanto só aceita correção de bugs). Existem pouquíssimos bugs nela (me deparei mais com eles na instalação do que no uso do dia-a-dia) e certamente o que está aqui valerá para a versão final que sairá em algumas semanas.</p>
 <img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png">
+<a id="more"></a>
 <p><strong>Bom, vamos lá:</strong></p>
 <h2 id="0-_Backup_dos_dados_existentes_(disco_será_integralmente_utilizado)">0. Backup dos dados existentes (disco será integralmente utilizado)</h2><p>O passo zero não será descrito e depende de cada um. O instalador do Debian automatiza o processo de formatar, particionar e configurar a criptografia em disco desde que optemos por instalá-lo usando inteiramente um disco. Portanto, faça um backup dos dados e deixe o disco pronto para a instalação.</p>
 <p>Caso não desejes reservar um disco inteiro para o Debian, é plenamente possível instalá-lo em apenas uma parte do disco com criptografia e etc. (o sobrenome do GNU/Linux é configurabilidade) mas não será coberto nesse post :P.</p>
@@ -194,7 +198,12 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro]]>
+    <![CDATA[<p>O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de me preocupar com os dados em caso de perca ou roubo.</p>
+<p>A melhor maneira de se prevenir contra perca ou roubo é criptografando os dados e para tanto optei em instalar o Debian numa partição completamente criptografada. Assim … nem a PF consegue os dados :D.</p>
+<p>O post <strong>não</strong> é indicado para quem nunca instalou um GNU/Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.</p>
+<p>A versão do Debian que optei é a Jessie (v8), ela está quase saindo do forno (é <strong>testing</strong> mas está em <em>freeze</em>, portanto só aceita correção de bugs). Existem pouquíssimos bugs nela (me deparei mais com eles na instalação do que no uso do dia-a-dia) e certamente o que está aqui valerá para a versão final que sairá em algumas semanas.</p>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png">]]>
+    
     </summary>
     
       <category term="criptografia" scheme="https://felipehw.github.io/tags/criptografia/"/>
@@ -210,10 +219,11 @@
     <link href="https://felipehw.github.io/2015/02/28/hello-world/"/>
     <id>https://felipehw.github.io/2015/02/28/hello-world/</id>
     <published>2015-02-28T19:48:39.000Z</published>
-    <updated>2015-03-07T17:24:28.000Z</updated>
+    <updated>2015-03-08T01:20:32.000Z</updated>
     <content type="html"><![CDATA[<p>Quem é vivo sempre aparece, o <a href="https://lowdread.wordpress.com/" target="_blank" rel="external">primeiro blog que criei</a> (julho de 2010) entrou em hibernação profunda em julho de 2012. Na época eu estava me formando em História, entrando no curso de Gestão de T.I e especulava que ele poderia voltar no futuro mas sem promessas.</p>
 <img src="/2015/02/28/hello-world/paradox-clock.jpg">
 <p>Pois bem, voltamos com a segunda edição do blog justamente após o final do curso de Gestão de T.I. Quem sabe agora tenha mais tempo (só trabalho, ao invés de trabalho + estudo).</p>
+<a id="more"></a>
 <p>Recuperando a explicação da criação do 1ro blog:</p>
 <blockquote><p>Bom, a ideia do blog é, antes de mais nada, conhecer um pouco essas ferramentas para criaçào de blog.</p>
 <p>E <del>, talvez,</del> publicar algo que <del>ajudou meus colegas em suas primeiras explorações no mundo GNU/Linux</del> ajude a mim mesmo (hue) nas minhas explorações do mundo do software livre (principalmente GNU/Linux e desenvolvimento de software).</p>
@@ -221,7 +231,10 @@
 <footer><strong>Eu mesmo</strong><cite><a href="https://lowdread.wordpress.com/2010/07/26/sobre-a-utilidade-disso/" target="_blank" rel="external">Sobre a utilidade disso</a></cite></footer></blockquote>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Quem é vivo sempre aparece, o <a href="https://lowdread.wordpress.com/" target="_blank" rel="external">primeiro blog que criei</a> (julho]]>
+    <![CDATA[<p>Quem é vivo sempre aparece, o <a href="https://lowdread.wordpress.com/">primeiro blog que criei</a> (julho de 2010) entrou em hibernação profunda em julho de 2012. Na época eu estava me formando em História, entrando no curso de Gestão de T.I e especulava que ele poderia voltar no futuro mas sem promessas.</p>
+<img src="/2015/02/28/hello-world/paradox-clock.jpg">
+<p>Pois bem, voltamos com a segunda edição do blog justamente após o final do curso de Gestão de T.I. Quem sabe agora tenha mais tempo (só trabalho, ao invés de trabalho + estudo).</p>]]>
+    
     </summary>
     
       <category term="offtopic" scheme="https://felipehw.github.io/categories/offtopic/"/>
