@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/</loc>
+    <lastmod>2015-03-08T01:08:20.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/</loc>
     <lastmod>2015-03-07T17:26:20.000Z</lastmod>
   </url>

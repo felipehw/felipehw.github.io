@@ -84,6 +84,93 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/" class="article-date">
+  <time datetime="2015-03-08T04:08:20.000Z" itemprop="datePublished">8 mar 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/">Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Esse post é do <em>dark side</em>. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou o desenvolvimento do driver livre (<a href="http://nouveau.freedesktop.org/wiki/" target="_blank" rel="external">nouveau</a>) e só recentemente começou a prestar alguma ajuda.</p>
+<img src="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">
+<p>A tecnologia <a href="http://www.nvidia.com/object/optimus_technology.html" target="_blank" rel="external">NVIDIA Optimus</a> permite aos notebooks utilizarem a placa de vídeo onboard no cotidiano e, apenas quando necessário, fazer uso da placa de vídeo dedicada (Nvidia). Isso é essencial para que a bateria tenha longa duração, dado que a placa de vídeo dedicada é ativada apenas quando necessário (e ela consome bastante energia :/).</p>
+<p>O projeto que se dedica a suportar essa tecnologia no GNU/Linux é o <a href="http://bumblebee-project.org/" target="_blank" rel="external">Bumblebee</a>. Podemos usar ele com o driver livre (nouveau) e o driver proprietário. Como o driver proprietário da Nvidia é bem maduro no GNU/Linux, conseguimos por meio dele usar todo o potencial da placa de vídeo e por meio do Bumblebee economizar o máximo de energia possível.</p>
+<p>A instalação no Debian antes do Jessie exigia alguma atenção, mas no Jessie os pacotes já estão nos repositórios e o processo é bem direto.</p>
+<p>Vamos pôr a mão na massa:</p>
+<h3 id="0-_Adicione_suporte_aos_repositórios_com_softwares_proprietários">0. Adicione suporte aos repositórios com softwares proprietários</h3><p>Antes de mais nada, os repositórios com softwares proprietários (<code>non-free</code>) e dependentes de proprietários (<code>contrib</code>) devem estar habilitados.</p>
+<p>Para tanto, adicione no final das linhas de repositórios para o Jessie as palavras <code>non-free</code> e <code>contrib</code> em <code>/etc/apt/sources.list</code>. Exemplo:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb http://debian.pop-sc.rnp.br/debian/ jessie main contrib non-free</span><br><span class="line">deb-src http://debian.pop-sc.rnp.br/debian/ jessie main contrib non-free</span><br></pre></td></tr></table></figure>
+<p>Depois atualize os dados referentes aos repositórios executando:<br><code># apt-get update</code></p>
+<h3 id="1-_Instalação">1. Instalação</h3><ul>
+<li><p>Instale os pacotes necessários p/ o Bumblebee e o driver proprietário Nvidia:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get install bumblebee-nvidia primus</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Apenas para Debian 64 bits</strong>. Permite que utilizemos o Bumblebee inclusive quando rodando aplicações 32 bits em sistemas 64 bits (essencial para diversos jogos no <a href="steampowered.com">Steam</a>):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dpkg --add-architecture i386 &amp;&amp; apt-get update &amp;&amp; apt-get install primus-libs:i386</span></span><br></pre></td></tr></table></figure>
+<p>Atenção: Se durante a instalação, lhe for perguntado se deseja criar um arquivo <code>xorg.conf</code> responda que <strong>não</strong>. Essa pergunta se aplica apenas a sistemas que usam uma única placa (Nvidia - aka sem Optimus). Também não execute <code>nvidia-xconfig</code>.</p>
+</li>
+</ul>
+<h3 id="2-_Pós-instalação">2. Pós-instalação</h3><p>Adicione os usuários que forem utilizar da placa Nvidia via Bumblebee ao grupo <code>bumblebee</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># adduser $USER bumblebee</span></span><br></pre></td></tr></table></figure></p>
+<p>Caso o usuário não seja adicionado, o mesmo não conseguirá chavear entre a placa de vídeo onboard e offboard.</p>
+<p>Pronto! Tudo instalado e pós-instalado.</p>
+<h3 id="3-_Utilização">3. Utilização</h3><p>O sistema estará por padrão utilizando sempre a placa onboard. Para utilizarmos a placa dedicada Nvidia, devemos executar a aplicação desejada por meio de um dos seguintes executáveis: <code>primusrun</code> ou <code>optirun</code>.</p>
+<p>O <code>primusrun</code> é mais novo que <code>optirun</code>, tende a substituí-lo e possui maior performance (preferencial).</p>
+<p>Exemplo de utilização:</p>
+<ul>
+<li><code>$ primusrun [options] &lt;application&gt; [application-parameters]</code></li>
+<li><code>$ optirun [options] &lt;application&gt; [application-parameters]</code></li>
+</ul>
+<p>Executando o Steam c/ o <code>primusrun</code>: <code>$ primusrun steam</code>.</p>
+<p>Como visto, assim temos um controle bem grande sobre quando uma ou outra placa deve ser usada. Aqui (com as observações abaixo feitas ao Steam) tenho rodado os jogos com toda a performance possível, e no restante do tempo a bateria dura e o notebook fica silencioso :D.</p>
+<h4 id="3-1_Utilizando_Bumblebee_c/_Steam">3.1 Utilizando Bumblebee c/ Steam</h4><ul>
+<li><p>Economizando energia no Steam:<br>Se executamos o Steam assim <code>$ primusrun steam</code>, gastaremos energia à toa pois estamos com a placa Nvidia ativada sempre (mesmo enquanto navegamos pelo Steam ou executamos jogos leves).<br>A forma ideal é configurar o jogo que necessitar da Nvidia defindo que o mesmo deve ser executado com o comando <code>primusrun %command%</code> (ou <code>optirun %command%</code>) em: <em>Properties</em> -&gt; <em>General</em> -&gt; <em>Set Launch Options…</em>.</p>
+</li>
+<li><p>Jogos que nao funcionarem no Debian Jessie c/ Optimus:<br>Pode ocorrer da versão errada do libGL estar sendo carregada. Para corrigir isso:</p>
+<ol>
+<li><p>Localize a versão correta do libGL:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ locate libGL.so</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Configure o Steam p/ carregar o jogo com a versao correta (em <em>Properties</em> -&gt; <em>General</em> -&gt; <em>Set Launch Options…</em>.). Exemplo:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGL.so.<span class="number">1</span> primusrun %<span class="built_in">command</span>%</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<p>Fonte: <a href="https://wiki.archlinux.org/index.php/steam" target="_blank" rel="external">Steam - ArchWiki</a></p>
+<h2 id="Links">Links</h2><ul>
+<li><a href="https://wiki.debian.org/Bumblebee#Usage" target="_blank" rel="external">Bumblebee - Debian Wiki</a>: Documentação da Wiki Debian sobre a instalação do Bumblebee. Simples e direta.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/" data-id="ci6zqrfuj00011fpvpmu5ge11" class="article-share-link">Share</a>
+      
+        <a href="https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-instalando-debian-jessie-usando-criptografia-de-disco" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" class="article-date">
@@ -224,7 +311,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" data-id="ci6zmggdl0001f8ovbyfik3ua" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" data-id="ci6zqrfup00021fpvsppphzox" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -276,7 +363,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/02/28/hello-world/" data-id="ci6zmggee0008f8ov3l5tt6np" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/02/28/hello-world/" data-id="ci6zqrfv900091fpvyoceaamm" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2015/02/28/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -324,7 +411,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -334,6 +421,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/">Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie</a>
+          </li>
         
           <li>
             <a href="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/">Instalando Debian Jessie usando criptografia de disco</a>
