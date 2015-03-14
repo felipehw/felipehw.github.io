@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2015-03-08T01:24:03.000Z</updated>
+  <updated>2015-03-14T16:02:35.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,108 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Proteja seus dados: backups fáceis e seguros no desktop GNU/Linux]]></title>
+    <link href="https://felipehw.github.io/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/"/>
+    <id>https://felipehw.github.io/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/</id>
+    <published>2015-03-14T19:02:35.000Z</published>
+    <updated>2015-03-14T16:02:35.000Z</updated>
+    <content type="html"><![CDATA[<p>Os dados são de longe a coisa mais importante em nossos velhos notebooks, verdade?<br>Então pq diabos a maioria de nós nunca realiza backups e conta com a sorte do HD nunca falhar ou de nunca haver uma remoção acidental de arquivos?</p>
+<p>Parte das pessoas diz que é trabalhoso fazer backup ou que não sabe usar ferramentas para automatizar o processo …</p>
+<p><strong>Seus problemas acabaram!</strong> Veremos abaixo como realizar backups de forma automatizada, segura, encriptada, “zipada”, incremental, o escambau … e ainda por cima … muito, mas muito facilmente!</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/deja-dup.png">
+<a id="more"></a>
+<p>O Déjà Dup é o software (livre) da vez, ele é dedicado à backups para usuários finais. Assim, ele visa garantir backups seguros e eficientes mas escondendo toda complexidade do usuário final.</p>
+<p>Veja alguns dos recursos + legais que ele oferece:</p>
+<ul>
+<li><strong>Agendamento</strong>: Por meio dele podemos agendar para que os backups sejam feitos automaticamente de tempos em tempos (sem desculpas p/ esquecimento :D) ou manualmente.</li>
+<li><strong>Múltiplos backends</strong>: O backup não precisa ser em outro HD, pode ser na nuvem, num servidor FTP próprio, etc. Muito flexível :D.</li>
+<li><strong>Encriptação</strong>: O backup é guardado de forma encriptada, ou seja, se alguém conseguir acessar seu backup … sem senha nada feito!</li>
+<li><strong>Compressão</strong>: O backup também é comprimido, ou seja, tudo é compactado de forma a ocupar menos espaço que os arquivos originais.</li>
+<li><strong>Incremental</strong>: O backup é incremental, <strong>MAS</strong> que diabos é incremental?<br>Bom, de tempos em tempos são feitos <strong>backups integrais</strong> (o backup é feito do zero, de todos os dados) e os backups seguintes são apenas das modificações que ocorreram nesse meio tempo (arquivos modificados, criados e deletados) - <em>aka</em> <strong>backups incrementais</strong>. Dessa forma, ocupando um mínimo de espaço, podemos ter o estado dos dados em diversos momentos ao longo do tempo!<br><strong>Tá … mas qual a vantagem disso?</strong><br>A vantagem é que não apenas escolhemos que queremos recuperar os dados … mas podemos escolher o estado em que estes dados estavam num certo momento.<br>Exemplo: Você percebeu que apagou um dado importante só após 3 semanas, e os backups são feitos de forma semanal. Sem problemas! É só pegar o backup da semana em que o arquivo ainda existia ou não havia sido modificado de forma indesejada.</li>
+</ul>
+<p>Tá, me convenceu, como faço agora? Vamos à instalação e configuração!</p>
+<h2 id="0-_Instalação">0. Instalação</h2><p>No Debian Jessie, basta instalar o pacote <code>deja-dup</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get install deja-dup</span></span><br></pre></td></tr></table></figure>
+<p>Como o programa é popular, não será difícil encontrá-lo empacotado em outras distribuições GNU/Linux.</p>
+<h2 id="1-_Configuração">1. Configuração</h2><p>Abra o programa <code>deja-dup</code>. Vejamos o que podemos fazer, tela por tela:</p>
+<ul>
+<li><p><em>Visão geral</em>: O programa abrirá na tela “Visão geral”. Aqui podemos restaurar backups ou manualmente iniciar a realização de um backup (após configurar o mesmo).</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/1-visao_geral.png">
+<p>Após o primeiro backup, passa a ser informado também a data do último backup e quantos dias faltam para o próximo backup automático (se estiver habilitado).</p>
+</li>
+<li><p><em>Pastas para salvar</em>: Aqui devemos escolher as pastas que devem ser salvas. O padrão é o diretório do usuário inteiro … o que eu acho um pouco de exagero. No meu caso, faço backup apenas dos dados importantes e não dos terabytes de filmes e músicas.</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/2-pastas_para_salvar.png">
+</li>
+<li><p><em>Pastas a serem ignoradas</em>: Nessa tela podemos excluir do backup alguma subpasta dentro das pastas marcadas para backup. Esse recurso é muito útil para excluir alguma pasta que ocupa muito espaço com arquivos não importantes. No meu caso, sempre faço backups de minhas coisas linux mas marco para ficar de fora imagens de instalação, etc,</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/3-pastas_a_serem_ignoradas.png">
+</li>
+<li><p><em>Local de armazenamento</em>: Aqui escolhemos … onde armazenar o backup (duh). Há diversas opções (que vão desde uma pasta local à opções remotas como a nuvem). <strong>Escolha um local com espaço suficiente e que não seja o mesmo HD</strong> (pq se ele falhar, você perde os dados e o backup dos dados). Larga de ser mão de vaca e compre um HD novo se precisar (300 reais são menos importantes que as fotos e arquivos de uma vida inteira).<br>No meu caso, realizo o backup dos meus dados do notebook para um HD externo montado na pasta <code>/mnt/backup/</code> (mais precisamente na pasta <code>/mnt/backup/data</code>).</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/4-local_de_armazenamento.png">
+</li>
+<li><p><em>Agendado</em>: Nessa tela, escolhemos a frequência de realização dos backups e o tempo mínimo que eles serão mantidos. A tradução para o português não está um brinco … mas as opções são:</p>
+<ul>
+<li><em>Todos</em>: Aqui podemos escolher se o backup será feito semanalmente (opção “Semana”) ou diariamente (opção “Dia”).</li>
+<li><em>Manter</em>: Aqui escolhemos se os backups serão mantidos “Pelo menos seis meses”, “Pelo menos um ano” ou “Para sempre”. Se faltar espaço, os backups + antigos são deletados + cedo.</li>
+</ul>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/5-agendado.png">
+<p><strong>Repare</strong> que só é possível escolher alguma opção de <em>Todos</em> se o backup automático (agendado) está ativado. Ele é ativado/desativado clicando no On/Off no canto superior da janela (perto do <code>X</code> p/ fechar a janela)</p>
+</li>
+</ul>
+<p><strong>Pronto</strong>! Se você ativou o backup agendado … é só esperar que uma vez por semana (ou dia) o backup será realizado. <strong>Se no dia do backup o computador estiver desligado, sem problema</strong> … na próxima vez que você ligar o computador e se logar, o Déjà Dup inicia o backup (e avisa você através de uma janela).</p>
+<p>Você, inclusive não precisa esperar … na tela “Visão geral” podemos iniciar o backup manualmente (ou apenas ver quantos dias faltam para o próximo backup) e recuperar o backup de algum momento (ou apenas ver quando foi o último backup).</p>
+<p>No meu caso, eu faço backup para um HD externo que nem sempre está ligado ao notebook. Por isso, deixo o backup automático desativado (opção “Off” no canto superior da janela) e realizo manualmente na tela “Visão geral” com um frequência +- mensal (e fácil de acompanhar pq ele avisa a data do último backup).</p>
+<h2 id="2-_O_primeiro_backup_(a_gente_nunca_esquece)">2. O primeiro backup (a gente nunca esquece)</h2><p>Na criação do primeiro backup (seja ao ativar o backup agendado ou fazendo backups manuais) será perguntado se dejamos criptografar o backup para que o mesmo seja acessível apenas com senha. Eu recomendo que os dados sejam protegidos de bisbilhoteiros :D</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/6-1ro_backup_senha.png">
+<p>Na sequência, será iniciado a confecção do backup:</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/7-1ro_backup_criando.png">
+<p>Pronto, backup feito:</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/8-1ro_backup_feito.png">
+<ul>
+<li><strong>Obs</strong>: O primeiro backup demora bastante, os futuros são, em sua maioria, incrementais (somente o que mudou desde o último backup) e portanto … bem rápidos.</li>
+</ul>
+<h2 id="3-_Recuperando_backups">3. Recuperando backups</h2><p> 3.1. Para recuperar backups, na tela “Visão geral” clique em “Restaurar…” e escolha de onde o backup será recuperado (o mesmo local onde escolhemos guardar os backups na tela “Local de armazenamento”):</p>
+ <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/9-restaurar_backup_de_onde.png">
+<p> No meu caso, eu escolhi guardar os backups na pasta <code>/mnt/backup/data</code> e é esse local que devo informar.</p>
+<p> 3.2. Escolha entre os backups existentes pela data (dia):</p>
+ <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/10-restaurar_backup_de_quando.png">
+<p> 3.3. Finalmente escolha se deseja recuperar os arquivos do backup para seus lugares originais ou para outra pasta qualquer.</p>
+ <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/11-restaurar_backup_para_onde.png">
+<p> 3.4. Serão exibidas as opções escolhidas previamente, confirme se deseja realmente recuperar o backup.</p>
+ <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/12-restaurar_confirmar.png">
+<p> 3.5. Se você optou por proteger com senha, será necessário informar a senha:</p>
+ <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/13-restaurar_senha.png">
+<p> Pronto! Os arquivos do backup estão acessíveis novamente :D</p>
+ <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/14-restaurar_concluida.png">
+<ul>
+<li><strong>Obs1</strong>: Fique tranquilo que ao recuperar um backup, o mesmo não é deletado. Você pode recuperar o mesmo backup indefinidas vezes.</li>
+<li><p><strong>Obs2</strong>: Fique ligado que se já houver arquivos na pasta escolhida para receber o backup recuperado, os arquivos que possuírem os mesmos nomes que arquivos existentes no backup serão sobrescritos. Os arquivos que não colidirem os nomes com arquivos existentes no backup sobreviverão intocados.</p>
+<p>Bom, é isso. Até a próxima.</p>
+</li>
+</ul>
+<h2 id="Links">Links</h2><ul>
+<li><a href="https://wiki.gnome.org/Apps/DejaDup" target="_blank" rel="external">Apps/DejaDup - GNOME Wiki!</a>: Página oficial do Déjà Dup.<ul>
+<li><a href="https://wiki.gnome.org/Apps/DejaDup/HowItWorks" target="_blank" rel="external">Apps/DejaDup/HowItWorks - GNOME Wiki!</a>: Material curto e excelente, explicando como funciona o Déjà Dup. Incluindo:<ul>
+<li>como e quando ele realiza backups</li>
+<li>o formato dos arquivos do backup (e como funciona a criptografia aplicada nesses dados)</li>
+<li>o modo como trabalha com backups integrais e incrementais</li>
+<li>por quanto tempo os backups são mantidos após o período definido pelo usuário, etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Os dados são de longe a coisa mais importante em nossos velhos notebooks, verdade?<br>Então pq diabos a maioria de nós nunca realiza backups e conta com a sorte do HD nunca falhar ou de nunca haver uma remoção acidental de arquivos?</p>
+<p>Parte das pessoas diz que é trabalhoso fazer backup ou que não sabe usar ferramentas para automatizar o processo …</p>
+<p><strong>Seus problemas acabaram!</strong> Veremos abaixo como realizar backups de forma automatizada, segura, encriptada, “zipada”, incremental, o escambau … e ainda por cima … muito, mas muito facilmente!</p>
+<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/deja-dup.png">]]>
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie]]></title>
