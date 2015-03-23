@@ -1,0 +1,13 @@
+server {
+  server_name transmission;
+  listen 8080 default_server ssl;
+  ssl_certificate /etc/nginx/trans.crt;
+  ssl_certificate_key /etc/nginx/trans.key;
+  
+  access_log /var/log/nginx/transmission.access.log;
+
+  location / {
+    proxy_pass http://localhost:9091;
+  }
+}
+
