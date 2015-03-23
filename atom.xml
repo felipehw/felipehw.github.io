@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2015-03-23T22:30:24.000Z</updated>
+  <updated>2015-03-23T22:38:23.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://felipehw.github.io/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/"/>
     <id>https://felipehw.github.io/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/</id>
     <published>2015-03-24T01:29:26.000Z</published>
-    <updated>2015-03-23T22:30:24.000Z</updated>
+    <updated>2015-03-23T22:38:23.000Z</updated>
     <content type="html"><![CDATA[<p>O <a href="http://www.transmissionbt.com" target="_blank" rel="external">Transmission</a> é um cliente de torrent bastante conhecido no mundo GNU/Linux. Entretanto, há muitas pessoas que desconhecem que ele pode ser usado como um serviço (daemon) subindo sempre que a máquina está ligada e sem necessitar de interface gráfica para gerenciá-lo (pode ser gerenciado remotamente via browser, cli, gtk, etc.).</p>
 <p>Se combinamos o serviço do Transmission com um <a href="http://www.raspberrypi.org/" target="_blank" rel="external">Raspberry Pi</a> baratinho, temos um servidor de compartilhar <del>pirataria</del> cultura 24 horas por dia que pode ser acessado remotamente via browser e gastando um ínfimo de energia.</p>
 <img src="/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/copying_is_not_theft_min.jpg">
@@ -113,8 +113,8 @@
 </ul>
 <h2 id="Arquivos">Arquivos</h2><p>Seguem arquivos que talvez ajudem os que se percam na explicação:</p>
 <ul>
-<li><a href="/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-original.json" title="/etc/transmission-daemon/settings.json original">/etc/transmission-daemon/settings.json original</a> do Debian Jessie.</li>
-<li><a href="/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-configurado.json" title="/etc/transmission-daemon/settings.json configurado">/etc/transmission-daemon/settings.json configurado</a>: configuração a partir das recomendações que fiz acima. Não esqueça de alterar o usuário e senha p/ acesso (<code>&quot;rpc-username&quot;</code> e <code>&quot;rpc-password&quot;</code>) assim como path p/ download (<code>&quot;download-dir&quot;</code>).</li>
+<li><a href="/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-original_json" title="/etc/transmission-daemon/settings.json original">/etc/transmission-daemon/settings.json original</a> do Debian Jessie (renomeie p/ <code>settings.json</code>).</li>
+<li><a href="/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-configurado_json" title="/etc/transmission-daemon/settings.json configurado">/etc/transmission-daemon/settings.json configurado</a>: configuração a partir das recomendações que fiz acima (renomeie p/ <code>settings.json</code>). Não esqueça de alterar o usuário e senha p/ acesso (<code>&quot;rpc-username&quot;</code> e <code>&quot;rpc-password&quot;</code>) assim como path p/ download (<code>&quot;download-dir&quot;</code>).</li>
 <li><a href="/2015/03/24/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/transmission" title="/etc/nginx/sites-enabled/transmission configurado">/etc/nginx/sites-enabled/transmission configurado</a> p/ redirecionar requisições sobre HTTPS na porta 8080 p/ servidor em <code>http://localhost:9091</code> (o daemon do Transmission).</li>
 </ul>
 <h2 id="Links">Links</h2><h3 id="Transmission">Transmission</h3><ul>
@@ -163,32 +163,6 @@
       <category term="cultura livre" scheme="https://felipehw.github.io/categories/cultura-livre/"/>
     
       <category term="gnu/linux" scheme="https://felipehw.github.io/categories/cultura-livre/gnu-linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-original/"/>
-    <id>https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-original/</id>
-    <published>2015-03-23T03:00:00.000Z</published>
-    <updated>2015-03-23T22:29:27.000Z</updated>
-    <content type="html"><![CDATA[{"alt-speed-down":50,"alt-speed-enabled":false,"alt-speed-time-begin":540,"alt-speed-time-day":127,"alt-speed-time-enabled":false,"alt-speed-time-end":1020,"alt-speed-up":50,"bind-address-ipv4":"0.0.0.0","bind-address-ipv6":"::","blocklist-enabled":false,"blocklist-url":"http://www.example.com/blocklist","cache-size-mb":4,"dht-enabled":true,"download-dir":"/var/lib/transmission-daemon/downloads","download-limit":100,"download-limit-enabled":0,"download-queue-enabled":true,"download-queue-size":5,"encryption":1,"idle-seeding-limit":30,"idle-seeding-limit-enabled":false,"incomplete-dir":"/var/lib/transmission-daemon/Downloads","incomplete-dir-enabled":false,"lpd-enabled":false,"max-peers-global":200,"message-level":1,"peer-congestion-algorithm":"","peer-id-ttl-hours":6,"peer-limit-global":200,"peer-limit-per-torrent":50,"peer-port":51413,"peer-port-random-high":65535,"peer-port-random-low":49152,"peer-port-random-on-start":false,"peer-socket-tos":"default","pex-enabled":true,"port-forwarding-enabled":false,"preallocation":1,"prefetch-enabled":1,"queue-stalled-enabled":true,"queue-stalled-minutes":30,"ratio-limit":2,"ratio-limit-enabled":false,"rename-partial-files":true,"rpc-authentication-required":true,"rpc-bind-address":"0.0.0.0","rpc-enabled":true,"rpc-password":"{83e5e1153df6bf5560f81719763b1dfff851aeb6oeL1hQMU","rpc-port":9091,"rpc-url":"/transmission/","rpc-username":"transmission","rpc-whitelist":"127.0.0.1","rpc-whitelist-enabled":true,"scrape-paused-torrents-enabled":true,"script-torrent-done-enabled":false,"script-torrent-done-filename":"","seed-queue-enabled":false,"seed-queue-size":10,"speed-limit-down":100,"speed-limit-down-enabled":false,"speed-limit-up":100,"speed-limit-up-enabled":false,"start-added-torrents":true,"trash-original-torrent-files":false,"umask":18,"upload-limit":100,"upload-limit-enabled":0,"upload-slots-per-torrent":14,"utp-enabled":true}]]></content>
-    <summary type="html">
-    <![CDATA[{"alt-speed-down":50,"alt-speed-enabled":false,"alt-speed-time-begin":540,"alt-speed-time-day":127,"alt-speed-time-enabled":false,"alt-speed]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-configurado/"/>
-    <id>https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/settings-configurado/</id>
-    <published>2015-03-23T03:00:00.000Z</published>
-    <updated>2015-03-23T22:29:27.000Z</updated>
-    <content type="html"><![CDATA[{"alt-speed-down":50,"alt-speed-enabled":false,"alt-speed-time-begin":540,"alt-speed-time-day":127,"alt-speed-time-enabled":false,"alt-speed-time-end":1020,"alt-speed-up":50,"bind-address-ipv4":"0.0.0.0","bind-address-ipv6":"::","blocklist-enabled":false,"blocklist-url":"http://www.example.com/blocklist","cache-size-mb":4,"dht-enabled":true,"download-dir":"/media/deposito/arquivos/downloads","download-limit":100,"download-limit-enabled":0,"download-queue-enabled":true,"download-queue-size":5,"encryption":1,"idle-seeding-limit":30,"idle-seeding-limit-enabled":false,"incomplete-dir":"/media/deposito/arquivos/downloads/tmp","incomplete-dir-enabled":false,"lpd-enabled":false,"max-peers-global":80,"message-level":1,"peer-congestion-algorithm":"","peer-id-ttl-hours":6,"peer-limit-global":90,"peer-limit-per-torrent":15,"peer-port":51413,"peer-port-random-high":65535,"peer-port-random-low":49152,"peer-port-random-on-start":false,"peer-socket-tos":"default","pex-enabled":true,"port-forwarding-enabled":true,"preallocation":1,"prefetch-enabled":1,"queue-stalled-enabled":true,"queue-stalled-minutes":30,"ratio-limit":5,"ratio-limit-enabled":false,"rename-partial-files":true,"rpc-authentication-required":true,"rpc-bind-address":"0.0.0.0","rpc-enabled":true,"rpc-password":"informe_senha_nova","rpc-port":9091,"rpc-url":"/transmission/","rpc-username":"informe_username_novo","rpc-whitelist":"127.0.0.1, 192.168.*.*","rpc-whitelist-enabled":true,"scrape-paused-torrents-enabled":true,"script-torrent-done-enabled":false,"script-torrent-done-filename":"","seed-queue-enabled":false,"seed-queue-size":10,"speed-limit-down":100,"speed-limit-down-enabled":false,"speed-limit-up":70,"speed-limit-up-enabled":true,"start-added-torrents":true,"trash-original-torrent-files":false,"umask":2,"upload-limit":100,"upload-limit-enabled":0,"upload-slots-per-torrent":7,"utp-enabled":true}]]></content>
-    <summary type="html">
-    <![CDATA[{"alt-speed-down":50,"alt-speed-enabled":false,"alt-speed-time-begin":540,"alt-speed-time-day":127,"alt-speed-time-enabled":false,"alt-speed]]>
-    </summary>
     
   </entry>
   
