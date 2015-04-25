@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2015-04-19T00:06:14.000Z</updated>
+  <updated>2015-04-25T16:15:15.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Redimensionando filesystems e volumes lógicos em LVM]]></title>
+    <link href="https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/"/>
+    <id>https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/</id>
+    <published>2015-04-25T19:14:56.000Z</published>
+    <updated>2015-04-25T16:15:15.000Z</updated>
+    <content type="html"><![CDATA[<p>Veremos nesse post como redimensionar filesystems e volumes lógicos em LVM. Mas para que diabos precisamos disso?</p>
+<p>Imagine que o particionador automático da instalação do Debian criou um sistema LVM com uma partição root grande demais e a partição de swap pequena demais e que precisamos mudar o tamanho de ambas … aumentando uma e diminuindo outra … Isso não é tão trivial como parece … e é isso que veremos. :D</p>
+<img src="/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/matroska-min.jpg">
+<p><em>Cedo ou tarde, todo nerd precisa diminuir e aumentar filesystems em sistemas LVM …</em></p>
+<a id="more"></a>
+<p><strong>Preste atenção</strong>, para redimensionar tenha em mente que <strong>o filesystem está dentro do volume lógico</strong>.<br><strong>Para aumentar o tamanho de um filesystem</strong>, devemos <strong>primeiro</strong> aumentar o volume lógico em que ele está inserido <strong>e somente depois</strong> aumentar o filesystem.<br><strong>Para diminuir o tamanho de um filesystem</strong>, <strong>o caminho é o contrário</strong>, primeiro diminuímos o tamanho do filesystem e somente depois encolhemos o volume lógico.</p>
+<p>Usaremos nesse post o cenário hipotético mencionado acima (diminuir partição root, aumentar partição swap). Vejamos:</p>
+<ol>
+<li><p>Encontre os volumes lógicos a serem trabalhados:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/root'</span> [<span class="number">106.98</span> GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/swap_1'</span> [<span class="number">4.56</span> GiB] inherit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Diminua o tamanho do filesystem que está grande demais.</p>
+<ul>
+<li><p>Cheque e corrija erros no filesystem (ex. p/ ext4):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># e2fsck -f /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Diminua o tamanho do filesystem (ex: p/ 90GB):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root 90G</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Obs: <strong>O novo tamanho informado p/ o filesystem deve ser um pouco menor que o novo tamanho a ser informado para o volume lógico.</strong> Isso para evitar que em arrendondamentos feitos pela máquina, o filesystem fique maior que o volume lógico em que está inserido e ocorra *****.</p>
+</li>
+<li><p>Diminua o volume lógico da partição que está grande demais (ex: p/ 92GB).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvresize -L 92G dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Recupere o tamanho do filesystem - que estava grande demais - para ocupar todo o espaço do volume lógico redimensionado (dado que diminuímos o filesystem mais que o volume lógico - por segurança - e há espaço sobrando):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Aumente o tamanho do volume lógico que está pequeno demais.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvextend -l +100%FREE dread-note-vg/swap_1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Aumente o tamanho do filesystem que está pequeno demais.<br>Obs: Como é um filesystem swap, apenas recriei ele com o mesmo UUID ocupando todo o espaço disponível no volume lógico.</p>
+<ul>
+<li>Anotar o UUID da swap original: <code># blkid</code></li>
+<li>Criar nova swap com o mesmo UUID:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkswap -U 475dbca3-d779-445d-912e-6dfeea5d9e4e /dev/mapper/dread--note--vg-swap_1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Resultado final:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/root'</span> [<span class="number">92.00</span> GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/swap_1'</span> [<span class="number">19.55</span> GiB] inherit</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Veremos nesse post como redimensionar filesystems e volumes lógicos em LVM. Mas para que diabos precisamos disso?</p>
+<p>Imagine que o particionador automático da instalação do Debian criou um sistema LVM com uma partição root grande demais e a partição de swap pequena demais e que precisamos mudar o tamanho de ambas … aumentando uma e diminuindo outra … Isso não é tão trivial como parece … e é isso que veremos. :D</p>
+<img src="/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/matroska-min.jpg">
+<p><em>Cedo ou tarde, todo nerd precisa diminuir e aumentar filesystems em sistemas LVM …</em></p>]]>
+    
+    </summary>
+    
+      <category term="lvm" scheme="https://felipehw.github.io/tags/lvm/"/>
+    
+      <category term="particionamento" scheme="https://felipehw.github.io/tags/particionamento/"/>
+    
+      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Criando partições encriptadas (LVM sobre LUKS)]]></title>
