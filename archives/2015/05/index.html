@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Redimensionando filesystems e volumes lógicos em LVM | $ls /home/felipehw</title>
+  <title>$ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Veremos nesse post como redimensionar filesystems e volumes lógicos em LVM. Mas para que diabos precisamos disso?
-Imagine que o particionador automático da instalação do Debian criou um sistema LVM co">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Redimensionando filesystems e volumes lógicos em LVM">
-<meta property="og:url" content="https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/index.html">
+  <meta name="description" content="free software, free culture, copyleft, etc.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="$ls /home/felipehw">
+<meta property="og:url" content="https://felipehw.github.io/archives/2015/05/index.html">
 <meta property="og:site_name" content="$ls /home/felipehw">
-<meta property="og:description" content="Veremos nesse post como redimensionar filesystems e volumes lógicos em LVM. Mas para que diabos precisamos disso?
-Imagine que o particionador automático da instalação do Debian criou um sistema LVM co">
-<meta property="og:image" content="/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/matroska-min.jpg">
+<meta property="og:description" content="free software, free culture, copyleft, etc.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redimensionando filesystems e volumes lógicos em LVM">
-<meta name="twitter:description" content="Veremos nesse post como redimensionar filesystems e volumes lógicos em LVM. Mas para que diabos precisamos disso?
-Imagine que o particionador automático da instalação do Debian criou um sistema LVM co">
+<meta name="twitter:title" content="$ls /home/felipehw">
+<meta name="twitter:description" content="free software, free culture, copyleft, etc.">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -86,10 +82,12 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-redimensionando-volumes-logicos-em-particoes-lvm-criptografadas" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/" class="article-date">
-  <time datetime="2015-04-25T19:14:56.000Z" itemprop="datePublished">25 abr 2015</time>
+    <a href="/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/" class="article-date">
+  <time datetime="2015-05-02T20:09:41.000Z" itemprop="datePublished">2 mai 2015</time>
 </a>
     
   <div class="article-category">
@@ -103,8 +101,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Redimensionando filesystems e volumes lógicos em LVM
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/">Como automagicamente utilizar o melhor mirror Debian disponível</a>
     </h1>
   
 
@@ -112,91 +110,33 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Veremos nesse post como redimensionar filesystems e volumes lógicos em LVM. Mas para que diabos precisamos disso?</p>
-<p>Imagine que o particionador automático da instalação do Debian criou um sistema LVM com uma partição root grande demais e a partição de swap pequena demais e que precisamos mudar o tamanho de ambas … aumentando uma e diminuindo outra … Isso não é tão trivial como parece … e é isso que veremos. :D</p>
-<img src="/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/matroska-min.jpg">
-<p><em>Cedo ou tarde, todo nerd precisa diminuir e aumentar filesystems em sistemas LVM …</em></p>
-<a id="more"></a>
-<p><strong>Preste atenção</strong>, para redimensionar tenha em mente que <strong>o filesystem está dentro do volume lógico</strong>.<br><strong>Para aumentar o tamanho de um filesystem</strong>, devemos <strong>primeiro</strong> aumentar o volume lógico em que ele está inserido <strong>e somente depois</strong> aumentar o filesystem.<br><strong>Para diminuir o tamanho de um filesystem</strong>, <strong>o caminho é o contrário</strong>, primeiro diminuímos o tamanho do filesystem e somente depois encolhemos o volume lógico.</p>
-<p>Usaremos nesse post o cenário hipotético mencionado acima (diminuir partição root, aumentar partição swap). Vejamos:</p>
-<ol>
-<li><p>Encontre os volumes lógicos a serem trabalhados:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/root'</span> [<span class="number">106.98</span> GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/swap_1'</span> [<span class="number">4.56</span> GiB] inherit</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Diminua o tamanho do filesystem que está grande demais.</p>
-<ul>
-<li><p>Cheque e corrija erros no filesystem (ex. p/ ext4):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># e2fsck -f /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Diminua o tamanho do filesystem (ex: p/ 90GB):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root 90G</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>Obs: <strong>O novo tamanho informado p/ o filesystem deve ser um pouco menor que o novo tamanho a ser informado para o volume lógico.</strong> Isso para evitar que em arrendondamentos feitos pela máquina, o filesystem fique maior que o volume lógico em que está inserido e ocorra *****.</p>
-</li>
-<li><p>Diminua o volume lógico da partição que está grande demais (ex: p/ 92GB).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvresize -L 92G dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Recupere o tamanho do filesystem - que estava grande demais - para ocupar todo o espaço do volume lógico redimensionado (dado que diminuímos o filesystem mais que o volume lógico - por segurança - e há espaço sobrando):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Aumente o tamanho do volume lógico que está pequeno demais.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvextend -l +100%FREE dread-note-vg/swap_1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Aumente o tamanho do filesystem que está pequeno demais.<br>Obs: Como é um filesystem swap, apenas recriei ele com o mesmo UUID ocupando todo o espaço disponível no volume lógico.</p>
-<ul>
-<li>Anotar o UUID da swap original: <code># blkid</code></li>
-<li>Criar nova swap com o mesmo UUID:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkswap -U 475dbca3-d779-445d-912e-6dfeea5d9e4e /dev/mapper/dread--note--vg-swap_1</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>Resultado final:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/root'</span> [<span class="number">92.00</span> GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">'/dev/dread-note-vg/swap_1'</span> [<span class="number">19.55</span> GiB] inherit</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
+        <p>Antes de mais nada: Parabéns (atrasado - foi em 25/04) ao Projeto Debian pelo lançamento do <em>release</em> Jessie!</p>
+<img src="/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/lancamento-jessie-minions.gif">
+<p>Como parte das comemorações do lançamento do Debian Jessie, segue uma dica valiosa.</p>
+<p>O projeto Debian disponibiliza um serviço que <strong>automagicamente</strong> escolhe o melhor mirror disponível cada vez que você necessitar acessar os repositórios da distribuição, seja para atualizar ou baixar algum software novo.</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/" data-id="ci97acoev000c0kpvlqmmfmle" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/" data-id="ci97acoem00080kpv0jue4t9p" class="article-share-link">Share</a>
       
-        <a href="https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://felipehw.github.io/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lvm/">lvm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/particionamento/">particionamento</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Como automagicamente utilizar o melhor mirror Debian disponível
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Criando partições encriptadas (LVM sobre LUKS)</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
 </section>
         
           <aside id="sidebar">
@@ -294,13 +234,11 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'felipehwgithubiogit';
   
-  var disqus_url = 'https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

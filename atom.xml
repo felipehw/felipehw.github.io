@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2015-04-25T16:15:15.000Z</updated>
+  <updated>2015-05-02T17:10:15.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Como automagicamente utilizar o melhor mirror Debian disponível]]></title>
+    <link href="https://felipehw.github.io/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/"/>
+    <id>https://felipehw.github.io/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/</id>
+    <published>2015-05-02T20:09:41.000Z</published>
+    <updated>2015-05-02T17:10:15.000Z</updated>
+    <content type="html"><![CDATA[<p>Antes de mais nada: Parabéns (atrasado - foi em 25/04) ao Projeto Debian pelo lançamento do <em>release</em> Jessie!</p>
+<img src="/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/lancamento-jessie-minions.gif">
+<p>Como parte das comemorações do lançamento do Debian Jessie, segue uma dica valiosa.</p>
+<p>O projeto Debian disponibiliza um serviço que <strong>automagicamente</strong> escolhe o melhor mirror disponível cada vez que você necessitar acessar os repositórios da distribuição, seja para atualizar ou baixar algum software novo.</p>
+<a id="more"></a>
+<p>O nome do serviço é <a href="http://httpredir.debian.org/" target="_blank" rel="external">httpredir.debian.org</a> e entre os critérios que  ele utiliza para escolher o melhor mirror temos a localização geográfica e de rede, a disponibilidade e atualização dos mirrors, etc.</p>
+<p>Para testarmos qual mirror o serviço escolheria para nossa máquina/localização, veja <a href="http://httpredir.debian.org/demo.html" target="_blank" rel="external">aqui</a>.</p>
+<p>Para utilizar, basta substituir o seu mirror antigo em <code>/etc/apt/sources.list</code> (exemplo para o recém-lançado Debian Jessie):</p>
+<ul>
+<li><p>Antes:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//debian.pop-sc.rnp.br/debian/ jessie main</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Depois:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//httpredir.debian.org/debian/ jessie main</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Exemplo">Exemplo</h2><p>Segue de exemplo o meu <code>/etc/apt/sources.list</code> com os repositórios para a nova versão estável do Debian (Jessie) habilitados (inclusive o <a href="http://backports.debian.org/" target="_blank" rel="external">backports</a>) e os repositórios para <em>testing</em>, <em>unstable</em> e <em>experimental</em> comentados (desabilitados).</p>
+<p><code>/etc/apt/sources.list</code><br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#STABLE</span></span><br><span class="line"></span><br><span class="line">deb http:<span class="comment">//httpredir.debian.org/debian/ jessie main  </span></span><br><span class="line">deb-src http:<span class="comment">//httpredir.debian.org/debian/ jessie main  </span></span><br><span class="line"></span><br><span class="line">deb http:<span class="comment">//security.debian.org/ jessie/updates main</span></span><br><span class="line">deb-src http:<span class="comment">//security.debian.org/ jessie/updates main</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># jessie-updates, previously known as 'volatile'</span></span><br><span class="line">deb http:<span class="comment">//httpredir.debian.org/debian/ jessie-updates main</span></span><br><span class="line">deb-src http:<span class="comment">//httpredir.debian.org/debian/ jessie-updates main</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># jessie-backports, previously on backports.debian.org</span></span><br><span class="line">deb http:<span class="comment">//httpredir.debian.org/debian/ jessie-backports main  </span></span><br><span class="line">deb-src http:<span class="comment">//httpredir.debian.org/debian/ jessie-backports main  </span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#ADICIONADO (TESTING/UNSTABLE/EXPERIMENTAL)</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#TESTING</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#deb http://httpredir.debian.org/debian/ testing main  </span></span><br><span class="line"><span class="preprocessor">#deb-src http://httpredir.debian.org/debian/ testing main  </span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#deb http://security.debian.org/ testing/updates main</span></span><br><span class="line"><span class="preprocessor">#deb-src http://security.debian.org/ testing/updates main</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># testing-updates, previously known as 'volatile'</span></span><br><span class="line"><span class="preprocessor">#deb http://httpredir.debian.org/debian/ testing-updates main</span></span><br><span class="line"><span class="preprocessor">#deb-src http://httpredir.debian.org/debian/ testing-updates main</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#SID</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#deb http://httpredir.debian.org/debian/ unstable main</span></span><br><span class="line"><span class="preprocessor">#deb-src http://httpredir.debian.org/debian/ unstable main</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#EXPERIMENTAL</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#deb http://httpredir.debian.org/debian/ experimental main</span></span><br><span class="line"><span class="preprocessor">#deb-src http://httpredir.debian.org/debian/ experimental main</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Links">Links</h2><ul>
+<li><a href="http://httpredir.debian.org/" target="_blank" rel="external">Debian mirrors HTTP redirector</a>: Site oficial do httpredir.debian.org. Contém mais informações sobre o serviço.<ul>
+<li><a href="http://httpredir.debian.org/demo.html" target="_blank" rel="external">Demonstração</a>: Demonstração oficial do funcionamento e de qual mirror seria escolhido pelo serviço num dado momento.</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Antes de mais nada: Parabéns (atrasado - foi em 25/04) ao Projeto Debian pelo lançamento do <em>release</em> Jessie!</p>
+<img src="/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/lancamento-jessie-minions.gif">
+<p>Como parte das comemorações do lançamento do Debian Jessie, segue uma dica valiosa.</p>
+<p>O projeto Debian disponibiliza um serviço que <strong>automagicamente</strong> escolhe o melhor mirror disponível cada vez que você necessitar acessar os repositórios da distribuição, seja para atualizar ou baixar algum software novo.</p>]]>
+    
+    </summary>
+    
+      <category term="debian" scheme="https://felipehw.github.io/tags/debian/"/>
+    
+      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Redimensionando filesystems e volumes lógicos em LVM]]></title>
