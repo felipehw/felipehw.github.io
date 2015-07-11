@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2015-05-10T14:27:53.000Z</updated>
+  <updated>2015-07-11T15:06:22.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Como fazer o app GNOME Music encontrar suas músicas]]></title>
+    <link href="https://felipehw.github.io/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/"/>
+    <id>https://felipehw.github.io/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/</id>
+    <published>2015-07-11T18:05:45.000Z</published>
+    <updated>2015-07-11T15:06:22.000Z</updated>
+    <content type="html"><![CDATA[<p>Por um tempo abri mão de testar o GNOME Music no uso cotidiano porque não conseguia fazer com que lesse os arquivos de música no local onde estavam e por outro pequeno detalhe com a indexação de arquivos.</p>
+<img src="/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/folder-music-icon.png">
+<p>Se você está tendo problemas com o GNOME Music, talvez sejam os mesmos que eu tive.</p>
+<a id="more"></a>
+<p>O GNOME Music não nos permite escolher onde o programa busca as músicas (WTF!), no lugar ele usa variáveis do ambiente padronizadas que são utilizadas por vários aplicativos para buscar arquivos de um determinado tipo. Esses variáveis são determinadas pela especificação <a href="http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html" target="_blank" rel="external">XDG Base Directory Specification</a> e se encontram no arquivo <code>~/.config/user-dirs.dirs</code>. Basta atualizar a variável <code>XDG_MUSIC_DIR</code> para apontar para o diretório de músicas. Veja abaixo o conteúdo original do arquivo no Debian Jessie:</p>
+<p><code>~/.config/user-dirs.dirs</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file is written by xdg-user-dirs-update</span></span><br><span class="line"><span class="comment"># If you want to change or add directories, just edit the line you're</span></span><br><span class="line"><span class="comment"># interested in. All local changes will be retained on the next run</span></span><br><span class="line"><span class="comment"># Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped</span></span><br><span class="line"><span class="comment"># homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an</span></span><br><span class="line"><span class="comment"># absolute path. No other format is supported.</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">XDG_DESKTOP_DIR=<span class="string">"<span class="variable">$HOME</span>/Área de trabalho"</span></span><br><span class="line">XDG_DOWNLOAD_DIR=<span class="string">"<span class="variable">$HOME</span>/Downloads"</span></span><br><span class="line">XDG_TEMPLATES_DIR=<span class="string">"<span class="variable">$HOME</span>/Modelos"</span></span><br><span class="line">XDG_PUBLICSHARE_DIR=<span class="string">"<span class="variable">$HOME</span>/Público"</span></span><br><span class="line">XDG_DOCUMENTS_DIR=<span class="string">"<span class="variable">$HOME</span>/Documentos"</span></span><br><span class="line">XDG_MUSIC_DIR=<span class="string">"<span class="variable">$HOME</span>/Música"</span></span><br><span class="line">XDG_PICTURES_DIR=<span class="string">"<span class="variable">$HOME</span>/Imagens"</span></span><br><span class="line">XDG_VIDEOS_DIR=<span class="string">"<span class="variable">$HOME</span>/Vídeos"</span></span><br></pre></td></tr></table></figure></p>
+<p>Basta alterar o <em>path</em> dos diretórios para refletirem os dados reais em seu disco rígido, não precisa reiniciar o GNOME … o GNOME Music encontrará os arquivos na próxima vez que for executado. </p>
+<p>Por fim, se o GNOME Music ainda não encontrar seus arquivos, provavelmente é porquê você não está indexando os arquivos do diretório de música (que o GNOME faz via Tracker). Basta habilitar a indexação em <code>Todas as configurações &gt; Pesquisa &gt; Pesquisar localizações -&gt; Música (ON)</code>:</p>
+<img src="/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/pesquisar-localizacoes.png">
+<p>Agora é só escutar suas músicas com uma cerva:</p>
+<img src="/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/gnome-music.png">
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Por um tempo abri mão de testar o GNOME Music no uso cotidiano porque não conseguia fazer com que lesse os arquivos de música no local onde estavam e por outro pequeno detalhe com a indexação de arquivos.</p>
+<img src="/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/folder-music-icon.png">
+<p>Se você está tendo problemas com o GNOME Music, talvez sejam os mesmos que eu tive.</p>]]>
+    
+    </summary>
+    
+      <category term="gnome" scheme="https://felipehw.github.io/tags/gnome/"/>
+    
+      <category term="music" scheme="https://felipehw.github.io/tags/music/"/>
+    
+      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Tamanho de fontes em monitores 15' FullHD no Gnome, Firefox e Thunderbird]]></title>
