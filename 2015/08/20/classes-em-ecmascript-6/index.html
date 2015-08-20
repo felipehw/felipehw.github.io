@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>$ls /home/felipehw</title>
+  <title>Classes em ECMAScript 6 | $ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="free software, free culture, copyleft, etc.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="$ls /home/felipehw">
-<meta property="og:url" content="https://felipehw.github.io/tags/dark-side/index.html">
+  <meta name="description" content="Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Classes em ECMAScript 6">
+<meta property="og:url" content="https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/index.html">
 <meta property="og:site_name" content="$ls /home/felipehw">
-<meta property="og:description" content="free software, free culture, copyleft, etc.">
+<meta property="og:description" content="Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova en">
+<meta property="og:image" content="/2015/08/20/classes-em-ecmascript-6/ecmascript6-logo.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="$ls /home/felipehw">
-<meta name="twitter:description" content="free software, free culture, copyleft, etc.">
+<meta name="twitter:title" content="Classes em ECMAScript 6">
+<meta name="twitter:description" content="Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova en">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -82,16 +83,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-classes-em-ecmascript-6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/" class="article-date">
-  <time datetime="2015-03-08T04:08:20.000Z" itemprop="datePublished">8 mar 2015</time>
+    <a href="/2015/08/20/classes-em-ecmascript-6/" class="article-date">
+  <time datetime="2015-08-20T05:39:44.000Z" itemprop="datePublished">20 ago 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/gnu-linux/">gnu/linux</a>
+    <a class="article-category-link" href="/categories/develop/">develop</a>
   </div>
 
   </div>
@@ -101,8 +100,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/">Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie</a>
+    <h1 class="article-title" itemprop="name">
+      Classes em ECMAScript 6
     </h1>
   
 
@@ -110,31 +109,88 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Esse post é do <em>dark side</em>. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou o desenvolvimento do driver livre (<a href="http://nouveau.freedesktop.org/wiki/">nouveau</a>) e só recentemente começou a prestar alguma ajuda.</p>
-<img src="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">
-        
-          <p class="article-more-link">
-            <a href="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/#more">Read More</a>
-          </p>
-        
+        <p>Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova encarnação do ECMAScript.</p>
+<img src="/2015/08/20/classes-em-ecmascript-6/ecmascript6-logo.png">
+<a id="more"></a>
+<p>Classes no ES6 são apenas um açucar sintático sobre o padrão de OO baseado em protótipos do JavaScript de sempre e <strong>não</strong> um novo modelo de OO para a linguagem.<br>De qualquer maneira, essa nova forma é muito mais simples de usar e portanto encoraja o uso de OO. Vejamos a aparência de uma classe ES6:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Point &#123;</span><br><span class="line">    constructor(x, y) &#123;</span><br><span class="line">        <span class="keyword">this</span>.x = x;</span><br><span class="line">        <span class="keyword">this</span>.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    toString() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>As classes no ES6, entretanto, não suportam ainda alguns features importantes. Vejamos rapidamente seus recursos e omissões.</p>
+<ul>
+<li><p>Classes ES6 suportam:</p>
+<ul>
+<li><em>construtor</em>: método especial para criar e inicializar instâncias da classe.</li>
+<li>métodos de instância</li>
+<li>métodos estáticos: a <em>keyword</em> <code>static</code> define um método para a classe. Métodos estáticos são chamados diretamente pela classe (não pelas instâncias) e são normalmente usados para criar funções utilitárias relativas à instâncias da classe.</li>
+<li>getters: métodos que permitem vincular uma “propriedade” da instância para uma função cujo retorno é oferecido sempre que a “propriedade” é acessada (ou seja, a propriedade retorna um valor dinamicamente computado).</li>
+<li>setters: métodos que permitem vincular uma “propriedade” da instância para uma função que é invocada quando tentamos atribuir algo para a “propriedade” (podemos criar um par de setter/getter com o mesmo nome, simulando uma propriedade normal)</li>
+<li>sub-classing: subclasses podem ser facilmente criadas usando a <em>keyword</em> <code>extends</code>.</li>
+<li><em>super</em> calls: a <em>keyword</em> <code>super</code> pode ser usada para invocar métodos da classe pai.</li>
+</ul>
+</li>
+<li><p>Classes ES6 não suportam:</p>
+<ul>
+<li>inicializadores de propriedade: a sintaxe de definição de classe <strong>suporta apenas métodos</strong> (constructor, métodos estáticos e métodos da instância) <strong>e não propriedades</strong>, portanto não podemos utilizar <code>foo = &quot;bar&quot;;</code> ou <code>foo : &quot;bar&quot;;</code> dentro da definição da classe. Propriedades das instâncias, portanto, são normalmente definidas no <em>constructor</em> enquanto propriedades da classe são atribuídas após a definição da classe (<code>var classe = class { }; classe.propDaClasse = &quot;string&quot;</code>).</li>
+</ul>
+</li>
+</ul>
+<p>A ausência de inicializadores de propriedade está sendo debatida atualmente na comunidade JS e as próximas versões do ES devem suprir essa carência.</p>
+<p>Outras características de classes que considero importantes:</p>
+<ul>
+<li>O escopo dos métodos da classe é dinâmico e não léxico. Significando que se passarmos o método como uma callback para outro escopo, o <code>this</code> obedecerá o <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">comportamento normal</a> de fn()s JavaScript e dependerá da forma como a função for invocada. Se quisermos que as funções que representam os métodos de instância sempre tenham a instância como <code>this</code>, podemos fazer:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Counter &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    super();</span><br><span class="line">    <span class="keyword">this</span>.tick = <span class="keyword">this</span>.tick.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  tick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>O resultado da definição de uma classe é apenas uma função:</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62; typeof Point&#10;&#39;function&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Apenas podemos instanciar uma classe usando <code>new</code>, não é possível fazer isso invocando a classe:</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62; Point()&#10;TypeError: Classes can&#8217;t be function-called</span><br></pre></td></tr></table></figure>
+<h2 id="Links">Links</h2><ul>
+<li><a href="http://www.2ality.com/2015/02/es6-classes-final.html" target="_blank" rel="external">Classes in ECMAScript 6 (final semantics)</a>: Excelente material sobre classes ES6, abordando semântica, etc.</li>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="external">Classes - JavaScript | MDN</a>: Documentação da Mozilla sobre classes.</li>
+<li><a href="https://babeljs.io/docs/learn-es2015/#classes" target="_blank" rel="external">Learn ES2015 · Babel - Classes</a>: Trecho sobre classes de um apanhadão sucinto das novidades do ES6.</li>
+<li><a href="https://hacks.mozilla.org/2015/07/es6-in-depth-classes/" target="_blank" rel="external">ES6 In Depth: Classes ✩ Mozilla Hacks – the Web developer blog</a>: Artigo abordando detalhes do tema e incluindo algumas limitações atuais.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get" target="_blank" rel="external">getter - JavaScript | MDN</a>: Documentação da Mozilla sobre getters.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set" target="_blank" rel="external">setter - JavaScript | MDN</a>: Documentação da Mozilla sobre setters.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">this - JavaScript | MDN</a>: Documentação da Mozilla sobre <code>this</code>.</li>
+<li><a href="http://www.ian-thomas.net/autobinding-react-and-es6-classes/" target="_blank" rel="external">Autobinding, React and ES6 Classes</a> e <a href="https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#autobinding" target="_blank" rel="external">React v0.13.0 Beta 1 | React</a>: Links interessantes sobre a adoção pelo React das classes ES6 e das consequências de sua limitação.</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/" data-id="cidjlqxat001q1upvqrazrbt1" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/" data-id="cidjlqx7w00011upvxjjeg3j8" class="article-share-link">Share</a>
       
-        <a href="https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dark-side/">dark side</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nvidia/">nvidia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/steam/">steam</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/10/proxy-no-gnome-3-14/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Proxy autenticado no Gnome 3.14</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -232,11 +288,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'felipehwgithubiogit';
   
+  var disqus_url = 'https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
