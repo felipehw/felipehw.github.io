@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: torrent | $ls /home/felipehw</title>
+  <title>Como configurar um cliente No-IP no Raspberry Pi | $ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="free software, free culture, copyleft, etc.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="$ls /home/felipehw">
-<meta property="og:url" content="https://felipehw.github.io/tags/torrent/index.html">
+  <meta name="description" content="Acessar remotamente o Raspberry Pi de casa é uma mão na roda para muita coisa!Com isso podemos usar o rasp como servidor de torrents gerenciado remotamente, servidor de arquivos, rádio web, de páginas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Como configurar um cliente No-IP no Raspberry Pi">
+<meta property="og:url" content="https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/index.html">
 <meta property="og:site_name" content="$ls /home/felipehw">
-<meta property="og:description" content="free software, free culture, copyleft, etc.">
+<meta property="og:description" content="Acessar remotamente o Raspberry Pi de casa é uma mão na roda para muita coisa!Com isso podemos usar o rasp como servidor de torrents gerenciado remotamente, servidor de arquivos, rádio web, de páginas">
+<meta property="og:image" content="https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/raspberry.png">
+<meta property="og:updated_time" content="2015-10-07T01:14:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="$ls /home/felipehw">
-<meta name="twitter:description" content="free software, free culture, copyleft, etc.">
+<meta name="twitter:title" content="Como configurar um cliente No-IP no Raspberry Pi">
+<meta name="twitter:description" content="Acessar remotamente o Raspberry Pi de casa é uma mão na roda para muita coisa!Com isso podemos usar o rasp como servidor de torrents gerenciado remotamente, servidor de arquivos, rádio web, de páginas">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -82,16 +84,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-como-configurar-um-cliente-no-ip-no-raspberry-pi" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/" class="article-date">
-  <time datetime="2015-03-24T01:29:26.000Z" itemprop="datePublished">23 Mar 2015</time>
+    <a href="/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/" class="article-date">
+  <time datetime="2015-10-07T01:14:18.000Z" itemprop="datePublished">6 Out 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/cultura-livre/">cultura livre</a>
+    <a class="article-category-link" href="/categories/gnu-linux/">gnu/linux</a>
   </div>
 
   </div>
@@ -101,8 +101,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/">Torrent profissa: gerenciamento remoto e servidor de compartilhamento 24hs</a>
+    <h1 class="article-title" itemprop="name">
+      Como configurar um cliente No-IP no Raspberry Pi
     </h1>
   
 
@@ -110,32 +110,101 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>O <a href="http://www.transmissionbt.com">Transmission</a> é um cliente de torrent bastante conhecido no mundo GNU/Linux. Entretanto, há muitas pessoas que desconhecem que ele pode ser usado como um serviço (daemon) subindo sempre que a máquina está ligada e sem necessitar de interface gráfica para gerenciá-lo (pode ser gerenciado remotamente via browser, cli, gtk, etc.).</p>
-<p>Se combinamos o serviço do Transmission com um <a href="http://www.raspberrypi.org/">Raspberry Pi</a> baratinho, temos um servidor de compartilhar <del>pirataria</del> cultura 24 horas por dia que pode ser acessado remotamente via browser e gastando um ínfimo de energia.</p>
-<img src="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/copying_is_not_theft_min.jpg" alt="Copying Is Not Theft - Nina Paley" title="Copying Is Not Theft - Nina Paley">
-        
-          <p class="article-more-link">
-            <a href="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/#more">Read More</a>
-          </p>
-        
+        <p>Acessar remotamente o Raspberry Pi de casa é uma mão na roda para muita coisa!<br>Com isso podemos usar o rasp como servidor de torrents gerenciado remotamente, servidor de arquivos, rádio web, de páginas, etc.</p>
+<p>Veremos aqui como acessar remotamente o rasp mesmo com IP dinâmico, utilizando-se do serviço gratuito <a href="https://www.noip.com/" target="_blank" rel="external">no-ip.com</a>.<br>(Ah, um pouco de conhecimento prévio de GNU/Linux e redes é essencial - ou talvez uma busca complementar no Google).</p>
+<img src="/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/raspberry.png" alt="Raspberry" title="Raspberry">
+<a id="more"></a>
+<h2 id="Crie_um_domínio_no_No-IP">Crie um <em>domínio</em> no No-IP</h2><p>Primeiramente, deve-se criar uma conta em <a href="https://www.noip.com/" target="_blank" rel="external">no-ip.com</a> e adicionar o redirecionamento de um domínio para seu ip dinâmico.</p>
+<p>Logado no site do <a href="https://www.noip.com/" target="_blank" rel="external">no-ip.com</a>, clique em <a href="https://www.noip.com/members/dns/" target="_blank" rel="external">Hosts/Redirects</a> e <a href="https://www.noip.com/members/dns/host.php" target="_blank" rel="external">Add A Host</a>. Agora configure o domínio a ser utilizado para o ip dinâmico:</p>
+<ul>
+<li>Hostname: Informe o domínio a ser utilizado para acessar sua máquina na internet.</li>
+<li>Host Type: Se não souber, deixe em <em>DNS Host (A)</em></li>
+<li>IP Address: Seu IP atual (o rasp se encarregará de atualizar automaticamente depois)</li>
+</ul>
+<h2 id="Instalação_do_cliente_No-IP_no_Raspberry">Instalação do cliente No-IP no Raspberry</h2><p>Com relação à instalação e configuração do cliente No-IP no Raspberry:</p>
+<ol>
+<li><p>Instale os pacotes para compilar e etc.:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Crie um diretório para armazenar o <em>source</em> do cliente:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/localSrc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Navegue para o novo diretório:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/localSrc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Baixe o software do No-IP:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://www.no-ip.com/client/linux/noip-duc-linux.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Extraia o código-fonte do software do tar.gz:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar zxvf noip-duc-linux.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Entre no dir do código-fonte do software (no momento é a v. 2.1.9-1):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd noip-2.1.9-1/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Compile o código-fonte do software:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Instale:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+<p>O instalador pedirá:</p>
+<ul>
+<li>Login</li>
+<li>Senha</li>
+<li>Se houver + de 1 domínio registrado, ele pedirá se é p/ atualizar todos (na dúvida, responda <code>y</code>)</li>
+<li>Intervalo de atualização: o default (30m) está bem (só aperte enter)</li>
+<li>Para o resto responda <code>N</code> (a não ser que saiba o que está fazendo)</li>
+</ul>
+</li>
+<li><p>Execução:<br>(Ao executar, o domínio do no-ip é <em>linkado</em> com o IP atual)</p>
+<ul>
+<li>Para executar manualmente:<br><code>$ sudo /usr/local/bin/noip2</code></li>
+<li>Para executar no boot (<strong>ideal</strong> pq automatiza o processo):<br>Adicione a linha: <code>/usr/local/bin/noip2</code> acima da linha <code>exit 0</code> de <code>/etc/rc.local</code>.<br>O arquico <code>/etc/rc.local</code> ficará +- assim:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#OUTRAS LINHAS&#10;/usr/local/bin/noip2&#10;exit 0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Ps: Pode ser usado o editor nano através de <code>sudo nano /etc/rc.local</code></p>
+</li>
+<li><p>Para verificar se está rodando corretamente:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/bin/noip2 -S</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Extras">Extras</h2><ul>
+<li>O post foi baseado nesse <a href="http://www.awesomeweirdness.com/projects-diy/raspberrypi/setup-noip-client-raspberry-pi/" target="_blank" rel="external">outro post</a>.</li>
+<li>Não tenho condição de ajudar a debugar eventuais problemas, etc. Aconselho fórums e pesquisa no Google (que nunca faz mal).</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/" data-id="cifg3sbc9001mq6sxnjhiucam" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/" data-id="cifg3sba80001q6sx2tqsej7b" class="article-share-link">Share</a>
       
-        <a href="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compartilhamento/">compartilhamento</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pirataria/">pirataria</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/torrent/">torrent</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/09/06/meu-mapa-lunar-caseiro/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Meu mapa lunar caseiro</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -233,11 +302,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'felipehwgithubiogit';
   
+  var disqus_url = 'https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
