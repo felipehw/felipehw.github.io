@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/</loc>
+    <lastmod>2015-10-08T22:54:13.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/</loc>
     <lastmod>2015-10-07T01:14:18.000Z</lastmod>
   </url>

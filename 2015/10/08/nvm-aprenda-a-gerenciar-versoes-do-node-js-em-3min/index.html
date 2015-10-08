@@ -3,17 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/9 | $ls /home/felipehw</title>
+  <title>NVM: Aprenda a gerenciar versões do Node.js em 3 min | $ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="free software, free culture, copyleft, etc.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="$ls /home/felipehw">
-<meta property="og:url" content="https://felipehw.github.io/archives/2015/09/index.html">
+  <meta name="description" content="O NVM (Node Version Manager) é um bash script que permite gerenciar facilmente múltiplas versões do Node.js.
+Por meio dele não ficamos mais amarrados à versões antigas da distribuição GNU/Linux utiliz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NVM: Aprenda a gerenciar versões do Node.js em 3 min">
+<meta property="og:url" content="https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/index.html">
 <meta property="og:site_name" content="$ls /home/felipehw">
-<meta property="og:description" content="free software, free culture, copyleft, etc.">
+<meta property="og:description" content="O NVM (Node Version Manager) é um bash script que permite gerenciar facilmente múltiplas versões do Node.js.
+Por meio dele não ficamos mais amarrados à versões antigas da distribuição GNU/Linux utiliz">
+<meta property="og:image" content="https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/nodejs.png">
+<meta property="og:updated_time" content="2015-10-08T22:54:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="$ls /home/felipehw">
-<meta name="twitter:description" content="free software, free culture, copyleft, etc.">
+<meta name="twitter:title" content="NVM: Aprenda a gerenciar versões do Node.js em 3 min">
+<meta name="twitter:description" content="O NVM (Node Version Manager) é um bash script que permite gerenciar facilmente múltiplas versões do Node.js.
+Por meio dele não ficamos mais amarrados à versões antigas da distribuição GNU/Linux utiliz">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -82,16 +87,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-meu-mapa-lunar-caseiro" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/09/06/meu-mapa-lunar-caseiro/" class="article-date">
-  <time datetime="2015-09-06T20:00:30.000Z" itemprop="datePublished">6 Set 2015</time>
+    <a href="/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/" class="article-date">
+  <time datetime="2015-10-08T22:54:13.000Z" itemprop="datePublished">8 Out 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/offtopic/">offtopic</a>
+    <a class="article-category-link" href="/categories/develop/">develop</a>
   </div>
 
   </div>
@@ -101,8 +104,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/06/meu-mapa-lunar-caseiro/">Meu mapa lunar caseiro</a>
+    <h1 class="article-title" itemprop="name">
+      NVM: Aprenda a gerenciar versões do Node.js em 3 min
     </h1>
   
 
@@ -110,31 +113,75 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Aproveitei a foto da “Superlua” (aka Lua Cheia no perigeu) do fim de semana (29/08/2015) para fazer uma espécie de mapa lunar.</p>
-<img src="/2015/09/06/meu-mapa-lunar-caseiro/IMG_8183_little.jpg" alt="Superlua de 29/08/2015" title="Superlua de 29/08/2015">
-        
-          <p class="article-more-link">
-            <a href="/2015/09/06/meu-mapa-lunar-caseiro/#more">Read More</a>
-          </p>
-        
+        <p>O <a href="https://github.com/creationix/nvm" target="_blank" rel="external">NVM (Node Version Manager)</a> é um bash script que permite gerenciar facilmente múltiplas versões do <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a>.</p>
+<p>Por meio dele não ficamos mais amarrados à versões antigas da distribuição GNU/Linux utilizada, nem precisamos ficar baixando e compilando na mão.</p>
+<p>Para trocar de uma versão para outra basta um comando …</p>
+<p>Vejamos um passo-a-passo básico e rápido para a versão <code>0.28.0</code> do NVM:</p>
+<img src="/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/nodejs.png" alt="Node.js" title="Node.js">
+<a id="more"></a>
+<h2 id="Instalação">Instalação</h2><ul>
+<li>Requisitos no Debian/Ubuntu: pacotes <code>build-essential</code> e <code>libssl-dev</code>.</li>
+<li>Como usuário normal:<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.<span class="number">28.0</span>/install.sh | bash</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>O que esse script faz?</p>
+<blockquote>
+<p>The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc or ~/.profile).</p>
+</blockquote>
+<h2 id="Uso">Uso</h2><ul>
+<li><p>Para baixar, compilar e instalar uma versão específica do node.js:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install <span class="number">0.10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Para definir a versão <em>default</em> do usuário:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm use <span class="number">0.10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Para listar as versões instaladas:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Para listar as versões disponíves para instalar:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls-remote</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Para desinstalar uma versão específica:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm uninstall <span class="number">0.10</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Obs: Ao invés da versão (ex: <code>0.10</code>) podemos usar aliases como <code>stable</code> e <code>unstable</code>:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure></p>
+<p>Para usar a versão do nodejs <strong>original</strong> de sua distribuição, acesse-a com o alias <code>system</code>:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install system</span><br></pre></td></tr></table></figure></p>
+<p><strong>Bônus</strong>: Para baixar, compilar e instalar uma versão específica <strong>e</strong>, de quebra, obter todos os pacotes npm instalados de uma versão anteriormente instalada:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable --reinstall-packages-from=system</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/09/06/meu-mapa-lunar-caseiro/" data-id="cifitn21j000f4usxicr7myzz" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/" data-id="cifitn20y00014usxlgqmvgwt" class="article-share-link">Share</a>
       
-        <a href="https://felipehw.github.io/2015/09/06/meu-mapa-lunar-caseiro/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/astronomia/">astronomia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fotografia/">fotografia</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lua/">lua</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Como configurar um cliente No-IP no Raspberry Pi</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -232,11 +279,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'felipehwgithubiogit';
   
+  var disqus_url = 'https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
