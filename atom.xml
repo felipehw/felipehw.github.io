@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2016-01-25T16:19:57.000Z</updated>
+  <updated>2016-01-25T16:36:01.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://felipehw.github.io/2016/01/25/habilitando-trim-sobre-lvm-sobre-luks-num-ssd/"/>
     <id>https://felipehw.github.io/2016/01/25/habilitando-trim-sobre-lvm-sobre-luks-num-ssd/</id>
     <published>2016-01-25T16:19:57.000Z</published>
-    <updated>2016-01-25T16:19:57.000Z</updated>
+    <updated>2016-01-25T16:36:01.000Z</updated>
     <content type="html"><![CDATA[<p>Habilitar TRIM em sistemas usando LUKS não é tão fácil quanto parece pois o TRIM deve ser habilitado em todas as camadas intermediárias entre o SSD e o filesystem. Fiz abaixo uma receita para uso pessoal e que funciona para Debian Jessie e para Fedora 23. <strong>No caso do Fedora</strong>, os passos 2, 5 e 6 são <strong>diferentes</strong> e estão listados logo abaixo em <strong>seção específica</strong>.</p>
 <img src="/2016/01/25/habilitando-trim-sobre-lvm-sobre-luks-num-ssd/matroska-luks-lvm-trim.png" alt="Matroska c/ TRIM em LVM sobre LUKS" title="Matroska c/ TRIM em LVM sobre LUKS">
 <a id="more"></a>
@@ -83,6 +83,7 @@
 <li>Passo 5.<br>Apenas execute: <code># dracut -f</code>.</li>
 <li>Passo 6.<br>Apenas execute <code># systemctl enable fstrim.timer</code> para automaticamente executar o TRIM semanalmente em todas as unidades montadas que suportam TRIM.</li>
 </ul>
+<p>Ps: Para visualizar os logs do service <code>fstrim.timer</code>, execute: <code>journalctl -u fstrim.timer</code></p>
 <h2 id="Bônus">Bônus</h2><ul>
 <li>Partições swap:<ul>
 <li>Podem utilizar TRIM. Para tanto, garanta que o TRIM está ativado nos níveis inferiores (dm-crypt e LVM) e ative no filesystem da swap utilizando em sua linha do <code>/etc/fstab</code> a opção <code>discard</code>. Fonte: <a href="https://wiki.archlinux.org/index.php/Solid_State_Drives#Swap_Space_on_SSDs" target="_blank" rel="external">Swap Space os SSDs - Solid State Drives - ArchWiki</a>. Exemplo: <code>/dev/mapper/dread--note--vg-swap_1 none            swap    sw,discard              0       0</code></li>
