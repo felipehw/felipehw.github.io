@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2016-01-25T16:36:01.000Z</updated>
+  <updated>2016-01-30T14:18:03.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[screenFetch: Info do sistema em ASCII e com estilo]]></title>
+    <link href="https://felipehw.github.io/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/"/>
+    <id>https://felipehw.github.io/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/</id>
+    <published>2016-01-30T14:18:03.000Z</published>
+    <updated>2016-01-30T14:18:03.000Z</updated>
+    <content type="html"><![CDATA[<p>Dica rápida.</p>
+<p>O <a href="https://github.com/KittyKatt/screenFetch" target="_blank" rel="external">screenFetch</a> é um pequeno bash script (software livre, GPLv3) que serve para printar no terminal um belo logo da tua distro junto com informações do sistema. Veja abaixo o output no Fedora que atualmente utilizo:</p>
+<img src="/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/screenfetch-fedora-23.png" alt="screenFetch de uma máquina Fedora 23" title="screenFetch de uma máquina Fedora 23">
+<p>É um daqueles scripts que todo mundo conhece, menos tu, e achei interessante divulgar para algum desavisado :D</p>
+<a id="more"></a>
+<p>Para instalar no Debian/Ubuntu:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get install screenfetch</span></span><br></pre></td></tr></table></figure>
+<p>Para instalar no Fedora:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dnf install screenfetch</span></span><br></pre></td></tr></table></figure>
+<p>Para executá-lo:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ screenfetch</span><br></pre></td></tr></table></figure>
+<p>Manual do screenFetch:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ man screenfetch</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Dica rápida.</p>
+<p>O <a href="https://github.com/KittyKatt/screenFetch">screenFetch</a> é um pequeno bash script (software livre, GPLv3) que serve para printar no terminal um belo logo da tua distro junto com informações do sistema. Veja abaixo o output no Fedora que atualmente utilizo:</p>
+<img src="/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/screenfetch-fedora-23.png" alt="screenFetch de uma máquina Fedora 23" title="screenFetch de uma máquina Fedora 23">
+<p>É um daqueles scripts que todo mundo conhece, menos tu, e achei interessante divulgar para algum desavisado :D</p>]]>
+    
+    </summary>
+    
+      <category term="glamour" scheme="https://felipehw.github.io/tags/glamour/"/>
+    
+      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Habilitando TRIM sobre LVM sobre LUKS num SSD]]></title>
