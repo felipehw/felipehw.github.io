@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2016-01-30T14:18:03.000Z</updated>
+  <updated>2016-03-12T19:56:04.000Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,236 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX]]></title>
+    <link href="https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/"/>
+    <id>https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/</id>
+    <published>2016-03-12T19:56:04.000Z</published>
+    <updated>2016-03-12T19:56:04.000Z</updated>
+    <content type="html"><![CDATA[<p>Nesse post veremos como configurar o linter ESLint (inclusive no Atom) para ganhar alguns anos de vida a mais ao diminuir o stress no desenvolvimento JavaScript. O post segue o formato “receita-de-bolo” e é destinado ao “eu-do-futuro-que-esqueceu-isso”. Mas pode ser útil para terceiros que sabem o que é um linter :D.</p>
+<p>Ah, o setup considera minha realidade de trabalho (ES6, JSX). Se você ainda usa ES5 … não sabe a diferença … melhorou muito :D</p>
+<img src="/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/stress.jpg" alt="A vida é melhor com ESLint" title="A vida é melhor com ESLint">
+<a id="more"></a>
+<p>Há varios linters por aí, como os famosos JSlint, JSHint, JSCS, ESLint.<br>O mais recente desses 4 linters populares é o ESLint e o mesmo tem chamado a atenção por causa de seus recursos.</p>
+<p>O ESLint possui features interessantes como:</p>
+<ul>
+<li>Suporta configuração</li>
+<li>Suporta plugins</li>
+<li>Melhor suporte à ES6 e JSX</li>
+<li>Possui <em>rules</em> que além de estilo ajudam a detectar bugs</li>
+</ul>
+<p>Devido a essas características, optamos pelo ESLint. Ver mais <a href="http://www.sitepoint.com/comparison-javascript-linting-tools/" target="_blank" rel="external">aqui</a>.</p>
+<p>Para deixá-lo ainda mais versátil utilizamos conjutamente com:</p>
+<ul>
+<li>parser <a href="https://github.com/babel/babel-eslint" target="_blank" rel="external">babel-eslint</a> que permite <em>lintar</em> todo o código suportado pelo babel.</li>
+<li>plugin <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">ESLint-plugin-React</a> que oferece um conjunto de <em>rules</em> específicas para React (e inclusive corrige problemas como a <em>rule</em> <code>&quot;no-unused-vars&quot;</code> não detectar o uso de vars na sintaxe JSX)</li>
+</ul>
+<hr>
+<p>Vejamos o setup do mesmo tanto no âmbito do sistema operacional (global) quanto de um determinado projeto (local):</p>
+<h2 id="Global">Global</h2><h3 id="Instalação">Instalação</h3><ol>
+<li>Instale globalmente o eslint &gt;= 2: <code>$ sudo npm install --global eslint</code></li>
+<li>Instale globalmente o babel-eslint p/ o eslint &gt;=2: <code>$ npm install --global babel-eslint@next</code></li>
+<li>Instale globalmente o eslint-plugin-react: <code>$ sudo npm install --global eslint-plugin-react</code></li>
+</ol>
+<h3 id="Configuração">Configuração</h3><ol>
+<li>Crie uma configuração inicial com: <code>$ eslint --init</code> (será criado no dir atual)</li>
+<li>Mova o arquivo criado para <code>~/</code></li>
+<li>Edite o arquivo em <code>~/</code> de acordo com suas preferências (ver site oficial por documentação ou exemplo comentado abaixo).</li>
+</ol>
+<p>Notas:</p>
+<ul>
+<li>O formato do arquivo de configuração pode ser JSON, JS, YAML (o <code>eslint --init</code> permite escolher). Optei por JS por permitir comentários e etc (com o devido highlight de IDEs).</li>
+<li>Se houver um arquivo de configuração no dir onde é invocado <code>eslint</code>, esse será utilizado ao invés do arquivo em <code>~/</code>.</li>
+</ul>
+<h3 id="Desintalação">Desintalação</h3><ol>
+<li>Desinstale os módulos globais: <code>$ sudo npm uninstall --global eslint babel-eslint eslint-plugin-react</code></li>
+<li>(OPCIONAL) Remova o arquivo de configuração: <code>$ rm ~/.eslintrc*</code></li>
+</ol>
+<h3 id="Utilização">Utilização</h3><p>O linter pode ser facilmente utilizado através da invocação de linhas como:</p>
+<ul>
+<li><code>$ eslint file1.js file2.js</code></li>
+<li><code>$ eslint lib/**</code></li>
+</ul>
+<p>Para mais info ver a <a href="http://eslint.org/docs/user-guide/command-line-interface" target="_blank" rel="external">documentação oficial</a>.</p>
+<h2 id="Local_(projeto)_-_recomendado">Local (projeto) - recomendado</h2><p>Se quisermos utilizar o eslint apenas num projeto, podemos instalar ele localmente no projeto. Entre as vantagens, está o fato de podermos usar uma determinada versão com uma certa configuração e plugins específicos e de levarmos essa configuração (no <code>package.json</code>) junto com o projeto (que já estará corretamente configurado para uso por terceiros).</p>
+<h3 id="Instalação-1">Instalação</h3><ol>
+<li>Situe-se na raiz do projeto npm: <code>$ cd ./projeto</code></li>
+<li>Instale localmente o eslint &gt;= 2: <code>$ npm install --save-dev eslint</code></li>
+<li>Instale localmente o babel-eslint p/ o eslint &gt;=2: <code>$ npm install --save-dev babel-eslint@next</code></li>
+<li>Instale localmente o eslint-plugin-react: <code>$ npm install --save-dev eslint-plugin-react</code></li>
+</ol>
+<h3 id="Configuração-1">Configuração</h3><ol>
+<li>Situe-se na raiz do projeto npm: <code>$ cd ./projeto</code></li>
+<li>Crie uma configuração inicial com: <code>$ eslint --init</code> (será criado no dir atual)</li>
+<li>Edite o arquivo de acordo com suas preferências (ver site oficial por documentação ou exemplo comentado abaixo).</li>
+</ol>
+<p>Notas:</p>
+<ul>
+<li>Mesmo a instalação sendo local ao projeto, caso o arquivo de configuração não seja encontrado no dir do projeto, o linter tentará utilizar o arquivo de configuração localizado nos dirs acima ou em <code>~/</code> (se houver).</li>
+</ul>
+<h3 id="Desinstalação">Desinstalação</h3><ol>
+<li>Desinstale os módulos do projeto: <code>$ npm uninstall --save-dev eslint babel-eslint eslint-plugin-react</code></li>
+<li>(OPCIONAL) Remova o arquivo de configuração do projeto: <code>$ rm ./projeto/.eslintrc*</code></li>
+</ol>
+<h3 id="Utilização-1">Utilização</h3><p>A única diferença para a utilização do eslint instalado globalmente é que devemos apontar para seu executável dentro de seu dir em <code>node_modules</code>. Exemplo: <code>./node_modules/eslint/bin/eslint.js index.js</code></p>
+<hr>
+<h2 id="Notas">Notas</h2><ul>
+<li>A prioridade na busca por arquivos de configuração é:<ol>
+<li>Dir local</li>
+<li>Dirs acima no path</li>
+<li><code>~/</code></li>
+</ol>
+</li>
+<li>É recomendado possuir um arquivo de configuração básico em <code>~/</code>, com rules que sejam interessantes independente das particularidades de um determinado projeto.</li>
+<li>O arquivo de configuração é simples. E podemos escolher se uma <em>rule</em> estará desligada (<code>&quot;off&quot;</code> ou <code>0</code>), emitindo aviso (<code>&quot;warn&quot;</code> ou <code>1</code>) ou emitindo erro (<code>&quot;error&quot;</code> ou <code>2</code>). Exemplo: <code>&quot;indent&quot;: [2, 4]</code> (ou <code>&quot;indent&quot;: [&quot;error&quot;, 4]</code>) emite error quando identação for != de 4 espaços.</li>
+<li><p>Quando invocamos o eslint, as mensagens de aviso/erro contém as regras que as dispararam. Assim fica fácil localizar e modificar regras que não estejam adequadas.<br>Exemplo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7:9  error  Expected &#39;===&#39; and instead saw &#39;==&#39;                              eqeqeq</span><br></pre></td></tr></table></figure>
+<p>Na linha 7, coluna 9 do arquivo analisado foi encontrado um <code>==</code> quando era esperado <code>===</code>. A regra que emitiu esse <em>erro</em> foi <code>eqeqeq</code>.</p>
+</li>
+<li>O <a href="https://github.com/babel/babel-eslint" target="_blank" rel="external">babel-eslint</a> possui algumas <a href="https://github.com/babel/babel-eslint#known-issues" target="_blank" rel="external">limitações descritas em sua página</a> que é bom considerar.</li>
+<li>Há um <a href="(https://github.com/babel/babel-eslint/issues/267">bug</a>) no momento em que escrevo que o babel-eslint mais recente (5.0.0) não funciona com o eslint mais recente (2.3.0) e exige que instalemos o eslint 2.2.0.</li>
+</ul>
+<h2 id="Arquivo_de_configuração_sample">Arquivo de configuração sample</h2><p>Arquivo de configuração funcional comentado (<code>.eslintrc.js</code>)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  parser: <span class="string">'babel-eslint'</span>, <span class="comment">// parser que permite lintar todo o código suportado pelo babel</span></span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    ecmaVersion: <span class="number">7</span>,</span><br><span class="line">    sourceType: <span class="string">'module'</span>, <span class="comment">// habilita suporte a ECMAScript modules</span></span><br><span class="line">    ecmaFeatures: &#123;</span><br><span class="line">      impliedStrict: <span class="literal">true</span>, <span class="comment">// todo código é considerado implicitamente 'strict' (mesmo sem 'use strict').</span></span><br><span class="line">      jsx: <span class="literal">true</span>, <span class="comment">// suporte a JSX</span></span><br><span class="line">      experimentalObjectRestSpread: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  env: &#123;</span><br><span class="line">    browser: <span class="literal">true</span>, <span class="comment">// permite vars globais de browsers</span></span><br><span class="line">    commonjs: <span class="literal">true</span>, <span class="comment">// permite vars globais de commonjs (p/ browser code que usa browserify/webpack)</span></span><br><span class="line">    embertest: <span class="literal">true</span>, <span class="comment">// permite vars globais de embertest</span></span><br><span class="line">    es6: <span class="literal">true</span>, <span class="comment">// permite recursos do ES6</span></span><br><span class="line">    node: <span class="literal">true</span>, <span class="comment">// permite vars globais do node e seu escopo</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [<span class="string">'react'</span>], <span class="comment">// habilita plugin `eslint-plugin-react` (deve ser instalado)</span></span><br><span class="line">  rules: &#123; <span class="comment">// all rules are disabled by default (veja "eslint:recommended" abaixo)</span></span><br><span class="line">    <span class="string">'block-scoped-var'</span>: <span class="number">2</span>, <span class="comment">// proíbe vars de serem usadas fora do bloco onde foram declaradas (emula estilo do C)</span></span><br><span class="line">    <span class="string">'comma-dangle'</span>: [<span class="number">2</span>, <span class="string">'always-multiline'</span>], <span class="comment">// exige ',' em &#123;&#125;s e []s multi line e proíbe em single line</span></span><br><span class="line">    <span class="string">'dot-location'</span>: [<span class="number">2</span>, <span class="string">'property'</span>], <span class="comment">// exige que newlines sejam antes do ponto numa *member expression* (ponto fica junto com propriedade).</span></span><br><span class="line">    eqeqeq: [<span class="number">2</span>, <span class="string">'smart'</span>], <span class="comment">// exige comparação estrita (===) salvo em alguns casos (http://eslint.org/docs/rules/eqeqeq)</span></span><br><span class="line">    indent: [<span class="number">2</span>, <span class="number">2</span>], <span class="comment">// exige indentação de 2 espaços</span></span><br><span class="line">    <span class="string">'linebreak-style'</span>: [<span class="number">2</span>, <span class="string">'unix'</span>], <span class="comment">// proíbe quebras de linha do Windows</span></span><br><span class="line">    <span class="string">'no-else-return'</span>: <span class="number">2</span>, <span class="comment">// proíbe 'else' desnecessario quando 'if' já tem 'return' (pq pode ficar fora do bloco)</span></span><br><span class="line">    <span class="string">'no-unused-vars'</span>: [<span class="number">2</span>, &#123; <span class="string">'vars'</span>: <span class="string">'all'</span>, <span class="string">'args'</span>: <span class="string">'none'</span> &#125;], <span class="comment">// exige que todas as vars sejam usadas, ignora (ñ) uso de argumentos</span></span><br><span class="line">    quotes: [<span class="number">2</span>, <span class="string">'single'</span>, <span class="string">'avoid-escape'</span>], <span class="comment">// exige  '' e não reclama de "quotes 'assim'"</span></span><br><span class="line">    semi: [<span class="number">2</span>, <span class="string">'always'</span>], <span class="comment">// exige ';'</span></span><br><span class="line">    strict: [<span class="number">1</span>, <span class="string">'global'</span>], <span class="comment">// warn pedindo que todo código esteja no strict mode (declaração no escopo global, reclama de 'use strict's redundantes)</span></span><br><span class="line">    <span class="string">'vars-on-top'</span>: <span class="number">2</span>, <span class="comment">// exige que vars estejam declaradas no topo do escopo    </span></span><br><span class="line">  &#125;,</span><br><span class="line">  extends: [ <span class="comment">// extende conf. com a de outros arquivos (últimos tem primazia)</span></span><br><span class="line">    <span class="string">'eslint:recommended'</span>, <span class="comment">// habilita rules recomendadas (ver essas em &lt;http://eslint.org/docs/rules/&gt;)</span></span><br><span class="line">    <span class="string">'plugin:react/recommended'</span>, <span class="comment">// habilita rules recomendadas pelo plugin p/ boas práticas de React (inclusive 'jsx-uses-vars' que evita vars JSX de serem incorretamente marcadas como ñ usadas)</span></span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Com_Atom">Com Atom</h2><p>Para utilizar o ESLint em conjunto com o editor <a href="https://atom.io/" target="_blank" rel="external">Atom</a>, o pacote mais famoso é o <a href="https://atom.io/packages/linter-eslint" target="_blank" rel="external">linter-eslint</a>.<br>Basta instalar o pacote <code>linter-eslint</code> desde o Atom.<br>O <code>linter-eslint</code> depende do pacote <code>linter</code> e irá instalar esse automaticamente caso necessário.</p>
+<p>Caso você utilize o <a href="http://nuclide.io/" target="_blank" rel="external">Nuclide</a> sobre o Atom, o mesmo utiliza uma solução alternativa ao pacote <code>linter</code>, chamada <a href="https://github.com/facebook/nuclide/tree/master/pkg/nuclide/diagnostics" target="_blank" rel="external">nuclide-diagnostics</a>. Qualquer pacote (incluindo o <code>linter-eslint</code>) que funcione com o <code>linter</code> funciona com o <code>nuclide-diagnostics</code>, de modo que apenas um dos dois deve estar habilitado. Caso os dois estejam habilitados ao mesmo tempo, veremos uma UI duplicada para exibir dados do linter durante a utilização.</p>
+<p>O <code>linter-eslint</code>, por padrão, tentará utilizar uma versão do <code>eslint</code> local ao seu projeto (vimos como instalar localmente acima). A versão local é buscada em <code>projeto/node_modules/eslint</code>. Se a versão local não for encontrada, será utilizada uma que vem com o pacote. Caso desejado, podemos via configuração espeficicar para o <code>linter-eslint</code> utilizar um <code>eslint</code> instalado globalmente.</p>
+<p>Para utilizar plugins do ESLint, basta que estes estejam instalados localmente no seu projeto conjuntamente com o ESLint (também visto acima). A outra opção é instalar tanto o ESLint quanto seus plugins globalmente (também visto acima) e habilitar nas configurações do pacote <code>linter-eslint</code> (via interface) a opção <code>Use Global Eslint</code> para utilizar o <code>eslint</code> instalado globalmente.</p>
+<p>A localização do arquivo de configuração do ESLint utilizado pelo <code>linter-eslint</code> segue as mesmas regras utilizadas normalmente pelo <code>eslint</code> (ver acima).</p>
+<h2 id="Links">Links</h2><ul>
+<li><a href="http://eslint.org/" target="_blank" rel="external">ESlint</a><ul>
+<li><a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="external">Documentation - ESLint - Pluggable JavaScript linter</a>: Configuração do ESLint</li>
+<li><a href="http://eslint.org/docs/rules/" target="_blank" rel="external">List of available rules - ESLint - Pluggable JavaScript linter</a>: Documentação sobre <em>rules</em> do ESLint</li>
+</ul>
+</li>
+<li>parser <a href="https://github.com/babel/babel-eslint" target="_blank" rel="external">babel-eslint</a></li>
+<li>plugin <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">ESLint-plugin-React</a></li>
+</ul>
+<p><strong>Obs</strong>: Versões utilizadas na confecção do post:</p>
+<ul>
+<li>eslint: 2.2.0</li>
+<li>babel-eslint: 5.0.0</li>
+<li>eslint-plugin-react: 4.2.1</li>
+<li>atom: 1.5.3</li>
+<li>linter-eslint: 7.0.0</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Nesse post veremos como configurar o linter ESLint (inclusive no Atom) para ganhar alguns anos de vida a mais ao diminuir o stress no desenvolvimento JavaScript. O post segue o formato “receita-de-bolo” e é destinado ao “eu-do-futuro-que-esqueceu-isso”. Mas pode ser útil para terceiros que sabem o que é um linter :D.</p>
+<p>Ah, o setup considera minha realidade de trabalho (ES6, JSX). Se você ainda usa ES5 … não sabe a diferença … melhorou muito :D</p>
+<img src="/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/stress.jpg" alt="A vida é melhor com ESLint" title="A vida é melhor com ESLint">]]>
+    
+    </summary>
+    
+      <category term="atom" scheme="https://felipehw.github.io/tags/atom/"/>
+    
+      <category term="ecmascript" scheme="https://felipehw.github.io/tags/ecmascript/"/>
+    
+      <category term="javascript" scheme="https://felipehw.github.io/tags/javascript/"/>
+    
+      <category term="jsx" scheme="https://felipehw.github.io/tags/jsx/"/>
+    
+      <category term="web" scheme="https://felipehw.github.io/tags/web/"/>
+    
+      <category term="develop" scheme="https://felipehw.github.io/categories/develop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Aventuras com Flow + Atom (JavaScript)]]></title>
+    <link href="https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/"/>
+    <id>https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/</id>
+    <published>2016-03-12T19:55:31.000Z</published>
+    <updated>2016-03-12T19:55:32.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://flowtype.org/" target="_blank" rel="external">Flow</a> é um static type checker criado pelo Facebook que ajuda bastante no desenvolvimento JS :D. Mais informações no <a href="(http://flowtype.org/">site oficial</a>.<br>O Flow pode ser utilizado tanto como uma ferramenta CLI quanto integrado à IDEs. Veremos como usá-lo dentro do <a href="https://atom.io/" target="_blank" rel="external">Atom</a>.</p>
+<p>O post segue o formato “receita-de-bolo” e é destinado ao “eu-do-futuro-que-esqueceu-isso”. Mas pode ser útil para terceiros que sabem o que é um static type checker e conheçam JavaScript :D.</p>
+<img src="/2016/03/12/aventuras-com-flow-atom-javascript/flow-hero-logo.png" alt="Flow" title="Flow">
+<a id="more"></a>
+<p>O suporte ao Flow dentro do Atom é mais completo utilizando o pacote <a href="http://nuclide.io/" target="_blank" rel="external">Nuclide</a> que é desenvolvido também pelo Facebook e visa oferecer um ótimo suporte às tecnologias da empresa (como React, react-native, flow, …). Portanto, instalaremos tanto o Flow quanto o Nuclide.</p>
+<p>Nota: Atualmente o Flow não funciona em Windows. Apenas GNU/Linux e Mac. O Nuclide funciona apenas parcialmente em Windows.</p>
+<h2 id="Instalação">Instalação</h2><ol>
+<li>Instalar Flow:<ol>
+<li>Baixar o binário em <a href="http://flowtype.org/" target="_blank" rel="external">http://flowtype.org/</a></li>
+<li>Extrair o pacote para um dir desejado. Ex: <code>unzip ./path/flow-linux64-v0.22.1.zip</code>. Pronto! Será criado o dir <code>flow</code> com o binário <code>flow</code> dentro.</li>
+<li>Basta agora criar um link do binário para <code>/usr/local/bin</code> ou de alguma outra forma inserir o binário no <code>$PATH</code> do <em>user</em> ou sistema.</li>
+</ol>
+</li>
+<li>(OPCIONAL) Instalar o Nuclide (apenas para uso no Atom):<ol>
+<li>Instale o pacote <code>nuclide</code> via interface do Atom.</li>
+<li>(OPCIONAL) É recomendado desabilitar o pacote <code>linter</code> (caso esteja instalado), deixando o Nuclide utilizar sua solução própria (<a href="https://github.com/facebook/nuclide/tree/master/pkg/nuclide/diagnostics" target="_blank" rel="external">nuclide-diagnostics</a>) e que é compatível com todos os plugins que dependem do <code>linter</code>.</li>
+</ol>
+</li>
+</ol>
+<p>Nota: A instalação do <code>nuclide</code> pode ser objeto de alguns cuidados posteriores para uma experiência mais completa: <a href="http://nuclide.io/docs/editor/setup/" target="_blank" rel="external">http://nuclide.io/docs/editor/setup/</a></p>
+<h2 id="Utilização">Utilização</h2><ul>
+<li><p>Para utilizarmos o flow necessitamos que o projeto atenda dois requisitos:</p>
+<ol>
+<li><p>Possuir um arquivo de configuração do flow (<code>.flowconfig</code>).</p>
+<p>O mesmo pode ser criado sem conteúdo (<code>$ touch ./projeto/.flowconfig</code>) ou através do comando “<code>$ flow init</code>“ que criará no dir em que for invocado um arquivo com as seções básicas de configuração do flow vazias.</p>
+<p>Ao ser invocado, o flow irá buscar pelo <code>.flowconfig</code> no dir em que for invocado, caso não encontre, tentará nos dirs pais.</p>
+</li>
+<li>Somente serão checados os arquivos JavaScript que possuam o comentário “<code>// @flow</code>“ no <strong>topo do arquivo</strong>. Isso permite utilizarmos o flow de forma incremental em projetos.</li>
+</ol>
+</li>
+<li><p>Para utilizar o flow via prompt, basta invocarmos no dir do projeto: <code>$ flow</code>. Se desejarmos um arquivo em específico: <code>$ flow arquivo.js</code>. Mais informações na <a href="http://flowtype.org/docs/cli.html#_" target="_blank" rel="external">documentação oficial</a>.</p>
+</li>
+<li>Para utilizar o flow via Atom, tendo o projeto atendido as 2 necessidades elencadas acima, basta ter instalado o Nuclide.</li>
+</ul>
+<h2 id="Configuração">Configuração</h2><p>Saber configurar o <code>.flowconfig</code> é essencial para que o flow funcione de forma rápida e sem jogar uma avalanche de alertas caso suas dependências também sejam passíveis de análise pela ferramenta.</p>
+<p>Em meu caso, ao desenvolver utilizando o react-native houve sérios problemas de performance pois o <code>.flowconfig</code> oferecido varria todas as dependências do projeto. A solução foi ignorar os arquivos existentes em <code>projeto/node_modules</code> e adicionar interfaces para que o flow não reclamasse dos módulos importados de <code>node_modules</code> em meu código (e que o mesmo não estava apto a encontrar pois eu forçava que fossem ignorados).</p>
+<p>A configuração do <code>.flowconfig</code> foi feita da seguinte forma:</p>
+<ul>
+<li>Na seção <code>ignore</code> foi adicionado o dir <code>node_modules</code>:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ignore]&#10;&#10;.*/node_modules/*</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Na seção <code>libs</code> foi apontado o dir contendo as declarações de interfaces para módulos que o flow não irá encontrar (pq são códigos de terceiros localizados em <code>node_modules</code> que optamos por ignorar):</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[libs]&#10;flow-interfaces</span><br></pre></td></tr></table></figure>
+<p>No dir <code>projeto/flow-interfaces</code> adicionamos o arquivo <code>react-native.js</code> com interface para o módulo <code>react-native</code>. O arquivo ficou assim:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare module &#34;react-native&#34; &#123;&#10;  declare var AppRegistry: any;&#10;  declare var Component: any;&#10;  declare var StyleSheet: any;&#10;  declare var Text: any;&#10;  declare var View: any;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>Essa é só uma passada superficial pelo <code>.flowconfig</code>, mais informações sobre o mesmo na <a href="http://flowtype.org/docs/advanced-configuration.html#_" target="_blank" rel="external">documentação oficial</a> e, mais especificamente, como lidar com código de terceiros <a href="http://flowtype.org/docs/third-party.html#_" target="_blank" rel="external">aqui</a>.</p>
+<p>Ps: Atenção que se o <code>.flowconfig</code> possuir a sessão <code>[version]</code>, a versão do flow deve ser atendida, caso contrário o mesmo não será executado.</p>
+<h2 id="Links">Links</h2><ul>
+<li><a href="http://nuclide.io/" target="_blank" rel="external">Nuclide</a><ul>
+<li><a href="http://nuclide.io/docs/languages/flow/" target="_blank" rel="external">Nuclide | Flow </a>: Detalhes sobre a instalação e os recursos oferecidos pela combinação Nuclide + Flow.</li>
+</ul>
+</li>
+<li><a href="http://flowtype.org/" target="_blank" rel="external">Flow</a><ul>
+<li><a href="http://flowtype.org/docs/troubleshooting.html" target="_blank" rel="external">Flow | Troubleshooting</a>: Problemas comuns encontrados ao usar o Flow e como resolvê-los.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Obs</strong>: Versões utilizadas na confecção do post:</p>
+<ul>
+<li>flow: 0.22.1</li>
+<li>nuclide: 0.124.0</li>
+<li>atom: 1.5.3</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://flowtype.org/">Flow</a> é um static type checker criado pelo Facebook que ajuda bastante no desenvolvimento JS :D. Mais informações no <a href="(http://flowtype.org/">site oficial</a>.<br>O Flow pode ser utilizado tanto como uma ferramenta CLI quanto integrado à IDEs. Veremos como usá-lo dentro do <a href="https://atom.io/">Atom</a>.</p>
+<p>O post segue o formato “receita-de-bolo” e é destinado ao “eu-do-futuro-que-esqueceu-isso”. Mas pode ser útil para terceiros que sabem o que é um static type checker e conheçam JavaScript :D.</p>
+<img src="/2016/03/12/aventuras-com-flow-atom-javascript/flow-hero-logo.png" alt="Flow" title="Flow">]]>
+    
+    </summary>
+    
+      <category term="atom" scheme="https://felipehw.github.io/tags/atom/"/>
+    
+      <category term="ecmascript" scheme="https://felipehw.github.io/tags/ecmascript/"/>
+    
+      <category term="flow" scheme="https://felipehw.github.io/tags/flow/"/>
+    
+      <category term="javascript" scheme="https://felipehw.github.io/tags/javascript/"/>
+    
+      <category term="jsx" scheme="https://felipehw.github.io/tags/jsx/"/>
+    
+      <category term="web" scheme="https://felipehw.github.io/tags/web/"/>
+    
+      <category term="develop" scheme="https://felipehw.github.io/categories/develop/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[screenFetch: Info do sistema em ASCII e com estilo]]></title>
