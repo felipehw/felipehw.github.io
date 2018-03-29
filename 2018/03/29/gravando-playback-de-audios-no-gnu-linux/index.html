@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Gravando playback de áudios no GNU/Linux | $ls /home/felipehw</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Essa dica é especialmente útil quando desejamos gravar áudios que, por algum motivo alheio a nossa vontade, podemos escutar via computador mas não podemos salvar o mesmo num arquivo de áudio.">
+<meta name="keywords" content="compartilhamento,pirataria">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gravando playback de áudios no GNU&#x2F;Linux">
+<meta property="og:url" content="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/index.html">
+<meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
+<meta property="og:description" content="Essa dica é especialmente útil quando desejamos gravar áudios que, por algum motivo alheio a nossa vontade, podemos escutar via computador mas não podemos salvar o mesmo num arquivo de áudio.">
+<meta property="og:locale" content="pt-BR">
+<meta property="og:image" content="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/audiobooks_min.jpg">
+<meta property="og:updated_time" content="2018-03-29T22:13:22.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gravando playback de áudios no GNU&#x2F;Linux">
+<meta name="twitter:description" content="Essa dica é especialmente útil quando desejamos gravar áudios que, por algum motivo alheio a nossa vontade, podemos escutar via computador mas não podemos salvar o mesmo num arquivo de áudio.">
+<meta name="twitter:image" content="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/audiobooks_min.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-60491247-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title">
+      <img id="header-logo" src="/images/tux_v02.svg.png" alt="Tux pixelated" title="Tux pixelated">
+      <div id="header-wrap-hs">
+        <h1 id="logo-wrap">
+          <a href="/" id="logo">$ls /home/felipehw</a>
+        </h1>
+        
+          <h2 id="subtitle-wrap">
+            <a href="/" id="subtitle">software &amp; cultura livre</a>
+          </h2>
+        
+      </div>
+    </div>
+    <div id="header-inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-gravando-playback-de-audios-no-gnu-linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/" class="article-date">
+  <time datetime="2018-03-29T22:13:22.000Z" itemprop="datePublished">29 mar 2018</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cultura-livre/">cultura livre</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Gravando playback de áudios no GNU/Linux
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Essa dica é especialmente útil quando desejamos gravar áudios que, por algum motivo alheio a nossa vontade, podemos escutar via computador mas não podemos salvar o mesmo num arquivo de áudio.</p>
+<img src="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/audiobooks_min.jpg" title="Imagem de audiobook.">
+<a id="more"></a>
+<p>Exemplos disso, são áudios em portais web como os <em>audiobooks</em> da ******. Nesse caso, podemos escutar o áudio dos audiobooks via navegador de internet mas não podemos baixar os referidos audiobooks.</p>
+<p>A solução está em interceptar o áudio que está sendo reproduzido via servidor de som “PulseAudio” e gravar seu conteúdo utilizando o editor de áudio “<a href="https://www.audacityteam.org/" target="_blank" rel="noopener">Audacity</a>“. Tudo software livre.</p>
+<p>Necessitaremos de um sistema GNU/Linux utilizando “PulseAudio” com os softwares “PulseAudio Volume Control (pavucontrol)” e “Audacity” instalados.</p>
+<h2 id="Instalando-os-aplicativos-necessarios-Fedora-2x"><a href="#Instalando-os-aplicativos-necessarios-Fedora-2x" class="headerlink" title="Instalando os aplicativos necessários (Fedora 2x)"></a>Instalando os aplicativos necessários (Fedora 2x)</h2><p>O Fedora 2x (e diversas outras distros) preenchem todos os requisitos.</p>
+<ol>
+<li>Servidor de som “PulseAudio”: É o padrão da maioria das distribuições.</li>
+<li>Para instalar o Audacity: <code>sudo dnf install audacity</code></li>
+<li>Para instalar o PulseAudio Volume Control (pavucontrol): <code>sudo dnf install pavucontrol</code></li>
+</ol>
+<h2 id="Gravando-playback-de-audios"><a href="#Gravando-playback-de-audios" class="headerlink" title="Gravando playback de áudios"></a>Gravando playback de áudios</h2><p>Não vou repetir o que já está documentado (como dito acima, isso aqui é mais uma dica). Basta seguir o passo a passo em <a href="http://manual.audacityteam.org/man/tutorial_recording_computer_playback_on_linux.html" target="_blank" rel="noopener">Tutorial - Recording Computer Playback on Linux - Audacity Development Manual</a> (seção <strong>“PulseAudio”</strong>). Caso esteja fora do ar, segue o <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/Tutorial_-_Recording_Computer_Playback_on_Linux.pdf" title="PDF">PDF</a> salvo em 03/2018.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/" data-id="cjfd2stk2001oeasx4kxnmfao" class="article-share-link">Share</a>
+      
+        <a href="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compartilhamento/">compartilhamento</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pirataria/">pirataria</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/06/constelacao-de-orion-e-nebulosa-de-orion/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Constelação de Órion e Nebulosa de Órion</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/astronomia/" style="font-size: 15px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 12.5px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 15px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 12.5px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 10px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/">Gravando playback de áudios no GNU/Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/06/constelacao-de-orion-e-nebulosa-de-orion/">Constelação de Órion e Nebulosa de Órion</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/">Júpiter, o gigante gasoso, desde Floripa</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/">Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/12/aventuras-com-flow-atom-javascript/">Aventuras com Flow + Atom (JavaScript)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 felipehw<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'felipehwgithubiogit';
+  
+  var disqus_url = 'https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

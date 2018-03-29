@@ -6,16 +6,19 @@
   <title>Criando partições encriptadas (LVM sobre LUKS) | $ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de LVM e LUKS.Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood">
+<meta name="keywords" content="criptografia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Criando partições encriptadas (LVM sobre LUKS)">
 <meta property="og:url" content="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/index.html">
-<meta property="og:site_name" content="$ls /home/felipehw">
+<meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
 <meta property="og:description" content="Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de LVM e LUKS.Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood">
+<meta property="og:locale" content="pt-BR">
 <meta property="og:image" content="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg">
 <meta property="og:updated_time" content="2015-09-06T20:06:21.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Criando partições encriptadas (LVM sobre LUKS)">
 <meta name="twitter:description" content="Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de LVM e LUKS.Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood">
+<meta name="twitter:image" content="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -23,7 +26,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 <!-- Google Analytics -->
 <script type="text/javascript">
@@ -77,7 +80,7 @@ ga('send', 'pageview');
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
       </div>
     </div>
   </div>
@@ -87,7 +90,7 @@ ga('send', 'pageview');
         <section id="main"><article id="post-criando-particoes-encriptadas-lvm-sobre-luks" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/" class="article-date">
-  <time datetime="2015-04-19T03:05:40.000Z" itemprop="datePublished">19 Abr 2015</time>
+  <time datetime="2015-04-19T03:05:40.000Z" itemprop="datePublished">19 abr 2015</time>
 </a>
     
   <div class="article-category">
@@ -110,21 +113,21 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de <a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29" target="_blank" rel="external">LVM</a> e <a href="https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup" target="_blank" rel="external">LUKS</a>.<br>Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.</p>
-<img src="/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg" alt="Criptografia com LVM + LUKS" title="Criptografia com LVM + LUKS">
+        <p>Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de <a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29" target="_blank" rel="noopener">LVM</a> e <a href="https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup" target="_blank" rel="noopener">LUKS</a>.<br>Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.</p>
+<img src="/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg" title="Criptografia com LVM + LUKS">
 <a id="more"></a>
 <p>Não é um post teórico, mas sim de <strong>receita de bolo</strong>. <strong>A teoria, entretanto, é essencial</strong> para saber o que está acontencendo e conhecer melhor as possibilidades e limitações do setup escolhido. Essa teoria, porém, não cabe no escopo de um post e nem tenho competência (e paciência) para abordá-la. Por isso, coloquei os melhores links que encontrei sobre a mesma no final do post. <strong>Recomendo fortemente a leitura dos <a href="#links">links</a></strong> (não é da boca para fora, li e aprendi bastante - e o conteúdo não é excessivamente técnico).</p>
 <p>As únicas pinceladas teóricas seguem abaixo:</p>
 <ul>
-<li><p>O LVM (se você não sabe o que é, pare e se informe <a href="https://wiki.archlinux.org/index.php/LVM" target="_blank" rel="external">antes</a>) não é essencial para criptografar um disco, mas utilizamos o mesmo para termos flexibilidade na criação/destruição/modificação de partições no interior do disco criptografado.</p>
+<li><p>O LVM (se você não sabe o que é, pare e se informe <a href="https://wiki.archlinux.org/index.php/LVM" target="_blank" rel="noopener">antes</a>) não é essencial para criptografar um disco, mas utilizamos o mesmo para termos flexibilidade na criação/destruição/modificação de partições no interior do disco criptografado.</p>
 </li>
-<li><p>O LVM em nosso setup é utilizado numa camada acima do LUKS (tecnologia para criptografia), assim necessitamos de apenas uma password para destravar todas as partições no HD … e eliminamos possíveis <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support" target="_blank" rel="external">complicações</a> para suspender e etc. O lado negativo é que o layout do LVM não é transparente (está dentro do <em>blockdevice</em> encriptado usando LUKS) e por isso não é possível extender volumes lógicos através de outros discos.</p>
+<li><p>O LVM em nosso setup é utilizado numa camada acima do LUKS (tecnologia para criptografia), assim necessitamos de apenas uma password para destravar todas as partições no HD … e eliminamos possíveis <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support" target="_blank" rel="noopener">complicações</a> para suspender e etc. O lado negativo é que o layout do LVM não é transparente (está dentro do <em>blockdevice</em> encriptado usando LUKS) e por isso não é possível extender volumes lógicos através de outros discos.</p>
 </li>
 </ul>
 <p><strong>=&gt;AVISO&lt;=</strong>: Não é um post para iniciantes. Assim, por exemplo, não será explicado quando usar <em>root</em>, como utilizar o gparted ou mesmo o que é <code>/etc/fstab</code>.</p>
-<h2 id="Preparando_o_disco_e_criando_o_container_encriptado">Preparando o disco e criando o container encriptado</h2><p>Nesse passo preparemos o disco (apagaremos de forma a dificultar a quebra da criptografia) e criaremos o container criptografado. É aqui que reside a parte que realmente diz respeito à criptografia.</p>
+<h2 id="Preparando-o-disco-e-criando-o-container-encriptado"><a href="#Preparando-o-disco-e-criando-o-container-encriptado" class="headerlink" title="Preparando o disco e criando o container encriptado"></a>Preparando o disco e criando o container encriptado</h2><p>Nesse passo preparemos o disco (apagaremos de forma a dificultar a quebra da criptografia) e criaremos o container criptografado. É aqui que reside a parte que realmente diz respeito à criptografia.</p>
 <p><strong>Obs</strong>: No post supomos que o HD utilizado é <code>/dev/sdb</code>.</p>
-<h3 id="1-_Escreva_o_disco_inteiro_com_dados_aleatórios">1. Escreva o disco inteiro com dados aleatórios</h3><p>Motivo: dificultar o deciframento ao garantir que o espaço vazio é indistinguível dos dados escritos sob criptografia.</p>
+<h3 id="1-Escreva-o-disco-inteiro-com-dados-aleatorios"><a href="#1-Escreva-o-disco-inteiro-com-dados-aleatorios" class="headerlink" title="1. Escreva o disco inteiro com dados aleatórios"></a>1. Escreva o disco inteiro com dados aleatórios</h3><p>Motivo: dificultar o deciframento ao garantir que o espaço vazio é indistinguível dos dados escritos sob criptografia.</p>
 <ol>
 <li><p>Crie um container encriptado temporário para o disco desejado (ex: <code>/dev/sdb</code>):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup open --type plain /dev/sdb container</span></span><br></pre></td></tr></table></figure>
@@ -139,8 +142,8 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup close container</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>Fonte: <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation" target="_blank" rel="external">https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation</a></p>
-<h3 id="2-_Crie_o_container_encriptado">2. Crie o container encriptado</h3><ol>
+<p>Fonte: <a href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation</a></p>
+<h3 id="2-Crie-o-container-encriptado"><a href="#2-Crie-o-container-encriptado" class="headerlink" title="2. Crie o container encriptado"></a>2. Crie o container encriptado</h3><ol>
 <li><p>Crie uma partição do tipo 8E00 (LVM2 PV) para abrigar o container criptografado:</p>
 <p>A partição pode ser criada no fdisk, cfdisk, parted ou gparted. No gparted, basta criar uma partição do tipo “lvm2 pv”.<br>Em nosso caso, a nova partição é <code>/dev/sdb1</code>.</p>
 </li>
@@ -154,7 +157,7 @@ ga('send', 'pageview');
 </li>
 </ol>
 <p><strong>Pronto</strong>, a parte relativa à criptografia está feita. O motivo de destravarmos o container é que criaremos <strong>no próximo passo</strong> a estrutura LVM dentro do container (e consequentemente as partições).</p>
-<h2 id="Criando_estrutura_LVM_e_seu(s)_volume(s)_lógico(s)">Criando estrutura LVM e seu(s) volume(s) lógico(s)</h2><p>Com o container criptografado criado e destravado, é hora de criarmos a estrutura LVM segundo nossas preferências.</p>
+<h2 id="Criando-estrutura-LVM-e-seu-s-volume-s-logico-s"><a href="#Criando-estrutura-LVM-e-seu-s-volume-s-logico-s" class="headerlink" title="Criando estrutura LVM e seu(s) volume(s) lógico(s)"></a>Criando estrutura LVM e seu(s) volume(s) lógico(s)</h2><p>Com o container criptografado criado e destravado, é hora de criarmos a estrutura LVM segundo nossas preferências.</p>
 <p>O procedimento agora <strong>não diz respeito à criptografia</strong>, mas ao manuseio normal de partições.</p>
 <p>Vejamos um caso utilizando 1 physical volume (PV), dentro de 1 volume group (VG), contendo 1 logical volume (LV) ocupando todo o espaço disponível no disco. <strong>Ou seja</strong>, utilizamos um arranjo básico de LVM que implicará numa partição (em nosso caso, EXT4) ocupando todo o disco.</p>
 <p>Procedimento:</p>
@@ -173,7 +176,7 @@ ga('send', 'pageview');
 </li>
 </ol>
 <p>Pronto, agora temos um arranjo LVM com uma partição EXT4 dentro de um container criptografado. Mas … como montamos e desmontamos essa partição no uso diário? Vejamos o último passo :D,</p>
-<h2 id="Montando_e_desmontando">Montando e desmontando</h2><p>Para acessarmos o conteúdo das partições dentro do container criptografado … basta destravarmos o container e montar normalmente as partições. Vejamos como fazer isso manualmente e automaticamente.</p>
+<h2 id="Montando-e-desmontando"><a href="#Montando-e-desmontando" class="headerlink" title="Montando e desmontando"></a>Montando e desmontando</h2><p>Para acessarmos o conteúdo das partições dentro do container criptografado … basta destravarmos o container e montar normalmente as partições. Vejamos como fazer isso manualmente e automaticamente.</p>
 <ul>
 <li><p>Manualmente:</p>
 <ul>
@@ -210,14 +213,14 @@ ga('send', 'pageview');
 <p>O arquivo <code>/etc/crypttab</code> contém uma lista de <em>blockdevices</em> encriptados (aka containers) que são destravados no boot. O <code>crypttab</code> é lido antes do <code>fstab</code> e portanto destrava o container antes que os filesystems dentro dele sejam montados.</p>
 </li>
 </ul>
-<h2 id="Links:"><span id="links">Links:</span></h2><ul>
-<li><a href="https://wiki.archlinux.org/index.php/Disk_encryption" target="_blank" rel="external">Disk encryption - ArchWiki</a>: O que é e como funciona criptografia em discos, partições, etc. Tipos de criptografia no GNU/Linux, soluções utilizadas, etc. <strong>Recomendado</strong></li>
-<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system" target="_blank" rel="external">dm-crypt/Encrypting a non-root file system - ArchWiki</a>: Documentação suscinta e clara sobre como criar e montar partições criptografadas <em>non-root</em>.</li>
-<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system" target="_blank" rel="external">dm-crypt/Encrypting an entire system - ArchWiki</a>: Documentação sobre diversas estratégias para criptografar o sistema inteiro.</li>
-<li><a href="http://earlruby.org/2010/02/adding-an-external-encrypted-drive-with-lvm-to-ubuntu-linux/comment-page-1/" target="_blank" rel="external">Adding an external encrypted drive with LVM to Ubuntu Linux | Earl C. Ruby III</a>: Post sobre como criar e montar partições criptografadas <em>non-root</em>. A documentação do Arch é melhor, o destaque desse post é seu estilo simples e direto que serviu como inspiração para essas palavras.</li>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links:"></a><span id="links">Links:</span></h2><ul>
+<li><a href="https://wiki.archlinux.org/index.php/Disk_encryption" target="_blank" rel="noopener">Disk encryption - ArchWiki</a>: O que é e como funciona criptografia em discos, partições, etc. Tipos de criptografia no GNU/Linux, soluções utilizadas, etc. <strong>Recomendado</strong></li>
+<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system" target="_blank" rel="noopener">dm-crypt/Encrypting a non-root file system - ArchWiki</a>: Documentação suscinta e clara sobre como criar e montar partições criptografadas <em>non-root</em>.</li>
+<li><a href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system" target="_blank" rel="noopener">dm-crypt/Encrypting an entire system - ArchWiki</a>: Documentação sobre diversas estratégias para criptografar o sistema inteiro.</li>
+<li><a href="http://earlruby.org/2010/02/adding-an-external-encrypted-drive-with-lvm-to-ubuntu-linux/comment-page-1/" target="_blank" rel="noopener">Adding an external encrypted drive with LVM to Ubuntu Linux | Earl C. Ruby III</a>: Post sobre como criar e montar partições criptografadas <em>non-root</em>. A documentação do Arch é melhor, o destaque desse post é seu estilo simples e direto que serviu como inspiração para essas palavras.</li>
 <li>Documentação Oficial Debian - Instalação c/ criptografia:<ul>
-<li><a href="https://www.debian.org/releases/stable/amd64/ch06s03.html.en#partman-crypto" target="_blank" rel="external">6.3.3.6. Configuring Encrypted Volumes</a> em <a href="https://www.debian.org/releases/stable/amd64/ch06s03.html.en#di-partition" target="_blank" rel="external">6.3.3. Partitioning and Mount Point Selection</a>.</li>
-<li><a href="https://www.debian.org/releases/stable/amd64/ch07s02.html.en" target="_blank" rel="external">7.2. Mounting encrypted volumes</a></li>
+<li><a href="https://www.debian.org/releases/stable/amd64/ch06s03.html.en#partman-crypto" target="_blank" rel="noopener">6.3.3.6. Configuring Encrypted Volumes</a> em <a href="https://www.debian.org/releases/stable/amd64/ch06s03.html.en#di-partition" target="_blank" rel="noopener">6.3.3. Partitioning and Mount Point Selection</a>.</li>
+<li><a href="https://www.debian.org/releases/stable/amd64/ch07s02.html.en" target="_blank" rel="noopener">7.2. Mounting encrypted volumes</a></li>
 </ul>
 </li>
 </ul>
@@ -225,7 +228,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/" data-id="cjdb436g4002wrhsxcl00x4i9" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/" data-id="cjfd2stj0000beasxzlaurl1o" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -272,7 +275,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -281,7 +284,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -290,7 +293,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/astronomia/" style="font-size: 15px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 10px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 15px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 10px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 10px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
+      <a href="/tags/astronomia/" style="font-size: 15px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 12.5px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 15px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 12.5px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 10px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
     </div>
   </div>
 
@@ -299,7 +302,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">Fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">Junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">Março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">Janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">Setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">Julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">Maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">Abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">Março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -309,6 +312,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/">Gravando playback de áudios no GNU/Linux</a>
+          </li>
         
           <li>
             <a href="/2018/02/06/constelacao-de-orion-e-nebulosa-de-orion/">Constelação de Órion e Nebulosa de Órion</a>
@@ -324,10 +331,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2016/03/12/aventuras-com-flow-atom-javascript/">Aventuras com Flow + Atom (JavaScript)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/">screenFetch: Info do sistema em ASCII e com estilo</a>
           </li>
         
       </ul>
@@ -376,11 +379,11 @@ ga('send', 'pageview');
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

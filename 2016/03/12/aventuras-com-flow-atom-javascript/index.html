@@ -6,16 +6,19 @@
   <title>Aventuras com Flow + Atom (JavaScript) | $ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Flow é um static type checker criado pelo Facebook que ajuda bastante no desenvolvimento JS :D. Mais informações no site oficial.O Flow pode ser utilizado tanto como uma ferramenta CLI quanto integrad">
+<meta name="keywords" content="javascript,web,ecmascript,jsx,atom,flow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Aventuras com Flow + Atom (JavaScript)">
 <meta property="og:url" content="https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/index.html">
-<meta property="og:site_name" content="$ls /home/felipehw">
+<meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
 <meta property="og:description" content="Flow é um static type checker criado pelo Facebook que ajuda bastante no desenvolvimento JS :D. Mais informações no site oficial.O Flow pode ser utilizado tanto como uma ferramenta CLI quanto integrad">
+<meta property="og:locale" content="pt-BR">
 <meta property="og:image" content="https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/flow-hero-logo.png">
 <meta property="og:updated_time" content="2016-03-12T19:55:32.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Aventuras com Flow + Atom (JavaScript)">
 <meta name="twitter:description" content="Flow é um static type checker criado pelo Facebook que ajuda bastante no desenvolvimento JS :D. Mais informações no site oficial.O Flow pode ser utilizado tanto como uma ferramenta CLI quanto integrad">
+<meta name="twitter:image" content="https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/flow-hero-logo.png">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -23,7 +26,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 <!-- Google Analytics -->
 <script type="text/javascript">
@@ -77,7 +80,7 @@ ga('send', 'pageview');
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
       </div>
     </div>
   </div>
@@ -87,7 +90,7 @@ ga('send', 'pageview');
         <section id="main"><article id="post-aventuras-com-flow-atom-javascript" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/12/aventuras-com-flow-atom-javascript/" class="article-date">
-  <time datetime="2016-03-12T19:55:31.000Z" itemprop="datePublished">12 Mar 2016</time>
+  <time datetime="2016-03-12T19:55:31.000Z" itemprop="datePublished">12 mar 2016</time>
 </a>
     
   <div class="article-category">
@@ -110,27 +113,27 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://flowtype.org/" target="_blank" rel="external">Flow</a> é um static type checker criado pelo Facebook que ajuda bastante no desenvolvimento JS :D. Mais informações no <a href="(http://flowtype.org/">site oficial</a>.<br>O Flow pode ser utilizado tanto como uma ferramenta CLI quanto integrado à IDEs. Veremos como usá-lo dentro do <a href="https://atom.io/" target="_blank" rel="external">Atom</a>.</p>
+        <p><a href="http://flowtype.org/" target="_blank" rel="noopener">Flow</a> é um static type checker criado pelo Facebook que ajuda bastante no desenvolvimento JS :D. Mais informações no <a href="(http://flowtype.org/">site oficial</a>.<br>O Flow pode ser utilizado tanto como uma ferramenta CLI quanto integrado à IDEs. Veremos como usá-lo dentro do <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>.</p>
 <p>O post segue o formato “receita-de-bolo” e é destinado ao “eu-do-futuro-que-esqueceu-isso”. Mas pode ser útil para terceiros que sabem o que é um static type checker e conheçam JavaScript :D.</p>
-<img src="/2016/03/12/aventuras-com-flow-atom-javascript/flow-hero-logo.png" alt="Flow" title="Flow">
+<img src="/2016/03/12/aventuras-com-flow-atom-javascript/flow-hero-logo.png" title="Flow">
 <a id="more"></a>
-<p>O suporte ao Flow dentro do Atom é mais completo utilizando o pacote <a href="http://nuclide.io/" target="_blank" rel="external">Nuclide</a> que é desenvolvido também pelo Facebook e visa oferecer um ótimo suporte às tecnologias da empresa (como React, react-native, flow, …). Portanto, instalaremos tanto o Flow quanto o Nuclide.</p>
+<p>O suporte ao Flow dentro do Atom é mais completo utilizando o pacote <a href="http://nuclide.io/" target="_blank" rel="noopener">Nuclide</a> que é desenvolvido também pelo Facebook e visa oferecer um ótimo suporte às tecnologias da empresa (como React, react-native, flow, …). Portanto, instalaremos tanto o Flow quanto o Nuclide.</p>
 <p>Nota: Atualmente o Flow não funciona em Windows. Apenas GNU/Linux e Mac. O Nuclide funciona apenas parcialmente em Windows.</p>
-<h2 id="Instalação">Instalação</h2><ol>
+<h2 id="Instalacao"><a href="#Instalacao" class="headerlink" title="Instalação"></a>Instalação</h2><ol>
 <li>Instalar Flow:<ol>
-<li>Baixar o binário em <a href="http://flowtype.org/" target="_blank" rel="external">http://flowtype.org/</a></li>
+<li>Baixar o binário em <a href="http://flowtype.org/" target="_blank" rel="noopener">http://flowtype.org/</a></li>
 <li>Extrair o pacote para um dir desejado. Ex: <code>unzip ./path/flow-linux64-v0.22.1.zip</code>. Pronto! Será criado o dir <code>flow</code> com o binário <code>flow</code> dentro.</li>
 <li>Basta agora criar um link do binário para <code>/usr/local/bin</code> ou de alguma outra forma inserir o binário no <code>$PATH</code> do <em>user</em> ou sistema.</li>
 </ol>
 </li>
 <li>(OPCIONAL) Instalar o Nuclide (apenas para uso no Atom):<ol>
 <li>Instale o pacote <code>nuclide</code> via interface do Atom.</li>
-<li>(OPCIONAL) É recomendado desabilitar o pacote <code>linter</code> (caso esteja instalado), deixando o Nuclide utilizar sua solução própria (<a href="https://github.com/facebook/nuclide/tree/master/pkg/nuclide/diagnostics" target="_blank" rel="external">nuclide-diagnostics</a>) e que é compatível com todos os plugins que dependem do <code>linter</code>.</li>
+<li>(OPCIONAL) É recomendado desabilitar o pacote <code>linter</code> (caso esteja instalado), deixando o Nuclide utilizar sua solução própria (<a href="https://github.com/facebook/nuclide/tree/master/pkg/nuclide/diagnostics" target="_blank" rel="noopener">nuclide-diagnostics</a>) e que é compatível com todos os plugins que dependem do <code>linter</code>.</li>
 </ol>
 </li>
 </ol>
-<p>Nota: A instalação do <code>nuclide</code> pode ser objeto de alguns cuidados posteriores para uma experiência mais completa: <a href="http://nuclide.io/docs/editor/setup/" target="_blank" rel="external">http://nuclide.io/docs/editor/setup/</a></p>
-<h2 id="Utilização">Utilização</h2><ul>
+<p>Nota: A instalação do <code>nuclide</code> pode ser objeto de alguns cuidados posteriores para uma experiência mais completa: <a href="http://nuclide.io/docs/editor/setup/" target="_blank" rel="noopener">http://nuclide.io/docs/editor/setup/</a></p>
+<h2 id="Utilizacao"><a href="#Utilizacao" class="headerlink" title="Utilização"></a>Utilização</h2><ul>
 <li><p>Para utilizarmos o flow necessitamos que o projeto atenda dois requisitos:</p>
 <ol>
 <li><p>Possuir um arquivo de configuração do flow (<code>.flowconfig</code>).</p>
@@ -140,32 +143,32 @@ ga('send', 'pageview');
 <li>Somente serão checados os arquivos JavaScript que possuam o comentário “<code>// @flow</code>“ no <strong>topo do arquivo</strong>. Isso permite utilizarmos o flow de forma incremental em projetos.</li>
 </ol>
 </li>
-<li><p>Para utilizar o flow via prompt, basta invocarmos no dir do projeto: <code>$ flow</code>. Se desejarmos um arquivo em específico: <code>$ flow arquivo.js</code>. Mais informações na <a href="http://flowtype.org/docs/cli.html#_" target="_blank" rel="external">documentação oficial</a>.</p>
+<li><p>Para utilizar o flow via prompt, basta invocarmos no dir do projeto: <code>$ flow</code>. Se desejarmos um arquivo em específico: <code>$ flow arquivo.js</code>. Mais informações na <a href="http://flowtype.org/docs/cli.html#_" target="_blank" rel="noopener">documentação oficial</a>.</p>
 </li>
 <li>Para utilizar o flow via Atom, tendo o projeto atendido as 2 necessidades elencadas acima, basta ter instalado o Nuclide.</li>
 </ul>
-<h2 id="Configuração">Configuração</h2><p>Saber configurar o <code>.flowconfig</code> é essencial para que o flow funcione de forma rápida e sem jogar uma avalanche de alertas caso suas dependências também sejam passíveis de análise pela ferramenta.</p>
+<h2 id="Configuracao"><a href="#Configuracao" class="headerlink" title="Configuração"></a>Configuração</h2><p>Saber configurar o <code>.flowconfig</code> é essencial para que o flow funcione de forma rápida e sem jogar uma avalanche de alertas caso suas dependências também sejam passíveis de análise pela ferramenta.</p>
 <p>Em meu caso, ao desenvolver utilizando o react-native houve sérios problemas de performance pois o <code>.flowconfig</code> oferecido varria todas as dependências do projeto. A solução foi ignorar os arquivos existentes em <code>projeto/node_modules</code> e adicionar interfaces para que o flow não reclamasse dos módulos importados de <code>node_modules</code> em meu código (e que o mesmo não estava apto a encontrar pois eu forçava que fossem ignorados).</p>
 <p>A configuração do <code>.flowconfig</code> foi feita da seguinte forma:</p>
 <ul>
 <li>Na seção <code>ignore</code> foi adicionado o dir <code>node_modules</code>:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ignore]&#10;&#10;.*/node_modules/*</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[ignore]</span><br><span class="line"></span><br><span class="line">.*/node_modules/*</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Na seção <code>libs</code> foi apontado o dir contendo as declarações de interfaces para módulos que o flow não irá encontrar (pq são códigos de terceiros localizados em <code>node_modules</code> que optamos por ignorar):</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[libs]&#10;flow-interfaces</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[libs]</span><br><span class="line">flow-interfaces</span><br></pre></td></tr></table></figure>
 <p>No dir <code>projeto/flow-interfaces</code> adicionamos o arquivo <code>react-native.js</code> com interface para o módulo <code>react-native</code>. O arquivo ficou assim:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare module &#34;react-native&#34; &#123;&#10;  declare var AppRegistry: any;&#10;  declare var Component: any;&#10;  declare var StyleSheet: any;&#10;  declare var Text: any;&#10;  declare var View: any;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>Essa é só uma passada superficial pelo <code>.flowconfig</code>, mais informações sobre o mesmo na <a href="http://flowtype.org/docs/advanced-configuration.html#_" target="_blank" rel="external">documentação oficial</a> e, mais especificamente, como lidar com código de terceiros <a href="http://flowtype.org/docs/third-party.html#_" target="_blank" rel="external">aqui</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">declare module &quot;react-native&quot; &#123;</span><br><span class="line">  declare var AppRegistry: any;</span><br><span class="line">  declare var Component: any;</span><br><span class="line">  declare var StyleSheet: any;</span><br><span class="line">  declare var Text: any;</span><br><span class="line">  declare var View: any;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Essa é só uma passada superficial pelo <code>.flowconfig</code>, mais informações sobre o mesmo na <a href="http://flowtype.org/docs/advanced-configuration.html#_" target="_blank" rel="noopener">documentação oficial</a> e, mais especificamente, como lidar com código de terceiros <a href="http://flowtype.org/docs/third-party.html#_" target="_blank" rel="noopener">aqui</a>.</p>
 <p>Ps: Atenção que se o <code>.flowconfig</code> possuir a sessão <code>[version]</code>, a versão do flow deve ser atendida, caso contrário o mesmo não será executado.</p>
-<h2 id="Links">Links</h2><ul>
-<li><a href="http://nuclide.io/" target="_blank" rel="external">Nuclide</a><ul>
-<li><a href="http://nuclide.io/docs/languages/flow/" target="_blank" rel="external">Nuclide | Flow </a>: Detalhes sobre a instalação e os recursos oferecidos pela combinação Nuclide + Flow.</li>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="http://nuclide.io/" target="_blank" rel="noopener">Nuclide</a><ul>
+<li><a href="http://nuclide.io/docs/languages/flow/" target="_blank" rel="noopener">Nuclide | Flow </a>: Detalhes sobre a instalação e os recursos oferecidos pela combinação Nuclide + Flow.</li>
 </ul>
 </li>
-<li><a href="http://flowtype.org/" target="_blank" rel="external">Flow</a><ul>
-<li><a href="http://flowtype.org/docs/troubleshooting.html" target="_blank" rel="external">Flow | Troubleshooting</a>: Problemas comuns encontrados ao usar o Flow e como resolvê-los.</li>
+<li><a href="http://flowtype.org/" target="_blank" rel="noopener">Flow</a><ul>
+<li><a href="http://flowtype.org/docs/troubleshooting.html" target="_blank" rel="noopener">Flow | Troubleshooting</a>: Problemas comuns encontrados ao usar o Flow e como resolvê-los.</li>
 </ul>
 </li>
 </ul>
@@ -179,7 +182,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/" data-id="cjdb436dx000rrhsx5hx4srq9" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/" data-id="cjfd2stju001eeasxbjtkfxbt" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -226,7 +229,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -235,7 +238,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -244,7 +247,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/astronomia/" style="font-size: 15px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 10px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 15px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 10px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 10px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
+      <a href="/tags/astronomia/" style="font-size: 15px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 12.5px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 15px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 12.5px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 10px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
     </div>
   </div>
 
@@ -253,7 +256,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">Fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">Junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">Março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">Janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">Setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">Julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">Maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">Abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">Março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -263,6 +266,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/">Gravando playback de áudios no GNU/Linux</a>
+          </li>
         
           <li>
             <a href="/2018/02/06/constelacao-de-orion-e-nebulosa-de-orion/">Constelação de Órion e Nebulosa de Órion</a>
@@ -278,10 +285,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2016/03/12/aventuras-com-flow-atom-javascript/">Aventuras com Flow + Atom (JavaScript)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/">screenFetch: Info do sistema em ASCII e com estilo</a>
           </li>
         
       </ul>
@@ -330,11 +333,11 @@ ga('send', 'pageview');
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

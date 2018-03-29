@@ -6,11 +6,13 @@
   <title>Instalando Debian Jessie usando criptografia de disco | $ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de">
+<meta name="keywords" content="debian,criptografia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instalando Debian Jessie usando criptografia de disco">
 <meta property="og:url" content="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/index.html">
-<meta property="og:site_name" content="$ls /home/felipehw">
+<meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
 <meta property="og:description" content="O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de">
+<meta property="og:locale" content="pt-BR">
 <meta property="og:image" content="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png">
 <meta property="og:image" content="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-graphical_install.png">
 <meta property="og:image" content="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-select_a_language.png">
@@ -24,6 +26,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Instalando Debian Jessie usando criptografia de disco">
 <meta name="twitter:description" content="O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de">
+<meta name="twitter:image" content="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -31,7 +34,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 <!-- Google Analytics -->
 <script type="text/javascript">
@@ -85,7 +88,7 @@ ga('send', 'pageview');
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
       </div>
     </div>
   </div>
@@ -95,7 +98,7 @@ ga('send', 'pageview');
         <section id="main"><article id="post-instalando-debian-jessie-usando-criptografia-de-disco" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" class="article-date">
-  <time datetime="2015-02-28T20:27:02.000Z" itemprop="datePublished">28 Fev 2015</time>
+  <time datetime="2015-02-28T20:27:02.000Z" itemprop="datePublished">28 fev 2015</time>
 </a>
     
   <div class="article-category">
@@ -122,20 +125,20 @@ ga('send', 'pageview');
 <p>A melhor maneira de se prevenir contra <del>perca</del> perda ou roubo é criptografando os dados e para tanto optei em instalar o Debian numa partição completamente criptografada. Assim … nem a PF consegue os dados :D.</p>
 <p>O post <strong>não</strong> é indicado para quem nunca instalou um GNU/Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.</p>
 <p>A versão do Debian que optei é a Jessie (v8), ela está quase saindo do forno (é <strong>testing</strong> mas está em <em>freeze</em>, portanto só aceita correção de bugs). Existem pouquíssimos bugs nela (me deparei mais com eles na instalação do que no uso do dia-a-dia) e certamente o que está aqui valerá para a versão final que sairá em algumas semanas.</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png" alt="Jessie - Mascote do Debian 8" title="Jessie - Mascote do Debian 8">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png" title="Jessie - Mascote do Debian 8">
 <a id="more"></a>
 <p><strong>Bom, vamos lá:</strong></p>
-<h2 id="0-_Backup_dos_dados_existentes_(disco_será_integralmente_utilizado)">0. Backup dos dados existentes (disco será integralmente utilizado)</h2><p>O passo zero não será descrito e depende de cada um. O instalador do Debian automatiza o processo de formatar, particionar e configurar a criptografia em disco desde que optemos por instalá-lo usando inteiramente um disco. Portanto, faça um backup dos dados e deixe o disco pronto para a instalação.</p>
+<h2 id="0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado"><a href="#0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado" class="headerlink" title="0. Backup dos dados existentes (disco será integralmente utilizado)"></a>0. Backup dos dados existentes (disco será integralmente utilizado)</h2><p>O passo zero não será descrito e depende de cada um. O instalador do Debian automatiza o processo de formatar, particionar e configurar a criptografia em disco desde que optemos por instalá-lo usando inteiramente um disco. Portanto, faça um backup dos dados e deixe o disco pronto para a instalação.</p>
 <p>Caso não desejes reservar um disco inteiro para o Debian, é plenamente possível instalá-lo em apenas uma parte do disco com criptografia e etc. (o sobrenome do GNU/Linux é configurabilidade) mas não será coberto nesse post :P.</p>
-<h2 id="1-_Download_da_imagem_do_Debian:">1. Download da imagem do Debian:</h2><p>Primeiro baixe uma imagem do Debian Jessie em <a href="https://www.debian.org/CD/http-ftp/" target="_blank" rel="external">https://www.debian.org/CD/http-ftp/</a> e grave numa pendrive (ou CD/DVD - alguém usa isso?).</p>
-<p>No momento que escrevo o Jessie é testing, portanto é o link <a href="http://cdimage.debian.org/cdimage/weekly-builds/" target="_blank" rel="external">Official CD/DVD images of the “testing” distribution (regenerated weekly)</a> mas em breve será o link <a href="https://www.debian.org/CD/http-ftp/#stable" target="_blank" rel="external">Official CD/DVD images of the “stable” release</a>.</p>
-<h2 id="2-_Instalando_c/_criptografia:">2. Instalando c/ criptografia:</h2><p>Reinicie a máquina com a pendrive espetada e siga as seguintes opções:</p>
+<h2 id="1-Download-da-imagem-do-Debian"><a href="#1-Download-da-imagem-do-Debian" class="headerlink" title="1. Download da imagem do Debian:"></a>1. Download da imagem do Debian:</h2><p>Primeiro baixe uma imagem do Debian Jessie em <a href="https://www.debian.org/CD/http-ftp/" target="_blank" rel="noopener">https://www.debian.org/CD/http-ftp/</a> e grave numa pendrive (ou CD/DVD - alguém usa isso?).</p>
+<p>No momento que escrevo o Jessie é testing, portanto é o link <a href="http://cdimage.debian.org/cdimage/weekly-builds/" target="_blank" rel="noopener">Official CD/DVD images of the “testing” distribution (regenerated weekly)</a> mas em breve será o link <a href="https://www.debian.org/CD/http-ftp/#stable" target="_blank" rel="noopener">Official CD/DVD images of the “stable” release</a>.</p>
+<h2 id="2-Instalando-c-criptografia"><a href="#2-Instalando-c-criptografia" class="headerlink" title="2. Instalando c/ criptografia:"></a>2. Instalando c/ criptografia:</h2><p>Reinicie a máquina com a pendrive espetada e siga as seguintes opções:</p>
 <ul>
 <li><p>Ao iniciar a imagem de instalação, escolha <em>Graphical install</em>:</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-graphical_install.png" alt="Início da instalação do Debian Jessie" title="Início da instalação do Debian Jessie">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-graphical_install.png" title="Início da instalação do Debian Jessie">
 </li>
 <li><p>Selecione como linguaguem “Português Brasil” e na sequência a localidade como “Brasil”:</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-select_a_language.png" alt="Select a language" title="Select a language">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-select_a_language.png" title="Select a language">
 </li>
 <li><p>Na próxima tela (“Configure o teclado”) escolha o teclado apropriado. “Português brasileiro” para teclado ABNT (com cedilha) ou “Inglês americano” para teclado sem cedilha.</p>
 </li>
@@ -162,18 +165,18 @@ ga('send', 'pageview');
 <p>Depois de configurar a forma de acesso à rede é só informar o “Nome da máquina” (qualquer um) e o “Nome de domínio” (se não souber/tiver, qualquer um).</p>
 </li>
 <li><p>O próximo passo é configurar usuários e senhas (tela “Configurar usuários e senhas”). Defina a senha do root bem como login e senha de um usuário normal:</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-configurar_usuarios_e_senhas.png" alt="Configurar usuários e senhas" title="Configurar usuários e senhas">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-configurar_usuarios_e_senhas.png" title="Configurar usuários e senhas">
 </li>
 <li><p>Na tela “Configurar o relógio”, defina o fuso horário correto escolhendo seu estado na lista (ex: “Santa Catarina”).</p>
 </li>
 <li><p>Finalmente, chegamos à tela do particionador de discos:</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-particionar_discos.png" alt="Particionar discos" title="Particionar discos">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-particionar_discos.png" title="Particionar discos">
 <p>É aqui que definiremos que o sistema operacional seja instalado num sistema de arquivo sob criptografia. Iremos utilizar um disco inteiro (portanto, apagaremos qualquer coisa que exista nele)</p>
 <p>Siga os seguintes passos:</p>
 <ol>
 <li>Escolha “Assistido - usar disco todo e LVM criptografado”</li>
 <li>Selecione o disco a ser formatado e particionado (escolhi o disco <code>sda</code>).</li>
-<li>Na tela “Esquema de particionamento” escolha “Todos os arquivos em uma partição (para iniciantes)” pois como estamos usando <a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29" target="_blank" rel="external">LVM</a> é fácil redimensionar depois e criar as partições desejadas (post futuro).</li>
+<li>Na tela “Esquema de particionamento” escolha “Todos os arquivos em uma partição (para iniciantes)” pois como estamos usando <a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29" target="_blank" rel="noopener">LVM</a> é fácil redimensionar depois e criar as partições desejadas (post futuro).</li>
 <li>Responda “Sim” à pergunta “Gravar as mudanças nos discos e configurar LVM?”.<br>O disco será sobrescrito com dados aleatório para aumentar a segurança (dificulta diferenciar o que possui dados do que ainda está vazio).</li>
 <li>Agora é solicitada uma “frase criptográfica” para desbloquear o disco sempre que o sistema <em>bootar</em>. Atenção, se você esquecer essa senha … adeus dados :D.</li>
 <li>Finalmente, confirme tudo escolhendo a opção “Finalizar o particionamento e escrever as mudanças no disco” e depois respondendo “Sim” à pergunta “Escrever as mudanças nos discos?”.<br>As partições serão criadas e o sistema básico instalado.</li>
@@ -188,7 +191,7 @@ ga('send', 'pageview');
 <li><p>Na tela “Configurando popularity-contest” podemos optar por enviar dados anônimos sobre os pacotes instalados. Essa informação é usada para decidir os pacotes que são colocados no primeiro CD da distribuição.</p>
 </li>
 <li><p>Na tela “Seleção de software” podemos escolher coleções de software para serem instaladas além do sistema básico. Na dúvida, a seleção padrão possui o necessário para ambientes desktop.</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-selecao_de_software.png" alt="Seleção de software" title="Seleção de software">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-selecao_de_software.png" title="Seleção de software">
 </li>
 <li><p>Por fim na tela “Instalar o carregador de inicialização GRUB em um disco rígido”:</p>
 <ol>
@@ -197,43 +200,43 @@ ga('send', 'pageview');
 </ol>
 </li>
 <li><p>Pronto, basta reiniciar o sistema:</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-instalacao_completada.png" alt="Instalação completada" title="Instalação completada">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-instalacao_completada.png" title="Instalação completada">
 </li>
 <li><p>No boot será pedido a “frase criptográfica” (sem ela é impossível acessar os dados da partição):</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-pedindo_frase_criptografica.png" alt="Debian pedindo frase criptográfica no boot" title="Debian pedindo frase criptográfica no boot">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-pedindo_frase_criptografica.png" title="Debian pedindo frase criptográfica no boot">
 </li>
 <li><p>Após o boot, eis o GNOME do Debian Jessie em toda sua glória (e com a merecida segurança oferecida pela criptografia):</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-desktop.png" alt="GNOME no Debian Jessie" title="GNOME no Debian Jessie">
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-desktop.png" title="GNOME no Debian Jessie">
 </li>
 </ul>
-<h2 id="Extras">Extras</h2><h3 id="Firmwares"><span id="firmwares">Firmwares</span></h3><ul>
+<h2 id="Extras"><a href="#Extras" class="headerlink" title="Extras"></a>Extras</h2><h3 id="Firmwares"><a href="#Firmwares" class="headerlink" title="Firmwares"></a><span id="firmwares">Firmwares</span></h3><ul>
 <li><p>Para conseguir exatamente os firmwares faltando:</p>
 <ol>
-<li>Pesquise pelos arquivos de firmware mencionados pelo instalador no site <a href="https://www.debian.org/distrib/packages" target="_blank" rel="external">Debian — Packages</a>, por meio do instrumento de busca “Search the contents of packages”. Será indicado o pacote .deb contendo o firmware.</li>
+<li>Pesquise pelos arquivos de firmware mencionados pelo instalador no site <a href="https://www.debian.org/distrib/packages" target="_blank" rel="noopener">Debian – Packages</a>, por meio do instrumento de busca “Search the contents of packages”. Será indicado o pacote .deb contendo o firmware.</li>
 <li>Realize o download do pacote.</li>
 <li>Copie o pacote para o diretório raiz de um pendrive formatado em FAT.</li>
 <li>Insira a pendrive quando solicitada durante a instalação.</li>
 </ol>
 <p>No caso dos arquivos <code>rtlwifi/rtl8723befw.bin</code> e <code>rtl_nic/rtl8411-1.fw</code>, ambos estavam no pacote <code>firmware-realtek</code>.<br>No caso do arquivo <code>iwlwifi-6000g2b-6.ucode</code>, está no pacote <code>firmware-iwlwifi</code>.</p>
 </li>
-<li><p>Para baixar num único arquivo os pacotes .debs contendo os firmwares mais populares, basta fazer o download do arquivo compactado correspondente ao release da distribuição em <a href="http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/" target="_blank" rel="external">http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a>. Aí é só extrair seu conteúdo para uma pendrive e seguir os passos acima.</p>
+<li><p>Para baixar num único arquivo os pacotes .debs contendo os firmwares mais populares, basta fazer o download do arquivo compactado correspondente ao release da distribuição em <a href="http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/" target="_blank" rel="noopener">http://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a>. Aí é só extrair seu conteúdo para uma pendrive e seguir os passos acima.</p>
 </li>
 <li><p>Opcionalmente, os pacotes contendo os firmwares podem ser instalados manualmente após a instalação. (No meu caso, os pacotes <code>firmware-realtek_0.43_all.deb</code> e <code>firmware-iwlwifi</code>)</p>
 </li>
-<li><p>Mais info: <a href="https://www.debian.org/releases/stable/amd64/ch06s04.html.en" target="_blank" rel="external">6.4. Loading Missing Firmware</a></p>
+<li><p>Mais info: <a href="https://www.debian.org/releases/stable/amd64/ch06s04.html.en" target="_blank" rel="noopener">6.4. Loading Missing Firmware</a></p>
 </li>
 </ul>
-<h3 id="Bugs,_etc-">Bugs, etc.</h3><p>Os bugs que encontrei durante a instalação seguem abaixo. Lembre-se que o Jessie está na reta final e esses bugs provavelmente estarão corrigidos à tempo do lançamento. Ainda assim, vale lembrar que não topei com bugs após a instalação.</p>
+<h3 id="Bugs-etc"><a href="#Bugs-etc" class="headerlink" title="Bugs, etc."></a>Bugs, etc.</h3><p>Os bugs que encontrei durante a instalação seguem abaixo. Lembre-se que o Jessie está na reta final e esses bugs provavelmente estarão corrigidos à tempo do lançamento. Ainda assim, vale lembrar que não topei com bugs após a instalação.</p>
 <ul>
 <li>Não funcionou o touchpad durante a instalação (após a instalação, sim).</li>
-<li>Após configurar os discos com a opção “Assistido - usar o disco todo e LVM criptografado”, não posso voltar para configurar mais nada relacionado à discos pois dessa forma o instalador fará configurações erradas que após a instalação inviabilizarão o boot sem intervenção manual. Parece semelhante ao problema relatado em <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739299" target="_blank" rel="external">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739299</a>.</li>
+<li>Após configurar os discos com a opção “Assistido - usar o disco todo e LVM criptografado”, não posso voltar para configurar mais nada relacionado à discos pois dessa forma o instalador fará configurações erradas que após a instalação inviabilizarão o boot sem intervenção manual. Parece semelhante ao problema relatado em <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739299" target="_blank" rel="noopener">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739299</a>.</li>
 <li>Não consegui instalar os firmwares a partir de mídia removível durante a instalação, acabei instalando os pacotes .deb contendo os firmwares manualmente após a instalação.</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" data-id="cjdb436hb003rrhsx41so3gni" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/" data-id="cjfd2stij0002easxiebhhmr2" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -280,7 +283,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -289,7 +292,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -298,7 +301,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/astronomia/" style="font-size: 15px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 10px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 15px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 10px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 10px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
+      <a href="/tags/astronomia/" style="font-size: 15px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 12.5px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 15px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 12.5px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 10px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
     </div>
   </div>
 
@@ -307,7 +310,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">Fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">Junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">Março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">Janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">Outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">Setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">Agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">Julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">Maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">Abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">Março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">Fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -317,6 +320,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/">Gravando playback de áudios no GNU/Linux</a>
+          </li>
         
           <li>
             <a href="/2018/02/06/constelacao-de-orion-e-nebulosa-de-orion/">Constelação de Órion e Nebulosa de Órion</a>
@@ -332,10 +339,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2016/03/12/aventuras-com-flow-atom-javascript/">Aventuras com Flow + Atom (JavaScript)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/">screenFetch: Info do sistema em ASCII e com estilo</a>
           </li>
         
       </ul>
@@ -384,11 +387,11 @@ ga('send', 'pageview');
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>
