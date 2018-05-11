@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: pirataria | $ls /home/felipehw</title>
+  <title>Criando lindos PDFs a partir de livros ou xerox | $ls /home/felipehw</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="free software, free culture, copyleft, etc.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="$ls &#x2F;home&#x2F;felipehw">
-<meta property="og:url" content="https://felipehw.github.io/tags/pirataria/index.html">
+  <meta name="description" content="Quem nunca foi salvo por um PDF para estudar na universidade? Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseir">
+<meta name="keywords" content="compartilhamento,pirataria,universidade,humanas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Criando lindos PDFs a partir de livros ou xerox">
+<meta property="og:url" content="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/index.html">
 <meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
-<meta property="og:description" content="free software, free culture, copyleft, etc.">
+<meta property="og:description" content="Quem nunca foi salvo por um PDF para estudar na universidade? Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseir">
 <meta property="og:locale" content="pt-BR">
+<meta property="og:image" content="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg">
+<meta property="og:updated_time" content="2018-05-11T20:11:59.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="$ls &#x2F;home&#x2F;felipehw">
-<meta name="twitter:description" content="free software, free culture, copyleft, etc.">
+<meta name="twitter:title" content="Criando lindos PDFs a partir de livros ou xerox">
+<meta name="twitter:description" content="Quem nunca foi salvo por um PDF para estudar na universidade? Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseir">
+<meta name="twitter:image" content="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg">
   
     <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
@@ -83,9 +87,7 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/" class="article-date">
   <time datetime="2018-05-11T20:11:59.000Z" itemprop="datePublished">11 mai 2018</time>
@@ -102,8 +104,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/">Criando lindos PDFs a partir de livros ou xerox</a>
+    <h1 class="article-title" itemprop="name">
+      Criando lindos PDFs a partir de livros ou xerox
     </h1>
   
 
@@ -115,11 +117,142 @@ ga('send', 'pageview');
 <p>Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseiras e desfocadas de um xerox de 2 páginas lado-a-lado até aqueles que cada página está visível e bem enquadrada (para ler num e-reader) e podemos selecionar/copiar/colar o texto com o mouse.</p>
 <p>Veremos aqui como fazer PDFs desse último tipo.</p>
 <img src="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg" title="Imagem genérica de alguém estudando num e-reader.">
-        
-          <p class="article-more-link">
-            <a href="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/#more">Read More</a>
-          </p>
-        
+<a id="more"></a>
+<p>Não é difícil nem muito trabalhoso fazer bons PDFs, mas como daremos preferência, em primeiro lugar, à software livre, e, em segundo e desesperado lugar, ao software grátis, nosso fluxo de trabalho será dividido entre GNU/Linux e Android.</p>
+<p>No GNU/Linux iremos escanear, recortar e montar o PDF (usando apenas ferramentas livres).</p>
+<p>Infelizmente, não conheço uma boa ferramenta de OCR (<strong>O</strong> ptical <strong>C</strong> haracter <strong>R</strong> ecognition) para GNU/Linux. A consequência é que podemos fazer nesse sistema operacional um PDF de lindas páginas bem recortadas mas não um PDF que maravilhosamente reconheça/selecione/copie/cole linhas de texto.</p>
+<p>Portanto, a parte do OCR será feita via Android. Se você não faz questão de selecionar/copiar/colar o texto, pode ignorar a parte do Android.</p>
+<h1 id="0-Pre-requisitos"><a href="#0-Pre-requisitos" class="headerlink" title="0. Pré-requisitos"></a>0. Pré-requisitos</h1><ol>
+<li>Computador com GNU/Linux.</li>
+<li>Scanner.</li>
+<li>Smartphone com Android.</li>
+</ol>
+<h1 id="1-Escaneando-via-GNU-Linux"><a href="#1-Escaneando-via-GNU-Linux" class="headerlink" title="1. Escaneando (via GNU/Linux)"></a>1. Escaneando (via GNU/Linux)</h1><p>O aplicativo utilizado será o software livre <em>gscan2pdf</em>.</p>
+<ol>
+<li><p>Após abrir o aplicativo, vá em “Arquivo” → “Digitalizar”.</p>
+
+</li>
+<li><p>Utilize as seguintes configurações:</p>
+<ul>
+<li>Em “Modo de digitalização”:<ul>
+<li>“Modo de digitalização”: “Linhas”</li>
+<li>“Resolução de digitalização”: “300” dpi <em>(é a resolução recomendada para OCR)</em></li>
+</ul>
+</li>
+<li>Em “Opções de página”:<ul>
+<li>Em “Pós-processamento”, mantenha desmarcada a opção “Imagens digitalizadas com OCR” (faremos isso de forma superior via Android).</li>
+<li>Em “Pós-processamento”, se desejado, as imagens podem ser automaticamente rotacionadas em “Girar”. (Algo opcional, pois podem ser rotacionadas posteriormente).</li>
+<li>Se desejado, salve a presente configuração em “Perfis de digitalização” com um nome do tipo “Texto sem OCR”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pressione “Digitalizar” e escaneie todas as páginas desejadas.</p>
+
+<p>Caso tenhas escaneado 2 páginas de cada vez (lado-a-lado) ou, simplesmente, que deseje recortar a página para um tamanho menor … podemos usar a ferramenta “Cortar”. No primeiro caso, é importante recortar para que o OCR analise o conteúdo de texto de cada página sem misturar as páginas. E em ambos os casos, é vantajoso recortar para que o conteúdo caiba em pequenos dispositivos (como leitores de ebook).</p>
+</li>
+<li><p><em>[OPCIONAL]</em> Recortando as páginas todas com o mesmo tamanho:</p>
+<p>Há duas situações em que recortar as páginas é extremamente útil.<br>A primeira é quando o material escaneado é composto por folhas contendo duas páginas.<br>A segunda é quando a página possui grandes margens que tornam a leitura inadequada em e-readers.<br>Para ambos os casos, podemos seguir os passos abaixo:</p>
+<ol>
+<li><p><em>[OPCIONAL]</em> Caso exista mais de uma página por folha escaneada:<br>Vá na lista de folhas (coluna da esquerda) e com um “Ctrl + C”/“Ctrl + V” duplique as folhas.<br>Isso porque a página recortada substitui a folha escaneada … e se temos mais de uma página por folha, necessitaremos de tantas cópias de folha quanto páginas ela contenha.</p>
+</li>
+<li><p>Vá em “Visualizar” → “Selecionar” e faça um molde de corte que acomode de forma “justa” a página.<br><em>[DICA]</em> Escolha uma página de texto padrão para usar seu futuro corte como molde para todas as páginas.<br>(Normalmente, páginas de capa, sumário, etc., não são bons moldes. Páginas de texto de meio de capítulo são boas pois usam todo o espaço possível e, portanto, não corremos risco de fazer um molde de corte menor que o necessário.)</p>
+
+</li>
+<li><p>Vá em “Ferramentas” → “Cortar”:</p>
+<ol>
+<li>“Seleção de páginas” → “Selecionado”.</li>
+<li>Pressione “Aplicar”. Pronto!</li>
+</ol>
+
+<ul>
+<li>Caso o corte seja exatamente o mesmo em diversas folhas:<br>basta selecionar todas as folhas desejadas antes de utilizar a ferramenta “Cortar”.</li>
+<li>Caso o corte algo seja diferente em cada página:<br>Pelo menos, cortamos a primeira de nossas páginas e temos um molde!<br>Para as próximas páginas:<ol>
+<li>Clique na próxima página da lista.</li>
+<li>Acomode o molde de corte na área desejada.</li>
+<li>Repita o passo de ir em “Ferramentas” → “Cortar”, “Aplicar”.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Salvando</p>
+<ul>
+<li>Se não necessitamos de OCR:<br>basta salvarmos o PDF e pronto (já pode aproveitar o dia)!<br>Vá em “Arquivo” → “Salvar”:<ol>
+<li>“Seleção de páginas” → “Todos”</li>
+<li>“Tipo de imagem”: “PDF”</li>
+<li>[OPCIONAL] “Document Metadata”: Preencha os dados desejados (útil para uso em e-readers)</li>
+<li>Pressione “Salvar”</li>
+</ol>
+</li>
+<li>Se necessitamos de OCR:<br>salvaremos todas as páginas no formato “PNG” para continuar no Android (próxima  seção).<ol>
+<li>“Seleção de páginas” → “Todos”</li>
+<li>“Tipo de imagem”: “PNG”  </li>
+<li>Pressione “Salvar”
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="2-OCR-via-Android"><a href="#2-OCR-via-Android" class="headerlink" title="2. OCR (via Android)"></a>2. OCR (via Android)</h1><p>O aplicativo utilizado será o software proprietário mas grátis <a href="https://play.google.com/store/apps/details?id=com.adobe.scan.android&amp;hl=en" target="_blank" rel="noopener">Adobe Scan</a>.</p>
+<ol>
+<li>Torne os PNGs acessíveis para seu Android.<br>Eu fiz isso via Google Drive, mas podemos simplesmente copiar as fotos via cabo USB, etc.</li>
+<li>Abra o aplicativo <em>Adobe Scan</em> e pressione “X” para sair do modo de captura de imagem.</li>
+<li>Vá em “Digitalizações”, “+”, “Digitalizar usando Fotos”, “Mostrar todas as fotos”. Localize os PNGs do texto e importe.<ul>
+<li>Antes de importar as imagens, ordene elas por ordem alfabética.</li>
+<li>Caso o texto tenha mais de 25 páginas, será necessário criar PDFs de 25 em 25 páginas e juntá-los depois no <em>gscan2pdf</em> (GNU/Linux). Isso pq a Adobe não permite utilizar OCRs para quantidades maiores de páginas.</li>
+<li>Provavelmente as páginas estarão fora de ordem, há um ícone na interface que permite ordenar manualmente. Opcionalmente, podemos abrir o PDF no <em>gscan2pdf</em> (GNU/Linux) e reordenar (para muitas páginas é mais prático e rápido).</li>
+</ul>
+</li>
+<li>Clique em “Salvar PDF”. Será gerado um PDF com OCR.<br>(Não esqueça de enviar o PDF para algum lugar ou acessá-lo via <a href="https://cloud.acrobat.com/recent" target="_blank" rel="noopener">https://cloud.acrobat.com/recent</a>)<ul>
+<li>Se seu PDF possui menos de 25 páginas e você ordenou as páginas no <em>Adobe Scan</em>, parabéns, é fim de caminho.</li>
+<li>Caso contrário, devemos fazer as últimas edições via no GNU/Linux.
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux"><a href="#3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux" class="headerlink" title="3. [OPCIONAL] Últimos ajustes (via GNU/Linux)"></a>3. <em>[OPCIONAL]</em> Últimos ajustes (via GNU/Linux)</h1><p><a name="ressalva-gscan2pdf"></a>Obs: O <em>gscan2pdf</em> também faz todas as funções listadas abaixo <strong>mas</strong> aparentemente os PDFs gerados no <em>Adobe Scan</em> tem algum grau de incompatibilidade com o mesmo e ao utilizarmos o <em>gscan2pdf</em> nesses arquivos ocorre uma piora do OCR da Adobe (linhas ficam levemente deslocadas, quebras de linhas inesperadas, etc.). Por isso, recomendo evitarem o <em>gscan2pdf</em> e utilizarem as ferramentas abordadas abaixo.</p>
+<h2 id="3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas"><a href="#3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas" class="headerlink" title="3.1. [OPCIONAL] Reorganizando a ordem das páginas"></a>3.1. <em>[OPCIONAL]</em> Reorganizando a ordem das páginas</h2><p>Caso seu texto esteja com as páginas fora de ordem:</p>
+<h3 id="Com-o-PDF-Mod"><a href="#Com-o-PDF-Mod" class="headerlink" title="Com o PDF Mod"></a>Com o <em>PDF Mod</em></h3><p>Basta abrir o PDF e ir arrastando as páginas para a ordem desejada.</p>
+<h3 id="Com-o-gscan2pdf-veja-a-ressalva"><a href="#Com-o-gscan2pdf-veja-a-ressalva" class="headerlink" title="Com o gscan2pdf (veja a ressalva)"></a>Com o <em>gscan2pdf</em> (veja a <a href="#ressalva-gscan2pdf">ressalva</a>)</h3><ul>
+<li>para poucas páginas: arrastar e soltar na coluna da esquerda.</li>
+<li>para muitas páginas (e quando sabemos o número delas): definir o número de cada página.<br>Com isso, a página vai automaticamente para sua posição correta.<br>Para numerar uma página (ou várias), selecione na coluna da esquerda e com o botão direito do mouse escolha “Re-numerar”:<ol>
+<li>“Seleção de páginas” → “Selecionado”</li>
+<li>“Iniciar”: “Número da página”</li>
+<li>“Clique em Renumber”</li>
+</ol>
+</li>
+</ul>
+
+<h2 id="3-2-OPCIONAL-Juntando-PDFs"><a href="#3-2-OPCIONAL-Juntando-PDFs" class="headerlink" title="3.2. [OPCIONAL] Juntando PDFs"></a>3.2. <em>[OPCIONAL]</em> Juntando PDFs</h2><p>Caso seu texto possua mais de 25 páginas, a Adobe infelizmente exigiu que você gerasse mais de um PDF para utilizar o OCR deles. Então, vamos juntá-los! Faremos isso através do <em>PDF Mod</em>:</p>
+<p>Abra o último PDF no <em>PDF Mod</em> e vá adicionando os PDFs em ordem decrescente. Para adicionar um PDF: “Arquivo” → “Inserir de…”.</p>
+<p>Seguir a ordem decrescente é necessário porque cada novo PDF inserido tem suas páginas colocadas no início do PDF final.</p>
+<p>Pronto, temos todas as páginas reunidas e prontas para serem salvas num único PDF.</p>
+
+<p>Obs: O <em>gscan2pdf</em> também faz essa função porém temos essa <a href="#ressalva-gscan2pdf">ressalva</a>.</p>
+<h2 id="3-3-OPCIONAL-Recortando-as-paginas"><a href="#3-3-OPCIONAL-Recortando-as-paginas" class="headerlink" title="3.3.[OPCIONAL] Recortando as páginas"></a>3.3.<em>[OPCIONAL]</em> Recortando as páginas</h2><p>Sim, ensinamos como recortar páginas acima com o <em>gscan2pdf</em> (já falei na <a href="#ressalva-gscan2pdf">ressalva</a>?). Ensinaremos aqui a fazer o mesmo com uma ferramenta alternativa chamada <em>PDF-Shuffler</em> (também é software livre).</p>
+<p>A maior motivação para usar essa ferramenta é que ela é muito mais rápida para abrir PDFs com grande quantidades de páginas (casos em que o <em>gscan2pdf</em> demora muito e pode até travar).</p>
+<p>O crop é prático especialmente quando todas as páginas tem as mesmas regiões em branco. Pode-se aplicar um mesmo crop a todas as páginas desejadas. É prática para xerox contendo 2 páginas por folha (primeiro aplicamos um crop de “50% à direita” para pegarmos a página da esquerda, depois um crop de “50% à esquerda” para pegarmos a página da direita).</p>
+<p>Como fazer:</p>
+<ol>
+<li>Abra o arquivo no “PDF-Shuffler”.</li>
+<li>A opção está em <code>Edit</code> → <code>Crop</code>.<br>Embora não possua preview antes da operação, podemos ver se o resultado agradou e caso negativo, reaplicar a operação (pois essa não é cumulativa - aka, um crop posterior substitui o anterior).</li>
+</ol>
+
+<p>Obs: Os metadados serão apagados ao salvar. Teremos de usar uma ferramenta como o <em>PDF Mod</em> para adicionar novamente os metadados.</p>
+<h2 id="3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave"><a href="#3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave" class="headerlink" title="3.4. [OPCIONAL] Definindo metadados (Título, Autor, Assunto, Palavra-chave)"></a>3.4. <em>[OPCIONAL]</em> Definindo metadados (Título, Autor, Assunto, Palavra-chave)</h2><p>Podemos utilizar o software livre <em>PDF Mod</em> para definir os metadados. Com ele podemos editar os metadados: Título, Autor, Palavras-chave, Assunto.</p>
+<p>Isso é muito útil quanto temos um PDF com metadados incorretos e que por isso dificultam seu uso em e-readers.</p>
+<p>Para isso, basta:</p>
+<ol>
+<li>Abra o arquivo no “PDF Mod”.</li>
+<li>A opção está em <code>Arquivo</code> → <code>Propriedades</code>.</li>
+</ol>
+
+<p>(Outra alternativa mais flexível e poderosa que o <em>PDF Mod</em> é o utilitário de linha de comando <em>exiftool</em>, mas isso fica para outro post.<br>Ah, um exemplo rápido: <code>$ exiftool -Title=&quot;As estrelas descem à Terra&quot; -Author=&quot;Theodor W Adorno&quot; -Subject=&quot;Sociology&quot; -Keywords=&quot;Sociology, Astrology&quot; Livro_do_Adorno.pdf</code>)</p>
+<h1 id="Conclusao"><a href="#Conclusao" class="headerlink" title="Conclusão"></a>Conclusão</h1><p>Com o passo-a-passo acima temos os meios para gerar bons PDFs sem gastar nenhum tostão.<br>Eles são adequados para ler em e-readers e para marcarmos o texto com anotações e destaques.</p>
+
       
     </div>
     <footer class="article-footer">
@@ -133,112 +266,26 @@ ga('send', 'pageview');
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-gravando-playback-de-audios-no-gnu-linux" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/" class="article-date">
-  <time datetime="2018-03-29T22:13:22.000Z" itemprop="datePublished">29 mar 2018</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cultura-livre/">cultura livre</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/">Gravando playback de áudios no GNU/Linux</a>
-    </h1>
+    <a href="/2018/05/09/habilitando-a-lixeira-em-outras-particoes/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GNU/Linux e lixeiras (Lixeira em outras partições, etc.)</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Essa dica é especialmente útil quando desejamos gravar áudios que, por algum motivo alheio a nossa vontade, podemos escutar via computador mas não podemos salvar o mesmo num arquivo de áudio.</p>
-<img src="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/audiobooks_min.jpg" title="Imagem de audiobook.">
-        
-          <p class="article-more-link">
-            <a href="/2018/03/29/gravando-playback-de-audios-no-gnu-linux/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/" data-id="cjh2ee6qe001m45sxfblk7lns" class="article-share-link">Share</a>
-      
-        <a href="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compartilhamento/">compartilhamento</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pirataria/">pirataria</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
 
-  
-    <article id="post-torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/" class="article-date">
-  <time datetime="2015-03-24T01:29:26.000Z" itemprop="datePublished">23 mar 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/cultura-livre/">cultura livre</a>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/">Torrent profissa: gerenciamento remoto e servidor de compartilhamento 24hs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>O <a href="http://www.transmissionbt.com" target="_blank" rel="noopener">Transmission</a> é um cliente de torrent bastante conhecido no mundo GNU/Linux. Entretanto, há muitas pessoas que desconhecem que ele pode ser usado como um serviço (daemon) subindo sempre que a máquina está ligada e sem necessitar de interface gráfica para gerenciá-lo (pode ser gerenciado remotamente via browser, cli, gtk, etc.).</p>
-<p>Se combinamos o serviço do Transmission com um <a href="http://www.raspberrypi.org/" target="_blank" rel="noopener">Raspberry Pi</a> baratinho, temos um servidor de compartilhar <del>pirataria</del> cultura 24 horas por dia que pode ser acessado remotamente via browser e gastando um ínfimo de energia.</p>
-<img src="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/copying_is_not_theft_min.jpg" title="Copying Is Not Theft - Nina Paley">
-        
-          <p class="article-more-link">
-            <a href="/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/" data-id="cjh2ee6p5000745sx75umh8t9" class="article-share-link">Share</a>
-      
-        <a href="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compartilhamento/">compartilhamento</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pirataria/">pirataria</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/torrent/">torrent</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
+</section>
 </section>
         
           <aside id="sidebar">
@@ -336,11 +383,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'felipehwgithubiogit';
   
+  var disqus_url = 'https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

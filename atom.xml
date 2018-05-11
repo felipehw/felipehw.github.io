@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2018-05-09T15:23:38.358Z</updated>
+  <updated>2018-05-11T20:11:59.551Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,172 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Criando lindos PDFs a partir de livros ou xerox]]></title>
+    <link href="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/"/>
+    <id>https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/</id>
+    <published>2018-05-11T20:11:59.000Z</published>
+    <updated>2018-05-11T20:11:59.551Z</updated>
+    <content type="html"><![CDATA[<p>Quem nunca foi salvo por um PDF para estudar na universidade?</p>
+<p>Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseiras e desfocadas de um xerox de 2 páginas lado-a-lado até aqueles que cada página está visível e bem enquadrada (para ler num e-reader) e podemos selecionar/copiar/colar o texto com o mouse.</p>
+<p>Veremos aqui como fazer PDFs desse último tipo.</p>
+<img src="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg" title="Imagem genérica de alguém estudando num e-reader.">
+<a id="more"></a>
+<p>Não é difícil nem muito trabalhoso fazer bons PDFs, mas como daremos preferência, em primeiro lugar, à software livre, e, em segundo e desesperado lugar, ao software grátis, nosso fluxo de trabalho será dividido entre GNU/Linux e Android.</p>
+<p>No GNU/Linux iremos escanear, recortar e montar o PDF (usando apenas ferramentas livres).</p>
+<p>Infelizmente, não conheço uma boa ferramenta de OCR (<strong>O</strong> ptical <strong>C</strong> haracter <strong>R</strong> ecognition) para GNU/Linux. A consequência é que podemos fazer nesse sistema operacional um PDF de lindas páginas bem recortadas mas não um PDF que maravilhosamente reconheça/selecione/copie/cole linhas de texto.</p>
+<p>Portanto, a parte do OCR será feita via Android. Se você não faz questão de selecionar/copiar/colar o texto, pode ignorar a parte do Android.</p>
+<h1 id="0-Pre-requisitos"><a href="#0-Pre-requisitos" class="headerlink" title="0. Pré-requisitos"></a>0. Pré-requisitos</h1><ol>
+<li>Computador com GNU/Linux.</li>
+<li>Scanner.</li>
+<li>Smartphone com Android.</li>
+</ol>
+<h1 id="1-Escaneando-via-GNU-Linux"><a href="#1-Escaneando-via-GNU-Linux" class="headerlink" title="1. Escaneando (via GNU/Linux)"></a>1. Escaneando (via GNU/Linux)</h1><p>O aplicativo utilizado será o software livre <em>gscan2pdf</em>.</p>
+<ol>
+<li><p>Após abrir o aplicativo, vá em “Arquivo” → “Digitalizar”.</p>
+
+</li>
+<li><p>Utilize as seguintes configurações:</p>
+<ul>
+<li>Em “Modo de digitalização”:<ul>
+<li>“Modo de digitalização”: “Linhas”</li>
+<li>“Resolução de digitalização”: “300” dpi <em>(é a resolução recomendada para OCR)</em></li>
+</ul>
+</li>
+<li>Em “Opções de página”:<ul>
+<li>Em “Pós-processamento”, mantenha desmarcada a opção “Imagens digitalizadas com OCR” (faremos isso de forma superior via Android).</li>
+<li>Em “Pós-processamento”, se desejado, as imagens podem ser automaticamente rotacionadas em “Girar”. (Algo opcional, pois podem ser rotacionadas posteriormente).</li>
+<li>Se desejado, salve a presente configuração em “Perfis de digitalização” com um nome do tipo “Texto sem OCR”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pressione “Digitalizar” e escaneie todas as páginas desejadas.</p>
+
+<p>Caso tenhas escaneado 2 páginas de cada vez (lado-a-lado) ou, simplesmente, que deseje recortar a página para um tamanho menor … podemos usar a ferramenta “Cortar”. No primeiro caso, é importante recortar para que o OCR analise o conteúdo de texto de cada página sem misturar as páginas. E em ambos os casos, é vantajoso recortar para que o conteúdo caiba em pequenos dispositivos (como leitores de ebook).</p>
+</li>
+<li><p><em>[OPCIONAL]</em> Recortando as páginas todas com o mesmo tamanho:</p>
+<p>Há duas situações em que recortar as páginas é extremamente útil.<br>A primeira é quando o material escaneado é composto por folhas contendo duas páginas.<br>A segunda é quando a página possui grandes margens que tornam a leitura inadequada em e-readers.<br>Para ambos os casos, podemos seguir os passos abaixo:</p>
+<ol>
+<li><p><em>[OPCIONAL]</em> Caso exista mais de uma página por folha escaneada:<br>Vá na lista de folhas (coluna da esquerda) e com um “Ctrl + C”/“Ctrl + V” duplique as folhas.<br>Isso porque a página recortada substitui a folha escaneada … e se temos mais de uma página por folha, necessitaremos de tantas cópias de folha quanto páginas ela contenha.</p>
+</li>
+<li><p>Vá em “Visualizar” → “Selecionar” e faça um molde de corte que acomode de forma “justa” a página.<br><em>[DICA]</em> Escolha uma página de texto padrão para usar seu futuro corte como molde para todas as páginas.<br>(Normalmente, páginas de capa, sumário, etc., não são bons moldes. Páginas de texto de meio de capítulo são boas pois usam todo o espaço possível e, portanto, não corremos risco de fazer um molde de corte menor que o necessário.)</p>
+
+</li>
+<li><p>Vá em “Ferramentas” → “Cortar”:</p>
+<ol>
+<li>“Seleção de páginas” → “Selecionado”.</li>
+<li>Pressione “Aplicar”. Pronto!</li>
+</ol>
+
+<ul>
+<li>Caso o corte seja exatamente o mesmo em diversas folhas:<br>basta selecionar todas as folhas desejadas antes de utilizar a ferramenta “Cortar”.</li>
+<li>Caso o corte algo seja diferente em cada página:<br>Pelo menos, cortamos a primeira de nossas páginas e temos um molde!<br>Para as próximas páginas:<ol>
+<li>Clique na próxima página da lista.</li>
+<li>Acomode o molde de corte na área desejada.</li>
+<li>Repita o passo de ir em “Ferramentas” → “Cortar”, “Aplicar”.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Salvando</p>
+<ul>
+<li>Se não necessitamos de OCR:<br>basta salvarmos o PDF e pronto (já pode aproveitar o dia)!<br>Vá em “Arquivo” → “Salvar”:<ol>
+<li>“Seleção de páginas” → “Todos”</li>
+<li>“Tipo de imagem”: “PDF”</li>
+<li>[OPCIONAL] “Document Metadata”: Preencha os dados desejados (útil para uso em e-readers)</li>
+<li>Pressione “Salvar”</li>
+</ol>
+</li>
+<li>Se necessitamos de OCR:<br>salvaremos todas as páginas no formato “PNG” para continuar no Android (próxima  seção).<ol>
+<li>“Seleção de páginas” → “Todos”</li>
+<li>“Tipo de imagem”: “PNG”  </li>
+<li>Pressione “Salvar”
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="2-OCR-via-Android"><a href="#2-OCR-via-Android" class="headerlink" title="2. OCR (via Android)"></a>2. OCR (via Android)</h1><p>O aplicativo utilizado será o software proprietário mas grátis <a href="https://play.google.com/store/apps/details?id=com.adobe.scan.android&amp;hl=en" target="_blank" rel="noopener">Adobe Scan</a>.</p>
+<ol>
+<li>Torne os PNGs acessíveis para seu Android.<br>Eu fiz isso via Google Drive, mas podemos simplesmente copiar as fotos via cabo USB, etc.</li>
+<li>Abra o aplicativo <em>Adobe Scan</em> e pressione “X” para sair do modo de captura de imagem.</li>
+<li>Vá em “Digitalizações”, “+”, “Digitalizar usando Fotos”, “Mostrar todas as fotos”. Localize os PNGs do texto e importe.<ul>
+<li>Antes de importar as imagens, ordene elas por ordem alfabética.</li>
+<li>Caso o texto tenha mais de 25 páginas, será necessário criar PDFs de 25 em 25 páginas e juntá-los depois no <em>gscan2pdf</em> (GNU/Linux). Isso pq a Adobe não permite utilizar OCRs para quantidades maiores de páginas.</li>
+<li>Provavelmente as páginas estarão fora de ordem, há um ícone na interface que permite ordenar manualmente. Opcionalmente, podemos abrir o PDF no <em>gscan2pdf</em> (GNU/Linux) e reordenar (para muitas páginas é mais prático e rápido).</li>
+</ul>
+</li>
+<li>Clique em “Salvar PDF”. Será gerado um PDF com OCR.<br>(Não esqueça de enviar o PDF para algum lugar ou acessá-lo via <a href="https://cloud.acrobat.com/recent" target="_blank" rel="noopener">https://cloud.acrobat.com/recent</a>)<ul>
+<li>Se seu PDF possui menos de 25 páginas e você ordenou as páginas no <em>Adobe Scan</em>, parabéns, é fim de caminho.</li>
+<li>Caso contrário, devemos fazer as últimas edições via no GNU/Linux.
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux"><a href="#3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux" class="headerlink" title="3. [OPCIONAL] Últimos ajustes (via GNU/Linux)"></a>3. <em>[OPCIONAL]</em> Últimos ajustes (via GNU/Linux)</h1><p><a name="ressalva-gscan2pdf"></a>Obs: O <em>gscan2pdf</em> também faz todas as funções listadas abaixo <strong>mas</strong> aparentemente os PDFs gerados no <em>Adobe Scan</em> tem algum grau de incompatibilidade com o mesmo e ao utilizarmos o <em>gscan2pdf</em> nesses arquivos ocorre uma piora do OCR da Adobe (linhas ficam levemente deslocadas, quebras de linhas inesperadas, etc.). Por isso, recomendo evitarem o <em>gscan2pdf</em> e utilizarem as ferramentas abordadas abaixo.</p>
+<h2 id="3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas"><a href="#3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas" class="headerlink" title="3.1. [OPCIONAL] Reorganizando a ordem das páginas"></a>3.1. <em>[OPCIONAL]</em> Reorganizando a ordem das páginas</h2><p>Caso seu texto esteja com as páginas fora de ordem:</p>
+<h3 id="Com-o-PDF-Mod"><a href="#Com-o-PDF-Mod" class="headerlink" title="Com o PDF Mod"></a>Com o <em>PDF Mod</em></h3><p>Basta abrir o PDF e ir arrastando as páginas para a ordem desejada.</p>
+<h3 id="Com-o-gscan2pdf-veja-a-ressalva"><a href="#Com-o-gscan2pdf-veja-a-ressalva" class="headerlink" title="Com o gscan2pdf (veja a ressalva)"></a>Com o <em>gscan2pdf</em> (veja a <a href="#ressalva-gscan2pdf">ressalva</a>)</h3><ul>
+<li>para poucas páginas: arrastar e soltar na coluna da esquerda.</li>
+<li>para muitas páginas (e quando sabemos o número delas): definir o número de cada página.<br>Com isso, a página vai automaticamente para sua posição correta.<br>Para numerar uma página (ou várias), selecione na coluna da esquerda e com o botão direito do mouse escolha “Re-numerar”:<ol>
+<li>“Seleção de páginas” → “Selecionado”</li>
+<li>“Iniciar”: “Número da página”</li>
+<li>“Clique em Renumber”</li>
+</ol>
+</li>
+</ul>
+
+<h2 id="3-2-OPCIONAL-Juntando-PDFs"><a href="#3-2-OPCIONAL-Juntando-PDFs" class="headerlink" title="3.2. [OPCIONAL] Juntando PDFs"></a>3.2. <em>[OPCIONAL]</em> Juntando PDFs</h2><p>Caso seu texto possua mais de 25 páginas, a Adobe infelizmente exigiu que você gerasse mais de um PDF para utilizar o OCR deles. Então, vamos juntá-los! Faremos isso através do <em>PDF Mod</em>:</p>
+<p>Abra o último PDF no <em>PDF Mod</em> e vá adicionando os PDFs em ordem decrescente. Para adicionar um PDF: “Arquivo” → “Inserir de…”.</p>
+<p>Seguir a ordem decrescente é necessário porque cada novo PDF inserido tem suas páginas colocadas no início do PDF final.</p>
+<p>Pronto, temos todas as páginas reunidas e prontas para serem salvas num único PDF.</p>
+
+<p>Obs: O <em>gscan2pdf</em> também faz essa função porém temos essa <a href="#ressalva-gscan2pdf">ressalva</a>.</p>
+<h2 id="3-3-OPCIONAL-Recortando-as-paginas"><a href="#3-3-OPCIONAL-Recortando-as-paginas" class="headerlink" title="3.3.[OPCIONAL] Recortando as páginas"></a>3.3.<em>[OPCIONAL]</em> Recortando as páginas</h2><p>Sim, ensinamos como recortar páginas acima com o <em>gscan2pdf</em> (já falei na <a href="#ressalva-gscan2pdf">ressalva</a>?). Ensinaremos aqui a fazer o mesmo com uma ferramenta alternativa chamada <em>PDF-Shuffler</em> (também é software livre).</p>
+<p>A maior motivação para usar essa ferramenta é que ela é muito mais rápida para abrir PDFs com grande quantidades de páginas (casos em que o <em>gscan2pdf</em> demora muito e pode até travar).</p>
+<p>O crop é prático especialmente quando todas as páginas tem as mesmas regiões em branco. Pode-se aplicar um mesmo crop a todas as páginas desejadas. É prática para xerox contendo 2 páginas por folha (primeiro aplicamos um crop de “50% à direita” para pegarmos a página da esquerda, depois um crop de “50% à esquerda” para pegarmos a página da direita).</p>
+<p>Como fazer:</p>
+<ol>
+<li>Abra o arquivo no “PDF-Shuffler”.</li>
+<li>A opção está em <code>Edit</code> → <code>Crop</code>.<br>Embora não possua preview antes da operação, podemos ver se o resultado agradou e caso negativo, reaplicar a operação (pois essa não é cumulativa - aka, um crop posterior substitui o anterior).</li>
+</ol>
+
+<p>Obs: Os metadados serão apagados ao salvar. Teremos de usar uma ferramenta como o <em>PDF Mod</em> para adicionar novamente os metadados.</p>
+<h2 id="3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave"><a href="#3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave" class="headerlink" title="3.4. [OPCIONAL] Definindo metadados (Título, Autor, Assunto, Palavra-chave)"></a>3.4. <em>[OPCIONAL]</em> Definindo metadados (Título, Autor, Assunto, Palavra-chave)</h2><p>Podemos utilizar o software livre <em>PDF Mod</em> para definir os metadados. Com ele podemos editar os metadados: Título, Autor, Palavras-chave, Assunto.</p>
+<p>Isso é muito útil quanto temos um PDF com metadados incorretos e que por isso dificultam seu uso em e-readers.</p>
+<p>Para isso, basta:</p>
+<ol>
+<li>Abra o arquivo no “PDF Mod”.</li>
+<li>A opção está em <code>Arquivo</code> → <code>Propriedades</code>.</li>
+</ol>
+
+<p>(Outra alternativa mais flexível e poderosa que o <em>PDF Mod</em> é o utilitário de linha de comando <em>exiftool</em>, mas isso fica para outro post.<br>Ah, um exemplo rápido: <code>$ exiftool -Title=&quot;As estrelas descem à Terra&quot; -Author=&quot;Theodor W Adorno&quot; -Subject=&quot;Sociology&quot; -Keywords=&quot;Sociology, Astrology&quot; Livro_do_Adorno.pdf</code>)</p>
+<h1 id="Conclusao"><a href="#Conclusao" class="headerlink" title="Conclusão"></a>Conclusão</h1><p>Com o passo-a-passo acima temos os meios para gerar bons PDFs sem gastar nenhum tostão.<br>Eles são adequados para ler em e-readers e para marcarmos o texto com anotações e destaques.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Quem nunca foi salvo por um PDF para estudar na universidade?</p>
+<p>Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseiras e desfocadas de um xerox de 2 páginas lado-a-lado até aqueles que cada página está visível e bem enquadrada (para ler num e-reader) e podemos selecionar/copiar/colar o texto com o mouse.</p>
+<p>Veremos aqui como fazer PDFs desse último tipo.</p>
+<img src="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg" title="Imagem genérica de alguém estudando num e-reader.">]]>
+    
+    </summary>
+    
+      <category term="compartilhamento" scheme="https://felipehw.github.io/tags/compartilhamento/"/>
+    
+      <category term="pirataria" scheme="https://felipehw.github.io/tags/pirataria/"/>
+    
+      <category term="universidade" scheme="https://felipehw.github.io/tags/universidade/"/>
+    
+      <category term="humanas" scheme="https://felipehw.github.io/tags/humanas/"/>
+    
+      <category term="cultura livre" scheme="https://felipehw.github.io/categories/cultura-livre/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[GNU/Linux e lixeiras (Lixeira em outras partições, etc.)]]></title>
@@ -1408,127 +1574,17 @@
     
     </summary>
     
+      <category term="debian" scheme="https://felipehw.github.io/tags/debian/"/>
+    
       <category term="compartilhamento" scheme="https://felipehw.github.io/tags/compartilhamento/"/>
     
       <category term="pirataria" scheme="https://felipehw.github.io/tags/pirataria/"/>
-    
-      <category term="debian" scheme="https://felipehw.github.io/tags/debian/"/>
     
       <category term="torrent" scheme="https://felipehw.github.io/tags/torrent/"/>
     
       <category term="raspberry" scheme="https://felipehw.github.io/tags/raspberry/"/>
     
       <category term="cultura livre" scheme="https://felipehw.github.io/categories/cultura-livre/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Proteja seus dados: backups fáceis e seguros no desktop GNU/Linux]]></title>
-    <link href="https://felipehw.github.io/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/"/>
-    <id>https://felipehw.github.io/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/</id>
-    <published>2015-03-14T19:02:35.000Z</published>
-    <updated>2015-09-06T20:07:27.644Z</updated>
-    <content type="html"><![CDATA[<p>Os dados são de longe a coisa mais importante em nossos velhos notebooks, verdade?<br>Então pq diabos a maioria de nós nunca realiza backups e conta com a sorte do HD nunca falhar ou de nunca haver uma remoção acidental de arquivos?</p>
-<p>Parte das pessoas diz que é trabalhoso fazer backup ou que não sabe usar ferramentas para automatizar o processo …</p>
-<p><strong>Seus problemas acabaram!</strong> Veremos abaixo como realizar backups de forma automatizada, segura, encriptada, “zipada”, incremental, o escambau … e ainda por cima … muito, mas muito facilmente!</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/deja-dup.png" title="Ícone do Déjà Dup">
-<a id="more"></a>
-<p>O Déjà Dup é o software (livre) da vez, ele é dedicado à backups para usuários finais. Assim, ele visa garantir backups seguros e eficientes mas escondendo toda complexidade do usuário final.</p>
-<p>Veja alguns dos recursos + legais que ele oferece:</p>
-<ul>
-<li><strong>Agendamento</strong>: Por meio dele podemos agendar para que os backups sejam feitos automaticamente de tempos em tempos (sem desculpas p/ esquecimento :D) ou manualmente.</li>
-<li><strong>Múltiplos backends</strong>: O backup não precisa ser em outro HD, pode ser na nuvem, num servidor FTP próprio, etc. Muito flexível :D.</li>
-<li><strong>Encriptação</strong>: O backup é guardado de forma encriptada, ou seja, se alguém conseguir acessar seu backup … sem senha nada feito!</li>
-<li><strong>Compressão</strong>: O backup também é comprimido, ou seja, tudo é compactado de forma a ocupar menos espaço que os arquivos originais.</li>
-<li><strong>Incremental</strong>: O backup é incremental, <strong>MAS</strong> que diabos é incremental?<br>Bom, de tempos em tempos são feitos <strong>backups integrais</strong> (o backup é feito do zero, de todos os dados) e os backups seguintes são apenas das modificações que ocorreram nesse meio tempo (arquivos modificados, criados e deletados) - <em>aka</em> <strong>backups incrementais</strong>. Dessa forma, ocupando um mínimo de espaço, podemos ter o estado dos dados em diversos momentos ao longo do tempo!<br><strong>Tá … mas qual a vantagem disso?</strong><br>A vantagem é que não apenas escolhemos que queremos recuperar os dados … mas podemos escolher o estado em que estes dados estavam num certo momento.<br>Exemplo: Você percebeu que apagou um dado importante só após 3 semanas, e os backups são feitos de forma semanal. Sem problemas! É só pegar o backup da semana em que o arquivo ainda existia ou não havia sido modificado de forma indesejada.</li>
-</ul>
-<p>Tá, me convenceu, como faço agora? Vamos à instalação e configuração!</p>
-<h2 id="0-Instalacao"><a href="#0-Instalacao" class="headerlink" title="0. Instalação"></a>0. Instalação</h2><p>No Debian Jessie, basta instalar o pacote <code>deja-dup</code>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get install deja-dup</span></span><br></pre></td></tr></table></figure>
-<p>Como o programa é popular, não será difícil encontrá-lo empacotado em outras distribuições GNU/Linux.</p>
-<h2 id="1-Configuracao"><a href="#1-Configuracao" class="headerlink" title="1. Configuração"></a>1. Configuração</h2><p>Abra o programa <code>deja-dup</code>. Vejamos o que podemos fazer, tela por tela:</p>
-<ul>
-<li><p><em>Visão geral</em>: O programa abrirá na tela “Visão geral”. Aqui podemos restaurar backups ou manualmente iniciar a realização de um backup (após configurar o mesmo).</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/1-visao_geral.png" title="Visão geral">
-<p>Após o primeiro backup, passa a ser informado também a data do último backup e quantos dias faltam para o próximo backup automático (se estiver habilitado).</p>
-</li>
-<li><p><em>Pastas para salvar</em>: Aqui devemos escolher as pastas que devem ser salvas. O padrão é o diretório do usuário inteiro … o que eu acho um pouco de exagero. No meu caso, faço backup apenas dos dados importantes e não dos terabytes de filmes e músicas.</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/2-pastas_para_salvar.png" title="Pastas para salvar">
-</li>
-<li><p><em>Pastas a serem ignoradas</em>: Nessa tela podemos excluir do backup alguma subpasta dentro das pastas marcadas para backup. Esse recurso é muito útil para excluir alguma pasta que ocupa muito espaço com arquivos não importantes. No meu caso, sempre faço backups de minhas coisas linux mas marco para ficar de fora imagens de instalação, etc,</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/3-pastas_a_serem_ignoradas.png" title="Pastas a serem ignoradas">
-</li>
-<li><p><em>Local de armazenamento</em>: Aqui escolhemos … onde armazenar o backup (duh). Há diversas opções (que vão desde uma pasta local à opções remotas como a nuvem). <strong>Escolha um local com espaço suficiente e que não seja o mesmo HD</strong> (pq se ele falhar, você perde os dados e o backup dos dados). Larga de ser mão de vaca e compre um HD novo se precisar (300 reais são menos importantes que as fotos e arquivos de uma vida inteira).<br>No meu caso, realizo o backup dos meus dados do notebook para um HD externo montado na pasta <code>/mnt/backup/</code> (mais precisamente na pasta <code>/mnt/backup/data</code>).</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/4-local_de_armazenamento.png" title="Local de armazenamento">
-</li>
-<li><p><em>Agendado</em>: Nessa tela, escolhemos a frequência de realização dos backups e o tempo mínimo que eles serão mantidos. A tradução para o português não está um brinco … mas as opções são:</p>
-<ul>
-<li><em>Todos</em>: Aqui podemos escolher se o backup será feito semanalmente (opção “Semana”) ou diariamente (opção “Dia”).</li>
-<li><em>Manter</em>: Aqui escolhemos se os backups serão mantidos “Pelo menos seis meses”, “Pelo menos um ano” ou “Para sempre”. Se faltar espaço, os backups + antigos são deletados + cedo.</li>
-</ul>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/5-agendado.png" title="Agendado">
-<p><strong>Repare</strong> que só é possível escolher alguma opção de <em>Todos</em> se o backup automático (agendado) está ativado. Ele é ativado/desativado clicando no On/Off no canto superior da janela (perto do <code>X</code> p/ fechar a janela)</p>
-</li>
-</ul>
-<p><strong>Pronto</strong>! Se você ativou o backup agendado … é só esperar que uma vez por semana (ou dia) o backup será realizado. <strong>Se no dia do backup o computador estiver desligado, sem problema</strong> … na próxima vez que você ligar o computador e se logar, o Déjà Dup inicia o backup (e avisa você através de uma janela).</p>
-<p>Você, inclusive não precisa esperar … na tela “Visão geral” podemos iniciar o backup manualmente (ou apenas ver quantos dias faltam para o próximo backup) e recuperar o backup de algum momento (ou apenas ver quando foi o último backup).</p>
-<p>No meu caso, eu faço backup para um HD externo que nem sempre está ligado ao notebook. Por isso, deixo o backup automático desativado (opção “Off” no canto superior da janela) e realizo manualmente na tela “Visão geral” com um frequência +- mensal (e fácil de acompanhar pq ele avisa a data do último backup).</p>
-<h2 id="2-O-primeiro-backup-a-gente-nunca-esquece"><a href="#2-O-primeiro-backup-a-gente-nunca-esquece" class="headerlink" title="2. O primeiro backup (a gente nunca esquece)"></a>2. O primeiro backup (a gente nunca esquece)</h2><p>Na criação do primeiro backup (seja ao ativar o backup agendado ou fazendo backups manuais) será perguntado se dejamos criptografar o backup para que o mesmo seja acessível apenas com senha. Eu recomendo que os dados sejam protegidos de bisbilhoteiros :D</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/6-1ro_backup_senha.png" title="Escolha se recuperação de backups exigem senha">
-<p>Na sequência, será iniciado a confecção do backup:</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/7-1ro_backup_criando.png" title="Fazendo backup">
-<p>Pronto, backup feito:</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/8-1ro_backup_feito.png" title="Backup feito">
-<ul>
-<li><strong>Obs</strong>: O primeiro backup demora bastante, os futuros são, em sua maioria, incrementais (somente o que mudou desde o último backup) e portanto … bem rápidos.</li>
-</ul>
-<h2 id="3-Recuperando-backups"><a href="#3-Recuperando-backups" class="headerlink" title="3. Recuperando backups"></a>3. Recuperando backups</h2><p> 3.1. Para recuperar backups, na tela “Visão geral” clique em “Restaurar…” e escolha de onde o backup será recuperado (o mesmo local onde escolhemos guardar os backups na tela “Local de armazenamento”):</p>
- <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/9-restaurar_backup_de_onde.png" title="Aponte o local onde estão os backups">
-<p> No meu caso, eu escolhi guardar os backups na pasta <code>/mnt/backup/data</code> e é esse local que devo informar.</p>
-<p> 3.2. Escolha entre os backups existentes pela data (dia):</p>
- <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/10-restaurar_backup_de_quando.png" title="Restaurar de quando?">
-<p> 3.3. Finalmente escolha se deseja recuperar os arquivos do backup para seus lugares originais ou para outra pasta qualquer.</p>
- <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/11-restaurar_backup_para_onde.png" title="Restaurar para onde?">
-<p> 3.4. Serão exibidas as opções escolhidas previamente, confirme se deseja realmente recuperar o backup.</p>
- <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/12-restaurar_confirmar.png" title="Confirmando a recuperação do backup">
-<p> 3.5. Se você optou por proteger com senha, será necessário informar a senha:</p>
- <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/13-restaurar_senha.png" title="Informe senha p/ descriptografar">
-<p> Pronto! Os arquivos do backup estão acessíveis novamente :D</p>
- <img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/14-restaurar_concluida.png" title="Restauração de backup concluída">
-<ul>
-<li><strong>Obs1</strong>: Fique tranquilo que ao recuperar um backup, o mesmo não é deletado. Você pode recuperar o mesmo backup indefinidas vezes.</li>
-<li><p><strong>Obs2</strong>: Fique ligado que se já houver arquivos na pasta escolhida para receber o backup recuperado, os arquivos que possuírem os mesmos nomes que arquivos existentes no backup serão sobrescritos. Os arquivos que não colidirem os nomes com arquivos existentes no backup sobreviverão intocados.</p>
-<p>Bom, é isso. Até a próxima.</p>
-</li>
-</ul>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="https://wiki.gnome.org/Apps/DejaDup" target="_blank" rel="noopener">Apps/DejaDup - GNOME Wiki!</a>: Página oficial do Déjà Dup.<ul>
-<li><a href="https://wiki.gnome.org/Apps/DejaDup/HowItWorks" target="_blank" rel="noopener">Apps/DejaDup/HowItWorks - GNOME Wiki!</a>: Material curto e excelente, explicando como funciona o Déjà Dup. Incluindo:<ul>
-<li>como e quando ele realiza backups</li>
-<li>o formato dos arquivos do backup (e como funciona a criptografia aplicada nesses dados)</li>
-<li>o modo como trabalha com backups integrais e incrementais</li>
-<li>por quanto tempo os backups são mantidos após o período definido pelo usuário, etc.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Os dados são de longe a coisa mais importante em nossos velhos notebooks, verdade?<br>Então pq diabos a maioria de nós nunca realiza backups e conta com a sorte do HD nunca falhar ou de nunca haver uma remoção acidental de arquivos?</p>
-<p>Parte das pessoas diz que é trabalhoso fazer backup ou que não sabe usar ferramentas para automatizar o processo …</p>
-<p><strong>Seus problemas acabaram!</strong> Veremos abaixo como realizar backups de forma automatizada, segura, encriptada, “zipada”, incremental, o escambau … e ainda por cima … muito, mas muito facilmente!</p>
-<img src="/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/deja-dup.png" title="Ícone do Déjà Dup">]]>
-    
-    </summary>
-    
-      <category term="debian" scheme="https://felipehw.github.io/tags/debian/"/>
-    
-      <category term="backup" scheme="https://felipehw.github.io/tags/backup/"/>
-    
-      <category term="segurança" scheme="https://felipehw.github.io/tags/seguranca/"/>
-    
-      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
     
   </entry>
   
