@@ -85,6 +85,57 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/" class="article-date">
+  <time datetime="2018-12-15T22:32:04.000Z" itemprop="datePublished">15 dez 2018</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cultura-livre/">cultura livre</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/">OCRs de PDFs no GNU/Linux: Estudando com textos e não prints</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Quem nunca foi estudar para a faculdade com um PDF e descobriu que não conseguiria marcar o texto ou copiar e colar seu conteúdo?<br>Que aquele lindo PDF em vez de ser um agradável texto a ser anotado e copiado mais parecia um print em que somente poderíamos fazer riscos ao redor dignos de uma criança de 7 anos no Paint?</p>
+<p>A solução para isso é gerar um novo PDF utilizando alguma tecnologia de reconhecimento óptico de caracteres (OCR: Optical Character Recognition).</p>
+<img src="/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/ocr_small.jpg" title="Imagem genérica de ferramente de OCR.">
+        
+          <p class="article-more-link">
+            <a href="/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/" data-id="cjpq1e4c2001sapsxqgh1kshu" class="article-share-link">Share</a>
+      
+        <a href="https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/compartilhamento/">compartilhamento</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/humanas/">humanas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pirataria/">pirataria</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/universidade/">universidade</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/" class="article-date">
@@ -111,19 +162,124 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Quem nunca foi salvo por um PDF para estudar na universidade?</p>
+        <p>(Atualizado em 15/12/2018. Agora temos ferramentas livres para todo o processo, incluindo o OCR.)</p>
+<p>Quem nunca foi salvo por um PDF para estudar na universidade?</p>
 <p>Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseiras e desfocadas de um xerox de 2 páginas lado-a-lado até aqueles que cada página está visível e bem enquadrada (para ler num e-reader) e podemos selecionar/copiar/colar o texto com o mouse.</p>
-<p>Veremos aqui como fazer PDFs desse último tipo.</p>
+<p>Veremos aqui como fazer PDFs desse último tipo. E no GNU/Linux, tudo software livre!</p>
 <img src="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg" title="Imagem genérica de alguém estudando num e-reader.">
-        
-          <p class="article-more-link">
-            <a href="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/#more">Read More</a>
-          </p>
-        
+<h1 id="0-Pre-requisitos"><a href="#0-Pre-requisitos" class="headerlink" title="0. Pré-requisitos"></a>0. Pré-requisitos</h1><ol>
+<li>Computador com GNU/Linux.</li>
+<li>Scanner.</li>
+</ol>
+<h1 id="1-Escaneando"><a href="#1-Escaneando" class="headerlink" title="1. Escaneando"></a>1. Escaneando</h1><p>O aplicativo utilizado será o software livre <em>gscan2pdf</em>.</p>
+<ol>
+<li><p>Após abrir o aplicativo, vá em “Arquivo” → “Digitalizar”.</p>
+
+</li>
+<li><p>Utilize as seguintes configurações:</p>
+<ul>
+<li>Em “Modo de digitalização”:<ul>
+<li>“Modo de digitalização”: “Linhas”</li>
+<li>“Resolução de digitalização”: “300” dpi <em>(é a resolução recomendada para OCR)</em></li>
+</ul>
+</li>
+<li>Em “Opções de página”:<ul>
+<li>Em “Pós-processamento”, mantenha desmarcada a opção “Imagens digitalizadas com OCR” (faremos isso de forma superior via Android).</li>
+<li>Em “Pós-processamento”, se desejado, as imagens podem ser automaticamente rotacionadas em “Girar”. (Algo opcional, pois podem ser rotacionadas posteriormente).</li>
+<li>Se desejado, salve a presente configuração em “Perfis de digitalização” com um nome do tipo “Texto sem OCR”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pressione “Digitalizar” e escaneie todas as páginas desejadas.</p>
+
+<p>Caso tenhas escaneado 2 páginas de cada vez (lado-a-lado) ou, simplesmente, que deseje recortar a página para um tamanho menor … podemos usar a ferramenta “Cortar”. No primeiro caso, é importante recortar para que o OCR analise o conteúdo de texto de cada página sem misturar as páginas. E em ambos os casos, é vantajoso recortar para que o conteúdo caiba em pequenos dispositivos (como leitores de ebook).</p>
+</li>
+<li><p><em>[OPCIONAL]</em> Recortando as páginas todas com o mesmo tamanho:</p>
+<p>Há duas situações em que recortar as páginas é extremamente útil.<br>A primeira é quando o material escaneado é composto por folhas contendo duas páginas.<br>A segunda é quando a página possui grandes margens que tornam a leitura inadequada em e-readers.<br>Para ambos os casos, podemos seguir os passos abaixo:</p>
+<ol>
+<li><p><em>[OPCIONAL]</em> Caso exista mais de uma página por folha escaneada:<br>Vá na lista de folhas (coluna da esquerda) e com um “Ctrl + C”/“Ctrl + V” duplique as folhas.<br>Isso porque a página recortada substitui a folha escaneada … e se temos mais de uma página por folha, necessitaremos de tantas cópias de folha quanto páginas ela contenha.</p>
+</li>
+<li><p>Vá em “Visualizar” → “Selecionar” e faça um molde de corte que acomode de forma “justa” a página.<br><em>[DICA]</em> Escolha uma página de texto padrão para usar seu futuro corte como molde para todas as páginas.<br>(Normalmente, páginas de capa, sumário, etc., não são bons moldes. Páginas de texto de meio de capítulo são boas pois usam todo o espaço possível e, portanto, não corremos risco de fazer um molde de corte menor que o necessário.)</p>
+
+</li>
+<li><p>Vá em “Ferramentas” → “Cortar”:</p>
+<ol>
+<li>“Seleção de páginas” → “Selecionado”.</li>
+<li>Pressione “Aplicar”. Pronto!</li>
+</ol>
+
+<ul>
+<li>Caso o corte seja exatamente o mesmo em diversas folhas:<br>basta selecionar todas as folhas desejadas antes de utilizar a ferramenta “Cortar”.</li>
+<li>Caso o corte algo seja diferente em cada página:<br>Pelo menos, cortamos a primeira de nossas páginas e temos um molde!<br>Para as próximas páginas:<ol>
+<li>Clique na próxima página da lista.</li>
+<li>Acomode o molde de corte na área desejada.</li>
+<li>Repita o passo de ir em “Ferramentas” → “Cortar”, “Aplicar”.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Salvando</p>
+<p> Vá em “Arquivo” → “Salvar”:</p>
+<ol>
+<li>“Seleção de páginas” → “Todos”</li>
+<li>“Tipo de imagem”: “PDF”</li>
+<li>[OPCIONAL] “Document Metadata”: Preencha os dados desejados (útil para uso em e-readers)</li>
+<li>Pressione “Salvar”
+</li>
+</ol>
+<ul>
+<li>Obs: Em caso de optarmos pelo OCR, os metadados deverão ser definidos depois (pois são perdidos na criação da versão com OCR).</li>
+</ul>
+</li>
+</ol>
+<h1 id="2-OCR"><a href="#2-OCR" class="headerlink" title="2. OCR"></a>2. OCR</h1><p><em>Secção atualizada (agora temos um software livre e muito mais fácil e prático)</em><br>A ferramenta é o software livre pdfsandwich. Utilize o passo-a-passo <a href="https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/">aqui</a>.</p>
+<h1 id="3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux"><a href="#3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux" class="headerlink" title="3. [OPCIONAL] Últimos ajustes (via GNU/Linux)"></a>3. <em>[OPCIONAL]</em> Últimos ajustes (via GNU/Linux)</h1><p>Obs: O <em>gscan2pdf</em> também faz todas as funções listadas abaixo <strong>mas</strong> ele é pesado com grandes PDFs e tem algumas incompatibilidades, por isso cito ferramentas alternativas como um bônus.</p>
+<h2 id="3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas"><a href="#3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas" class="headerlink" title="3.1. [OPCIONAL] Reorganizando a ordem das páginas"></a>3.1. <em>[OPCIONAL]</em> Reorganizando a ordem das páginas</h2><p>Caso seu texto esteja com as páginas fora de ordem:</p>
+<h3 id="Com-o-PDF-Mod"><a href="#Com-o-PDF-Mod" class="headerlink" title="Com o PDF Mod"></a>Com o <em>PDF Mod</em></h3><p>Basta abrir o PDF e ir arrastando as páginas para a ordem desejada.</p>
+<h3 id="Com-o-gscan2pdf"><a href="#Com-o-gscan2pdf" class="headerlink" title="Com o gscan2pdf"></a>Com o <em>gscan2pdf</em></h3><ul>
+<li>para poucas páginas: arrastar e soltar na coluna da esquerda.</li>
+<li>para muitas páginas (e quando sabemos o número delas): definir o número de cada página.<br>Com isso, a página vai automaticamente para sua posição correta.<br>Para numerar uma página (ou várias), selecione na coluna da esquerda e com o botão direito do mouse escolha “Re-numerar”:<ol>
+<li>“Seleção de páginas” → “Selecionado”</li>
+<li>“Iniciar”: “Número da página”</li>
+<li>“Clique em Renumber”</li>
+</ol>
+</li>
+</ul>
+
+<h2 id="3-2-OPCIONAL-Juntando-PDFs"><a href="#3-2-OPCIONAL-Juntando-PDFs" class="headerlink" title="3.2. [OPCIONAL] Juntando PDFs"></a>3.2. <em>[OPCIONAL]</em> Juntando PDFs</h2><p>Faremos isso através do <em>PDF Mod</em>.</p>
+<p>Abra o último PDF (relativo às páginas) no <em>PDF Mod</em> e vá adicionando os PDFs em ordem decrescente. Para adicionar um PDF: “Arquivo” → “Inserir de…”.</p>
+<p>Seguir a ordem decrescente é necessário porque cada novo PDF inserido tem suas páginas colocadas no início do PDF final.</p>
+<p>Pronto, temos todas as páginas reunidas e prontas para serem salvas num único PDF.</p>
+
+<h2 id="3-3-OPCIONAL-Recortando-as-paginas"><a href="#3-3-OPCIONAL-Recortando-as-paginas" class="headerlink" title="3.3.[OPCIONAL] Recortando as páginas"></a>3.3.<em>[OPCIONAL]</em> Recortando as páginas</h2><p>Obs: Já ensinamos como recortar páginas acima com o <em>gscan2pdf</em>.</p>
+<p>Ensinaremos aqui a fazer o mesmo com uma ferramenta alternativa chamada <em>PDF-Shuffler</em> (também é software livre).</p>
+<p>A maior motivação para usar essa ferramenta é que ela é muito mais rápida para abrir PDFs com grande quantidades de páginas (casos em que o <em>gscan2pdf</em> demora muito e pode até travar).</p>
+<p>O crop é prático especialmente quando todas as páginas tem as mesmas regiões em branco. Pode-se aplicar um mesmo crop a todas as páginas desejadas. É prática para xerox contendo 2 páginas por folha (primeiro aplicamos um crop de “50% à direita” para pegarmos a página da esquerda, depois um crop de “50% à esquerda” para pegarmos a página da direita).</p>
+<p>Como fazer:</p>
+<ol>
+<li>Abra o arquivo no “PDF-Shuffler”.</li>
+<li>A opção está em <code>Edit</code> → <code>Crop</code>.<br>Embora não possua preview antes da operação, podemos ver se o resultado agradou e caso negativo, reaplicar a operação (pois essa não é cumulativa - aka, um crop posterior substitui o anterior).</li>
+</ol>
+
+<p>Obs: Os metadados serão apagados ao salvar. Teremos de usar uma ferramenta como o <em>PDF Mod</em> para adicionar novamente os metadados.</p>
+<h2 id="3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave"><a href="#3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave" class="headerlink" title="3.4. [OPCIONAL] Definindo metadados (Título, Autor, Assunto, Palavra-chave)"></a>3.4. <em>[OPCIONAL]</em> Definindo metadados (Título, Autor, Assunto, Palavra-chave)</h2><p>Podemos utilizar o software livre <em>PDF Mod</em> para definir os metadados. Com ele podemos editar os metadados: Título, Autor, Palavras-chave, Assunto.</p>
+<p>Isso é muito útil quanto temos um PDF com metadados incorretos e que por isso dificultam seu uso em e-readers.</p>
+<p>Para isso, basta:</p>
+<ol>
+<li>Abra o arquivo no “PDF Mod”.</li>
+<li>A opção está em <code>Arquivo</code> → <code>Propriedades</code>.</li>
+</ol>
+
+<p>(Outra alternativa mais flexível e poderosa que o <em>PDF Mod</em> é o utilitário de linha de comando <em>exiftool</em>, mas isso fica para outro post.<br>Ah, um exemplo rápido: <code>$ exiftool -Title=&quot;As estrelas descem à Terra&quot; -Author=&quot;Theodor W Adorno&quot; -Subject=&quot;Sociology&quot; -Keywords=&quot;Sociology, Astrology&quot; Livro_do_Adorno.pdf</code>)</p>
+<h1 id="Conclusao"><a href="#Conclusao" class="headerlink" title="Conclusão"></a>Conclusão</h1><p>Com o passo-a-passo acima temos os meios para gerar bons PDFs sem gastar nenhum tostão.<br>Eles são adequados para ler em e-readers e para marcarmos o texto com anotações e destaques.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/" data-id="cjk1eoktb001r3gsx2qjob5w1" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/" data-id="cjpq1e4bl001eapsx8fuglfk9" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -173,7 +329,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/" data-id="cjk1eokt6001m3gsxlm5qaclq" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/" data-id="cjpq1e4bi001bapsx8tvvtja0" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -224,7 +380,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/" data-id="cjk1eoks900073gsx13een7ux" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/" data-id="cjpq1e4ab0006apsx0xzz5abf" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -247,7 +403,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/humanas/">humanas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/humanas/">humanas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -256,7 +412,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/asteroide/">asteroide</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/desktop/">desktop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/historia/">história</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/humanas/">humanas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/livros/">livros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/universidade/">universidade</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/asteroide/">asteroide</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/desktop/">desktop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/historia/">história</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/humanas/">humanas</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/livros/">livros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/universidade/">universidade</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -265,7 +421,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/asteroide/" style="font-size: 10px;">asteroide</a> <a href="/tags/astronomia/" style="font-size: 18px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 14px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/ecmascript/" style="font-size: 16px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 18px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 14px;">gnome</a> <a href="/tags/historia/" style="font-size: 10px;">história</a> <a href="/tags/humanas/" style="font-size: 10px;">humanas</a> <a href="/tags/javascript/" style="font-size: 16px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12px;">jsx</a> <a href="/tags/livros/" style="font-size: 10px;">livros</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 14px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 12px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/universidade/" style="font-size: 10px;">universidade</a> <a href="/tags/web/" style="font-size: 16px;">web</a>
+      <a href="/tags/asteroide/" style="font-size: 10px;">asteroide</a> <a href="/tags/astronomia/" style="font-size: 18px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 16px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/ecmascript/" style="font-size: 16px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 10px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 18px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 14px;">gnome</a> <a href="/tags/historia/" style="font-size: 10px;">história</a> <a href="/tags/humanas/" style="font-size: 12px;">humanas</a> <a href="/tags/javascript/" style="font-size: 16px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12px;">jsx</a> <a href="/tags/livros/" style="font-size: 10px;">livros</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 16px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 12px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/universidade/" style="font-size: 12px;">universidade</a> <a href="/tags/web/" style="font-size: 16px;">web</a>
     </div>
   </div>
 
@@ -274,7 +430,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">julho 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">junho 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">maio 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">dezembro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">julho 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">junho 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">maio 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -284,6 +440,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/">OCRs de PDFs no GNU/Linux: Estudando com textos e não prints</a>
+          </li>
         
           <li>
             <a href="/2018/07/25/comentario-sobre-o-livro-sob-tres-bandeiras-anarquismo-e-imaginacao-anticolonial/">Sobre o livro Sob três bandeiras: Anarquismo e imaginação anticolonial</a>
@@ -299,10 +459,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/">Criando lindos PDFs a partir de livros ou xerox</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/09/habilitando-a-lixeira-em-outras-particoes/">GNU/Linux e lixeiras (Lixeira em outras partições, etc.)</a>
           </li>
         
       </ul>
