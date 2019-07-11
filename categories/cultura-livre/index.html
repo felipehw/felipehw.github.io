@@ -167,115 +167,11 @@ ga('send', 'pageview');
 <p>Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseiras e desfocadas de um xerox de 2 páginas lado-a-lado até aqueles que cada página está visível e bem enquadrada (para ler num e-reader) e podemos selecionar/copiar/colar o texto com o mouse.</p>
 <p>Veremos aqui como fazer PDFs desse último tipo. E no GNU/Linux, tudo software livre!</p>
 <img src="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg" title="Imagem genérica de alguém estudando num e-reader.">
-<h1 id="0-Pre-requisitos"><a href="#0-Pre-requisitos" class="headerlink" title="0. Pré-requisitos"></a>0. Pré-requisitos</h1><ol>
-<li>Computador com GNU/Linux.</li>
-<li>Scanner.</li>
-</ol>
-<h1 id="1-Escaneando"><a href="#1-Escaneando" class="headerlink" title="1. Escaneando"></a>1. Escaneando</h1><p>O aplicativo utilizado será o software livre <em>gscan2pdf</em>.</p>
-<ol>
-<li><p>Após abrir o aplicativo, vá em “Arquivo” → “Digitalizar”.</p>
-
-</li>
-<li><p>Utilize as seguintes configurações:</p>
-<ul>
-<li>Em “Modo de digitalização”:<ul>
-<li>“Modo de digitalização”: “Linhas”</li>
-<li>“Resolução de digitalização”: “300” dpi <em>(é a resolução recomendada para OCR)</em></li>
-</ul>
-</li>
-<li>Em “Opções de página”:<ul>
-<li>Em “Pós-processamento”, mantenha desmarcada a opção “Imagens digitalizadas com OCR” (faremos isso de forma superior via Android).</li>
-<li>Em “Pós-processamento”, se desejado, as imagens podem ser automaticamente rotacionadas em “Girar”. (Algo opcional, pois podem ser rotacionadas posteriormente).</li>
-<li>Se desejado, salve a presente configuração em “Perfis de digitalização” com um nome do tipo “Texto sem OCR”.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Pressione “Digitalizar” e escaneie todas as páginas desejadas.</p>
-
-<p>Caso tenhas escaneado 2 páginas de cada vez (lado-a-lado) ou, simplesmente, que deseje recortar a página para um tamanho menor … podemos usar a ferramenta “Cortar”. No primeiro caso, é importante recortar para que o OCR analise o conteúdo de texto de cada página sem misturar as páginas. E em ambos os casos, é vantajoso recortar para que o conteúdo caiba em pequenos dispositivos (como leitores de ebook).</p>
-</li>
-<li><p><em>[OPCIONAL]</em> Recortando as páginas todas com o mesmo tamanho:</p>
-<p>Há duas situações em que recortar as páginas é extremamente útil.<br>A primeira é quando o material escaneado é composto por folhas contendo duas páginas.<br>A segunda é quando a página possui grandes margens que tornam a leitura inadequada em e-readers.<br>Para ambos os casos, podemos seguir os passos abaixo:</p>
-<ol>
-<li><p><em>[OPCIONAL]</em> Caso exista mais de uma página por folha escaneada:<br>Vá na lista de folhas (coluna da esquerda) e com um “Ctrl + C”/“Ctrl + V” duplique as folhas.<br>Isso porque a página recortada substitui a folha escaneada … e se temos mais de uma página por folha, necessitaremos de tantas cópias de folha quanto páginas ela contenha.</p>
-</li>
-<li><p>Vá em “Visualizar” → “Selecionar” e faça um molde de corte que acomode de forma “justa” a página.<br><em>[DICA]</em> Escolha uma página de texto padrão para usar seu futuro corte como molde para todas as páginas.<br>(Normalmente, páginas de capa, sumário, etc., não são bons moldes. Páginas de texto de meio de capítulo são boas pois usam todo o espaço possível e, portanto, não corremos risco de fazer um molde de corte menor que o necessário.)</p>
-
-</li>
-<li><p>Vá em “Ferramentas” → “Cortar”:</p>
-<ol>
-<li>“Seleção de páginas” → “Selecionado”.</li>
-<li>Pressione “Aplicar”. Pronto!</li>
-</ol>
-
-<ul>
-<li>Caso o corte seja exatamente o mesmo em diversas folhas:<br>basta selecionar todas as folhas desejadas antes de utilizar a ferramenta “Cortar”.</li>
-<li>Caso o corte algo seja diferente em cada página:<br>Pelo menos, cortamos a primeira de nossas páginas e temos um molde!<br>Para as próximas páginas:<ol>
-<li>Clique na próxima página da lista.</li>
-<li>Acomode o molde de corte na área desejada.</li>
-<li>Repita o passo de ir em “Ferramentas” → “Cortar”, “Aplicar”.</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>Salvando</p>
-<p> Vá em “Arquivo” → “Salvar”:</p>
-<ol>
-<li>“Seleção de páginas” → “Todos”</li>
-<li>“Tipo de imagem”: “PDF”</li>
-<li>[OPCIONAL] “Document Metadata”: Preencha os dados desejados (útil para uso em e-readers)</li>
-<li>Pressione “Salvar”
-</li>
-</ol>
-<ul>
-<li>Obs: Em caso de optarmos pelo OCR, os metadados deverão ser definidos depois (pois são perdidos na criação da versão com OCR).</li>
-</ul>
-</li>
-</ol>
-<h1 id="2-OCR"><a href="#2-OCR" class="headerlink" title="2. OCR"></a>2. OCR</h1><p><em>Secção atualizada (agora temos um software livre e muito mais fácil e prático)</em><br>A ferramenta é o software livre pdfsandwich. Utilize o passo-a-passo <a href="https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/">aqui</a>.</p>
-<h1 id="3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux"><a href="#3-OPCIONAL-Ultimos-ajustes-via-GNU-Linux" class="headerlink" title="3. [OPCIONAL] Últimos ajustes (via GNU/Linux)"></a>3. <em>[OPCIONAL]</em> Últimos ajustes (via GNU/Linux)</h1><p>Obs: O <em>gscan2pdf</em> também faz todas as funções listadas abaixo <strong>mas</strong> ele é pesado com grandes PDFs e tem algumas incompatibilidades, por isso cito ferramentas alternativas como um bônus.</p>
-<h2 id="3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas"><a href="#3-1-OPCIONAL-Reorganizando-a-ordem-das-paginas" class="headerlink" title="3.1. [OPCIONAL] Reorganizando a ordem das páginas"></a>3.1. <em>[OPCIONAL]</em> Reorganizando a ordem das páginas</h2><p>Caso seu texto esteja com as páginas fora de ordem:</p>
-<h3 id="Com-o-PDF-Mod"><a href="#Com-o-PDF-Mod" class="headerlink" title="Com o PDF Mod"></a>Com o <em>PDF Mod</em></h3><p>Basta abrir o PDF e ir arrastando as páginas para a ordem desejada.</p>
-<h3 id="Com-o-gscan2pdf"><a href="#Com-o-gscan2pdf" class="headerlink" title="Com o gscan2pdf"></a>Com o <em>gscan2pdf</em></h3><ul>
-<li>para poucas páginas: arrastar e soltar na coluna da esquerda.</li>
-<li>para muitas páginas (e quando sabemos o número delas): definir o número de cada página.<br>Com isso, a página vai automaticamente para sua posição correta.<br>Para numerar uma página (ou várias), selecione na coluna da esquerda e com o botão direito do mouse escolha “Re-numerar”:<ol>
-<li>“Seleção de páginas” → “Selecionado”</li>
-<li>“Iniciar”: “Número da página”</li>
-<li>“Clique em Renumber”</li>
-</ol>
-</li>
-</ul>
-
-<h2 id="3-2-OPCIONAL-Juntando-PDFs"><a href="#3-2-OPCIONAL-Juntando-PDFs" class="headerlink" title="3.2. [OPCIONAL] Juntando PDFs"></a>3.2. <em>[OPCIONAL]</em> Juntando PDFs</h2><p>Faremos isso através do <em>PDF Mod</em>.</p>
-<p>Abra o último PDF (relativo às páginas) no <em>PDF Mod</em> e vá adicionando os PDFs em ordem decrescente. Para adicionar um PDF: “Arquivo” → “Inserir de…”.</p>
-<p>Seguir a ordem decrescente é necessário porque cada novo PDF inserido tem suas páginas colocadas no início do PDF final.</p>
-<p>Pronto, temos todas as páginas reunidas e prontas para serem salvas num único PDF.</p>
-
-<h2 id="3-3-OPCIONAL-Recortando-as-paginas"><a href="#3-3-OPCIONAL-Recortando-as-paginas" class="headerlink" title="3.3.[OPCIONAL] Recortando as páginas"></a>3.3.<em>[OPCIONAL]</em> Recortando as páginas</h2><p>Obs: Já ensinamos como recortar páginas acima com o <em>gscan2pdf</em>.</p>
-<p>Ensinaremos aqui a fazer o mesmo com uma ferramenta alternativa chamada <em>PDF-Shuffler</em> (também é software livre).</p>
-<p>A maior motivação para usar essa ferramenta é que ela é muito mais rápida para abrir PDFs com grande quantidades de páginas (casos em que o <em>gscan2pdf</em> demora muito e pode até travar).</p>
-<p>O crop é prático especialmente quando todas as páginas tem as mesmas regiões em branco. Pode-se aplicar um mesmo crop a todas as páginas desejadas. É prática para xerox contendo 2 páginas por folha (primeiro aplicamos um crop de “50% à direita” para pegarmos a página da esquerda, depois um crop de “50% à esquerda” para pegarmos a página da direita).</p>
-<p>Como fazer:</p>
-<ol>
-<li>Abra o arquivo no “PDF-Shuffler”.</li>
-<li>A opção está em <code>Edit</code> → <code>Crop</code>.<br>Embora não possua preview antes da operação, podemos ver se o resultado agradou e caso negativo, reaplicar a operação (pois essa não é cumulativa - aka, um crop posterior substitui o anterior).</li>
-</ol>
-
-<p>Obs: Os metadados serão apagados ao salvar. Teremos de usar uma ferramenta como o <em>PDF Mod</em> para adicionar novamente os metadados.</p>
-<h2 id="3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave"><a href="#3-4-OPCIONAL-Definindo-metadados-Titulo-Autor-Assunto-Palavra-chave" class="headerlink" title="3.4. [OPCIONAL] Definindo metadados (Título, Autor, Assunto, Palavra-chave)"></a>3.4. <em>[OPCIONAL]</em> Definindo metadados (Título, Autor, Assunto, Palavra-chave)</h2><p>Podemos utilizar o software livre <em>PDF Mod</em> para definir os metadados. Com ele podemos editar os metadados: Título, Autor, Palavras-chave, Assunto.</p>
-<p>Isso é muito útil quanto temos um PDF com metadados incorretos e que por isso dificultam seu uso em e-readers.</p>
-<p>Para isso, basta:</p>
-<ol>
-<li>Abra o arquivo no “PDF Mod”.</li>
-<li>A opção está em <code>Arquivo</code> → <code>Propriedades</code>.</li>
-</ol>
-
-<p>(Outra alternativa mais flexível e poderosa que o <em>PDF Mod</em> é o utilitário de linha de comando <em>exiftool</em>, mas isso fica para outro post.<br>Ah, um exemplo rápido: <code>$ exiftool -Title=&quot;As estrelas descem à Terra&quot; -Author=&quot;Theodor W Adorno&quot; -Subject=&quot;Sociology&quot; -Keywords=&quot;Sociology, Astrology&quot; Livro_do_Adorno.pdf</code>)</p>
-<h1 id="Conclusao"><a href="#Conclusao" class="headerlink" title="Conclusão"></a>Conclusão</h1><p>Com o passo-a-passo acima temos os meios para gerar bons PDFs sem gastar nenhum tostão.<br>Eles são adequados para ler em e-readers e para marcarmos o texto com anotações e destaques.</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -473,7 +369,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 felipehw<br>
+      &copy; 2019 felipehw<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

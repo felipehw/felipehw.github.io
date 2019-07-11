@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2018-12-15T22:32:04.737Z</updated>
+  <updated>2019-07-11T03:13:53.020Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/"/>
     <id>https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/</id>
     <published>2018-12-15T22:32:04.000Z</published>
-    <updated>2018-12-15T22:32:04.737Z</updated>
+    <updated>2019-07-11T03:13:53.020Z</updated>
     <content type="html"><![CDATA[<p>Quem nunca foi estudar para a faculdade com um PDF e descobriu que não conseguiria marcar o texto ou copiar e colar seu conteúdo?<br>Que aquele lindo PDF em vez de ser um agradável texto a ser anotado e copiado mais parecia um print em que somente poderíamos fazer riscos ao redor dignos de uma criança de 7 anos no Paint?</p>
 <p>A solução para isso é gerar um novo PDF utilizando alguma tecnologia de reconhecimento óptico de caracteres (OCR: Optical Character Recognition).</p>
 <img src="/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/ocr_small.jpg" title="Imagem genérica de ferramente de OCR.">
@@ -184,12 +184,13 @@
     <link href="https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/"/>
     <id>https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/</id>
     <published>2018-05-11T20:11:59.000Z</published>
-    <updated>2018-12-15T22:33:09.703Z</updated>
+    <updated>2019-07-11T03:14:15.381Z</updated>
     <content type="html"><![CDATA[<p>(Atualizado em 15/12/2018. Agora temos ferramentas livres para todo o processo, incluindo o OCR.)</p>
 <p>Quem nunca foi salvo por um PDF para estudar na universidade?</p>
 <p>Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseiras e desfocadas de um xerox de 2 páginas lado-a-lado até aqueles que cada página está visível e bem enquadrada (para ler num e-reader) e podemos selecionar/copiar/colar o texto com o mouse.</p>
 <p>Veremos aqui como fazer PDFs desse último tipo. E no GNU/Linux, tudo software livre!</p>
 <img src="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg" title="Imagem genérica de alguém estudando num e-reader.">
+<a id="more"></a>
 <h1 id="0-Pre-requisitos"><a href="#0-Pre-requisitos" class="headerlink" title="0. Pré-requisitos"></a>0. Pré-requisitos</h1><ol>
 <li>Computador com GNU/Linux.</li>
 <li>Scanner.</li>
@@ -301,7 +302,11 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>(Atualizado em 15/12/2018. Agora temos ferramentas livres para todo o processo, incluindo o OCR.)</p>
-<p>Quem nunca foi salvo por um PDF ]]>
+<p>Quem nunca foi salvo por um PDF para estudar na universidade?</p>
+<p>Quem costuma estudar por PDFs deve estar acostumado a encontrar PDFs de toda qualidade. Desde aqueles que são nada mais que fotos grosseiras e desfocadas de um xerox de 2 páginas lado-a-lado até aqueles que cada página está visível e bem enquadrada (para ler num e-reader) e podemos selecionar/copiar/colar o texto com o mouse.</p>
+<p>Veremos aqui como fazer PDFs desse último tipo. E no GNU/Linux, tudo software livre!</p>
+<img src="/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/kobo_cafe_small.jpg" title="Imagem genérica de alguém estudando num e-reader.">]]>
+    
     </summary>
     
       <category term="compartilhamento" scheme="https://felipehw.github.io/tags/compartilhamento/"/>
@@ -474,7 +479,7 @@
     <link href="https://felipehw.github.io/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/"/>
     <id>https://felipehw.github.io/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/</id>
     <published>2016-06-27T01:03:12.000Z</published>
-    <updated>2016-06-27T01:03:12.650Z</updated>
+    <updated>2019-07-11T03:39:05.170Z</updated>
     <content type="html"><![CDATA[<p>No post de hoje veremos as tentativas grosseiras de capturar imagens de Júpiter desde o quintal de uma casa em Florianópolis.</p>
 <img src="/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/jupiter_icon-little.png" title="Ícone de Júpiter">
 <a id="more"></a>
@@ -523,6 +528,10 @@
 <img src="/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/20160612-capoeiras/asi120mc-FireCapture/Jup_000503_g4_ap15_v2.jpg" title="Júpiter e sua Grande Mancha Vermelha em 12/06/2016">
 <p>Perceba a Grande Mancha Vermelha no centro do planeta, um pouco acima da linha do Equador (o Sul é para cima). Na foto também estão visíveis (muito ruim de ver) as luas Io (no lado direito), Europa (no lado esquerdo) e Ganímedes (mais à esquerda de Europa). Nessa imagem, Júpiter estava a 820 milhões de quilômetros (ou seja, afastou-se bastante desde a foto de 15 de abril).</p>
 <p>Bom, era isso. Se ficou interessado … a <a href="https://pt.wikipedia.org/wiki/Juno_(sonda_espacial)" target="_blank" rel="noopener">sonda Juno</a> chegará em Júpiter em 04/07/2016 após uma viagem de quase 5 anos (foi lançada em agosto de 2011). Entre um de seus objetivos está descobrir se Júpiter possui um núcleo sólido. A sonda irá orbitar o planeta por 20 meses e certamente teremos fotos bem melhores que as minhas :D Fique antenado nas fotos incríveis que surgirão a partir do próximos mês na internet.</p>
+<p><strong>Update</strong>: Em 09/07/2019 consegui registros melhores. Júpiter distava 657 milhões de quilômetros da Terra.</p>
+<img src="/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/Jup_012145_lapl3_ap48-crop.png" title="Júpiter em 09/07/2019">
+<p>Na animação abaixo estão contidas 6 registros que abarcam um período de 11 minutos. Mesmo com a curta duração já é possível registrar os efeitos da rotação de Júpiter.</p>
+<img src="/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/animated.gif" title="Júpiter em 09/07/2019">
 ]]></content>
     <summary type="html">
     <![CDATA[<p>No post de hoje veremos as tentativas grosseiras de capturar imagens de Júpiter desde o quintal de uma casa em Florianópolis.</p>
