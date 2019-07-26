@@ -4,7 +4,7 @@
   <subtitle><![CDATA[software & cultura livre]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://felipehw.github.io/"/>
-  <updated>2019-07-11T03:13:53.020Z</updated>
+  <updated>2019-07-26T22:37:56.848Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Monitorando temperatura da CPU no GNU/Linux]]></title>
+    <link href="https://felipehw.github.io/2019/07/26/monitorando-temperatura-da-cpu-no-gnu-linux/"/>
+    <id>https://felipehw.github.io/2019/07/26/monitorando-temperatura-da-cpu-no-gnu-linux/</id>
+    <published>2019-07-26T22:37:56.000Z</published>
+    <updated>2019-07-26T22:37:56.848Z</updated>
+    <content type="html"><![CDATA[<p>Esse é um post rápido para mim mesmo no futuro. É sobre como monitorar a temperatura da CPU no GNU/Linux (e mais algumas informações de outros sensores disponíveis na máquina).</p>
+<img src="/2019/07/26/monitorando-temperatura-da-cpu-no-gnu-linux/sensors.png" title="Monitorando a velocidade da CPU com sensors">
+<a id="more"></a>
+<p>Utilizaremos as ferramentas do projeto <a href="https://hwmon.wiki.kernel.org/lm_sensors" target="_blank" rel="noopener">lm_sensors</a>.</p>
+<h2 id="0-Instalacao"><a href="#0-Instalacao" class="headerlink" title="0. Instalação"></a>0. Instalação</h2><p>No Fedora 30:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf install -y lm_sensors</span><br></pre></td></tr></table></figure>
+<h2 id="1-Utilizacao"><a href="#1-Utilizacao" class="headerlink" title="1. Utilização"></a>1. Utilização</h2><p>Para verificar a temperatura da CPU (e mais algumas informações de outros sensores disponíveis na máquina):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sensors</span><br></pre></td></tr></table></figure></p>
+<p>Para monitorar em tempo real utilizamos o utilitário <em>watch</em>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ watch sensors</span><br></pre></td></tr></table></figure></p>
+<p>O padrão do <em>watch</em> é invocar o comando (em nosso caso, <em>sensors</em>) a cada 2 segundos. Para definir 1 segundo, utilizamos: <code>watch -n 1 sensors</code>.</p>
+<p>Até mais!</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://hwmon.wiki.kernel.org/lm_sensors" target="_blank" rel="noopener">lm_sensors</a>: Site do projeto <em>lm_sensors</em>.</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Esse é um post rápido para mim mesmo no futuro. É sobre como monitorar a temperatura da CPU no GNU/Linux (e mais algumas informações de outros sensores disponíveis na máquina).</p>
+<img src="/2019/07/26/monitorando-temperatura-da-cpu-no-gnu-linux/sensors.png" title="Monitorando a velocidade da CPU com sensors">]]>
+    
+    </summary>
+    
+      <category term="fedora" scheme="https://felipehw.github.io/tags/fedora/"/>
+    
+      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[OCRs de PDFs no GNU/Linux: Estudando com textos e não prints]]></title>
@@ -1296,44 +1328,6 @@
       <category term="gnome" scheme="https://felipehw.github.io/tags/gnome/"/>
     
       <category term="music" scheme="https://felipehw.github.io/tags/music/"/>
-    
-      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Tamanho de fontes em monitores 15' FullHD no Gnome, Firefox e Thunderbird]]></title>
-    <link href="https://felipehw.github.io/2015/05/10/tamanho-de-fontes-em-monitores-15-fullhd-no-gnome-firefox-e-thunderbird/"/>
-    <id>https://felipehw.github.io/2015/05/10/tamanho-de-fontes-em-monitores-15-fullhd-no-gnome-firefox-e-thunderbird/</id>
-    <published>2015-05-10T17:27:32.000Z</published>
-    <updated>2015-09-06T20:05:42.480Z</updated>
-    <content type="html"><![CDATA[<p>Recentemente, recebi um notebook de <strong>15 polegadas FullHD (1920x1080)</strong> para trabalhar. E qual não foi a minha surpresa em descobrir que o Gnome, Firefox e Thunderbird (entre outros) ficavam com a <strong>fonte muito pequena</strong> para uma legibilidade adequada.</p>
-<img src="/2015/05/10/tamanho-de-fontes-em-monitores-15-fullhd-no-gnome-firefox-e-thunderbird/mr_magoo-min.png" title="Mr Magoo">
-<a id="more"></a>
-<p>Uma pesquisa rápida na internet me mostrou como adequar a fonte e tornar a experiência extremamente agradável. Vejamos as dicas:</p>
-<ul>
-<li>Gnome<br>Vá em “Ferramenta de ajustes” (“Tweak Tool”) -&gt; “Fontes”: Modifique o “Fator de escala” de <code>1.00</code> p/ <code>1.15</code>.</li>
-<li>Firefox/Iceweasel<br>Modifique <code>layout.css.devPixelsPerPx</code> em <code>about:config</code> de <code>-1.0</code> p/ <code>1.25</code>.</li>
-<li>Thunderbird/Icedove<br>Mesmo processo do Firefox, porém acessei <code>about:config</code> em “Edit” → “Preferences” → “Advanced” → “Config editor”. Optei pelo valor <code>1.1</code>.</li>
-</ul>
-<p>Obs1: Recomendo d+ que telas 15 polegadas sejam FullHD, é outra experiência.<br>Obs2: Ajustes realizados no Debian Jessie (Gnome 3.14, Iceweasel 31, Icedove 31)<br>Obs3: Ajuste os valores numéricos para o que lhe agradar mais.</p>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="https://wiki.archlinux.org/index.php/HiDPI" target="_blank" rel="noopener">HiDPI - ArchWiki</a></li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Recentemente, recebi um notebook de <strong>15 polegadas FullHD (1920x1080)</strong> para trabalhar. E qual não foi a minha surpresa em descobrir que o Gnome, Firefox e Thunderbird (entre outros) ficavam com a <strong>fonte muito pequena</strong> para uma legibilidade adequada.</p>
-<img src="/2015/05/10/tamanho-de-fontes-em-monitores-15-fullhd-no-gnome-firefox-e-thunderbird/mr_magoo-min.png" title="Mr Magoo">]]>
-    
-    </summary>
-    
-      <category term="firefox" scheme="https://felipehw.github.io/tags/firefox/"/>
-    
-      <category term="thunderbird" scheme="https://felipehw.github.io/tags/thunderbird/"/>
-    
-      <category term="gnome" scheme="https://felipehw.github.io/tags/gnome/"/>
-    
-      <category term="fullhd" scheme="https://felipehw.github.io/tags/fullhd/"/>
     
       <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
     
