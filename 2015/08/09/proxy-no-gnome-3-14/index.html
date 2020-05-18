@@ -3,44 +3,44 @@
 <head>
   <meta charset="utf-8">
   
+
+  
   <title>Proxy autenticado no Gnome 3.14 | $ls /home/felipehw</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="No trabalho, utilizo um notebook com Debian Jessie e acesso à internet por meio de proxy autenticado (com senha). O grande problema é que o Gnome 3.14 não disponibiliza em sua ferramenta de configuraç">
-<meta name="keywords" content="gnome,proxy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Proxy autenticado no Gnome 3.14">
 <meta property="og:url" content="https://felipehw.github.io/2015/08/09/proxy-no-gnome-3-14/index.html">
 <meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
 <meta property="og:description" content="No trabalho, utilizo um notebook com Debian Jessie e acesso à internet por meio de proxy autenticado (com senha). O grande problema é que o Gnome 3.14 não disponibiliza em sua ferramenta de configuraç">
-<meta property="og:locale" content="pt-BR">
-<meta property="og:updated_time" content="2015-08-09T23:08:53.367Z">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="2015-08-10T02:07:24.000Z">
+<meta property="article:modified_time" content="2015-08-09T23:08:53.368Z">
+<meta property="article:author" content="felipehw">
+<meta property="article:tag" content="gnome">
+<meta property="article:tag" content="proxy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Proxy autenticado no Gnome 3.14">
-<meta name="twitter:description" content="No trabalho, utilizo um notebook com Debian Jessie e acesso à internet por meio de proxy autenticado (com senha). O grande problema é que o Gnome 3.14 não disponibiliza em sua ferramenta de configuraç">
   
-    <link rel="alternative" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
   
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-ga('create', 'UA-60491247-1', 'auto');
-ga('send', 'pageview');
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-</script>
-<!-- End Google Analytics -->
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
 
-</head>
 <body>
   <div id="container">
     <div id="wrap">
@@ -85,11 +85,12 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-proxy-no-gnome-3-14" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-proxy-no-gnome-3-14" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2015/08/09/proxy-no-gnome-3-14/" class="article-date">
-  <time datetime="2015-08-10T02:07:24.000Z" itemprop="datePublished">9 ago 2015</time>
+  <time class="dt-published" datetime="2015-08-10T02:07:24.000Z" itemprop="datePublished">9 ago 2015</time>
 </a>
+
     
   <div class="article-category">
     <a class="article-category-link" href="/categories/gnu-linux/">gnu/linux</a>
@@ -102,27 +103,32 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
+    <h1 class="p-name article-title" itemprop="headline name">
       Proxy autenticado no Gnome 3.14
     </h1>
   
 
+
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <p>No trabalho, utilizo um notebook com Debian Jessie e acesso à internet por meio de proxy autenticado (com senha).</p>
 <p>O grande problema é que o Gnome 3.14 não disponibiliza em sua ferramenta de configuração gráfica p/ proxy de rede (“Todas configurações” -&gt; “Rede” -&gt; “Proxy da rede”) uma forma de definir username e password do proxy. E sem isso não conseguimos fazer com que diversos componentes do Gnome acessem à internet.</p>
 <a id="more"></a>
+
 <p>A única forma de definir username e password para o proxy do Gnome é setando “na mão” via linha de comando. Vejamos como fazer:</p>
 <p>Em “Todas configurações” -&gt; “Rede” -&gt; “Proxy da rede”, após definir o “Método” p/ “Manual” e especificar o endereço do proxy e a porta, a configuração foi setada assim por debaixo dos panos:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings list-recursively org.gnome.system.proxy</span><br><span class="line">org.gnome.system.proxy use-same-proxy true</span><br><span class="line">org.gnome.system.proxy mode &apos;manual&apos;</span><br><span class="line">org.gnome.system.proxy autoconfig-url &apos;&apos;</span><br><span class="line">org.gnome.system.proxy ignore-hosts [&apos;localhost&apos;, &apos;127.0.0.0/8&apos;, &apos;::1&apos;, &apos;192.168.0.0/16&apos;]</span><br><span class="line">org.gnome.system.proxy.ftp host &apos;proxy.empresa.com.br&apos;</span><br><span class="line">org.gnome.system.proxy.ftp port 3128</span><br><span class="line">org.gnome.system.proxy.socks host &apos;proxy.empresa.com.br&apos;</span><br><span class="line">org.gnome.system.proxy.socks port 3128</span><br><span class="line">org.gnome.system.proxy.http host &apos;proxy.empresa.com.br&apos;</span><br><span class="line">org.gnome.system.proxy.http port 3128</span><br><span class="line">org.gnome.system.proxy.http use-authentication false</span><br><span class="line">org.gnome.system.proxy.http authentication-password &apos;&apos;</span><br><span class="line">org.gnome.system.proxy.http authentication-user &apos;&apos;</span><br><span class="line">org.gnome.system.proxy.http enabled false</span><br><span class="line">org.gnome.system.proxy.https host &apos;&apos;</span><br><span class="line">org.gnome.system.proxy.https port 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings list-recursively org.gnome.system.proxy</span><br><span class="line">org.gnome.system.proxy use-same-proxy true</span><br><span class="line">org.gnome.system.proxy mode &#39;manual&#39;</span><br><span class="line">org.gnome.system.proxy autoconfig-url &#39;&#39;</span><br><span class="line">org.gnome.system.proxy ignore-hosts [&#39;localhost&#39;, &#39;127.0.0.0&#x2F;8&#39;, &#39;::1&#39;, &#39;192.168.0.0&#x2F;16&#39;]</span><br><span class="line">org.gnome.system.proxy.ftp host &#39;proxy.empresa.com.br&#39;</span><br><span class="line">org.gnome.system.proxy.ftp port 3128</span><br><span class="line">org.gnome.system.proxy.socks host &#39;proxy.empresa.com.br&#39;</span><br><span class="line">org.gnome.system.proxy.socks port 3128</span><br><span class="line">org.gnome.system.proxy.http host &#39;proxy.empresa.com.br&#39;</span><br><span class="line">org.gnome.system.proxy.http port 3128</span><br><span class="line">org.gnome.system.proxy.http use-authentication false</span><br><span class="line">org.gnome.system.proxy.http authentication-password &#39;&#39;</span><br><span class="line">org.gnome.system.proxy.http authentication-user &#39;&#39;</span><br><span class="line">org.gnome.system.proxy.http enabled false</span><br><span class="line">org.gnome.system.proxy.https host &#39;&#39;</span><br><span class="line">org.gnome.system.proxy.https port 0</span><br></pre></td></tr></table></figure>
+
 <p>Obs1: Repare que deixei a configuração p/ https em branco, isso pq a ausência de configuração implica em usar o proxy http p/ https (é o caso da rede que utilizo). Esse funcionamento é explicado na descrição da chave <code>mode</code> em <code>org.gnome.system.proxy</code> no <code>dconf-editor</code>.<br>Obs2: Observe que <code>org.gnome.system.proxy.http enabled</code> é <code>false</code>. Isso não é problema pq essa chave não é mais usada. Esse funcionamento é explicado na descrição da chave <code>enabled</code> em <code>org.gnome.system.proxy.http</code> no <code>dconf-editor</code>.</p>
 <p><strong>Para o proxy autenticado passar a funcionar corretamente</strong>, modifiquei via linha de comando alguns campos (definindo login e senha):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings set org.gnome.system.proxy.http use-authentication true</span><br><span class="line">$ gsettings set org.gnome.system.proxy.http authentication-user &apos;login&apos;</span><br><span class="line">$ gsettings set org.gnome.system.proxy.http authentication-password &apos;senha&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings set org.gnome.system.proxy.http use-authentication true</span><br><span class="line">$ gsettings set org.gnome.system.proxy.http authentication-user &#39;login&#39;</span><br><span class="line">$ gsettings set org.gnome.system.proxy.http authentication-password &#39;senha&#39;</span><br></pre></td></tr></table></figure>
+
 <p>Obs3: Substitua os valores <code>login</code> e <code>senha</code> pelo seu login e senha real.</p>
 <p>O resultado foi:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings list-recursively org.gnome.system.proxy</span><br><span class="line">org.gnome.system.proxy mode &apos;manual&apos;</span><br><span class="line">org.gnome.system.proxy autoconfig-url &apos;&apos;</span><br><span class="line">org.gnome.system.proxy ignore-hosts [&apos;localhost&apos;, &apos;127.0.0.0/8&apos;, &apos;::1&apos;, &apos;192.168.0.0/16&apos;]</span><br><span class="line">org.gnome.system.proxy.ftp host &apos;proxy.empresa.com.br&apos;</span><br><span class="line">org.gnome.system.proxy.ftp port 3128</span><br><span class="line">org.gnome.system.proxy.socks host &apos;proxy.empresa.com.br&apos;</span><br><span class="line">org.gnome.system.proxy.socks port 3128</span><br><span class="line">org.gnome.system.proxy.http host &apos;proxy.empresa.com.br&apos;</span><br><span class="line">org.gnome.system.proxy.http port 3128</span><br><span class="line">org.gnome.system.proxy.http use-authentication true</span><br><span class="line">org.gnome.system.proxy.http authentication-password &apos;senha&apos;</span><br><span class="line">org.gnome.system.proxy.http authentication-user &apos;login&apos;</span><br><span class="line">org.gnome.system.proxy.http enabled false</span><br><span class="line">org.gnome.system.proxy.https host &apos;&apos;</span><br><span class="line">org.gnome.system.proxy.https port 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings list-recursively org.gnome.system.proxy</span><br><span class="line">org.gnome.system.proxy mode &#39;manual&#39;</span><br><span class="line">org.gnome.system.proxy autoconfig-url &#39;&#39;</span><br><span class="line">org.gnome.system.proxy ignore-hosts [&#39;localhost&#39;, &#39;127.0.0.0&#x2F;8&#39;, &#39;::1&#39;, &#39;192.168.0.0&#x2F;16&#39;]</span><br><span class="line">org.gnome.system.proxy.ftp host &#39;proxy.empresa.com.br&#39;</span><br><span class="line">org.gnome.system.proxy.ftp port 3128</span><br><span class="line">org.gnome.system.proxy.socks host &#39;proxy.empresa.com.br&#39;</span><br><span class="line">org.gnome.system.proxy.socks port 3128</span><br><span class="line">org.gnome.system.proxy.http host &#39;proxy.empresa.com.br&#39;</span><br><span class="line">org.gnome.system.proxy.http port 3128</span><br><span class="line">org.gnome.system.proxy.http use-authentication true</span><br><span class="line">org.gnome.system.proxy.http authentication-password &#39;senha&#39;</span><br><span class="line">org.gnome.system.proxy.http authentication-user &#39;login&#39;</span><br><span class="line">org.gnome.system.proxy.http enabled false</span><br><span class="line">org.gnome.system.proxy.https host &#39;&#39;</span><br><span class="line">org.gnome.system.proxy.https port 0</span><br></pre></td></tr></table></figure>
+
 <p>Para testar se está realmente funcionando, verifique se é possível instalar extensões a partir do site <a href="https://extensions.gnome.org/" target="_blank" rel="noopener">https://extensions.gnome.org/</a>, para tanto devem estar configurados o proxy do Gnome e do Firefox/Iceweasel.</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a href="https://developer.gnome.org/ProxyConfiguration/" target="_blank" rel="noopener">https://developer.gnome.org/ProxyConfiguration/</a></li>
@@ -131,12 +137,13 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2015/08/09/proxy-no-gnome-3-14/" data-id="cjyko76ip002rrosxfq5xfjx4" class="article-share-link">Share</a>
+      <a data-url="https://felipehw.github.io/2015/08/09/proxy-no-gnome-3-14/" data-id="ckabl4ghh000rsgmqavyg15xn" data-title="Proxy autenticado no Gnome 3.14" class="article-share-link">Share</a>
       
         <a href="https://felipehw.github.io/2015/08/09/proxy-no-gnome-3-14/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gnome/">gnome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li></ul>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gnome/" rel="tag">gnome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li></ul>
 
     </footer>
   </div>
@@ -161,15 +168,18 @@ ga('send', 'pageview');
   
 </nav>
 
+
   
 </article>
 
 
 <section id="comments">
   <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
   </div>
 </section>
+
+
 </section>
         
           <aside id="sidebar">
@@ -178,18 +188,20 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/humanas/">humanas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/humanas/">humanas</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a></li></ul>
     </div>
   </div>
+
 
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/asteroide/">asteroide</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/">astronomia</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/">backup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/">compartilhamento</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/">criptografia</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/">dark side</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/desktop/">desktop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/">firefox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/">flow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/">fotografia</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/">fullhd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/">glamour</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/historia/">história</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/humanas/">humanas</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/">jsx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/livros/">livros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/">luks</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/">lvm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/">particionamento</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/">pirataria</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/">planeta</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/">raspberry</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/">segurança</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/">ssd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/">thunderbird</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/">torrent</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/">trim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/universidade/">universidade</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/asteroide/" rel="tag">asteroide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/" rel="tag">astronomia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/" rel="tag">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/" rel="tag">backup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/" rel="tag">compartilhamento</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/" rel="tag">criptografia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/" rel="tag">dark side</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/desktop/" rel="tag">desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/" rel="tag">ecmascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/" rel="tag">fedora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/" rel="tag">firefox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/" rel="tag">flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/" rel="tag">fotografia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/" rel="tag">fullhd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/" rel="tag">glamour</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/" rel="tag">gnome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/historia/" rel="tag">história</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/humanas/" rel="tag">humanas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/" rel="tag">jsx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/livros/" rel="tag">livros</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/" rel="tag">lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/" rel="tag">luks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/" rel="tag">lvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/" rel="tag">music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/" rel="tag">particionamento</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/" rel="tag">pirataria</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/" rel="tag">planeta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/" rel="tag">raspberry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/" rel="tag">segurança</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/" rel="tag">ssd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/" rel="tag">steam</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/" rel="tag">thunderbird</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/" rel="tag">torrent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/" rel="tag">trim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/universidade/" rel="tag">universidade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
     </div>
   </div>
+
 
   
     
@@ -200,19 +212,21 @@ ga('send', 'pageview');
     </div>
   </div>
 
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">julho 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">dezembro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">julho 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">junho 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">maio 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">julho 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">dezembro 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">julho 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">junho 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">maio 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a></li></ul>
     </div>
   </div>
+
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -240,6 +254,7 @@ ga('send', 'pageview');
     </div>
   </div>
 
+
   
 </aside>
         
@@ -248,11 +263,12 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 felipehw<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2020 felipehw<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
+
     </div>
     <nav id="mobile-nav">
   
@@ -271,22 +287,30 @@ ga('send', 'pageview');
   
   (function(){
     var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-3.4.1.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
+
+
+
+
 
   </div>
 </body>
