@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://felipehw.github.io/"/>
-  <updated>2019-07-26T22:37:56.848Z</updated>
+  <updated>2020-10-21T01:07:33.415Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Marte, o planeta vermelho, desde Floripa</title>
+    <link href="https://felipehw.github.io/2020/10/20/marte-o-planeta-vermelho-desde-floripa/"/>
+    <id>https://felipehw.github.io/2020/10/20/marte-o-planeta-vermelho-desde-floripa/</id>
+    <published>2020-10-21T01:07:33.000Z</published>
+    <updated>2020-10-21T01:07:33.415Z</updated>
+    
+    <content type="html"><![CDATA[<p>Marte capturado às 23 horas e 49 minutos de 17 de outubro de 2020.</p><img src="/2020/10/20/marte-o-planeta-vermelho-desde-floripa/2020-10-17-0249_1-CapObj_lapl5_ap25-registax-CROPPED-v2.jpg" class="" title="Marte em 17&#x2F;10&#x2F;2020"><a id="more"></a><p>O planeta vermelho está no momento mais próximo da Terra em dois anos. Vejamos:</p><img src="/2020/10/20/marte-o-planeta-vermelho-desde-floripa/20201017-diagram.png" class="" title="Sistema solar em 17&#x2F;10&#x2F;2020"><p>O “pertinho” se traduz em 63 milhões de quilômetros.</p><p>Eu pensava que dificilmente um telescópio pequeno conseguiria algum detalhe do planeta além de uma bolota avermelhada.<br>Felizmente, estava enganado.</p><p>Vejamos o que o precário registro pode nos mostrar:</p><img src="/2020/10/20/marte-o-planeta-vermelho-desde-floripa/2020-10-17-0249_1-CapObj_lapl5_ap25-registax-labels.jpg" class="" title="Marte em 17&#x2F;10&#x2F;2020 com legenda"><p>No momento, o hemisfério sul marciano está visível para nós, terráqueos. E é assim que podemos ver a calota polar do sul, uma manchinha branca. Por que tão pequena? Porque agora está rolando um baita verão no hemisfério sul de Marte e ela reduz muito de tamanho nessa estação do ano.</p><p>O polo norte não é visível e num telescópio assim pequeno mal podemos ver os sinais das nuvens brancas que cobrem esse polo (uns meros e suaves pixels brancos). Esse manto de nuvens se dissipará quando chegar a primavera no polo norte (fevereiro de 2021).</p><p>Entre os dois polos, meu pequeno telescópio consegue diferenciar as áreas marcadas por rochas expostas (escuras) daquelas marcadas por vastas extensões de areias do deserto (claras).</p><p>Pode parecer pouco, mas acho incrível que de maneira amadora, no fundo de um quintal, consigamos enxergar com alguns detalhes um planeta tão longe (e menor que a Terra). Podemos mesmo ver as consequências do verão para o polo sul.</p><p>Se algum dia, o ser humano botar os pés em outro planeta … será em Marte. Em dizer que tem gente que acredita que a Terra é plana e desconfia da astronomia …</p><p>Ah, compare esse registro com o que eu fiz em 15 de julho de 2018.</p><img src="/2020/10/20/marte-o-planeta-vermelho-desde-floripa/Mars_012354_lapl4_ap62-processado_v2-crop.jpg" class="" title="Marte em 15&#x2F;07&#x2F;2018 com legenda"><p>Naquela ocasião, uma tempestade de areia histórica varreu o planeta, apagou os detalhes da geografia e ainda <a href="https://www.space.com/mars-rover-opportunity-declared-dead.html" target="_blank" rel="noopener">matou</a> o rover Opportunity (da Nasa).</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Marte capturado às 23 horas e 49 minutos de 17 de outubro de 2020.&lt;/p&gt;
+&lt;img src=&quot;/2020/10/20/marte-o-planeta-vermelho-desde-floripa/2020-10-17-0249_1-CapObj_lapl5_ap25-registax-CROPPED-v2.jpg&quot; class=&quot;&quot; title=&quot;Marte em 17&amp;#x2F;10&amp;#x2F;2020&quot;&gt;
+    
+    </summary>
+    
+      <category term="offtopic" scheme="https://felipehw.github.io/categories/offtopic/"/>
+    
+    
+      <category term="astronomia" scheme="https://felipehw.github.io/tags/astronomia/"/>
+    
+      <category term="fotografia" scheme="https://felipehw.github.io/tags/fotografia/"/>
+    
+      <category term="planeta" scheme="https://felipehw.github.io/tags/planeta/"/>
+    
+  </entry>
   
   <entry>
     <title>Monitorando temperatura da CPU no GNU/Linux</title>
@@ -540,33 +567,6 @@
       <category term="gnome" scheme="https://felipehw.github.io/tags/gnome/"/>
     
       <category term="proxy" scheme="https://felipehw.github.io/tags/proxy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Como fazer o app GNOME Music encontrar suas músicas</title>
-    <link href="https://felipehw.github.io/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/"/>
-    <id>https://felipehw.github.io/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/</id>
-    <published>2015-07-11T18:05:45.000Z</published>
-    <updated>2015-09-06T20:05:26.253Z</updated>
-    
-    <content type="html"><![CDATA[<p>Por um tempo abri mão de testar o GNOME Music no uso cotidiano porque não conseguia fazer com que lesse os arquivos de música no local onde estavam e por outro pequeno detalhe com a indexação de arquivos.</p><img src="/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/folder-music-icon.png" class="" title="Maldita política de dir pré-estabelecido para músicas"><p>Se você está tendo problemas com o GNOME Music, talvez sejam os mesmos que eu tive.</p><a id="more"></a><p>O GNOME Music não nos permite escolher onde o programa busca as músicas (WTF!), no lugar ele usa variáveis do ambiente padronizadas que são utilizadas por vários aplicativos para buscar arquivos de um determinado tipo. Esses variáveis são determinadas pela especificação <a href="http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html" target="_blank" rel="noopener">XDG Base Directory Specification</a> e se encontram no arquivo <code>~/.config/user-dirs.dirs</code>. Basta atualizar a variável <code>XDG_MUSIC_DIR</code> para apontar para o diretório de músicas. Veja abaixo o conteúdo original do arquivo no Debian Jessie:</p><p><code>~/.config/user-dirs.dirs</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># This file is written by xdg-user-dirs-update</span><br><span class="line"># If you want to change or add directories, just edit the line you&#39;re</span><br><span class="line"># interested in. All local changes will be retained on the next run</span><br><span class="line"># Format is XDG_xxx_DIR&#x3D;&quot;$HOME&#x2F;yyy&quot;, where yyy is a shell-escaped</span><br><span class="line"># homedir-relative path, or XDG_xxx_DIR&#x3D;&quot;&#x2F;yyy&quot;, where &#x2F;yyy is an</span><br><span class="line"># absolute path. No other format is supported.</span><br><span class="line"># </span><br><span class="line">XDG_DESKTOP_DIR&#x3D;&quot;$HOME&#x2F;Área de trabalho&quot;</span><br><span class="line">XDG_DOWNLOAD_DIR&#x3D;&quot;$HOME&#x2F;Downloads&quot;</span><br><span class="line">XDG_TEMPLATES_DIR&#x3D;&quot;$HOME&#x2F;Modelos&quot;</span><br><span class="line">XDG_PUBLICSHARE_DIR&#x3D;&quot;$HOME&#x2F;Público&quot;</span><br><span class="line">XDG_DOCUMENTS_DIR&#x3D;&quot;$HOME&#x2F;Documentos&quot;</span><br><span class="line">XDG_MUSIC_DIR&#x3D;&quot;$HOME&#x2F;Música&quot;</span><br><span class="line">XDG_PICTURES_DIR&#x3D;&quot;$HOME&#x2F;Imagens&quot;</span><br><span class="line">XDG_VIDEOS_DIR&#x3D;&quot;$HOME&#x2F;Vídeos&quot;</span><br></pre></td></tr></table></figure><p>Basta alterar o <em>path</em> dos diretórios para refletirem os dados reais em seu disco rígido, não precisa reiniciar o GNOME … o GNOME Music encontrará os arquivos na próxima vez que for executado. </p><p>Por fim, se o GNOME Music ainda não encontrar seus arquivos, provavelmente é porquê você não está indexando os arquivos do diretório de música (que o GNOME faz via Tracker). Basta habilitar a indexação em <code>Todas as configurações &gt; Pesquisa &gt; Pesquisar localizações -&gt; Música (ON)</code>:</p><img src="/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/pesquisar-localizacoes.png" class="" title="Habilitando a indexação dos arquivos do diretório de música"><p>Agora é só escutar suas músicas com uma cerva:</p><img src="/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/gnome-music.png" class="" title="GNOME Music funkando propriamente">]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Por um tempo abri mão de testar o GNOME Music no uso cotidiano porque não conseguia fazer com que lesse os arquivos de música no local onde estavam e por outro pequeno detalhe com a indexação de arquivos.&lt;/p&gt;
-&lt;img src=&quot;/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/folder-music-icon.png&quot; class=&quot;&quot; title=&quot;Maldita política de dir pré-estabelecido para músicas&quot;&gt;
-
-&lt;p&gt;Se você está tendo problemas com o GNOME Music, talvez sejam os mesmos que eu tive.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
-    
-    
-      <category term="gnome" scheme="https://felipehw.github.io/tags/gnome/"/>
-    
-      <category term="music" scheme="https://felipehw.github.io/tags/music/"/>
     
   </entry>
   
