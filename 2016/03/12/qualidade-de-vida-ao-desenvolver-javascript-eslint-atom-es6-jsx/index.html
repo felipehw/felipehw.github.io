@@ -1,128 +1,76 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   
+  <title>Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX | $ls /home/felipehw</title>
+  <meta name="author" content="felipehw">
+  
+  <meta name="description" content="free software, free culture, copyleft, etc.">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX"/>
+  <meta property="og:site_name" content="$ls /home/felipehw"/>
 
   
-  <title>Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX | $ls /home/felipehw</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Nesse post veremos como configurar o linter ESLint (inclusive no Atom) para ganhar alguns anos de vida a mais ao diminuir o stress no desenvolvimento JavaScript. O post segue o formato “receita-de-bol">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX">
-<meta property="og:url" content="https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/index.html">
-<meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
-<meta property="og:description" content="Nesse post veremos como configurar o linter ESLint (inclusive no Atom) para ganhar alguns anos de vida a mais ao diminuir o stress no desenvolvimento JavaScript. O post segue o formato “receita-de-bol">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:image" content="https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/stress.jpg">
-<meta property="article:published_time" content="2016-03-12T19:56:04.000Z">
-<meta property="article:modified_time" content="2016-03-12T19:56:04.577Z">
-<meta property="article:author" content="felipehw">
-<meta property="article:tag" content="javascript">
-<meta property="article:tag" content="web">
-<meta property="article:tag" content="ecmascript">
-<meta property="article:tag" content="jsx">
-<meta property="article:tag" content="atom">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/stress.jpg">
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="shortcut icon" href="/favicon.png">
   
     <link rel="alternate" href="/atom.xml" title="$ls /home/felipehw" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
 <link rel="stylesheet" href="/css/style.css">
 
+  <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title">
-      <img id="header-logo" src="/images/tux_v02.svg.png" alt="Tux pixelated" title="Tux pixelated">
-      <div id="header-wrap-hs">
-        <h1 id="logo-wrap">
-          <a href="/" id="logo">$ls /home/felipehw</a>
-        </h1>
-        
-          <h2 id="subtitle-wrap">
-            <a href="/" id="subtitle">software &amp; cultura livre</a>
-          </h2>
-        
-      </div>
-    </div>
-    <div id="header-inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-          <a class="main-nav-link" href="/about">About</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://felipehw.github.io"></form>
-      </div>
-    </div>
-  </div>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">$ls /home/felipehw</a></h1>
+  <h2><a href="/">software &amp; cultura livre</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
 </header>
-
-      <div class="outer">
-        <section id="main"><article id="post-qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/" class="article-date">
-  <time class="dt-published" datetime="2016-03-12T19:56:04.000Z" itemprop="datePublished">12 mar 2016</time>
-</a>
-
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/develop/">develop</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article id="post-qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx" class="h-entry post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX
-    </h1>
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time class="dt-published" datetime="2016-03-12T19:56:04.000Z"><a href="/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/">12 Mar 2016</a></time>
+      
+      
+  
+    <h1 class="p-name title" itemprop="headline name">Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX</h1>
   
 
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    </header>
+    <div class="e-content entry" itemprop="articleBody">
       
         <p>Nesse post veremos como configurar o linter ESLint (inclusive no Atom) para ganhar alguns anos de vida a mais ao diminuir o stress no desenvolvimento JavaScript. O post segue o formato “receita-de-bolo” e é destinado ao “eu-do-futuro-que-esqueceu-isso”. Mas pode ser útil para terceiros que sabem o que é um linter :D.</p>
 <p>Ah, o setup considera minha realidade de trabalho (ES6, JSX). Se você ainda usa ES5 … não sabe a diferença … melhorou muito :D</p>
 <img src="/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/stress.jpg" class="" title="A vida é melhor com ESLint">
 
-<a id="more"></a>
+<span id="more"></span>
 
 <p>Há varios linters por aí, como os famosos JSlint, JSHint, JSCS, ESLint.<br>O mais recente desses 4 linters populares é o ESLint e o mesmo tem chamado a atenção por causa de seus recursos.</p>
 <p>O ESLint possui features interessantes como:</p>
@@ -132,11 +80,11 @@
 <li>Melhor suporte à ES6 e JSX</li>
 <li>Possui <em>rules</em> que além de estilo ajudam a detectar bugs</li>
 </ul>
-<p>Devido a essas características, optamos pelo ESLint. Ver mais <a href="http://www.sitepoint.com/comparison-javascript-linting-tools/" target="_blank" rel="noopener">aqui</a>.</p>
+<p>Devido a essas características, optamos pelo ESLint. Ver mais <a target="_blank" rel="noopener" href="http://www.sitepoint.com/comparison-javascript-linting-tools/">aqui</a>.</p>
 <p>Para deixá-lo ainda mais versátil utilizamos conjutamente com:</p>
 <ul>
-<li>parser <a href="https://github.com/babel/babel-eslint" target="_blank" rel="noopener">babel-eslint</a> que permite <em>lintar</em> todo o código suportado pelo babel.</li>
-<li>plugin <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="noopener">ESLint-plugin-React</a> que oferece um conjunto de <em>rules</em> específicas para React (e inclusive corrige problemas como a <em>rule</em> <code>&quot;no-unused-vars&quot;</code> não detectar o uso de vars na sintaxe JSX)</li>
+<li>parser <a target="_blank" rel="noopener" href="https://github.com/babel/babel-eslint">babel-eslint</a> que permite <em>lintar</em> todo o código suportado pelo babel.</li>
+<li>plugin <a target="_blank" rel="noopener" href="https://github.com/yannickcr/eslint-plugin-react">ESLint-plugin-React</a> que oferece um conjunto de <em>rules</em> específicas para React (e inclusive corrige problemas como a <em>rule</em> <code>&quot;no-unused-vars&quot;</code> não detectar o uso de vars na sintaxe JSX)</li>
 </ul>
 <hr>
 <p>Vejamos o setup do mesmo tanto no âmbito do sistema operacional (global) quanto de um determinado projeto (local):</p>
@@ -164,7 +112,7 @@
 <li><code>$ eslint file1.js file2.js</code></li>
 <li><code>$ eslint lib/**</code></li>
 </ul>
-<p>Para mais info ver a <a href="http://eslint.org/docs/user-guide/command-line-interface" target="_blank" rel="noopener">documentação oficial</a>.</p>
+<p>Para mais info ver a <a target="_blank" rel="noopener" href="http://eslint.org/docs/user-guide/command-line-interface">documentação oficial</a>.</p>
 <h2 id="Local-projeto-recomendado"><a href="#Local-projeto-recomendado" class="headerlink" title="Local (projeto) - recomendado"></a>Local (projeto) - recomendado</h2><p>Se quisermos utilizar o eslint apenas num projeto, podemos instalar ele localmente no projeto. Entre as vantagens, está o fato de podermos usar uma determinada versão com uma certa configuração e plugins específicos e de levarmos essa configuração (no <code>package.json</code>) junto com o projeto (que já estará corretamente configurado para uso por terceiros).</p>
 <h3 id="Instalacao-1"><a href="#Instalacao-1" class="headerlink" title="Instalação"></a>Instalação</h3><ol>
 <li>Situe-se na raiz do projeto npm: <code>$ cd ./projeto</code></li>
@@ -196,27 +144,27 @@
 </li>
 <li>É recomendado possuir um arquivo de configuração básico em <code>~/</code>, com rules que sejam interessantes independente das particularidades de um determinado projeto.</li>
 <li>O arquivo de configuração é simples. E podemos escolher se uma <em>rule</em> estará desligada (<code>&quot;off&quot;</code> ou <code>0</code>), emitindo aviso (<code>&quot;warn&quot;</code> ou <code>1</code>) ou emitindo erro (<code>&quot;error&quot;</code> ou <code>2</code>). Exemplo: <code>&quot;indent&quot;: [2, 4]</code> (ou <code>&quot;indent&quot;: [&quot;error&quot;, 4]</code>) emite error quando identação for != de 4 espaços.</li>
-<li>Quando invocamos o eslint, as mensagens de aviso/erro contém as regras que as dispararam. Assim fica fácil localizar e modificar regras que não estejam adequadas.<br>Exemplo:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7:9  error  Expected &#39;&#x3D;&#x3D;&#x3D;&#39; and instead saw &#39;&#x3D;&#x3D;&#39;                              eqeqeq</span><br></pre></td></tr></table></figure>
+<li>Quando invocamos o eslint, as mensagens de aviso/erro contém as regras que as dispararam. Assim fica fácil localizar e modificar regras que não estejam adequadas.<br>Exemplo:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7:9  error  Expected &#x27;===&#x27; and instead saw &#x27;==&#x27;                              eqeqeq</span><br></pre></td></tr></table></figure>
 Na linha 7, coluna 9 do arquivo analisado foi encontrado um <code>==</code> quando era esperado <code>===</code>. A regra que emitiu esse <em>erro</em> foi <code>eqeqeq</code>.</li>
-<li>O <a href="https://github.com/babel/babel-eslint" target="_blank" rel="noopener">babel-eslint</a> possui algumas <a href="https://github.com/babel/babel-eslint#known-issues" target="_blank" rel="noopener">limitações descritas em sua página</a> que é bom considerar.</li>
+<li>O <a target="_blank" rel="noopener" href="https://github.com/babel/babel-eslint">babel-eslint</a> possui algumas <a target="_blank" rel="noopener" href="https://github.com/babel/babel-eslint#known-issues">limitações descritas em sua página</a> que é bom considerar.</li>
 <li>Há um <a href="(https://github.com/babel/babel-eslint/issues/267)">bug</a> no momento em que escrevo que o babel-eslint mais recente (5.0.0) não funciona com o eslint mais recente (2.3.0) e exige que instalemos o eslint 2.2.0.</li>
 </ul>
 <h2 id="Arquivo-de-configuracao-sample"><a href="#Arquivo-de-configuracao-sample" class="headerlink" title="Arquivo de configuração sample"></a>Arquivo de configuração sample</h2><p>Arquivo de configuração funcional comentado (<code>.eslintrc.js</code>)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  parser: <span class="string">'babel-eslint'</span>, <span class="comment">// parser que permite lintar todo o código suportado pelo babel</span></span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    ecmaVersion: <span class="number">7</span>,</span><br><span class="line">    sourceType: <span class="string">'module'</span>, <span class="comment">// habilita suporte a ECMAScript modules</span></span><br><span class="line">    ecmaFeatures: &#123;</span><br><span class="line">      impliedStrict: <span class="literal">true</span>, <span class="comment">// todo código é considerado implicitamente 'strict' (mesmo sem 'use strict').</span></span><br><span class="line">      jsx: <span class="literal">true</span>, <span class="comment">// suporte a JSX</span></span><br><span class="line">      experimentalObjectRestSpread: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  env: &#123;</span><br><span class="line">    browser: <span class="literal">true</span>, <span class="comment">// permite vars globais de browsers</span></span><br><span class="line">    commonjs: <span class="literal">true</span>, <span class="comment">// permite vars globais de commonjs (p/ browser code que usa browserify/webpack)</span></span><br><span class="line">    embertest: <span class="literal">true</span>, <span class="comment">// permite vars globais de embertest</span></span><br><span class="line">    es6: <span class="literal">true</span>, <span class="comment">// permite recursos do ES6</span></span><br><span class="line">    node: <span class="literal">true</span>, <span class="comment">// permite vars globais do node e seu escopo</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [<span class="string">'react'</span>], <span class="comment">// habilita plugin `eslint-plugin-react` (deve ser instalado)</span></span><br><span class="line">  rules: &#123; <span class="comment">// all rules are disabled by default (veja "eslint:recommended" abaixo)</span></span><br><span class="line">    <span class="string">'block-scoped-var'</span>: <span class="number">2</span>, <span class="comment">// proíbe vars de serem usadas fora do bloco onde foram declaradas (emula estilo do C)</span></span><br><span class="line">    <span class="string">'comma-dangle'</span>: [<span class="number">2</span>, <span class="string">'always-multiline'</span>], <span class="comment">// exige ',' em &#123;&#125;s e []s multi line e proíbe em single line</span></span><br><span class="line">    <span class="string">'dot-location'</span>: [<span class="number">2</span>, <span class="string">'property'</span>], <span class="comment">// exige que newlines sejam antes do ponto numa *member expression* (ponto fica junto com propriedade).</span></span><br><span class="line">    eqeqeq: [<span class="number">2</span>, <span class="string">'smart'</span>], <span class="comment">// exige comparação estrita (===) salvo em alguns casos (http://eslint.org/docs/rules/eqeqeq)</span></span><br><span class="line">    indent: [<span class="number">2</span>, <span class="number">2</span>], <span class="comment">// exige indentação de 2 espaços</span></span><br><span class="line">    <span class="string">'linebreak-style'</span>: [<span class="number">2</span>, <span class="string">'unix'</span>], <span class="comment">// proíbe quebras de linha do Windows</span></span><br><span class="line">    <span class="string">'no-else-return'</span>: <span class="number">2</span>, <span class="comment">// proíbe 'else' desnecessario quando 'if' já tem 'return' (pq pode ficar fora do bloco)</span></span><br><span class="line">    <span class="string">'no-unused-vars'</span>: [<span class="number">2</span>, &#123; <span class="string">'vars'</span>: <span class="string">'all'</span>, <span class="string">'args'</span>: <span class="string">'none'</span> &#125;], <span class="comment">// exige que todas as vars sejam usadas, ignora (ñ) uso de argumentos</span></span><br><span class="line">    quotes: [<span class="number">2</span>, <span class="string">'single'</span>, <span class="string">'avoid-escape'</span>], <span class="comment">// exige  '' e não reclama de "quotes 'assim'"</span></span><br><span class="line">    semi: [<span class="number">2</span>, <span class="string">'always'</span>], <span class="comment">// exige ';'</span></span><br><span class="line">    strict: [<span class="number">1</span>, <span class="string">'global'</span>], <span class="comment">// warn pedindo que todo código esteja no strict mode (declaração no escopo global, reclama de 'use strict's redundantes)</span></span><br><span class="line">    <span class="string">'vars-on-top'</span>: <span class="number">2</span>, <span class="comment">// exige que vars estejam declaradas no topo do escopo    </span></span><br><span class="line">  &#125;,</span><br><span class="line">  extends: [ <span class="comment">// extende conf. com a de outros arquivos (últimos tem primazia)</span></span><br><span class="line">    <span class="string">'eslint:recommended'</span>, <span class="comment">// habilita rules recomendadas (ver essas em &lt;http://eslint.org/docs/rules/&gt;)</span></span><br><span class="line">    <span class="string">'plugin:react/recommended'</span>, <span class="comment">// habilita rules recomendadas pelo plugin p/ boas práticas de React (inclusive 'jsx-uses-vars' que evita vars JSX de serem incorretamente marcadas como ñ usadas)</span></span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">parser</span>: <span class="string">&#x27;babel-eslint&#x27;</span>, <span class="comment">// parser que permite lintar todo o código suportado pelo babel</span></span><br><span class="line">  <span class="attr">parserOptions</span>: &#123;</span><br><span class="line">    <span class="attr">ecmaVersion</span>: <span class="number">7</span>,</span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span>, <span class="comment">// habilita suporte a ECMAScript modules</span></span><br><span class="line">    <span class="attr">ecmaFeatures</span>: &#123;</span><br><span class="line">      <span class="attr">impliedStrict</span>: <span class="literal">true</span>, <span class="comment">// todo código é considerado implicitamente &#x27;strict&#x27; (mesmo sem &#x27;use strict&#x27;).</span></span><br><span class="line">      <span class="attr">jsx</span>: <span class="literal">true</span>, <span class="comment">// suporte a JSX</span></span><br><span class="line">      <span class="attr">experimentalObjectRestSpread</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">env</span>: &#123;</span><br><span class="line">    <span class="attr">browser</span>: <span class="literal">true</span>, <span class="comment">// permite vars globais de browsers</span></span><br><span class="line">    <span class="attr">commonjs</span>: <span class="literal">true</span>, <span class="comment">// permite vars globais de commonjs (p/ browser code que usa browserify/webpack)</span></span><br><span class="line">    <span class="attr">embertest</span>: <span class="literal">true</span>, <span class="comment">// permite vars globais de embertest</span></span><br><span class="line">    <span class="attr">es6</span>: <span class="literal">true</span>, <span class="comment">// permite recursos do ES6</span></span><br><span class="line">    <span class="attr">node</span>: <span class="literal">true</span>, <span class="comment">// permite vars globais do node e seu escopo</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="string">&#x27;react&#x27;</span>], <span class="comment">// habilita plugin `eslint-plugin-react` (deve ser instalado)</span></span><br><span class="line">  <span class="attr">rules</span>: &#123; <span class="comment">// all rules are disabled by default (veja &quot;eslint:recommended&quot; abaixo)</span></span><br><span class="line">    <span class="string">&#x27;block-scoped-var&#x27;</span>: <span class="number">2</span>, <span class="comment">// proíbe vars de serem usadas fora do bloco onde foram declaradas (emula estilo do C)</span></span><br><span class="line">    <span class="string">&#x27;comma-dangle&#x27;</span>: [<span class="number">2</span>, <span class="string">&#x27;always-multiline&#x27;</span>], <span class="comment">// exige &#x27;,&#x27; em &#123;&#125;s e []s multi line e proíbe em single line</span></span><br><span class="line">    <span class="string">&#x27;dot-location&#x27;</span>: [<span class="number">2</span>, <span class="string">&#x27;property&#x27;</span>], <span class="comment">// exige que newlines sejam antes do ponto numa *member expression* (ponto fica junto com propriedade).</span></span><br><span class="line">    <span class="attr">eqeqeq</span>: [<span class="number">2</span>, <span class="string">&#x27;smart&#x27;</span>], <span class="comment">// exige comparação estrita (===) salvo em alguns casos (http://eslint.org/docs/rules/eqeqeq)</span></span><br><span class="line">    <span class="attr">indent</span>: [<span class="number">2</span>, <span class="number">2</span>], <span class="comment">// exige indentação de 2 espaços</span></span><br><span class="line">    <span class="string">&#x27;linebreak-style&#x27;</span>: [<span class="number">2</span>, <span class="string">&#x27;unix&#x27;</span>], <span class="comment">// proíbe quebras de linha do Windows</span></span><br><span class="line">    <span class="string">&#x27;no-else-return&#x27;</span>: <span class="number">2</span>, <span class="comment">// proíbe &#x27;else&#x27; desnecessario quando &#x27;if&#x27; já tem &#x27;return&#x27; (pq pode ficar fora do bloco)</span></span><br><span class="line">    <span class="string">&#x27;no-unused-vars&#x27;</span>: [<span class="number">2</span>, &#123; <span class="string">&#x27;vars&#x27;</span>: <span class="string">&#x27;all&#x27;</span>, <span class="string">&#x27;args&#x27;</span>: <span class="string">&#x27;none&#x27;</span> &#125;], <span class="comment">// exige que todas as vars sejam usadas, ignora (ñ) uso de argumentos</span></span><br><span class="line">    <span class="attr">quotes</span>: [<span class="number">2</span>, <span class="string">&#x27;single&#x27;</span>, <span class="string">&#x27;avoid-escape&#x27;</span>], <span class="comment">// exige  &#x27;&#x27; e não reclama de &quot;quotes &#x27;assim&#x27;&quot;</span></span><br><span class="line">    <span class="attr">semi</span>: [<span class="number">2</span>, <span class="string">&#x27;always&#x27;</span>], <span class="comment">// exige &#x27;;&#x27;</span></span><br><span class="line">    <span class="attr">strict</span>: [<span class="number">1</span>, <span class="string">&#x27;global&#x27;</span>], <span class="comment">// warn pedindo que todo código esteja no strict mode (declaração no escopo global, reclama de &#x27;use strict&#x27;s redundantes)</span></span><br><span class="line">    <span class="string">&#x27;vars-on-top&#x27;</span>: <span class="number">2</span>, <span class="comment">// exige que vars estejam declaradas no topo do escopo    </span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extends</span>: [ <span class="comment">// extende conf. com a de outros arquivos (últimos tem primazia)</span></span><br><span class="line">    <span class="string">&#x27;eslint:recommended&#x27;</span>, <span class="comment">// habilita rules recomendadas (ver essas em &lt;http://eslint.org/docs/rules/&gt;)</span></span><br><span class="line">    <span class="string">&#x27;plugin:react/recommended&#x27;</span>, <span class="comment">// habilita rules recomendadas pelo plugin p/ boas práticas de React (inclusive &#x27;jsx-uses-vars&#x27; que evita vars JSX de serem incorretamente marcadas como ñ usadas)</span></span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="Com-Atom"><a href="#Com-Atom" class="headerlink" title="Com Atom"></a>Com Atom</h2><p>Para utilizar o ESLint em conjunto com o editor <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>, o pacote mais famoso é o <a href="https://atom.io/packages/linter-eslint" target="_blank" rel="noopener">linter-eslint</a>.<br>Basta instalar o pacote <code>linter-eslint</code> desde o Atom.<br>O <code>linter-eslint</code> depende do pacote <code>linter</code> e irá instalar esse automaticamente caso necessário.</p>
-<p>Caso você utilize o <a href="http://nuclide.io/" target="_blank" rel="noopener">Nuclide</a> sobre o Atom, o mesmo utiliza uma solução alternativa ao pacote <code>linter</code>, chamada <a href="https://github.com/facebook/nuclide/tree/master/pkg/nuclide/diagnostics" target="_blank" rel="noopener">nuclide-diagnostics</a>. Qualquer pacote (incluindo o <code>linter-eslint</code>) que funcione com o <code>linter</code> funciona com o <code>nuclide-diagnostics</code>, de modo que apenas um dos dois deve estar habilitado. Caso os dois estejam habilitados ao mesmo tempo, veremos uma UI duplicada para exibir dados do linter durante a utilização.</p>
+<h2 id="Com-Atom"><a href="#Com-Atom" class="headerlink" title="Com Atom"></a>Com Atom</h2><p>Para utilizar o ESLint em conjunto com o editor <a target="_blank" rel="noopener" href="https://atom.io/">Atom</a>, o pacote mais famoso é o <a target="_blank" rel="noopener" href="https://atom.io/packages/linter-eslint">linter-eslint</a>.<br>Basta instalar o pacote <code>linter-eslint</code> desde o Atom.<br>O <code>linter-eslint</code> depende do pacote <code>linter</code> e irá instalar esse automaticamente caso necessário.</p>
+<p>Caso você utilize o <a target="_blank" rel="noopener" href="http://nuclide.io/">Nuclide</a> sobre o Atom, o mesmo utiliza uma solução alternativa ao pacote <code>linter</code>, chamada <a target="_blank" rel="noopener" href="https://github.com/facebook/nuclide/tree/master/pkg/nuclide/diagnostics">nuclide-diagnostics</a>. Qualquer pacote (incluindo o <code>linter-eslint</code>) que funcione com o <code>linter</code> funciona com o <code>nuclide-diagnostics</code>, de modo que apenas um dos dois deve estar habilitado. Caso os dois estejam habilitados ao mesmo tempo, veremos uma UI duplicada para exibir dados do linter durante a utilização.</p>
 <p>O <code>linter-eslint</code>, por padrão, tentará utilizar uma versão do <code>eslint</code> local ao seu projeto (vimos como instalar localmente acima). A versão local é buscada em <code>projeto/node_modules/eslint</code>. Se a versão local não for encontrada, será utilizada uma que vem com o pacote. Caso desejado, podemos via configuração espeficicar para o <code>linter-eslint</code> utilizar um <code>eslint</code> instalado globalmente.</p>
 <p>Para utilizar plugins do ESLint, basta que estes estejam instalados localmente no seu projeto conjuntamente com o ESLint (também visto acima). A outra opção é instalar tanto o ESLint quanto seus plugins globalmente (também visto acima) e habilitar nas configurações do pacote <code>linter-eslint</code> (via interface) a opção <code>Use Global Eslint</code> para utilizar o <code>eslint</code> instalado globalmente.</p>
 <p>A localização do arquivo de configuração do ESLint utilizado pelo <code>linter-eslint</code> segue as mesmas regras utilizadas normalmente pelo <code>eslint</code> (ver acima).</p>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
-<li><a href="http://eslint.org/" target="_blank" rel="noopener">ESlint</a><ul>
-<li><a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="noopener">Documentation - ESLint - Pluggable JavaScript linter</a>: Configuração do ESLint</li>
-<li><a href="http://eslint.org/docs/rules/" target="_blank" rel="noopener">List of available rules - ESLint - Pluggable JavaScript linter</a>: Documentação sobre <em>rules</em> do ESLint</li>
+<li><a target="_blank" rel="noopener" href="http://eslint.org/">ESlint</a><ul>
+<li><a target="_blank" rel="noopener" href="http://eslint.org/docs/user-guide/configuring">Documentation - ESLint - Pluggable JavaScript linter</a>: Configuração do ESLint</li>
+<li><a target="_blank" rel="noopener" href="http://eslint.org/docs/rules/">List of available rules - ESLint - Pluggable JavaScript linter</a>: Documentação sobre <em>rules</em> do ESLint</li>
 </ul>
 </li>
-<li>parser <a href="https://github.com/babel/babel-eslint" target="_blank" rel="noopener">babel-eslint</a></li>
-<li>plugin <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="noopener">ESLint-plugin-React</a></li>
+<li>parser <a target="_blank" rel="noopener" href="https://github.com/babel/babel-eslint">babel-eslint</a></li>
+<li>plugin <a target="_blank" rel="noopener" href="https://github.com/yannickcr/eslint-plugin-react">ESLint-plugin-React</a></li>
 </ul>
 <p><strong>Obs</strong>: Versões utilizadas na confecção do post:</p>
 <ul>
@@ -229,182 +177,227 @@ Na linha 7, coluna 9 do arquivo analisado foi encontrado um <code>==</code> quan
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/" data-id="ckabl4ggx000jsgmq05b13275" data-title="Qualidade de vida ao desenvolver JavaScript: ESLint + Atom + ES6 + JSX" class="article-share-link">Share</a>
+    <footer>
       
-        <a href="https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atom/" rel="tag">atom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/" rel="tag">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsx/" rel="tag">jsx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
+        
+  
+  <div class="categories">
+    <a href="/categories/develop/">develop</a>
+  </div>
 
+        
+  
+  <div class="tags">
+    <a href="/tags/javascript/">javascript</a>, <a href="/tags/web/">web</a>, <a href="/tags/ecmascript/">ecmascript</a>, <a href="/tags/jsx/">jsx</a>, <a href="/tags/atom/">atom</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Júpiter, o gigante gasoso, desde Floripa
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/03/12/aventuras-com-flow-atom-javascript/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Aventuras com Flow + Atom (JavaScript)</div>
-    </a>
-  
-</nav>
-
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cultura-livre/">cultura livre</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">develop</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/gnu-linux/">gnu/linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/humanas/">humanas</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/offtopic/">offtopic</a></li></ul>
-    </div>
-  </div>
-
+<section id="comment">
+  <h1 class="title">Comments</h1>
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/asteroide/" rel="tag">asteroide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/astronomia/" rel="tag">astronomia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/" rel="tag">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/backup/" rel="tag">backup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/compartilhamento/" rel="tag">compartilhamento</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/criptografia/" rel="tag">criptografia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dark-side/" rel="tag">dark side</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/" rel="tag">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/desktop/" rel="tag">desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/" rel="tag">ecmascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/" rel="tag">fedora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firefox/" rel="tag">firefox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flow/" rel="tag">flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fotografia/" rel="tag">fotografia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fullhd/" rel="tag">fullhd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/glamour/" rel="tag">glamour</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/" rel="tag">gnome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/historia/" rel="tag">história</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/humanas/" rel="tag">humanas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsx/" rel="tag">jsx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/livros/" rel="tag">livros</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/" rel="tag">lua</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/luks/" rel="tag">luks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lvm/" rel="tag">lvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/" rel="tag">music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/particionamento/" rel="tag">particionamento</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pirataria/" rel="tag">pirataria</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/planeta/" rel="tag">planeta</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/raspberry/" rel="tag">raspberry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seguranca/" rel="tag">segurança</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssd/" rel="tag">ssd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/" rel="tag">steam</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thunderbird/" rel="tag">thunderbird</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/torrent/" rel="tag">torrent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trim/" rel="tag">trim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/universidade/" rel="tag">universidade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/asteroide/" style="font-size: 10px;">asteroide</a> <a href="/tags/astronomia/" style="font-size: 20px;">astronomia</a> <a href="/tags/atom/" style="font-size: 12.5px;">atom</a> <a href="/tags/backup/" style="font-size: 10px;">backup</a> <a href="/tags/compartilhamento/" style="font-size: 17.5px;">compartilhamento</a> <a href="/tags/criptografia/" style="font-size: 12.5px;">criptografia</a> <a href="/tags/dark-side/" style="font-size: 10px;">dark side</a> <a href="/tags/debian/" style="font-size: 20px;">debian</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/ecmascript/" style="font-size: 17.5px;">ecmascript</a> <a href="/tags/fedora/" style="font-size: 12.5px;">fedora</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/flow/" style="font-size: 10px;">flow</a> <a href="/tags/fotografia/" style="font-size: 20px;">fotografia</a> <a href="/tags/fullhd/" style="font-size: 10px;">fullhd</a> <a href="/tags/glamour/" style="font-size: 10px;">glamour</a> <a href="/tags/gnome/" style="font-size: 15px;">gnome</a> <a href="/tags/historia/" style="font-size: 10px;">história</a> <a href="/tags/humanas/" style="font-size: 12.5px;">humanas</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jsx/" style="font-size: 12.5px;">jsx</a> <a href="/tags/livros/" style="font-size: 10px;">livros</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/luks/" style="font-size: 10px;">luks</a> <a href="/tags/lvm/" style="font-size: 12.5px;">lvm</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/particionamento/" style="font-size: 12.5px;">particionamento</a> <a href="/tags/pirataria/" style="font-size: 17.5px;">pirataria</a> <a href="/tags/planeta/" style="font-size: 15px;">planeta</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/raspberry/" style="font-size: 12.5px;">raspberry</a> <a href="/tags/seguranca/" style="font-size: 10px;">segurança</a> <a href="/tags/ssd/" style="font-size: 10px;">ssd</a> <a href="/tags/steam/" style="font-size: 10px;">steam</a> <a href="/tags/thunderbird/" style="font-size: 10px;">thunderbird</a> <a href="/tags/torrent/" style="font-size: 10px;">torrent</a> <a href="/tags/trim/" style="font-size: 10px;">trim</a> <a href="/tags/universidade/" style="font-size: 12.5px;">universidade</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">outubro 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">julho 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">dezembro 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">julho 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">junho 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">maio 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">março 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">fevereiro 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">junho 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">março 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">janeiro 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">outubro 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">setembro 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">agosto 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">julho 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">maio 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">abril 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">março 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">fevereiro 2015</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/10/20/marte-o-planeta-vermelho-desde-floripa/">Marte, o planeta vermelho, desde Floripa</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/26/monitorando-temperatura-da-cpu-no-gnu-linux/">Monitorando temperatura da CPU no GNU/Linux</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/">OCRs de PDFs no GNU/Linux: Estudando com textos e não prints</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/25/comentario-sobre-o-livro-sob-tres-bandeiras-anarquismo-e-imaginacao-anticolonial/">Sobre o livro Sob três bandeiras: Anarquismo e imaginação anticolonial</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/02/saturno-e-seus-aneis-desde-floripa/">Saturno e seus anéis desde Floripa</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 felipehw<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/about" class="mobile-nav-link">About</a>
-  
-</nav>
-    
+      <div id="fb-root"></div>
 <script>
-  var disqus_shortname = 'felipehwgithubiogit';
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
   
-  var disqus_url = 'https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/';
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="as_sitesearch" value="felipehw.github.io">
+  </form>
+</div>
+
+
   
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.async = true;
-    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/cultura-livre/">cultura livre</a><small>4</small></li>
+  
+    <li><a href="/categories/develop/">develop</a><small>4</small></li>
+  
+    <li><a href="/categories/gnu-linux/">gnu/linux</a><small>14</small></li>
+  
+    <li><a href="/categories/humanas/">humanas</a><small>1</small></li>
+  
+    <li><a href="/categories/offtopic/">offtopic</a><small>7</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/asteroide/">asteroide</a><small>1</small></li>
+  
+    <li><a href="/tags/astronomia/">astronomia</a><small>6</small></li>
+  
+    <li><a href="/tags/atom/">atom</a><small>2</small></li>
+  
+    <li><a href="/tags/backup/">backup</a><small>1</small></li>
+  
+    <li><a href="/tags/compartilhamento/">compartilhamento</a><small>4</small></li>
+  
+    <li><a href="/tags/criptografia/">criptografia</a><small>2</small></li>
+  
+    <li><a href="/tags/dark-side/">dark side</a><small>1</small></li>
+  
+    <li><a href="/tags/debian/">debian</a><small>6</small></li>
+  
+    <li><a href="/tags/desktop/">desktop</a><small>1</small></li>
+  
+    <li><a href="/tags/ecmascript/">ecmascript</a><small>4</small></li>
+  
+    <li><a href="/tags/fedora/">fedora</a><small>2</small></li>
+  
+    <li><a href="/tags/firefox/">firefox</a><small>1</small></li>
+  
+    <li><a href="/tags/flow/">flow</a><small>1</small></li>
+  
+    <li><a href="/tags/fotografia/">fotografia</a><small>6</small></li>
+  
+    <li><a href="/tags/fullhd/">fullhd</a><small>1</small></li>
+  
+    <li><a href="/tags/glamour/">glamour</a><small>1</small></li>
+  
+    <li><a href="/tags/gnome/">gnome</a><small>3</small></li>
+  
+    <li><a href="/tags/historia/">história</a><small>1</small></li>
+  
+    <li><a href="/tags/humanas/">humanas</a><small>2</small></li>
+  
+    <li><a href="/tags/javascript/">javascript</a><small>4</small></li>
+  
+    <li><a href="/tags/jsx/">jsx</a><small>2</small></li>
+  
+    <li><a href="/tags/livros/">livros</a><small>1</small></li>
+  
+    <li><a href="/tags/lua/">lua</a><small>1</small></li>
+  
+    <li><a href="/tags/luks/">luks</a><small>1</small></li>
+  
+    <li><a href="/tags/lvm/">lvm</a><small>2</small></li>
+  
+    <li><a href="/tags/music/">music</a><small>1</small></li>
+  
+    <li><a href="/tags/nvidia/">nvidia</a><small>1</small></li>
+  
+    <li><a href="/tags/particionamento/">particionamento</a><small>2</small></li>
+  
+    <li><a href="/tags/pirataria/">pirataria</a><small>4</small></li>
+  
+    <li><a href="/tags/planeta/">planeta</a><small>3</small></li>
+  
+    <li><a href="/tags/proxy/">proxy</a><small>1</small></li>
+  
+    <li><a href="/tags/raspberry/">raspberry</a><small>2</small></li>
+  
+    <li><a href="/tags/seguranca/">segurança</a><small>1</small></li>
+  
+    <li><a href="/tags/ssd/">ssd</a><small>1</small></li>
+  
+    <li><a href="/tags/steam/">steam</a><small>1</small></li>
+  
+    <li><a href="/tags/thunderbird/">thunderbird</a><small>1</small></li>
+  
+    <li><a href="/tags/torrent/">torrent</a><small>1</small></li>
+  
+    <li><a href="/tags/trim/">trim</a><small>1</small></li>
+  
+    <li><a href="/tags/universidade/">universidade</a><small>2</small></li>
+  
+    <li><a href="/tags/web/">web</a><small>4</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2021 felipehw
+  
+</div>
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+
+
+<script src="/js/gallery.js"></script>
+
+
+
+<script>
+var disqus_shortname = 'felipehwgithubiogit';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
 </script>
 
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script>
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-
-  </div>
 </body>
 </html>
