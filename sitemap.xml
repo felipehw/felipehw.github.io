@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://felipehw.github.io/2018/07/25/comentario-sobre-o-livro-sob-tres-bandeiras-anarquismo-e-imaginacao-anticolonial/</loc>
+    
+    <lastmod>2022-02-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/</loc>
+    
+    <lastmod>2022-02-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/</loc>
+    
+    <lastmod>2022-02-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/</loc>
+    
+    <lastmod>2022-02-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/</loc>
+    
+    <lastmod>2022-02-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://felipehw.github.io/2020/10/20/marte-o-planeta-vermelho-desde-floripa/</loc>
     
     <lastmod>2020-10-21</lastmod>
@@ -23,27 +58,6 @@
   </url>
   
   <url>
-    <loc>https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/</loc>
-    
-    <lastmod>2019-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/</loc>
-    
-    <lastmod>2019-07-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/07/25/comentario-sobre-o-livro-sob-tres-bandeiras-anarquismo-e-imaginacao-anticolonial/</loc>
-    
-    <lastmod>2018-07-25</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://felipehw.github.io/2018/07/02/saturno-e-seus-aneis-desde-floripa/</loc>
     
     <lastmod>2018-07-16</lastmod>
@@ -61,13 +75,6 @@
     <loc>https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/</loc>
     
     <lastmod>2018-05-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/</loc>
-    
-    <lastmod>2018-03-29</lastmod>
     
   </url>
   
@@ -117,13 +124,6 @@
     <loc>https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/</loc>
     
     <lastmod>2015-10-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/</loc>
-    
-    <lastmod>2015-10-06</lastmod>
     
   </url>
   
@@ -221,7 +221,7 @@
 
   <url>
     <loc>https://felipehw.github.io/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -229,280 +229,273 @@
   
   <url>
     <loc>https://felipehw.github.io/tags/debian/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/criptografia/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/nvidia/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/steam/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/dark-side/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/backup/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/seguranca/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/lvm/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/particionamento/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/firefox/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/thunderbird/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/gnome/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/fullhd/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/music/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/proxy/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/javascript/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/web/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/ecmascript/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/astronomia/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/fotografia/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/lua/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/raspberry/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/trim/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/ssd/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/luks/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/fedora/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/glamour/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/jsx/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/atom/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/flow/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/planeta/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/compartilhamento/</loc>
-    <lastmod>2021-07-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/tags/pirataria/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/desktop/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/universidade/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/humanas/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/asteroide/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/historia/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/livros/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/torrent/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -511,35 +504,35 @@
   
   <url>
     <loc>https://felipehw.github.io/categories/offtopic/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/categories/gnu-linux/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/categories/develop/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/categories/cultura-livre/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/categories/humanas/</loc>
-    <lastmod>2021-07-21</lastmod>
+    <lastmod>2022-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
