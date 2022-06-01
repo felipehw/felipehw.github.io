@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://felipehw.github.io/"/>
-  <updated>2020-10-21T01:07:33.415Z</updated>
+  <updated>2022-06-01T20:36:25.023Z</updated>
   <id>https://felipehw.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Torto arado</title>
+    <link href="https://felipehw.github.io/2022/06/01/torto-arado/"/>
+    <id>https://felipehw.github.io/2022/06/01/torto-arado/</id>
+    <published>2022-06-01T20:30:40.000Z</published>
+    <updated>2022-06-01T20:36:25.023Z</updated>
+    
+    <content type="html"><![CDATA[<p>Todo mundo leu e falou desse livro. Apenas li agora, mas deixo minha impressão também :D.</p><img src="/2022/06/01/torto-arado/torto-arado.jpg" class="" title="Capa de Torto arado"><span id="more"></span><p>Torto arado é um mergulho sensível no mundo de servidão e violência que sufoca os herdeiros da escravidão. É sobre as permanências, sobre o peso e a tradição violenta que rege o Brasil rural. Um mundo que resiste, que se transforma à luz das rápidas transformações do século XX mas também conserva. Um mundo que se pudéssemos omitir inovações como energia elétrica e motos, poderia, numa primeira mirada, ser difícil de distinguir o século.</p><p>É um mergulho ficcional, deve-se dizer, mas extremamente realista. É sobre o controle sofregamente mantido por uma classe proprietária sobre uma população despossuída e marginalizada. Impossível não lembrar de sua contrapartida urbana (e verídica): o diário de Carolina Maria de Jesus de (Quarto de despejo: diário de uma favelada).</p><p>É também um livro sobre raízes e cultura popular dos herdeiros da escravidão. Evoca o orgulho tanto daqueles que eram os reservatórios dessas tradições — como Zeca Chapéu Grande — como daqueles que mesclavam sua experiência e sabedorias tradicionais com os ventos da esquerda que varriam o Brasil no final da Ditadura e início da Nova República — como Bibiana e Severo.</p><p>O realismo do livro “choca-se” com o mágico da cultura popular dos herdeiros da escravidão. Não no sentido de negá-lo, mas, sim, pelo contrário, de incorporá-lo. É um livro de realismo mágico. Aqui, o sobrenatural é tido como real. Os encantados do Jarê, tidos como reais pelos personagens, ganham sua existência inconteste na terceira parte do livro, na qual o narrador passa a ser um dos encantados: Santa Rita Pescadeira.</p><p>A narração, a propósito, é um destaque a parte. A história é sobre o drama de uma família negra no meio rural, é sobre gerações, é sobre cada uma das famílias que vivem o mesmo destino na Fazenda Água Negra e incontáveis outras. Para tanto, o romance é divido em três partes, cada um portando uma voz. Na primeira, quem narra os eventos é a irmã Bibiana, a segunda é narrada pela irmã Belonísia, e, por último, temos o retrato fantástico de Santa Rita Pescadeira.</p><p>Chama a atenção o recurso do autor para enfocar as permanências. Itamar Vieira Junior optou por evitar dar claramente o período em que ocorre a história do livro. A ideia é que o leitor tenha que perscrutar, sondar, tentar montar um quadro. Sem esse esforço, temos a impressão que a história ocorreu em um momento indefinido na história do Brasil. Tamanha as permanências.</p><p>Falando de um ponto de vista mais “pessoal”, é uma trama e uma narrativa que prendem imediatamente. O sentido de uma história que atravessa gerações mas ainda assim tem a impressão íntima de cada uma das vozes que a narra é surpreendente. O autor apresenta de cara o segredo que atravessa o livro: a faca de Donana e sua história (e maldição) que corta gerações de sua família. A faca atravessa a história da própria Donana, de Carmelita (sua filha), e das netas Bibiana e Belonísia (e, consequentemente, dos pais Zeca e Salu). O segredo, contudo, resiste a se encerrar. Se mantendo opaco ao leitor e aos personagens. Ao final, os personagens marcados pelo objeto, guardam para si sua parte dessa trama e apenas o leitor a compreende no todo.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Todo mundo leu e falou desse livro. Apenas li agora, mas deixo minha impressão também :D.&lt;/p&gt;
+&lt;img src=&quot;/2022/06/01/torto-arado/torto-arado.jpg&quot; class=&quot;&quot; title=&quot;Capa de Torto arado&quot;&gt;
+    
+    </summary>
+    
+      <category term="humanas" scheme="https://felipehw.github.io/categories/humanas/"/>
+    
+    
+      <category term="livros" scheme="https://felipehw.github.io/tags/livros/"/>
+    
+  </entry>
   
   <entry>
     <title>Marte, o planeta vermelho, desde Floripa</title>
@@ -536,31 +559,6 @@
       <category term="web" scheme="https://felipehw.github.io/tags/web/"/>
     
       <category term="ecmascript" scheme="https://felipehw.github.io/tags/ecmascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Proxy autenticado no Gnome 3.14</title>
-    <link href="https://felipehw.github.io/2015/08/09/proxy-no-gnome-3-14/"/>
-    <id>https://felipehw.github.io/2015/08/09/proxy-no-gnome-3-14/</id>
-    <published>2015-08-10T02:07:24.000Z</published>
-    <updated>2015-08-09T23:08:53.368Z</updated>
-    
-    <content type="html"><![CDATA[<p>No trabalho, utilizo um notebook com Debian Jessie e acesso à internet por meio de proxy autenticado (com senha).</p><p>O grande problema é que o Gnome 3.14 não disponibiliza em sua ferramenta de configuração gráfica p/ proxy de rede (“Todas configurações” -&gt; “Rede” -&gt; “Proxy da rede”) uma forma de definir username e password do proxy. E sem isso não conseguimos fazer com que diversos componentes do Gnome acessem à internet.</p><span id="more"></span><p>A única forma de definir username e password para o proxy do Gnome é setando “na mão” via linha de comando. Vejamos como fazer:</p><p>Em “Todas configurações” -&gt; “Rede” -&gt; “Proxy da rede”, após definir o “Método” p/ “Manual” e especificar o endereço do proxy e a porta, a configuração foi setada assim por debaixo dos panos:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings list-recursively org.gnome.system.proxy</span><br><span class="line">org.gnome.system.proxy use-same-proxy true</span><br><span class="line">org.gnome.system.proxy mode &#x27;manual&#x27;</span><br><span class="line">org.gnome.system.proxy autoconfig-url &#x27;&#x27;</span><br><span class="line">org.gnome.system.proxy ignore-hosts [&#x27;localhost&#x27;, &#x27;127.0.0.0/8&#x27;, &#x27;::1&#x27;, &#x27;192.168.0.0/16&#x27;]</span><br><span class="line">org.gnome.system.proxy.ftp host &#x27;proxy.empresa.com.br&#x27;</span><br><span class="line">org.gnome.system.proxy.ftp port 3128</span><br><span class="line">org.gnome.system.proxy.socks host &#x27;proxy.empresa.com.br&#x27;</span><br><span class="line">org.gnome.system.proxy.socks port 3128</span><br><span class="line">org.gnome.system.proxy.http host &#x27;proxy.empresa.com.br&#x27;</span><br><span class="line">org.gnome.system.proxy.http port 3128</span><br><span class="line">org.gnome.system.proxy.http use-authentication false</span><br><span class="line">org.gnome.system.proxy.http authentication-password &#x27;&#x27;</span><br><span class="line">org.gnome.system.proxy.http authentication-user &#x27;&#x27;</span><br><span class="line">org.gnome.system.proxy.http enabled false</span><br><span class="line">org.gnome.system.proxy.https host &#x27;&#x27;</span><br><span class="line">org.gnome.system.proxy.https port 0</span><br></pre></td></tr></table></figure><p>Obs1: Repare que deixei a configuração p/ https em branco, isso pq a ausência de configuração implica em usar o proxy http p/ https (é o caso da rede que utilizo). Esse funcionamento é explicado na descrição da chave <code>mode</code> em <code>org.gnome.system.proxy</code> no <code>dconf-editor</code>.<br>Obs2: Observe que <code>org.gnome.system.proxy.http enabled</code> é <code>false</code>. Isso não é problema pq essa chave não é mais usada. Esse funcionamento é explicado na descrição da chave <code>enabled</code> em <code>org.gnome.system.proxy.http</code> no <code>dconf-editor</code>.</p><p><strong>Para o proxy autenticado passar a funcionar corretamente</strong>, modifiquei via linha de comando alguns campos (definindo login e senha):</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings set org.gnome.system.proxy.http use-authentication true</span><br><span class="line">$ gsettings set org.gnome.system.proxy.http authentication-user &#x27;login&#x27;</span><br><span class="line">$ gsettings set org.gnome.system.proxy.http authentication-password &#x27;senha&#x27;</span><br></pre></td></tr></table></figure><p>Obs3: Substitua os valores <code>login</code> e <code>senha</code> pelo seu login e senha real.</p><p>O resultado foi:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings list-recursively org.gnome.system.proxy</span><br><span class="line">org.gnome.system.proxy mode &#x27;manual&#x27;</span><br><span class="line">org.gnome.system.proxy autoconfig-url &#x27;&#x27;</span><br><span class="line">org.gnome.system.proxy ignore-hosts [&#x27;localhost&#x27;, &#x27;127.0.0.0/8&#x27;, &#x27;::1&#x27;, &#x27;192.168.0.0/16&#x27;]</span><br><span class="line">org.gnome.system.proxy.ftp host &#x27;proxy.empresa.com.br&#x27;</span><br><span class="line">org.gnome.system.proxy.ftp port 3128</span><br><span class="line">org.gnome.system.proxy.socks host &#x27;proxy.empresa.com.br&#x27;</span><br><span class="line">org.gnome.system.proxy.socks port 3128</span><br><span class="line">org.gnome.system.proxy.http host &#x27;proxy.empresa.com.br&#x27;</span><br><span class="line">org.gnome.system.proxy.http port 3128</span><br><span class="line">org.gnome.system.proxy.http use-authentication true</span><br><span class="line">org.gnome.system.proxy.http authentication-password &#x27;senha&#x27;</span><br><span class="line">org.gnome.system.proxy.http authentication-user &#x27;login&#x27;</span><br><span class="line">org.gnome.system.proxy.http enabled false</span><br><span class="line">org.gnome.system.proxy.https host &#x27;&#x27;</span><br><span class="line">org.gnome.system.proxy.https port 0</span><br></pre></td></tr></table></figure><p>Para testar se está realmente funcionando, verifique se é possível instalar extensões a partir do site <a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a>, para tanto devem estar configurados o proxy do Gnome e do Firefox/Iceweasel.</p><h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul><li><a href="https://developer.gnome.org/ProxyConfiguration/">https://developer.gnome.org/ProxyConfiguration/</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;No trabalho, utilizo um notebook com Debian Jessie e acesso à internet por meio de proxy autenticado (com senha).&lt;/p&gt;
-&lt;p&gt;O grande problema é que o Gnome 3.14 não disponibiliza em sua ferramenta de configuração gráfica p/ proxy de rede (“Todas configurações” -&amp;gt; “Rede” -&amp;gt; “Proxy da rede”) uma forma de definir username e password do proxy. E sem isso não conseguimos fazer com que diversos componentes do Gnome acessem à internet.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="gnu/linux" scheme="https://felipehw.github.io/categories/gnu-linux/"/>
-    
-    
-      <category term="gnome" scheme="https://felipehw.github.io/tags/gnome/"/>
-    
-      <category term="proxy" scheme="https://felipehw.github.io/tags/proxy/"/>
     
   </entry>
   
