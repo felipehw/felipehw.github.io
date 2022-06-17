@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Por anos, utilizo GNU&#x2F;Linux no desktop.Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim. Ora disponível, ora indisponível, no menu do gerenciador de arquivos. Já havia me resig">
+    <meta name="description" content="Por anos, utilizo GNU&#x2F;Linux no desktop.Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim. Ora disponível, ora indisponível, no menu do gerenciador de arquivos. Já havia me">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GNU&#x2F;Linux e lixeiras (Lixeira em outras partições, etc.)">
 <meta property="og:url" content="https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/index.html">
 <meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
-<meta property="og:description" content="Por anos, utilizo GNU&#x2F;Linux no desktop.Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim. Ora disponível, ora indisponível, no menu do gerenciador de arquivos. Já havia me resig">
+<meta property="og:description" content="Por anos, utilizo GNU&#x2F;Linux no desktop.Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim. Ora disponível, ora indisponível, no menu do gerenciador de arquivos. Já havia me">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:image" content="https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/lixeira-small.jpg">
 <meta property="article:published_time" content="2018-05-09T15:23:38.000Z">
@@ -106,7 +106,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&title=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&title=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&title=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&name=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)&description=&lt;p&gt;Por anos, utilizo GNU/Linux no desktop.&lt;br&gt;Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim.&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&name=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)&description=&lt;p&gt;Por anos, utilizo GNU&amp;#x2F;Linux no desktop.&lt;br&gt;Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim.&lt;/p&gt;
 &lt;p&gt;Ora disponível, ora indisponível, no menu do gerenciador de arquivos.&lt;/p&gt;
 &lt;p&gt;Já havia me resignado a simplesmente sempre usar o &lt;code&gt;Shift&lt;/code&gt; + &lt;code&gt;Delete&lt;/code&gt; e excluir permanentemente.&lt;/p&gt;
 &lt;p&gt;Até hoje.&lt;/p&gt;
@@ -165,7 +165,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>Por anos, utilizo GNU/Linux no desktop.<br>Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim.</p>
+    <p>Por anos, utilizo GNU&#x2F;Linux no desktop.<br>Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim.</p>
 <p>Ora disponível, ora indisponível, no menu do gerenciador de arquivos.</p>
 <p>Já havia me resignado a simplesmente sempre usar o <code>Shift</code> + <code>Delete</code> e excluir permanentemente.</p>
 <p>Até hoje.</p>
@@ -174,17 +174,15 @@
 <span id="more"></span>
 
 <p>Em uma rápida pesquisa, descobri o motivo.</p>
-<p>O GNU/Linux necessita de um diretório para a “Lixeira” em cada partição em que queremos utilizar essa funcionalidade.<br>(Sim, ele não joga tudo na Lixeira dentro do diretório “Home” de seu usuário. Há uma Lixeira para os arquivos de cada partição - e é única para cada usuário.)<br>Se ele não puder criar ou encontrar esse diretório, apenas teremos a opção de “excluir permanentemente” no gerenciador de arquivos.</p>
+<p>O GNU&#x2F;Linux necessita de um diretório para a “Lixeira” em cada partição em que queremos utilizar essa funcionalidade.<br>(Sim, ele não joga tudo na Lixeira dentro do diretório “Home” de seu usuário. Há uma Lixeira para os arquivos de cada partição - e é única para cada usuário.)<br>Se ele não puder criar ou encontrar esse diretório, apenas teremos a opção de “excluir permanentemente” no gerenciador de arquivos.</p>
 <p>Então … basta criar um diretório para a “Lixeira do usuário” na partição em que queremos utilizar essa funcionalidade?</p>
 <p>Sim!</p>
 <p><strong>Funciona da seguinte maneira</strong>:<br>No diretório raiz da partição deve existir um diretório para a “Lixeira do usuário” com o seguinte nome: <code>.Trash-&lt;uid&gt;</code>. Sendo o <code>uid</code> o id do usuário. Exemplo: Usuário <code>joao</code> tem o <code>uid</code> <code>1000</code>, então criaremos o diretório <code>.Trash-1000</code> na raiz da partição.</p>
 <p>Vejamos um <strong>passo a passo</strong> para o usuário <code>joao</code> na partição montada em <code>/mnt/sdc1</code>:<br>0. Descubra o <code>uid</code> (user id) e o <code>gid</code> (group id) do usuário <code>joao</code>:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ id joao</span><br><span class="line">uid=1000(joao) gid=1000(joao) grupos=1000(joao),10(wheel)</span><br></pre></td></tr></table></figure>
 <ol>
-<li>Crie o diretório da “Lixeira” do usuário <code>joao</code> (<code>uid</code> = <code>1000</code>):<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /mnt/sdc1/.Trash-1000</span><br></pre></td></tr></table></figure></li>
-<li>Defina as permissões corretas para o diretório da Lixeira de <code>joao</code> (<code>uid</code> = <code>1000</code>, <code>gid</code> = <code>1000</code>):<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># chown 1000:1000 /mnt/sdc1/.Trash-1000</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Crie o diretório da “Lixeira” do usuário <code>joao</code> (<code>uid</code> &#x3D; <code>1000</code>):<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /mnt/sdc1/.Trash-1000</span><br></pre></td></tr></table></figure></li>
+<li>Defina as permissões corretas para o diretório da Lixeira de <code>joao</code> (<code>uid</code> &#x3D; <code>1000</code>, <code>gid</code> &#x3D; <code>1000</code>):<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># chown 1000:1000 /mnt/sdc1/.Trash-1000</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="Bonus"><a href="#Bonus" class="headerlink" title="Bônus"></a>Bônus</h2><h3 id="Onde-esta-a-Lixeira-no-diretorio-Home-do-usuario"><a href="#Onde-esta-a-Lixeira-no-diretorio-Home-do-usuario" class="headerlink" title="Onde está a Lixeira no diretório Home do usuário?"></a>Onde está a Lixeira no diretório Home do usuário?</h3><p>Já sabemos que em outras partições, a Lixeira é encontrada na raiz da partição utilizando o formato <code>.Trash-&lt;uid&gt;</code>. Mas e no diretório Home do usuário, onde está a Lixeira?</p>
 <p>De acordo com as convenções da especificação do Freedesktop.org, a Lixeira está em <code>$XDG_DATA_HOME/Trash</code>, sendo que o padrão da variável <code>$XDG_DATA_HOME</code> é <code>$HOME/.local/share</code>.</p>
@@ -207,14 +205,12 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ trash-list</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Para limpar a Lixeira (<code>&lt;dias&gt;</code> é opcional. Define que devem ser excluídos apenas arquivos mais velhos que tantos dias):<br>(apenas limpa o conteúdo da Lixeira no diretório Home do usuário)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trash-empty &lt;dias&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trash-empty &lt;dias&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/File_manager_functionality#Enable_Trash_functionality_on_different_filesystems_.28external_drives.29">File manager functionality - ArchWiki</a>: A seção “Enable Trash functionality on different filesystems (external drives)” contém a dica sobre Lixeira em diferentes partições.</li>
 <li><a target="_blank" rel="noopener" href="http://www.ramendik.ru/docs/trashspec.html">The FreeDesktop.org Trash specification</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/andreafrancia/trash-cli">andreafrancia/trash-cli: Command line interface to the freedesktop.org trashcan</a>: Página oficial do conjunto de utilitários de linha de comando para Lixeira <code>trash-cli</code>.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/andreafrancia/trash-cli">andreafrancia&#x2F;trash-cli: Command line interface to the freedesktop.org trashcan</a>: Página oficial do conjunto de utilitários de linha de comando para Lixeira <code>trash-cli</code>.</li>
 </ul>
 
   </div>
@@ -263,7 +259,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&title=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&title=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&title=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&name=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)&description=&lt;p&gt;Por anos, utilizo GNU/Linux no desktop.&lt;br&gt;Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim.&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/&name=GNU/Linux e lixeiras (Lixeira em outras partições, etc.)&description=&lt;p&gt;Por anos, utilizo GNU&amp;#x2F;Linux no desktop.&lt;br&gt;Por anos, a “Lixeira” de arquivos deletados foi algo misteriosa para mim.&lt;/p&gt;
 &lt;p&gt;Ora disponível, ora indisponível, no menu do gerenciador de arquivos.&lt;/p&gt;
 &lt;p&gt;Já havia me resignado a simplesmente sempre usar o &lt;code&gt;Shift&lt;/code&gt; + &lt;code&gt;Delete&lt;/code&gt; e excluir permanentemente.&lt;/p&gt;
 &lt;p&gt;Até hoje.&lt;/p&gt;

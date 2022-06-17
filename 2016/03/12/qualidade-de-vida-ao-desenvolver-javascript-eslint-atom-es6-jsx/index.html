@@ -190,8 +190,8 @@
 <hr>
 <p>Vejamos o setup do mesmo tanto no âmbito do sistema operacional (global) quanto de um determinado projeto (local):</p>
 <h2 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h2><h3 id="Instalacao"><a href="#Instalacao" class="headerlink" title="Instalação"></a>Instalação</h3><ol>
-<li>Instale globalmente o eslint &gt;= 2: <code>$ sudo npm install --global eslint</code></li>
-<li>Instale globalmente o babel-eslint p/ o eslint &gt;=2: <code>$ npm install --global babel-eslint@next</code></li>
+<li>Instale globalmente o eslint &gt;&#x3D; 2: <code>$ sudo npm install --global eslint</code></li>
+<li>Instale globalmente o babel-eslint p&#x2F; o eslint &gt;&#x3D;2: <code>$ npm install --global babel-eslint@next</code></li>
 <li>Instale globalmente o eslint-plugin-react: <code>$ sudo npm install --global eslint-plugin-react</code></li>
 </ol>
 <h3 id="Configuracao"><a href="#Configuracao" class="headerlink" title="Configuração"></a>Configuração</h3><ol>
@@ -217,8 +217,8 @@
 <h2 id="Local-projeto-recomendado"><a href="#Local-projeto-recomendado" class="headerlink" title="Local (projeto) - recomendado"></a>Local (projeto) - recomendado</h2><p>Se quisermos utilizar o eslint apenas num projeto, podemos instalar ele localmente no projeto. Entre as vantagens, está o fato de podermos usar uma determinada versão com uma certa configuração e plugins específicos e de levarmos essa configuração (no <code>package.json</code>) junto com o projeto (que já estará corretamente configurado para uso por terceiros).</p>
 <h3 id="Instalacao-1"><a href="#Instalacao-1" class="headerlink" title="Instalação"></a>Instalação</h3><ol>
 <li>Situe-se na raiz do projeto npm: <code>$ cd ./projeto</code></li>
-<li>Instale localmente o eslint &gt;= 2: <code>$ npm install --save-dev eslint</code></li>
-<li>Instale localmente o babel-eslint p/ o eslint &gt;=2: <code>$ npm install --save-dev babel-eslint@next</code></li>
+<li>Instale localmente o eslint &gt;&#x3D; 2: <code>$ npm install --save-dev eslint</code></li>
+<li>Instale localmente o babel-eslint p&#x2F; o eslint &gt;&#x3D;2: <code>$ npm install --save-dev babel-eslint@next</code></li>
 <li>Instale localmente o eslint-plugin-react: <code>$ npm install --save-dev eslint-plugin-react</code></li>
 </ol>
 <h3 id="Configuracao-1"><a href="#Configuracao-1" class="headerlink" title="Configuração"></a>Configuração</h3><ol>
@@ -244,8 +244,8 @@
 </ol>
 </li>
 <li>É recomendado possuir um arquivo de configuração básico em <code>~/</code>, com rules que sejam interessantes independente das particularidades de um determinado projeto.</li>
-<li>O arquivo de configuração é simples. E podemos escolher se uma <em>rule</em> estará desligada (<code>&quot;off&quot;</code> ou <code>0</code>), emitindo aviso (<code>&quot;warn&quot;</code> ou <code>1</code>) ou emitindo erro (<code>&quot;error&quot;</code> ou <code>2</code>). Exemplo: <code>&quot;indent&quot;: [2, 4]</code> (ou <code>&quot;indent&quot;: [&quot;error&quot;, 4]</code>) emite error quando identação for != de 4 espaços.</li>
-<li>Quando invocamos o eslint, as mensagens de aviso/erro contém as regras que as dispararam. Assim fica fácil localizar e modificar regras que não estejam adequadas.<br>Exemplo:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7:9  error  Expected &#x27;===&#x27; and instead saw &#x27;==&#x27;                              eqeqeq</span><br></pre></td></tr></table></figure>
+<li>O arquivo de configuração é simples. E podemos escolher se uma <em>rule</em> estará desligada (<code>&quot;off&quot;</code> ou <code>0</code>), emitindo aviso (<code>&quot;warn&quot;</code> ou <code>1</code>) ou emitindo erro (<code>&quot;error&quot;</code> ou <code>2</code>). Exemplo: <code>&quot;indent&quot;: [2, 4]</code> (ou <code>&quot;indent&quot;: [&quot;error&quot;, 4]</code>) emite error quando identação for !&#x3D; de 4 espaços.</li>
+<li>Quando invocamos o eslint, as mensagens de aviso&#x2F;erro contém as regras que as dispararam. Assim fica fácil localizar e modificar regras que não estejam adequadas.<br>Exemplo:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7:9  error  Expected &#x27;===&#x27; and instead saw &#x27;==&#x27;                              eqeqeq</span><br></pre></td></tr></table></figure>
 Na linha 7, coluna 9 do arquivo analisado foi encontrado um <code>==</code> quando era esperado <code>===</code>. A regra que emitiu esse <em>erro</em> foi <code>eqeqeq</code>.</li>
 <li>O <a target="_blank" rel="noopener" href="https://github.com/babel/babel-eslint">babel-eslint</a> possui algumas <a target="_blank" rel="noopener" href="https://github.com/babel/babel-eslint#known-issues">limitações descritas em sua página</a> que é bom considerar.</li>
 <li>Há um <a href="(https://github.com/babel/babel-eslint/issues/267)">bug</a> no momento em que escrevo que o babel-eslint mais recente (5.0.0) não funciona com o eslint mais recente (2.3.0) e exige que instalemos o eslint 2.2.0.</li>

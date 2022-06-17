@@ -107,7 +107,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&title=Como configurar um cliente No-IP no Raspberry Pi"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&title=Como configurar um cliente No-IP no Raspberry Pi"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&name=Como configurar um cliente No-IP no Raspberry Pi&description=&lt;p&gt;Acessar remotamente o Raspberry Pi de casa é uma mão na roda para muita coisa!&lt;br&gt;Com isso podemos usar o rasp como servidor de torrents gerenciado remotamente, servidor de arquivos, rádio web, de páginas, etc.&lt;/p&gt;
-&lt;p&gt;Veremos aqui como acessar remotamente o rasp mesmo com IP dinâmico, utilizando-se do serviço gratuito &lt;a href=&#34;https://www.noip.com/&#34;&gt;no-ip.com&lt;/a&gt;.&lt;br&gt;(Ah, um pouco de conhecimento prévio de GNU/Linux e redes é essencial - ou talvez uma busca complementar no Google).&lt;/p&gt;
+&lt;p&gt;Veremos aqui como acessar remotamente o rasp mesmo com IP dinâmico, utilizando-se do serviço gratuito &lt;a href=&#34;https://www.noip.com/&#34;&gt;no-ip.com&lt;/a&gt;.&lt;br&gt;(Ah, um pouco de conhecimento prévio de GNU&amp;#x2F;Linux e redes é essencial - ou talvez uma busca complementar no Google).&lt;/p&gt;
 &lt;img src=&#34;/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/raspberry.png&#34; class=&#34;&#34; title=&#34;Raspberry&#34;&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&t=Como configurar um cliente No-IP no Raspberry Pi"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
@@ -164,13 +164,13 @@
 
   <div class="content" itemprop="articleBody">
     <p>Acessar remotamente o Raspberry Pi de casa é uma mão na roda para muita coisa!<br>Com isso podemos usar o rasp como servidor de torrents gerenciado remotamente, servidor de arquivos, rádio web, de páginas, etc.</p>
-<p>Veremos aqui como acessar remotamente o rasp mesmo com IP dinâmico, utilizando-se do serviço gratuito <a target="_blank" rel="noopener" href="https://www.noip.com/">no-ip.com</a>.<br>(Ah, um pouco de conhecimento prévio de GNU/Linux e redes é essencial - ou talvez uma busca complementar no Google).</p>
+<p>Veremos aqui como acessar remotamente o rasp mesmo com IP dinâmico, utilizando-se do serviço gratuito <a target="_blank" rel="noopener" href="https://www.noip.com/">no-ip.com</a>.<br>(Ah, um pouco de conhecimento prévio de GNU&#x2F;Linux e redes é essencial - ou talvez uma busca complementar no Google).</p>
 <img src="/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/raspberry.png" class="" title="Raspberry">
 
 <span id="more"></span>
 
 <h2 id="Crie-um-dominio-no-No-IP"><a href="#Crie-um-dominio-no-No-IP" class="headerlink" title="Crie um domínio no No-IP"></a>Crie um <em>domínio</em> no No-IP</h2><p>Primeiramente, deve-se criar uma conta em <a target="_blank" rel="noopener" href="https://www.noip.com/">no-ip.com</a> e adicionar o redirecionamento de um domínio para seu ip dinâmico.</p>
-<p>Logado no site do <a target="_blank" rel="noopener" href="https://www.noip.com/">no-ip.com</a>, clique em <a target="_blank" rel="noopener" href="https://www.noip.com/members/dns/">Hosts/Redirects</a> e <a target="_blank" rel="noopener" href="https://www.noip.com/members/dns/host.php">Add A Host</a>. Agora configure o domínio a ser utilizado para o ip dinâmico:</p>
+<p>Logado no site do <a target="_blank" rel="noopener" href="https://www.noip.com/">no-ip.com</a>, clique em <a target="_blank" rel="noopener" href="https://www.noip.com/members/dns/">Hosts&#x2F;Redirects</a> e <a target="_blank" rel="noopener" href="https://www.noip.com/members/dns/host.php">Add A Host</a>. Agora configure o domínio a ser utilizado para o ip dinâmico:</p>
 <ul>
 <li>Hostname: Informe o domínio a ser utilizado para acessar sua máquina na internet.</li>
 <li>Host Type: Se não souber, deixe em <em>DNS Host (A)</em></li>
@@ -200,28 +200,26 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Instale:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
-
-<p>O instalador pedirá:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>  O instalador pedirá:</p>
 <ul>
 <li>Login</li>
 <li>Senha</li>
-<li>Se houver + de 1 domínio registrado, ele pedirá se é p/ atualizar todos (na dúvida, responda <code>y</code>)</li>
+<li>Se houver + de 1 domínio registrado, ele pedirá se é p&#x2F; atualizar todos (na dúvida, responda <code>y</code>)</li>
 <li>Intervalo de atualização: o default (30m) está bem (só aperte enter)</li>
 <li>Para o resto responda <code>N</code> (a não ser que saiba o que está fazendo)</li>
 </ul>
-</li>
-<li><p>Execução:<br>(Ao executar, o domínio do no-ip é <em>linkado</em> com o IP atual)</p>
+<ol start="9">
+<li>Execução:<br>  (Ao executar, o domínio do no-ip é <em>linkado</em> com o IP atual)</li>
+</ol>
 <ul>
-<li>Para executar manualmente:<br><code>$ sudo /usr/local/bin/noip2</code></li>
-<li>Para executar no boot (<strong>ideal</strong> pq automatiza o processo):<br>Adicione a linha: <code>/usr/local/bin/noip2</code> acima da linha <code>exit 0</code> de <code>/etc/rc.local</code>.<br>O arquico <code>/etc/rc.local</code> ficará +- assim:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#OUTRAS LINHAS</span><br><span class="line">/usr/local/bin/noip2</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
-Ps: Pode ser usado o editor nano através de <code>sudo nano /etc/rc.local</code></li>
+<li>Para executar manualmente:<br>  <code>$ sudo /usr/local/bin/noip2</code></li>
+<li>Para executar no boot (<strong>ideal</strong> pq automatiza o processo):<br>  Adicione a linha: <code>/usr/local/bin/noip2</code> acima da linha <code>exit 0</code> de <code>/etc/rc.local</code>.<br>  O arquico <code>/etc/rc.local</code> ficará +- assim:  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#OUTRAS LINHAS</span><br><span class="line">/usr/local/bin/noip2</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+  Ps: Pode ser usado o editor nano através de <code>sudo nano /etc/rc.local</code></li>
 </ul>
-</li>
-<li><p>Para verificar se está rodando corretamente:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/bin/noip2 -S</span><br></pre></td></tr></table></figure>
-
-</li>
+<ol start="10">
+<li>Para verificar se está rodando corretamente:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/bin/noip2 -S</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="Extras"><a href="#Extras" class="headerlink" title="Extras"></a>Extras</h2><ul>
 <li>O post foi baseado nesse <a target="_blank" rel="noopener" href="http://www.awesomeweirdness.com/projects-diy/raspberrypi/setup-noip-client-raspberry-pi/">outro post</a>.</li>
@@ -275,7 +273,7 @@ Ps: Pode ser usado o editor nano através de <code>sudo nano /etc/rc.local</code
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&title=Como configurar um cliente No-IP no Raspberry Pi"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&title=Como configurar um cliente No-IP no Raspberry Pi"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&name=Como configurar um cliente No-IP no Raspberry Pi&description=&lt;p&gt;Acessar remotamente o Raspberry Pi de casa é uma mão na roda para muita coisa!&lt;br&gt;Com isso podemos usar o rasp como servidor de torrents gerenciado remotamente, servidor de arquivos, rádio web, de páginas, etc.&lt;/p&gt;
-&lt;p&gt;Veremos aqui como acessar remotamente o rasp mesmo com IP dinâmico, utilizando-se do serviço gratuito &lt;a href=&#34;https://www.noip.com/&#34;&gt;no-ip.com&lt;/a&gt;.&lt;br&gt;(Ah, um pouco de conhecimento prévio de GNU/Linux e redes é essencial - ou talvez uma busca complementar no Google).&lt;/p&gt;
+&lt;p&gt;Veremos aqui como acessar remotamente o rasp mesmo com IP dinâmico, utilizando-se do serviço gratuito &lt;a href=&#34;https://www.noip.com/&#34;&gt;no-ip.com&lt;/a&gt;.&lt;br&gt;(Ah, um pouco de conhecimento prévio de GNU&amp;#x2F;Linux e redes é essencial - ou talvez uma busca complementar no Google).&lt;/p&gt;
 &lt;img src=&#34;/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/raspberry.png&#34; class=&#34;&#34; title=&#34;Raspberry&#34;&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/&t=Como configurar um cliente No-IP no Raspberry Pi"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>

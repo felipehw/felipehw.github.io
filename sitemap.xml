@@ -291,6 +291,27 @@
   </url>
   
   <url>
+    <loc>https://felipehw.github.io/tags/compartilhamento/</loc>
+    <lastmod>2022-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/tags/torrent/</loc>
+    <lastmod>2022-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/tags/raspberry/</loc>
+    <lastmod>2022-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://felipehw.github.io/tags/lvm/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
@@ -389,13 +410,6 @@
   </url>
   
   <url>
-    <loc>https://felipehw.github.io/tags/raspberry/</loc>
-    <lastmod>2022-06-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://felipehw.github.io/tags/trim/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
@@ -459,13 +473,6 @@
   </url>
   
   <url>
-    <loc>https://felipehw.github.io/tags/compartilhamento/</loc>
-    <lastmod>2022-06-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://felipehw.github.io/tags/desktop/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
@@ -507,13 +514,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://felipehw.github.io/tags/torrent/</loc>
-    <lastmod>2022-06-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
@@ -531,14 +531,14 @@
   </url>
   
   <url>
-    <loc>https://felipehw.github.io/categories/develop/</loc>
+    <loc>https://felipehw.github.io/categories/cultura-livre/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://felipehw.github.io/categories/cultura-livre/</loc>
+    <loc>https://felipehw.github.io/categories/develop/</loc>
     <lastmod>2022-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

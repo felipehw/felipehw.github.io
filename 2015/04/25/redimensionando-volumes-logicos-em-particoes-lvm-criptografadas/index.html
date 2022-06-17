@@ -176,40 +176,48 @@
 <p><strong>Preste atenção</strong>, para redimensionar tenha em mente que <strong>o filesystem está dentro do volume lógico</strong>.<br><strong>Para aumentar o tamanho de um filesystem</strong>, devemos <strong>primeiro</strong> aumentar o volume lógico em que ele está inserido <strong>e somente depois</strong> aumentar o filesystem.<br><strong>Para diminuir o tamanho de um filesystem</strong>, <strong>o caminho é o contrário</strong>, primeiro diminuímos o tamanho do filesystem e somente depois encolhemos o volume lógico.</p>
 <p>Usaremos nesse post o cenário hipotético mencionado acima (diminuir partição root, aumentar partição swap). Vejamos:</p>
 <ol>
-<li><p>Encontre os volumes lógicos a serem trabalhados:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/root&#x27;</span> [106.98 GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/swap_1&#x27;</span> [4.56 GiB] inherit</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Diminua o tamanho do filesystem que está grande demais.</p>
+<li>Encontre os volumes lógicos a serem trabalhados:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/root&#x27;</span> [106.98 GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/swap_1&#x27;</span> [4.56 GiB] inherit</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Diminua o tamanho do filesystem que está grande demais.</li>
+</ol>
 <ul>
-<li><p>Cheque e corrija erros no filesystem (ex. p/ ext4):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># e2fsck -f /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
+<li><p>Cheque e corrija erros no filesystem (ex. p&#x2F; ext4):</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># e2fsck -f /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Diminua o tamanho do filesystem (ex: p/ 90GB):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root 90G</span></span><br></pre></td></tr></table></figure>
-<p>Obs: <strong>O novo tamanho informado p/ o filesystem deve ser um pouco menor que o novo tamanho a ser informado para o volume lógico.</strong> Isso para evitar que em arrendondamentos feitos pela máquina, o filesystem fique maior que o volume lógico em que está inserido e ocorra *****.</p>
+<li><p>Diminua o tamanho do filesystem (ex: p&#x2F; 90GB):</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root 90G</span></span><br></pre></td></tr></table></figure>
+<p>  Obs: <strong>O novo tamanho informado p&#x2F; o filesystem deve ser um pouco menor que o novo tamanho a ser informado para o volume lógico.</strong> Isso para evitar que em arrendondamentos feitos pela máquina, o filesystem fique maior que o volume lógico em que está inserido e ocorra *****.</p>
 </li>
 </ul>
-</li>
-<li><p>Diminua o volume lógico da partição que está grande demais (ex: p/ 92GB).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvresize -L 92G dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Recupere o tamanho do filesystem - que estava grande demais - para ocupar todo o espaço do volume lógico redimensionado (dado que diminuímos o filesystem mais que o volume lógico - por segurança - e há espaço sobrando):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Aumente o tamanho do volume lógico que está pequeno demais.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvextend -l +100%FREE dread-note-vg/swap_1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Aumente o tamanho do filesystem que está pequeno demais.<br>Obs: Como é um filesystem swap, apenas recriei ele com o mesmo UUID ocupando todo o espaço disponível no volume lógico.</p>
+<ol start="3">
+<li>Diminua o volume lógico da partição que está grande demais (ex: p&#x2F; 92GB).</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvresize -L 92G dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Recupere o tamanho do filesystem - que estava grande demais - para ocupar todo o espaço do volume lógico redimensionado (dado que diminuímos o filesystem mais que o volume lógico - por segurança - e há espaço sobrando):</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># resize2fs /dev/dread-note-vg/root</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Aumente o tamanho do volume lógico que está pequeno demais.</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvextend -l +100%FREE dread-note-vg/swap_1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>Aumente o tamanho do filesystem que está pequeno demais.<br>  Obs: Como é um filesystem swap, apenas recriei ele com o mesmo UUID ocupando todo o espaço disponível no volume lógico.</li>
+</ol>
 <ul>
 <li>Anotar o UUID da swap original: <code># blkid</code></li>
-<li>Criar nova swap com o mesmo UUID:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkswap -U 475dbca3-d779-445d-912e-6dfeea5d9e4e /dev/mapper/dread--note--vg-swap_1</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>Criar nova swap com o mesmo UUID:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkswap -U 475dbca3-d779-445d-912e-6dfeea5d9e4e /dev/mapper/dread--note--vg-swap_1</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li><p>Resultado final:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/root&#x27;</span> [92.00 GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/swap_1&#x27;</span> [19.55 GiB] inherit  </span><br></pre></td></tr></table></figure>
-</li>
+<ol start="7">
+<li>Resultado final:</li>
 </ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvm</span></span><br><span class="line">lvm&gt; lvscan</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/root&#x27;</span> [92.00 GiB] inherit</span><br><span class="line">  ACTIVE            <span class="string">&#x27;/dev/dread-note-vg/swap_1&#x27;</span> [19.55 GiB] inherit  </span><br></pre></td></tr></table></figure>
 
   </div>
 </article>

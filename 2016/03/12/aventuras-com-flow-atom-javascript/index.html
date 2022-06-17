@@ -175,31 +175,24 @@
 <span id="more"></span>
 
 <p>O suporte ao Flow dentro do Atom é mais completo utilizando o pacote <a target="_blank" rel="noopener" href="http://nuclide.io/">Nuclide</a> que é desenvolvido também pelo Facebook e visa oferecer um ótimo suporte às tecnologias da empresa (como React, react-native, flow, …). Portanto, instalaremos tanto o Flow quanto o Nuclide.</p>
-<p>Nota: Atualmente o Flow não funciona em Windows. Apenas GNU/Linux e Mac. O Nuclide funciona apenas parcialmente em Windows.</p>
+<p>Nota: Atualmente o Flow não funciona em Windows. Apenas GNU&#x2F;Linux e Mac. O Nuclide funciona apenas parcialmente em Windows.</p>
 <h2 id="Instalacao"><a href="#Instalacao" class="headerlink" title="Instalação"></a>Instalação</h2><ol>
-<li>Instalar Flow:<ol>
+<li>Instalar Flow:</li>
 <li>Baixar o binário em <a target="_blank" rel="noopener" href="http://flowtype.org/">http://flowtype.org/</a></li>
 <li>Extrair o pacote para um dir desejado. Ex: <code>unzip ./path/flow-linux64-v0.22.1.zip</code>. Pronto! Será criado o dir <code>flow</code> com o binário <code>flow</code> dentro.</li>
 <li>Basta agora criar um link do binário para <code>/usr/local/bin</code> ou de alguma outra forma inserir o binário no <code>$PATH</code> do <em>user</em> ou sistema.</li>
-</ol>
-</li>
-<li>(OPCIONAL) Instalar o Nuclide (apenas para uso no Atom):<ol>
+<li>(OPCIONAL) Instalar o Nuclide (apenas para uso no Atom):</li>
 <li>Instale o pacote <code>nuclide</code> via interface do Atom.</li>
 <li>(OPCIONAL) É recomendado desabilitar o pacote <code>linter</code> (caso esteja instalado), deixando o Nuclide utilizar sua solução própria (<a target="_blank" rel="noopener" href="https://github.com/facebook/nuclide/tree/master/pkg/nuclide/diagnostics">nuclide-diagnostics</a>) e que é compatível com todos os plugins que dependem do <code>linter</code>.</li>
-</ol>
-</li>
 </ol>
 <p>Nota: A instalação do <code>nuclide</code> pode ser objeto de alguns cuidados posteriores para uma experiência mais completa: <a target="_blank" rel="noopener" href="http://nuclide.io/docs/editor/setup/">http://nuclide.io/docs/editor/setup/</a></p>
 <h2 id="Utilizacao"><a href="#Utilizacao" class="headerlink" title="Utilização"></a>Utilização</h2><ul>
 <li><p>Para utilizarmos o flow necessitamos que o projeto atenda dois requisitos:</p>
 <ol>
-<li><p>Possuir um arquivo de configuração do flow (<code>.flowconfig</code>).</p>
-<p>O mesmo pode ser criado sem conteúdo (<code>$ touch ./projeto/.flowconfig</code>) ou através do comando “<code>$ flow init</code>“ que criará no dir em que for invocado um arquivo com as seções básicas de configuração do flow vazias.</p>
-<p>Ao ser invocado, o flow irá buscar pelo <code>.flowconfig</code> no dir em que for invocado, caso não encontre, tentará nos dirs pais.</p>
-</li>
-<li><p>Somente serão checados os arquivos JavaScript que possuam o comentário “<code>// @flow</code>“ no <strong>topo do arquivo</strong>. Isso permite utilizarmos o flow de forma incremental em projetos.</p>
-</li>
+<li>Possuir um arquivo de configuração do flow (<code>.flowconfig</code>).</li>
 </ol>
+<p>  O mesmo pode ser criado sem conteúdo (<code>$ touch ./projeto/.flowconfig</code>) ou através do comando “<code>$ flow init</code>“ que criará no dir em que for invocado um arquivo com as seções básicas de configuração do flow vazias.</p>
+<p>  Ao ser invocado, o flow irá buscar pelo <code>.flowconfig</code> no dir em que for invocado, caso não encontre, tentará nos dirs pais.<br>2. Somente serão checados os arquivos JavaScript que possuam o comentário “<code>// @flow</code>“ no <strong>topo do arquivo</strong>. Isso permite utilizarmos o flow de forma incremental em projetos.</p>
 </li>
 <li><p>Para utilizar o flow via prompt, basta invocarmos no dir do projeto: <code>$ flow</code>. Se desejarmos um arquivo em específico: <code>$ flow arquivo.js</code>. Mais informações na <a target="_blank" rel="noopener" href="http://flowtype.org/docs/cli.html#_">documentação oficial</a>.</p>
 </li>

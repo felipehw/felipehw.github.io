@@ -116,7 +116,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-Adicione-suporte-aos-repositorios-com-softwares-proprietarios"><span class="toc-number">1.</span> <span class="toc-text">0. Adicione suporte aos repositórios com softwares proprietários</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Instalacao"><span class="toc-number">2.</span> <span class="toc-text">1. Instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Pos-instalacao"><span class="toc-number">3.</span> <span class="toc-text">2. Pós-instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Utilizacao"><span class="toc-number">4.</span> <span class="toc-text">3. Utilização</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Utilizando-Bumblebee-c-Steam"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Utilizando Bumblebee c&#x2F; Steam</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Links"><span class="toc-number"></span> <span class="toc-text">Links</span></a>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-Adicione-suporte-aos-repositorios-com-softwares-proprietarios"><span class="toc-number">1.</span> <span class="toc-text">0. Adicione suporte aos repositórios com softwares proprietários</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Instalacao"><span class="toc-number">2.</span> <span class="toc-text">1. Instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Pos-instalacao"><span class="toc-number">3.</span> <span class="toc-text">2. Pós-instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Utilizacao"><span class="toc-number">4.</span> <span class="toc-text">3. Utilização</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Utilizando-Bumblebee-c-x2F-Steam"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Utilizando Bumblebee c&#x2F; Steam</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Links"><span class="toc-number"></span> <span class="toc-text">Links</span></a>
     </div>
   </span>
 </div>
@@ -170,8 +170,8 @@
 
 <span id="more"></span>
 
-<p>A tecnologia <a target="_blank" rel="noopener" href="http://www.nvidia.com/object/optimus_technology.html">NVIDIA Optimus</a> permite aos notebooks utilizarem a placa de vídeo onboard no cotidiano e, apenas quando necessário, fazer uso da placa de vídeo dedicada (Nvidia). Isso é essencial para que a bateria tenha longa duração, dado que a placa de vídeo dedicada é ativada apenas quando necessário (e ela consome bastante energia :/).</p>
-<p>O projeto que se dedica a suportar essa tecnologia no GNU/Linux é o <a target="_blank" rel="noopener" href="http://bumblebee-project.org/">Bumblebee</a>. Podemos usar ele com o driver livre (nouveau) e o driver proprietário. Como o driver proprietário da Nvidia é bem maduro no GNU/Linux, conseguimos por meio dele usar todo o potencial da placa de vídeo e por meio do Bumblebee economizar o máximo de energia possível.</p>
+<p>A tecnologia <a target="_blank" rel="noopener" href="http://www.nvidia.com/object/optimus_technology.html">NVIDIA Optimus</a> permite aos notebooks utilizarem a placa de vídeo onboard no cotidiano e, apenas quando necessário, fazer uso da placa de vídeo dedicada (Nvidia). Isso é essencial para que a bateria tenha longa duração, dado que a placa de vídeo dedicada é ativada apenas quando necessário (e ela consome bastante energia :&#x2F;).</p>
+<p>O projeto que se dedica a suportar essa tecnologia no GNU&#x2F;Linux é o <a target="_blank" rel="noopener" href="http://bumblebee-project.org/">Bumblebee</a>. Podemos usar ele com o driver livre (nouveau) e o driver proprietário. Como o driver proprietário da Nvidia é bem maduro no GNU&#x2F;Linux, conseguimos por meio dele usar todo o potencial da placa de vídeo e por meio do Bumblebee economizar o máximo de energia possível.</p>
 <p>A instalação no Debian antes do Jessie exigia alguma atenção, mas no Jessie os pacotes já estão nos repositórios e o processo é bem direto.</p>
 <p>Vamos pôr a mão na massa:</p>
 <h3 id="0-Adicione-suporte-aos-repositorios-com-softwares-proprietarios"><a href="#0-Adicione-suporte-aos-repositorios-com-softwares-proprietarios" class="headerlink" title="0. Adicione suporte aos repositórios com softwares proprietários"></a>0. Adicione suporte aos repositórios com softwares proprietários</h3><p>Antes de mais nada, os repositórios com softwares proprietários (<code>non-free</code>) e dependentes de proprietários (<code>contrib</code>) devem estar habilitados.</p>
@@ -180,7 +180,7 @@
 
 <p>Depois atualize os dados referentes aos repositórios executando:<br><code># apt-get update</code></p>
 <h3 id="1-Instalacao"><a href="#1-Instalacao" class="headerlink" title="1. Instalação"></a>1. Instalação</h3><ul>
-<li><p>Instale os pacotes necessários p/ o Bumblebee e o driver proprietário Nvidia:</p>
+<li><p>Instale os pacotes necessários p&#x2F; o Bumblebee e o driver proprietário Nvidia:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get install bumblebee-nvidia primus</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>Apenas para Debian 64 bits</strong>. Permite que utilizemos o Bumblebee inclusive quando rodando aplicações 32 bits em sistemas 64 bits (essencial para diversos jogos no <a href="steampowered.com">Steam</a>):</p>
@@ -200,17 +200,15 @@
 <li><code>$ primusrun [options] &lt;application&gt; [application-parameters]</code></li>
 <li><code>$ optirun [options] &lt;application&gt; [application-parameters]</code></li>
 </ul>
-<p>Executando o Steam c/ o <code>primusrun</code>: <code>$ primusrun steam</code>.</p>
+<p>Executando o Steam c&#x2F; o <code>primusrun</code>: <code>$ primusrun steam</code>.</p>
 <p>Como visto, assim temos um controle bem grande sobre quando uma ou outra placa deve ser usada. Aqui (com as observações abaixo feitas ao Steam) tenho rodado os jogos com toda a performance possível, e no restante do tempo a bateria dura e o notebook fica silencioso :D.</p>
-<h4 id="3-1-Utilizando-Bumblebee-c-Steam"><a href="#3-1-Utilizando-Bumblebee-c-Steam" class="headerlink" title="3.1 Utilizando Bumblebee c/ Steam"></a>3.1 Utilizando Bumblebee c/ Steam</h4><ul>
+<h4 id="3-1-Utilizando-Bumblebee-c-x2F-Steam"><a href="#3-1-Utilizando-Bumblebee-c-x2F-Steam" class="headerlink" title="3.1 Utilizando Bumblebee c&#x2F; Steam"></a>3.1 Utilizando Bumblebee c&#x2F; Steam</h4><ul>
 <li><p>Economizando energia no Steam:<br>Se executamos o Steam assim <code>$ primusrun steam</code>, gastaremos energia à toa pois estamos com a placa Nvidia ativada sempre (mesmo enquanto navegamos pelo Steam ou executamos jogos leves).<br>A forma ideal é configurar o jogo que necessitar da Nvidia defindo que o mesmo deve ser executado com o comando <code>primusrun %command%</code> (ou <code>optirun %command%</code>) em: <em>Properties</em> -&gt; <em>General</em> -&gt; <em>Set Launch Options…</em>.</p>
 </li>
-<li><p>Jogos que nao funcionarem no Debian Jessie c/ Optimus:<br>Pode ocorrer da versão errada do libGL estar sendo carregada. Para corrigir isso:</p>
+<li><p>Jogos que nao funcionarem no Debian Jessie c&#x2F; Optimus:<br>Pode ocorrer da versão errada do libGL estar sendo carregada. Para corrigir isso:</p>
 <ol>
 <li>Localize a versão correta do libGL:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ locate libGL.so</span><br></pre></td></tr></table></figure></li>
-<li>Configure o Steam p/ carregar o jogo com a versao correta (em <em>Properties</em> -&gt; <em>General</em> -&gt; <em>Set Launch Options…</em>.). Exemplo:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGL.so.1 primusrun %<span class="built_in">command</span>%</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Configure o Steam p&#x2F; carregar o jogo com a versao correta (em <em>Properties</em> -&gt; <em>General</em> -&gt; <em>Set Launch Options…</em>.). Exemplo:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGL.so.1 primusrun %<span class="built_in">command</span>%</span><br></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ul>
@@ -251,7 +249,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-Adicione-suporte-aos-repositorios-com-softwares-proprietarios"><span class="toc-number">1.</span> <span class="toc-text">0. Adicione suporte aos repositórios com softwares proprietários</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Instalacao"><span class="toc-number">2.</span> <span class="toc-text">1. Instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Pos-instalacao"><span class="toc-number">3.</span> <span class="toc-text">2. Pós-instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Utilizacao"><span class="toc-number">4.</span> <span class="toc-text">3. Utilização</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Utilizando-Bumblebee-c-Steam"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Utilizando Bumblebee c&#x2F; Steam</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Links"><span class="toc-number"></span> <span class="toc-text">Links</span></a>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-Adicione-suporte-aos-repositorios-com-softwares-proprietarios"><span class="toc-number">1.</span> <span class="toc-text">0. Adicione suporte aos repositórios com softwares proprietários</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Instalacao"><span class="toc-number">2.</span> <span class="toc-text">1. Instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Pos-instalacao"><span class="toc-number">3.</span> <span class="toc-text">2. Pós-instalação</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Utilizacao"><span class="toc-number">4.</span> <span class="toc-text">3. Utilização</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Utilizando-Bumblebee-c-x2F-Steam"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Utilizando Bumblebee c&#x2F; Steam</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Links"><span class="toc-number"></span> <span class="toc-text">Links</span></a>
     </div>
 
     <div id="share-footer" style="display: none">

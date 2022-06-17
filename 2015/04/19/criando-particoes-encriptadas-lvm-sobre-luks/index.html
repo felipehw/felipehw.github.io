@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Nesse post veremos como adicionar novos HDs à sistemas GNU&#x2F;Linux com os dados criptografados utilizando um mix de LVM e LUKS.Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood">
+    <meta name="description" content="Nesse post veremos como adicionar novos HDs à sistemas GNU&#x2F;Linux com os dados criptografados utilizando um mix de LVM e LUKS.Dessa forma, se o FBI obter aquele seu HD com todas as séries de Holly">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Criando partições encriptadas (LVM sobre LUKS)">
 <meta property="og:url" content="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/index.html">
 <meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
-<meta property="og:description" content="Nesse post veremos como adicionar novos HDs à sistemas GNU&#x2F;Linux com os dados criptografados utilizando um mix de LVM e LUKS.Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood">
+<meta property="og:description" content="Nesse post veremos como adicionar novos HDs à sistemas GNU&#x2F;Linux com os dados criptografados utilizando um mix de LVM e LUKS.Dessa forma, se o FBI obter aquele seu HD com todas as séries de Holly">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:image" content="https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg">
 <meta property="article:published_time" content="2015-04-19T03:05:40.000Z">
@@ -106,7 +106,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&title=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&title=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&title=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&name=Criando partições encriptadas (LVM sobre LUKS)&description=&lt;p&gt;Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de &lt;a href=&#34;https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29&#34;&gt;LVM&lt;/a&gt; e &lt;a href=&#34;https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup&#34;&gt;LUKS&lt;/a&gt;.&lt;br&gt;Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&name=Criando partições encriptadas (LVM sobre LUKS)&description=&lt;p&gt;Nesse post veremos como adicionar novos HDs à sistemas GNU&amp;#x2F;Linux com os dados criptografados utilizando um mix de &lt;a href=&#34;https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29&#34;&gt;LVM&lt;/a&gt; e &lt;a href=&#34;https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup&#34;&gt;LUKS&lt;/a&gt;.&lt;br&gt;Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.&lt;/p&gt;
 &lt;img src=&#34;/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg&#34; class=&#34;&#34; title=&#34;Criptografia com LVM + LUKS&#34;&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&t=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
@@ -162,7 +162,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29">LVM</a> e <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup">LUKS</a>.<br>Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.</p>
+    <p>Nesse post veremos como adicionar novos HDs à sistemas GNU&#x2F;Linux com os dados criptografados utilizando um mix de <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29">LVM</a> e <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup">LUKS</a>.<br>Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.</p>
 <img src="/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg" class="" title="Criptografia com LVM + LUKS">
 
 <span id="more"></span>
@@ -170,65 +170,76 @@
 <p>Não é um post teórico, mas sim de <strong>receita de bolo</strong>. <strong>A teoria, entretanto, é essencial</strong> para saber o que está acontencendo e conhecer melhor as possibilidades e limitações do setup escolhido. Essa teoria, porém, não cabe no escopo de um post e nem tenho competência (e paciência) para abordá-la. Por isso, coloquei os melhores links que encontrei sobre a mesma no final do post. <strong>Recomendo fortemente a leitura dos <a href="#links">links</a></strong> (não é da boca para fora, li e aprendi bastante - e o conteúdo não é excessivamente técnico).</p>
 <p>As únicas pinceladas teóricas seguem abaixo:</p>
 <ul>
-<li><p>O LVM (se você não sabe o que é, pare e se informe <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/LVM">antes</a>) não é essencial para criptografar um disco, mas utilizamos o mesmo para termos flexibilidade na criação/destruição/modificação de partições no interior do disco criptografado.</p>
+<li><p>O LVM (se você não sabe o que é, pare e se informe <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/LVM">antes</a>) não é essencial para criptografar um disco, mas utilizamos o mesmo para termos flexibilidade na criação&#x2F;destruição&#x2F;modificação de partições no interior do disco criptografado.</p>
 </li>
 <li><p>O LVM em nosso setup é utilizado numa camada acima do LUKS (tecnologia para criptografia), assim necessitamos de apenas uma password para destravar todas as partições no HD … e eliminamos possíveis <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support">complicações</a> para suspender e etc. O lado negativo é que o layout do LVM não é transparente (está dentro do <em>blockdevice</em> encriptado usando LUKS) e por isso não é possível extender volumes lógicos através de outros discos.</p>
 </li>
 </ul>
-<p><strong>=&gt;AVISO&lt;=</strong>: Não é um post para iniciantes. Assim, por exemplo, não será explicado quando usar <em>root</em>, como utilizar o gparted ou mesmo o que é <code>/etc/fstab</code>.</p>
+<p><strong>&#x3D;&gt;AVISO&lt;&#x3D;</strong>: Não é um post para iniciantes. Assim, por exemplo, não será explicado quando usar <em>root</em>, como utilizar o gparted ou mesmo o que é <code>/etc/fstab</code>.</p>
 <h2 id="Preparando-o-disco-e-criando-o-container-encriptado"><a href="#Preparando-o-disco-e-criando-o-container-encriptado" class="headerlink" title="Preparando o disco e criando o container encriptado"></a>Preparando o disco e criando o container encriptado</h2><p>Nesse passo preparemos o disco (apagaremos de forma a dificultar a quebra da criptografia) e criaremos o container criptografado. É aqui que reside a parte que realmente diz respeito à criptografia.</p>
 <p><strong>Obs</strong>: No post supomos que o HD utilizado é <code>/dev/sdb</code>.</p>
 <h3 id="1-Escreva-o-disco-inteiro-com-dados-aleatorios"><a href="#1-Escreva-o-disco-inteiro-com-dados-aleatorios" class="headerlink" title="1. Escreva o disco inteiro com dados aleatórios"></a>1. Escreva o disco inteiro com dados aleatórios</h3><p>Motivo: dificultar o deciframento ao garantir que o espaço vazio é indistinguível dos dados escritos sob criptografia.</p>
 <ol>
-<li><p>Crie um container encriptado temporário para o disco desejado (ex: <code>/dev/sdb</code>):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup open --type plain /dev/sdb container</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Verifique que ele existe (ou seja, se <code>/dev/mapper/container</code> é listado):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># fdisk -l</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Limpe o disco com dados pseudoaleatórios (aleatórios pq são escritos no container encriptado) [<em>demora muito</em>]:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=/dev/zero of=/dev/mapper/container</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Feche o container:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup close container</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Crie um container encriptado temporário para o disco desejado (ex: <code>/dev/sdb</code>):</li>
 </ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup open --type plain /dev/sdb container</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Verifique que ele existe (ou seja, se <code>/dev/mapper/container</code> é listado):</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># fdisk -l</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Limpe o disco com dados pseudoaleatórios (aleatórios pq são escritos no container encriptado) [<em>demora muito</em>]:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dd if=/dev/zero of=/dev/mapper/container</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Feche o container:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup close container</span></span><br></pre></td></tr></table></figure>
+
 <p>Fonte: <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation">https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation</a></p>
 <h3 id="2-Crie-o-container-encriptado"><a href="#2-Crie-o-container-encriptado" class="headerlink" title="2. Crie o container encriptado"></a>2. Crie o container encriptado</h3><ol>
-<li><p>Crie uma partição do tipo 8E00 (LVM2 PV) para abrigar o container criptografado:</p>
-<p>A partição pode ser criada no fdisk, cfdisk, parted ou gparted. No gparted, basta criar uma partição do tipo “lvm2 pv”.<br>Em nosso caso, a nova partição é <code>/dev/sdb1</code>.</p>
-</li>
-<li><p>Crie o container criptografado LUKS (usando opções default):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup luksFormat /dev/sdb1</span></span><br></pre></td></tr></table></figure>
-
-<p>Confirme com <code>YES</code> e digite uma senha duas vezes (<strong>essa senha será usada p/ destravar o container, sem ela … não temos acesso aos dados</strong>)</p>
-</li>
-<li><p>Destrave o container (disponibiliza de forma não criptografada):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup open --type luks /dev/sdb1 container-destravado</span></span><br></pre></td></tr></table></figure>
-<p>O container destravado está disponível em <code>/dev/mapper/container-destravado</code>.</p>
-</li>
+<li>Crie uma partição do tipo 8E00 (LVM2 PV) para abrigar o container criptografado:</li>
 </ol>
+<p>  A partição pode ser criada no fdisk, cfdisk, parted ou gparted. No gparted, basta criar uma partição do tipo “lvm2 pv”.<br>  Em nosso caso, a nova partição é <code>/dev/sdb1</code>.</p>
+<ol start="2">
+<li>Crie o container criptografado LUKS (usando opções default):</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup luksFormat /dev/sdb1</span></span><br></pre></td></tr></table></figure>
+
+<p>  Confirme com <code>YES</code> e digite uma senha duas vezes (<strong>essa senha será usada p&#x2F; destravar o container, sem ela … não temos acesso aos dados</strong>)</p>
+<ol start="3">
+<li>Destrave o container (disponibiliza de forma não criptografada):</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup open --type luks /dev/sdb1 container-destravado</span></span><br></pre></td></tr></table></figure>
+<p>  O container destravado está disponível em <code>/dev/mapper/container-destravado</code>.</p>
 <p><strong>Pronto</strong>, a parte relativa à criptografia está feita. O motivo de destravarmos o container é que criaremos <strong>no próximo passo</strong> a estrutura LVM dentro do container (e consequentemente as partições).</p>
 <h2 id="Criando-estrutura-LVM-e-seu-s-volume-s-logico-s"><a href="#Criando-estrutura-LVM-e-seu-s-volume-s-logico-s" class="headerlink" title="Criando estrutura LVM e seu(s) volume(s) lógico(s)"></a>Criando estrutura LVM e seu(s) volume(s) lógico(s)</h2><p>Com o container criptografado criado e destravado, é hora de criarmos a estrutura LVM segundo nossas preferências.</p>
 <p>O procedimento agora <strong>não diz respeito à criptografia</strong>, mas ao manuseio normal de partições.</p>
 <p>Vejamos um caso utilizando 1 physical volume (PV), dentro de 1 volume group (VG), contendo 1 logical volume (LV) ocupando todo o espaço disponível no disco. <strong>Ou seja</strong>, utilizamos um arranjo básico de LVM que implicará numa partição (em nosso caso, EXT4) ocupando todo o disco.</p>
 <p>Procedimento:</p>
 <ol>
-<li><p>Crie um <em>physical volume</em> no container descriptografado:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pvcreate /dev/mapper/container-destravado</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Crie um <em>volume group</em>, e adicione o <em>physical volume</em> previamente criado:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vgcreate nome-do-vg /dev/mapper/container-destravado</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Crie um <em>logical volume</em> no <em>volume group</em>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvcreate -l +100%FREE nome-do-vg -n nomeDoLg</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Formate o <em>logical volume</em> com um <em>filesystem</em>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkfs.ext4 /dev/mapper/nome--do--vg-nomeDoLg</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Crie um <em>physical volume</em> no container descriptografado:</li>
 </ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pvcreate /dev/mapper/container-destravado</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Crie um <em>volume group</em>, e adicione o <em>physical volume</em> previamente criado:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vgcreate nome-do-vg /dev/mapper/container-destravado</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Crie um <em>logical volume</em> no <em>volume group</em>:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lvcreate -l +100%FREE nome-do-vg -n nomeDoLg</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Formate o <em>logical volume</em> com um <em>filesystem</em>:</li>
+</ol>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkfs.ext4 /dev/mapper/nome--do--vg-nomeDoLg</span></span><br></pre></td></tr></table></figure>
+
 <p>Pronto, agora temos um arranjo LVM com uma partição EXT4 dentro de um container criptografado. Mas … como montamos e desmontamos essa partição no uso diário? Vejamos o último passo :D,</p>
 <h2 id="Montando-e-desmontando"><a href="#Montando-e-desmontando" class="headerlink" title="Montando e desmontando"></a>Montando e desmontando</h2><p>Para acessarmos o conteúdo das partições dentro do container criptografado … basta destravarmos o container e montar normalmente as partições. Vejamos como fazer isso manualmente e automaticamente.</p>
 <ul>
@@ -236,44 +247,38 @@
 <ul>
 <li><p>Montando:</p>
 <ul>
-<li>Destrave a container:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup open --type luks /dev/sdb1 container-destravado</span></span><br></pre></td></tr></table></figure></li>
-<li>Monte a partição desejada:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mount -t ext4 /dev/mapper/nome--do--vg-nomeDoLg /mnt/nomeDoLg/</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>Destrave a container:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup open --type luks /dev/sdb1 container-destravado</span></span><br></pre></td></tr></table></figure></li>
+<li>Monte a partição desejada:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mount -t ext4 /dev/mapper/nome--do--vg-nomeDoLg /mnt/nomeDoLg/</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>Desmontando:</p>
 <ul>
 <li><p>Desmonte a partição:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># umount /mnt/nomeDoLg/</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># umount /mnt/nomeDoLg/</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Feche o container:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup close container-destravado</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cryptsetup close container-destravado</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>Automaticamente:</p>
 <ul>
-<li><p>Adicione uma entrada para a partição em <code>/etc/fstab</code>. Exemplo:</p>
-<p><code>/dev/mapper/nome--do--vg-nomeDoLg       /mnt/nomeDoLg/  ext4    defaults     0       2</code></p>
-</li>
-<li><p>Adicione uma entrada para o container em <code>/etc/crypttab</code>. Exemplo:<br><code>container-destravado     UUID=4fdc96a2-5f97-44a5-783d-dcd0d0658fdd none luks</code><br>Obs: O UUID informado é o da partição utilizada para criar o container (em nosso caso <code>dev/sdb1</code>).</p>
-</li>
+<li>Adicione uma entrada para a partição em <code>/etc/fstab</code>. Exemplo:</li>
+</ul>
+<p>  <code>/dev/mapper/nome--do--vg-nomeDoLg 	  /mnt/nomeDoLg/  ext4    defaults 	0       2</code></p>
+<ul>
+<li>Adicione uma entrada para o container em <code>/etc/crypttab</code>. Exemplo:<br>  <code>container-destravado     UUID=4fdc96a2-5f97-44a5-783d-dcd0d0658fdd none luks</code><br>  Obs: O UUID informado é o da partição utilizada para criar o container (em nosso caso <code>dev/sdb1</code>).</li>
 </ul>
 <p>O arquivo <code>/etc/crypttab</code> contém uma lista de <em>blockdevices</em> encriptados (aka containers) que são destravados no boot. O <code>crypttab</code> é lido antes do <code>fstab</code> e portanto destrava o container antes que os filesystems dentro dele sejam montados.</p>
 </li>
 </ul>
 <h2 id="Links"><a href="#Links" class="headerlink" title="Links:"></a><span id="links">Links:</span></h2><ul>
-<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Disk_encryption">Disk encryption - ArchWiki</a>: O que é e como funciona criptografia em discos, partições, etc. Tipos de criptografia no GNU/Linux, soluções utilizadas, etc. <strong>Recomendado</strong></li>
-<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system">dm-crypt/Encrypting a non-root file system - ArchWiki</a>: Documentação suscinta e clara sobre como criar e montar partições criptografadas <em>non-root</em>.</li>
-<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system">dm-crypt/Encrypting an entire system - ArchWiki</a>: Documentação sobre diversas estratégias para criptografar o sistema inteiro.</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Disk_encryption">Disk encryption - ArchWiki</a>: O que é e como funciona criptografia em discos, partições, etc. Tipos de criptografia no GNU&#x2F;Linux, soluções utilizadas, etc. <strong>Recomendado</strong></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system">dm-crypt&#x2F;Encrypting a non-root file system - ArchWiki</a>: Documentação suscinta e clara sobre como criar e montar partições criptografadas <em>non-root</em>.</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system">dm-crypt&#x2F;Encrypting an entire system - ArchWiki</a>: Documentação sobre diversas estratégias para criptografar o sistema inteiro.</li>
 <li><a target="_blank" rel="noopener" href="http://earlruby.org/2010/02/adding-an-external-encrypted-drive-with-lvm-to-ubuntu-linux/comment-page-1/">Adding an external encrypted drive with LVM to Ubuntu Linux | Earl C. Ruby III</a>: Post sobre como criar e montar partições criptografadas <em>non-root</em>. A documentação do Arch é melhor, o destaque desse post é seu estilo simples e direto que serviu como inspiração para essas palavras.</li>
-<li>Documentação Oficial Debian - Instalação c/ criptografia:<ul>
+<li>Documentação Oficial Debian - Instalação c&#x2F; criptografia:<ul>
 <li><a target="_blank" rel="noopener" href="https://www.debian.org/releases/stable/amd64/ch06s03.html.en#partman-crypto">6.3.3.6. Configuring Encrypted Volumes</a> em <a target="_blank" rel="noopener" href="https://www.debian.org/releases/stable/amd64/ch06s03.html.en#di-partition">6.3.3. Partitioning and Mount Point Selection</a>.</li>
 <li><a target="_blank" rel="noopener" href="https://www.debian.org/releases/stable/amd64/ch07s02.html.en">7.2. Mounting encrypted volumes</a></li>
 </ul>
@@ -326,7 +331,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&title=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&title=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&title=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&name=Criando partições encriptadas (LVM sobre LUKS)&description=&lt;p&gt;Nesse post veremos como adicionar novos HDs à sistemas GNU/Linux com os dados criptografados utilizando um mix de &lt;a href=&#34;https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29&#34;&gt;LVM&lt;/a&gt; e &lt;a href=&#34;https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup&#34;&gt;LUKS&lt;/a&gt;.&lt;br&gt;Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&name=Criando partições encriptadas (LVM sobre LUKS)&description=&lt;p&gt;Nesse post veremos como adicionar novos HDs à sistemas GNU&amp;#x2F;Linux com os dados criptografados utilizando um mix de &lt;a href=&#34;https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29&#34;&gt;LVM&lt;/a&gt; e &lt;a href=&#34;https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup&#34;&gt;LUKS&lt;/a&gt;.&lt;br&gt;Dessa forma, se o FBI obter aquele seu HD com todas as séries de Hollywood … não poderá acessar o conteúdo dele :D. E nem bisbilhoteiros em caso de perca ou roubo de seus HDs.&lt;/p&gt;
 &lt;img src=&#34;/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/criptografia-min.jpg&#34; class=&#34;&#34; title=&#34;Criptografia com LVM + LUKS&#34;&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/&t=Criando partições encriptadas (LVM sobre LUKS)"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>

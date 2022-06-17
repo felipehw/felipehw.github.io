@@ -117,7 +117,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/&title=Instalando Debian Jessie usando criptografia de disco"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/&name=Instalando Debian Jessie usando criptografia de disco&description=&lt;p&gt;O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de me preocupar com os dados em caso de &lt;del&gt;perca&lt;/del&gt; perda ou roubo.&lt;/p&gt;
 &lt;p&gt;A melhor maneira de se prevenir contra &lt;del&gt;perca&lt;/del&gt; perda ou roubo é criptografando os dados e para tanto optei em instalar o Debian numa partição completamente criptografada. Assim … nem a PF consegue os dados :D.&lt;/p&gt;
-&lt;p&gt;O post &lt;strong&gt;não&lt;/strong&gt; é indicado para quem nunca instalou um GNU/Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.&lt;/p&gt;
+&lt;p&gt;O post &lt;strong&gt;não&lt;/strong&gt; é indicado para quem nunca instalou um GNU&amp;#x2F;Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.&lt;/p&gt;
 &lt;p&gt;A versão do Debian que optei é a Jessie (v8), ela está quase saindo do forno (é &lt;strong&gt;testing&lt;/strong&gt; mas está em &lt;em&gt;freeze&lt;/em&gt;, portanto só aceita correção de bugs). Existem pouquíssimos bugs nela (me deparei mais com eles na instalação do que no uso do dia-a-dia) e certamente o que está aqui valerá para a versão final que sairá em algumas semanas.&lt;/p&gt;
 &lt;img src=&#34;/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png&#34; class=&#34;&#34; title=&#34;Jessie - Mascote do Debian 8&#34;&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/&t=Instalando Debian Jessie usando criptografia de disco"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
@@ -125,7 +125,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado"><span class="toc-number">1.</span> <span class="toc-text">0. Backup dos dados existentes (disco será integralmente utilizado)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Download-da-imagem-do-Debian"><span class="toc-number">2.</span> <span class="toc-text">1. Download da imagem do Debian:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Instalando-c-criptografia"><span class="toc-number">3.</span> <span class="toc-text">2. Instalando c&#x2F; criptografia:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extras"><span class="toc-number">4.</span> <span class="toc-text">Extras</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Firmwares"><span class="toc-number">4.1.</span> <span class="toc-text">Firmwares</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bugs-etc"><span class="toc-number">4.2.</span> <span class="toc-text">Bugs, etc.</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado"><span class="toc-number">1.</span> <span class="toc-text">0. Backup dos dados existentes (disco será integralmente utilizado)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Download-da-imagem-do-Debian"><span class="toc-number">2.</span> <span class="toc-text">1. Download da imagem do Debian:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Instalando-c-x2F-criptografia"><span class="toc-number">3.</span> <span class="toc-text">2. Instalando c&#x2F; criptografia:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extras"><span class="toc-number">4.</span> <span class="toc-text">Extras</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Firmwares"><span class="toc-number">4.1.</span> <span class="toc-text">Firmwares</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bugs-etc"><span class="toc-number">4.2.</span> <span class="toc-text">Bugs, etc.</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -176,7 +176,7 @@
   <div class="content" itemprop="articleBody">
     <p>O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de me preocupar com os dados em caso de <del>perca</del> perda ou roubo.</p>
 <p>A melhor maneira de se prevenir contra <del>perca</del> perda ou roubo é criptografando os dados e para tanto optei em instalar o Debian numa partição completamente criptografada. Assim … nem a PF consegue os dados :D.</p>
-<p>O post <strong>não</strong> é indicado para quem nunca instalou um GNU/Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.</p>
+<p>O post <strong>não</strong> é indicado para quem nunca instalou um GNU&#x2F;Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.</p>
 <p>A versão do Debian que optei é a Jessie (v8), ela está quase saindo do forno (é <strong>testing</strong> mas está em <em>freeze</em>, portanto só aceita correção de bugs). Existem pouquíssimos bugs nela (me deparei mais com eles na instalação do que no uso do dia-a-dia) e certamente o que está aqui valerá para a versão final que sairá em algumas semanas.</p>
 <img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png" class="" title="Jessie - Mascote do Debian 8">
 
@@ -184,10 +184,10 @@
 
 <p><strong>Bom, vamos lá:</strong></p>
 <h2 id="0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado"><a href="#0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado" class="headerlink" title="0. Backup dos dados existentes (disco será integralmente utilizado)"></a>0. Backup dos dados existentes (disco será integralmente utilizado)</h2><p>O passo zero não será descrito e depende de cada um. O instalador do Debian automatiza o processo de formatar, particionar e configurar a criptografia em disco desde que optemos por instalá-lo usando inteiramente um disco. Portanto, faça um backup dos dados e deixe o disco pronto para a instalação.</p>
-<p>Caso não desejes reservar um disco inteiro para o Debian, é plenamente possível instalá-lo em apenas uma parte do disco com criptografia e etc. (o sobrenome do GNU/Linux é configurabilidade) mas não será coberto nesse post :P.</p>
-<h2 id="1-Download-da-imagem-do-Debian"><a href="#1-Download-da-imagem-do-Debian" class="headerlink" title="1. Download da imagem do Debian:"></a>1. Download da imagem do Debian:</h2><p>Primeiro baixe uma imagem do Debian Jessie em <a target="_blank" rel="noopener" href="https://www.debian.org/CD/http-ftp/">https://www.debian.org/CD/http-ftp/</a> e grave numa pendrive (ou CD/DVD - alguém usa isso?).</p>
-<p>No momento que escrevo o Jessie é testing, portanto é o link <a target="_blank" rel="noopener" href="http://cdimage.debian.org/cdimage/weekly-builds/">Official CD/DVD images of the “testing” distribution (regenerated weekly)</a> mas em breve será o link <a target="_blank" rel="noopener" href="https://www.debian.org/CD/http-ftp/#stable">Official CD/DVD images of the “stable” release</a>.</p>
-<h2 id="2-Instalando-c-criptografia"><a href="#2-Instalando-c-criptografia" class="headerlink" title="2. Instalando c/ criptografia:"></a>2. Instalando c/ criptografia:</h2><p>Reinicie a máquina com a pendrive espetada e siga as seguintes opções:</p>
+<p>Caso não desejes reservar um disco inteiro para o Debian, é plenamente possível instalá-lo em apenas uma parte do disco com criptografia e etc. (o sobrenome do GNU&#x2F;Linux é configurabilidade) mas não será coberto nesse post :P.</p>
+<h2 id="1-Download-da-imagem-do-Debian"><a href="#1-Download-da-imagem-do-Debian" class="headerlink" title="1. Download da imagem do Debian:"></a>1. Download da imagem do Debian:</h2><p>Primeiro baixe uma imagem do Debian Jessie em <a target="_blank" rel="noopener" href="https://www.debian.org/CD/http-ftp/">https://www.debian.org/CD/http-ftp/</a> e grave numa pendrive (ou CD&#x2F;DVD - alguém usa isso?).</p>
+<p>No momento que escrevo o Jessie é testing, portanto é o link <a target="_blank" rel="noopener" href="http://cdimage.debian.org/cdimage/weekly-builds/">Official CD&#x2F;DVD images of the “testing” distribution (regenerated weekly)</a> mas em breve será o link <a target="_blank" rel="noopener" href="https://www.debian.org/CD/http-ftp/#stable">Official CD&#x2F;DVD images of the “stable” release</a>.</p>
+<h2 id="2-Instalando-c-x2F-criptografia"><a href="#2-Instalando-c-x2F-criptografia" class="headerlink" title="2. Instalando c&#x2F; criptografia:"></a>2. Instalando c&#x2F; criptografia:</h2><p>Reinicie a máquina com a pendrive espetada e siga as seguintes opções:</p>
 <ul>
 <li><p>Ao iniciar a imagem de instalação, escolha <em>Graphical install</em>:</p>
 <img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-graphical_install.png" class="" title="Início da instalação do Debian Jessie">
@@ -197,10 +197,8 @@
 </li>
 <li><p>Na próxima tela (“Configure o teclado”) escolha o teclado apropriado. “Português brasileiro” para teclado ABNT (com cedilha) ou “Inglês americano” para teclado sem cedilha.</p>
 </li>
-</ul>
-<ul>
 <li><p><strong>Caso seu computador possua hardware de rede que necessita de firmware proprietário</strong> chegaremos à parte mais chatinha (<strong>se não precisar</strong> o instalador pula essa etapa, agradeça ao seus fabricantes de hardware e <strong><a href="#configurarrede">pule uma seção</a></strong> :D).</p>
-<p>O Debian perguntará (tela “Detectar hardware de rede”) se você deseja oferecer o firmware (ausente na instalação pq ñ é software livre). É um caso comum p/ placas de rede wireless e algumas cabeadas.</p>
+<p>O Debian perguntará (tela “Detectar hardware de rede”) se você deseja oferecer o firmware (ausente na instalação pq ñ é software livre). É um caso comum p&#x2F; placas de rede wireless e algumas cabeadas.</p>
 <p>A vantagem de usar a rede na instalação é que são baixadas atualizações além de configurarmos a rede e o endereço do repositório de pacotes utilizado pelo sistema. No meu caso, tive azar … tanta a placa de rede cabeada quanto wireless precisam de firmware proprietário. <strong>Caso seja o seu caso</strong> (malditos fabricantes que <del>não colaboram com</del> boicotam o software livre):</p>
 <ol>
 <li>Anote os firmwares necessários informados pelo Debian (no meu caso, ele informou os arquivos <code>iwlwifi-6000g2b-6.ucode</code> - wifi- e, <code>rtl_nic/rtl8411-1.fw</code>  -cabeada-).</li>
@@ -217,7 +215,7 @@
 <li>Em “Tipo da rede sem fio …”: <code>WPA/WPA2 PSK</code> (<code>WPA/WPA2 PSK</code> é a + comum e segura; <code>Rede Aberta/WEP</code> é + antiga e insegura).</li>
 <li>Em “Frase secreta”: Senha da rede.</li>
 </ul>
-<p>Depois de configurar a forma de acesso à rede é só informar o “Nome da máquina” (qualquer um) e o “Nome de domínio” (se não souber/tiver, qualquer um).</p>
+<p>Depois de configurar a forma de acesso à rede é só informar o “Nome da máquina” (qualquer um) e o “Nome de domínio” (se não souber&#x2F;tiver, qualquer um).</p>
 </li>
 <li><p>O próximo passo é configurar usuários e senhas (tela “Configurar usuários e senhas”). Defina a senha do root bem como login e senha de um usuário normal:</p>
 <img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-configurar_usuarios_e_senhas.png" class="" title="Configurar usuários e senhas">
@@ -233,15 +231,15 @@
 <li>Escolha “Assistido - usar disco todo e LVM criptografado”</li>
 <li>Selecione o disco a ser formatado e particionado (escolhi o disco <code>sda</code>).</li>
 <li>Na tela “Esquema de particionamento” escolha “Todos os arquivos em uma partição (para iniciantes)” pois como estamos usando <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29">LVM</a> é fácil redimensionar depois e criar as partições desejadas (post futuro).</li>
-<li>Responda “Sim” à pergunta “Gravar as mudanças nos discos e configurar LVM?”.<br>O disco será sobrescrito com dados aleatório para aumentar a segurança (dificulta diferenciar o que possui dados do que ainda está vazio).</li>
+<li>Responda “Sim” à pergunta “Gravar as mudanças nos discos e configurar LVM?”.<br>  O disco será sobrescrito com dados aleatório para aumentar a segurança (dificulta diferenciar o que possui dados do que ainda está vazio).</li>
 <li>Agora é solicitada uma “frase criptográfica” para desbloquear o disco sempre que o sistema <em>bootar</em>. Atenção, se você esquecer essa senha … adeus dados :D.</li>
-<li>Finalmente, confirme tudo escolhendo a opção “Finalizar o particionamento e escrever as mudanças no disco” e depois respondendo “Sim” à pergunta “Escrever as mudanças nos discos?”.<br>As partições serão criadas e o sistema básico instalado.</li>
+<li>Finalmente, confirme tudo escolhendo a opção “Finalizar o particionamento e escrever as mudanças no disco” e depois respondendo “Sim” à pergunta “Escrever as mudanças nos discos?”.<br>  As partições serão criadas e o sistema básico instalado.</li>
 </ol>
 </li>
 <li><p>Na tela “Configurar o gerenciador de pacotes”:</p>
 <ol>
 <li>Responda “Não” à pergunta “Ler outro CD ou DVD?”</li>
-<li>Responda “Sim” à pergunta “Usar um espelho de rede?” se você tiver acesso à internet durante à instalação.<br>2.1. Escolha o Brasil, como país do espelho e algum dos repositóris disponíveis.<br>2.2. Opcionalmente, informe um proxy (se você não sabe o que é … não precisa de um :D).<br>Será configurado o acesso ao repositório, baixada e instalada as atualizações existentes.</li>
+<li>Responda “Sim” à pergunta “Usar um espelho de rede?” se você tiver acesso à internet durante à instalação.<br>  2.1. Escolha o Brasil, como país do espelho e algum dos repositóris disponíveis.<br>  2.2. Opcionalmente, informe um proxy (se você não sabe o que é … não precisa de um :D).<br>  Será configurado o acesso ao repositório, baixada e instalada as atualizações existentes.</li>
 </ol>
 </li>
 <li><p>Na tela “Configurando popularity-contest” podemos optar por enviar dados anônimos sobre os pacotes instalados. Essa informação é usada para decidir os pacotes que são colocados no primeiro CD da distribuição.</p>
@@ -262,9 +260,7 @@
 <img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-pedindo_frase_criptografica.png" class="" title="Debian pedindo frase criptográfica no boot">
 </li>
 <li><p>Após o boot, eis o GNOME do Debian Jessie em toda sua glória (e com a merecida segurança oferecida pela criptografia):</p>
-<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-desktop.png" class="" title="GNOME no Debian Jessie">
-
-</li>
+<img src="/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/debian8amd64-desktop.png" class="" title="GNOME no Debian Jessie"></li>
 </ul>
 <h2 id="Extras"><a href="#Extras" class="headerlink" title="Extras"></a>Extras</h2><h3 id="Firmwares"><a href="#Firmwares" class="headerlink" title="Firmwares"></a><span id="firmwares">Firmwares</span></h3><ul>
 <li><p>Para conseguir exatamente os firmwares faltando:</p>
@@ -322,7 +318,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado"><span class="toc-number">1.</span> <span class="toc-text">0. Backup dos dados existentes (disco será integralmente utilizado)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Download-da-imagem-do-Debian"><span class="toc-number">2.</span> <span class="toc-text">1. Download da imagem do Debian:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Instalando-c-criptografia"><span class="toc-number">3.</span> <span class="toc-text">2. Instalando c&#x2F; criptografia:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extras"><span class="toc-number">4.</span> <span class="toc-text">Extras</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Firmwares"><span class="toc-number">4.1.</span> <span class="toc-text">Firmwares</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bugs-etc"><span class="toc-number">4.2.</span> <span class="toc-text">Bugs, etc.</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Backup-dos-dados-existentes-disco-sera-integralmente-utilizado"><span class="toc-number">1.</span> <span class="toc-text">0. Backup dos dados existentes (disco será integralmente utilizado)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Download-da-imagem-do-Debian"><span class="toc-number">2.</span> <span class="toc-text">1. Download da imagem do Debian:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Instalando-c-x2F-criptografia"><span class="toc-number">3.</span> <span class="toc-text">2. Instalando c&#x2F; criptografia:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extras"><span class="toc-number">4.</span> <span class="toc-text">Extras</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Firmwares"><span class="toc-number">4.1.</span> <span class="toc-text">Firmwares</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bugs-etc"><span class="toc-number">4.2.</span> <span class="toc-text">Bugs, etc.</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -338,7 +334,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/&title=Instalando Debian Jessie usando criptografia de disco"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/&name=Instalando Debian Jessie usando criptografia de disco&description=&lt;p&gt;O primeiro tema do blog é a instalação do Debian Jessie usando criptografia de disco. Escrevi o post porque consegui comprar meu primeiro notebook e ao contrário dos desktops que tive antes … tenho de me preocupar com os dados em caso de &lt;del&gt;perca&lt;/del&gt; perda ou roubo.&lt;/p&gt;
 &lt;p&gt;A melhor maneira de se prevenir contra &lt;del&gt;perca&lt;/del&gt; perda ou roubo é criptografando os dados e para tanto optei em instalar o Debian numa partição completamente criptografada. Assim … nem a PF consegue os dados :D.&lt;/p&gt;
-&lt;p&gt;O post &lt;strong&gt;não&lt;/strong&gt; é indicado para quem nunca instalou um GNU/Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.&lt;/p&gt;
+&lt;p&gt;O post &lt;strong&gt;não&lt;/strong&gt; é indicado para quem nunca instalou um GNU&amp;#x2F;Linux na vida (não desista, há vários por aí :D), mas para quem nunca instalou um Debian.&lt;/p&gt;
 &lt;p&gt;A versão do Debian que optei é a Jessie (v8), ela está quase saindo do forno (é &lt;strong&gt;testing&lt;/strong&gt; mas está em &lt;em&gt;freeze&lt;/em&gt;, portanto só aceita correção de bugs). Existem pouquíssimos bugs nela (me deparei mais com eles na instalação do que no uso do dia-a-dia) e certamente o que está aqui valerá para a versão final que sairá em algumas semanas.&lt;/p&gt;
 &lt;img src=&#34;/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/jessie.png&#34; class=&#34;&#34; title=&#34;Jessie - Mascote do Debian 8&#34;&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/&t=Instalando Debian Jessie usando criptografia de disco"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
