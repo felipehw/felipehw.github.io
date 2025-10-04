@@ -13,15 +13,15 @@
 <meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
 <meta property="og:description" content="Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova en">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:image" content="https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/ecmascript6-logo.png">
+<meta property="og:image" content="https://felipehw.github.io/images/2015-08-20-classes-em-ecmascript-6/ecmascript6-logo.png">
 <meta property="article:published_time" content="2015-08-20T05:39:44.000Z">
-<meta property="article:modified_time" content="2015-09-06T20:04:52.290Z">
+<meta property="article:modified_time" content="2025-10-04T15:46:24.116Z">
 <meta property="article:author" content="felipehw">
 <meta property="article:tag" content="ecmascript">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/ecmascript6-logo.png">
+<meta name="twitter:image" content="https://felipehw.github.io/images/2015-08-20-classes-em-ecmascript-6/ecmascript6-logo.png">
     
     
       
@@ -118,7 +118,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&title=Classes em ECMAScript 6"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&title=Classes em ECMAScript 6"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&name=Classes em ECMAScript 6&description=&lt;p&gt;Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova encarnação do ECMAScript.&lt;/p&gt;
-&lt;img src=&#34;/2015/08/20/classes-em-ecmascript-6/ecmascript6-logo.png&#34; class=&#34;&#34; title=&#34;ECMAScript 6&#34;&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+&lt;p&gt;&lt;img src=&#34;/images/2015-08-20-classes-em-ecmascript-6/ecmascript6-logo.png&#34; alt=&#34;Logo do ECMAScript 6&#34; title=&#34;ECMAScript 6&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&t=Classes em ECMAScript 6"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -177,8 +177,7 @@
 
   <div class="content e-content" itemprop="articleBody">
     <p>Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova encarnação do ECMAScript.</p>
-<img src="/2015/08/20/classes-em-ecmascript-6/ecmascript6-logo.png" class="" title="ECMAScript 6">
-
+<p><img src="/images/2015-08-20-classes-em-ecmascript-6/ecmascript6-logo.png" alt="Logo do ECMAScript 6" title="ECMAScript 6"></p>
 <span id="more"></span>
 
 <p>Classes no ES6 são apenas um açucar sintático sobre o padrão de OO baseado em protótipos do JavaScript de sempre e <strong>não</strong> um novo modelo de OO para a linguagem.<br>De qualquer maneira, essa nova forma é muito mais simples de usar e portanto encoraja o uso de OO. Vejamos a aparência de uma classe ES6:</p>
@@ -199,7 +198,7 @@
 </li>
 <li><p>Classes ES6 não suportam:</p>
 <ul>
-<li>inicializadores de propriedade: a sintaxe de definição de classe <strong>suporta apenas métodos</strong> (constructor, métodos estáticos e métodos da instância) <strong>e não propriedades</strong>, portanto não podemos utilizar <code>foo = &quot;bar&quot;;</code> ou <code>foo : &quot;bar&quot;;</code> dentro da definição da classe. Propriedades das instâncias, portanto, são normalmente definidas no <em>constructor</em> enquanto propriedades da classe são atribuídas após a definição da classe (<code>var classe = class &#123; &#125;; classe.propDaClasse = &quot;string&quot;</code>).</li>
+<li>inicializadores de propriedade: a sintaxe de definição de classe <strong>suporta apenas métodos</strong> (constructor, métodos estáticos e métodos da instância) <strong>e não propriedades</strong>, portanto não podemos utilizar <code>foo = &quot;bar&quot;;</code> ou <code>foo : &quot;bar&quot;;</code> dentro da definição da classe. Propriedades das instâncias, portanto, são normalmente definidas no <em>constructor</em> enquanto propriedades da classe são atribuídas após a definição da classe (<code>var classe = class { }; classe.propDaClasse = &quot;string&quot;</code>).</li>
 </ul>
 </li>
 </ul>
@@ -283,7 +282,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&title=Classes em ECMAScript 6"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&title=Classes em ECMAScript 6"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&name=Classes em ECMAScript 6&description=&lt;p&gt;Com a nova versão do ECMAScript (6) finalizada em junho … é hora de fixar algo das novidades :D. Segue um apanhado que fiz (fontes abaixo) para entender melhor as peculiaridades das classes na nova encarnação do ECMAScript.&lt;/p&gt;
-&lt;img src=&#34;/2015/08/20/classes-em-ecmascript-6/ecmascript6-logo.png&#34; class=&#34;&#34; title=&#34;ECMAScript 6&#34;&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+&lt;p&gt;&lt;img src=&#34;/images/2015-08-20-classes-em-ecmascript-6/ecmascript6-logo.png&#34; alt=&#34;Logo do ECMAScript 6&#34; title=&#34;ECMAScript 6&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/&t=Classes em ECMAScript 6"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 

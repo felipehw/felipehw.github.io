@@ -13,16 +13,16 @@
 <meta property="og:site_name" content="$ls &#x2F;home&#x2F;felipehw">
 <meta property="og:description" content="Esse post é do dark side. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:image" content="https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">
+<meta property="og:image" content="https://felipehw.github.io/images/2015-03-08-instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">
 <meta property="article:published_time" content="2015-03-08T04:08:20.000Z">
-<meta property="article:modified_time" content="2015-09-06T20:07:45.116Z">
+<meta property="article:modified_time" content="2025-10-04T13:55:43.130Z">
 <meta property="article:author" content="felipehw">
 <meta property="article:tag" content="dark side">
 <meta property="article:tag" content="debian">
 <meta property="article:tag" content="nvidia">
 <meta property="article:tag" content="steam">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">
+<meta name="twitter:image" content="https://felipehw.github.io/images/2015-03-08-instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png">
     
     
       
@@ -119,7 +119,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&title=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&title=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&name=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie&description=&lt;p&gt;Esse post é do &lt;em&gt;dark side&lt;/em&gt;. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou o desenvolvimento do driver livre (&lt;a href=&#34;http://nouveau.freedesktop.org/wiki/&#34;&gt;nouveau&lt;/a&gt;) e só recentemente começou a prestar alguma ajuda.&lt;/p&gt;
-&lt;img src=&#34;/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png&#34; class=&#34;&#34; title=&#34;O lado Nvidia da força&#34;&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+&lt;p&gt;&lt;img src=&#34;/images/2015-03-08-instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png&#34; alt=&#34;Imagem de Darth Vader&#34; title=&#34;O lado Nvidia da força&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&t=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -178,8 +178,7 @@
 
   <div class="content e-content" itemprop="articleBody">
     <p>Esse post é do <em>dark side</em>. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou o desenvolvimento do driver livre (<a target="_blank" rel="noopener" href="http://nouveau.freedesktop.org/wiki/">nouveau</a>) e só recentemente começou a prestar alguma ajuda.</p>
-<img src="/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png" class="" title="O lado Nvidia da força">
-
+<p><img src="/images/2015-03-08-instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png" alt="Imagem de Darth Vader" title="O lado Nvidia da força"></p>
 <span id="more"></span>
 
 <p>A tecnologia <a target="_blank" rel="noopener" href="http://www.nvidia.com/object/optimus_technology.html">NVIDIA Optimus</a> permite aos notebooks utilizarem a placa de vídeo onboard no cotidiano e, apenas quando necessário, fazer uso da placa de vídeo dedicada (Nvidia). Isso é essencial para que a bateria tenha longa duração, dado que a placa de vídeo dedicada é ativada apenas quando necessário (e ela consome bastante energia :&#x2F;).</p>
@@ -193,15 +192,15 @@
 <p>Depois atualize os dados referentes aos repositórios executando:<br><code># apt-get update</code></p>
 <h3 id="1-Instalacao"><a href="#1-Instalacao" class="headerlink" title="1. Instalação"></a>1. Instalação</h3><ul>
 <li><p>Instale os pacotes necessários p&#x2F; o Bumblebee e o driver proprietário Nvidia:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get install bumblebee-nvidia primus</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install bumblebee-nvidia primus</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>Apenas para Debian 64 bits</strong>. Permite que utilizemos o Bumblebee inclusive quando rodando aplicações 32 bits em sistemas 64 bits (essencial para diversos jogos no <a href="steampowered.com">Steam</a>):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dpkg --add-architecture i386 &amp;&amp; apt-get update &amp;&amp; apt-get install primus-libs:i386</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --add-architecture i386 &amp;&amp; apt-get update &amp;&amp; apt-get install primus-libs:i386</span><br></pre></td></tr></table></figure>
 <p>Atenção: Se durante a instalação, lhe for perguntado se deseja criar um arquivo <code>xorg.conf</code> responda que <strong>não</strong>. Essa pergunta se aplica apenas a sistemas que usam uma única placa (Nvidia - aka sem Optimus). Também não execute <code>nvidia-xconfig</code>.</p>
 </li>
 </ul>
 <h3 id="2-Pos-instalacao"><a href="#2-Pos-instalacao" class="headerlink" title="2. Pós-instalação"></a>2. Pós-instalação</h3><p>Adicione os usuários que forem utilizar da placa Nvidia via Bumblebee ao grupo <code>bumblebee</code>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># adduser $USER bumblebee</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser <span class="variable">$USER</span> bumblebee</span><br></pre></td></tr></table></figure>
 
 <p>Caso o usuário não seja adicionado, o mesmo não conseguirá chavear entre a placa de vídeo onboard e offboard.</p>
 <p>Pronto! Tudo instalado e pós-instalado.</p>
@@ -209,8 +208,8 @@
 <p>O <code>primusrun</code> é mais novo que <code>optirun</code>, tende a substituí-lo e possui maior performance (preferencial).</p>
 <p>Exemplo de utilização:</p>
 <ul>
-<li><code>$ primusrun [options] &lt;application&gt; [application-parameters]</code></li>
-<li><code>$ optirun [options] &lt;application&gt; [application-parameters]</code></li>
+<li><code>primusrun [options] &lt;application&gt; [application-parameters]</code></li>
+<li><code>optirun [options] &lt;application&gt; [application-parameters]</code></li>
 </ul>
 <p>Executando o Steam c&#x2F; o <code>primusrun</code>: <code>$ primusrun steam</code>.</p>
 <p>Como visto, assim temos um controle bem grande sobre quando uma ou outra placa deve ser usada. Aqui (com as observações abaixo feitas ao Steam) tenho rodado os jogos com toda a performance possível, e no restante do tempo a bateria dura e o notebook fica silencioso :D.</p>
@@ -221,7 +220,7 @@
 <ol>
 <li>Localize a versão correta do libGL:</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ locate libGL.so</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locate libGL.so</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>Configure o Steam p&#x2F; carregar o jogo com a versao correta (em <em>Properties</em> -&gt; <em>General</em> -&gt; <em>Set Launch Options…</em>.). Exemplo:</li>
 </ol>
@@ -284,7 +283,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&title=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&title=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&name=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie&description=&lt;p&gt;Esse post é do &lt;em&gt;dark side&lt;/em&gt;. É sobre como instalar o driver proprietário da Nvidia no Debian Jessie, dado que o estado do driver livre infelizmente é bem insatisfatório. A própria Nvidia sempre boicotou o desenvolvimento do driver livre (&lt;a href=&#34;http://nouveau.freedesktop.org/wiki/&#34;&gt;nouveau&lt;/a&gt;) e só recentemente começou a prestar alguma ajuda.&lt;/p&gt;
-&lt;img src=&#34;/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png&#34; class=&#34;&#34; title=&#34;O lado Nvidia da força&#34;&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+&lt;p&gt;&lt;img src=&#34;/images/2015-03-08-instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/darth-vader.png&#34; alt=&#34;Imagem de Darth Vader&#34; title=&#34;O lado Nvidia da força&#34;&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/&t=Instalando driver proprietário Nvidia com suporte à tecnologia Optimus num notebook com Debian Jessie"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 

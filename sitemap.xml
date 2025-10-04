@@ -2,45 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://felipehw.github.io/2018/07/25/comentario-sobre-o-livro-sob-tres-bandeiras-anarquismo-e-imaginacao-anticolonial/</loc>
-    
-    <lastmod>2025-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2022/06/01/torto-arado/</loc>
-    
-    <lastmod>2025-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/tags/index.html</loc>
-    
-    <lastmod>2025-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/categories/index.html</loc>
-    
-    <lastmod>2025-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://felipehw.github.io/about/index.html</loc>
     
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,250 +13,7 @@
   <url>
     <loc>https://felipehw.github.io/2025/10/01/um-novo-comeco/</loc>
     
-    <lastmod>2025-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/02/28/hello-world/</loc>
-    
-    <lastmod>2025-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/search/index.html</loc>
-    
-    <lastmod>2022-06-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/</loc>
-    
-    <lastmod>2022-02-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/</loc>
-    
-    <lastmod>2022-02-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/</loc>
-    
-    <lastmod>2022-02-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/</loc>
-    
-    <lastmod>2022-02-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2020/10/20/marte-o-planeta-vermelho-desde-floripa/</loc>
-    
-    <lastmod>2020-10-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2019/07/26/monitorando-temperatura-da-cpu-no-gnu-linux/</loc>
-    
-    <lastmod>2019-07-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/</loc>
-    
-    <lastmod>2019-07-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/07/02/saturno-e-seus-aneis-desde-floripa/</loc>
-    
-    <lastmod>2018-07-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/06/23/vesta-o-asteroide-mais-brilhante-do-ceu-desde-floripa/</loc>
-    
-    <lastmod>2018-07-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/</loc>
-    
-    <lastmod>2018-05-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2018/02/06/constelacao-de-orion-e-nebulosa-de-orion/</loc>
-    
-    <lastmod>2018-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/</loc>
-    
-    <lastmod>2016-03-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/</loc>
-    
-    <lastmod>2016-03-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/</loc>
-    
-    <lastmod>2016-01-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2016/01/25/habilitando-trim-sobre-lvm-sobre-luks-num-ssd/</loc>
-    
-    <lastmod>2016-01-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/</loc>
-    
-    <lastmod>2015-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/</loc>
-    
-    <lastmod>2015-10-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/05/10/tamanho-de-fontes-em-monitores-15-fullhd-no-gnome-firefox-e-thunderbird/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/</loc>
-    
-    <lastmod>2015-09-06</lastmod>
+    <lastmod>2025-10-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -301,7 +22,106 @@
   <url>
     <loc>https://felipehw.github.io/2015/08/20/classes-em-ecmascript-6/</loc>
     
-    <lastmod>2015-09-06</lastmod>
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/10/06/como-configurar-um-cliente-no-ip-no-raspberry-pi/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/10/08/nvm-aprenda-a-gerenciar-versoes-do-node-js-em-3min/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2016/01/25/habilitando-trim-sobre-lvm-sobre-luks-num-ssd/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2016/01/30/screenfetch-info-do-sistema-em-ascii-e-com-estilo/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2016/03/12/aventuras-com-flow-atom-javascript/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2016/03/12/qualidade-de-vida-ao-desenvolver-javascript-eslint-atom-es6-jsx/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/03/29/gravando-playback-de-audios-no-gnu-linux/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/05/11/criando-lindos-pdfs-de-texto-a-partir-de-livros-ou-xerox/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/07/25/comentario-sobre-o-livro-sob-tres-bandeiras-anarquismo-e-imaginacao-anticolonial/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/12/15/ocrs-de-pdfs-no-gnu-linux-estudando-com-textos-e-nao-prints/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -310,7 +130,187 @@
   <url>
     <loc>https://felipehw.github.io/2015/09/06/meu-mapa-lunar-caseiro/</loc>
     
-    <lastmod>2015-09-06</lastmod>
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/02/06/constelacao-de-orion-e-nebulosa-de-orion/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/06/23/vesta-o-asteroide-mais-brilhante-do-ceu-desde-floripa/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2018/07/02/saturno-e-seus-aneis-desde-floripa/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2019/07/26/monitorando-temperatura-da-cpu-no-gnu-linux/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2020/10/20/marte-o-planeta-vermelho-desde-floripa/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2022/06/01/torto-arado/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2016/06/26/jupiter-o-gigante-gasoso-desde-floripa/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/03/14/proteja-seus-dados-backups-faceis-e-seguros-no-desktop-linux/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/02/28/instalando-debian-jessie-usando-criptografia-de-disco/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/03/23/torrent-profissa-gerenciamento-remoto-e-servidor-de-compartilhamento-24hs/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/05/10/tamanho-de-fontes-em-monitores-15-fullhd-no-gnome-firefox-e-thunderbird/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/05/02/servico-p-automagicamente-utilizar-o-melhor-mirror-debian-disponivel/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/04/25/redimensionando-volumes-logicos-em-particoes-lvm-criptografadas/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/04/19/criando-particoes-encriptadas-lvm-sobre-luks/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/03/08/instalando-driver-proprietario-nvidia-com-suporte-a-tecnologia-optimus-num-notebook-com-debian-jessie/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/02/28/hello-world/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/2015/07/11/como-fazer-o-app-gnome-music-encontrar-suas-musicas/</loc>
+    
+    <lastmod>2025-10-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/search/index.html</loc>
+    
+    <lastmod>2025-10-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/categories/index.html</loc>
+    
+    <lastmod>2025-10-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/tags/index.html</loc>
+    
+    <lastmod>2025-10-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -328,7 +328,7 @@
 
   <url>
     <loc>https://felipehw.github.io/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -336,273 +336,273 @@
   
   <url>
     <loc>https://felipehw.github.io/tags/debian/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/criptografia/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/nvidia/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/steam/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/dark-side/</loc>
-    <lastmod>2025-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/tags/backup/</loc>
-    <lastmod>2025-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://felipehw.github.io/tags/seguranca/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/compartilhamento/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/torrent/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/raspberry/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/tags/backup/</loc>
+    <lastmod>2025-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://felipehw.github.io/tags/seguranca/</loc>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/lvm/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/particionamento/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/firefox/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/thunderbird/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/gnome/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/fullhd/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/music/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/proxy/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/javascript/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/web/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/ecmascript/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/astronomia/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/fotografia/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/lua/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/trim/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/ssd/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/luks/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/fedora/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/glamour/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/jsx/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/atom/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/flow/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/planeta/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/desktop/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/universidade/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/humanas/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/asteroide/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/historia/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/tags/literatura/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -610,36 +610,36 @@
 
   
   <url>
-    <loc>https://felipehw.github.io/categories/offtopic/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <loc>https://felipehw.github.io/categories/gnu-linux/</loc>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://felipehw.github.io/categories/gnu-linux/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <loc>https://felipehw.github.io/categories/offtopic/</loc>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/categories/cultura-livre/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/categories/develop/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://felipehw.github.io/categories/humanas/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2025-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
